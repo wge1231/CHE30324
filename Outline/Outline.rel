@@ -1,0 +1,30 @@
+;; RefTeX parse info file
+;; File: /Users/wschnei1/Documents/Courses/CHE_324/Resources/Outline/Outline.tex
+;; User: wschnei1 (William F. Schneider)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/wschnei1/Documents/Courses/CHE_324/Resources/Outline/")
+
+(label-numbers ("eq:" . 2))
+
+(bof "/Users/wschnei1/Documents/Courses/CHE_324/Resources/Outline/Outline.tex")
+
+("Particle-in-a-box" "t" nil "/Users/wschnei1/Documents/Courses/CHE_324/Resources/Outline/Outline.tex" nil "")
+
+("eq:2" "e" nil "/Users/wschnei1/Documents/Courses/CHE_324/Resources/Outline/Outline.tex" nil "")
+
+("eq:1" "e" nil "/Users/wschnei1/Documents/Courses/CHE_324/Resources/Outline/Outline.tex" nil "")
+
+(eof "/Users/wschnei1/Documents/Courses/CHE_324/Resources/Outline/Outline.tex")
+))
+
