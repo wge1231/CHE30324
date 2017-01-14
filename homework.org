@@ -1,7 +1,7 @@
 |---+-------------+-----------+----------|
 |   | Due Date    | Homework  | Solution |
 |---+-------------+-----------+----------|
-| 1 | 25 Jan 2017 | [[./Homework/HW1-Sp17.pdf][pdf]] [[./Homework/HW1-Sp17.ipynb][ipynb]] |          |
+| 1 | 25 Jan 2017 | [[./Homework/HW1-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW1-Sp17.ipynb][ipynb]] |          |
 |   |             |           |          |
 | 2 | 1 Feb 2017  |           |          |
 |   |             |           |          |
