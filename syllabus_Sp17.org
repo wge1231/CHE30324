@@ -77,8 +77,9 @@ and answer questions.
 |--------------------------------------------+----------------|
     
 * Homework
-Eleven graded problem sets will be distributed during the semester and will be due at the beginning of class on dates to be announced.  *Assignments turned in late will automatically lose 20%, and those turned in after the solutions are posted will not be accepted.*  Your two lowest scores on homework will be dropped.  You may discuss the homework with your classmates, but *what you turn in must be your own work.*
+Eleven graded problem sets will be distributed during the semester and will be due at the beginning of class on dates to be announced.  *Assignments turned in late will automatically lose 20%, and those turned in after the solutions are posted will not be accepted.*  Your two lowest scores on homework will be dropped.  You may discuss the homework with your classmates, but *what you turn in must be your own work.
 
+Homework will in general require some computations. You may write out solutions by hand. Alternatively, homework will also be distributed as [[https://ipython.org/notebook.html][iPython notebooks]], a format that allows you to solve problems using Python within the notebook.
 * Homework Defense
 To help me get to know you and how you are doing with the course, after each homework assignment three or four of you will be chosen at random to meet with me one-on-one to defend their homework answers.
 
@@ -86,7 +87,7 @@ To help me get to know you and how you are doing with the course, after each hom
 Grades will be based on homework (25%), three in-class exams (45%), and a cumulative final (30%).
 
 * Web
-This syllabus, reading assignment, the homework assignments and solutions, a summary of the lecture schedule, and a *detailed course outline* is available on the web at http://www.nd.edu/~wschnei1/courses.shtml.
+This syllabus, reading assignment, the homework assignments and solutions, a summary of the lecture schedule, and a *detailed course outline* are available on the web at [[https://github.com/wmfschneider/CHE30324]]. 
 
 * Academic honesty
 Should go without saying. Any cheating or misrepresenting of work as your own will be dealt with according to the Honor Code policies of the university. I reserve the right to relocate any students during an examination at my discretion.
