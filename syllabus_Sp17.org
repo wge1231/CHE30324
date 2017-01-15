@@ -102,7 +102,7 @@ yourself from class.
 The TA and instructor are happy to answer questions during regular office hours or by appointment if you need extra help.
 
 | Dr. Bill Schneider\quad\quad | Yujia Wang, \email{ywang40@nd.edu} |
-| By appt/drop in              | 150 Fitz                           |
+| By appt/drop in              | M and T, 4-5 pm, 150 Fitz          |
 
 
 #+CAPTION: Tentative Course Calendar
