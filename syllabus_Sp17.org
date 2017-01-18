@@ -81,7 +81,7 @@ Eleven graded problem sets will be distributed during the semester and will be d
 
 Homework will in general require some computations. You may write out solutions by hand. Alternatively, homework will also be distributed as [[https://ipython.org/notebook.html][iPython notebooks]], a format that allows you to solve problems using Python within the notebook.
 * Homework Defense
-To help me get to know you and how you are doing with the course, after each homework assignment three or four of you will be chosen at random to meet with me one-on-one to defend their homework answers.
+To help me get to know you and how you are doing with the course, after each homework assignment three or four of you will be chosen at random to meet with me one-on-one to discuss their homework.
 
 * Grading
 Grades will be based on homework (25%), three in-class exams (45%), and a cumulative final (30%).
