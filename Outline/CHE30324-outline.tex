@@ -1,4 +1,4 @@
-% Created 2017-01-14 Sat 19:31
+% Created 2017-01-19 Thu 20:19
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -59,9 +59,9 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 
 \section{The Classical Foundations}
-\label{sec:org2f88407}
+\label{sec:org6f9077a}
 \subsection{Lecture 0: Introduction}
-\label{sec:orge29b7fe}
+\label{sec:org1387286}
 \begin{enumerate}
 \item Burning lighter
 \item Foundations of Physical Chemistry
@@ -101,7 +101,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{center}
 \end{table}
 \subsection{Lecture 1: Basic statistics}
-\label{sec:org6c136e9}
+\label{sec:org337c84a}
 \begin{enumerate}
 \item Discrete probability distributions---Coin flip
 \begin{enumerate}
@@ -134,7 +134,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \item Gravity example
 \begin{enumerate}
 \item \(E(h)=mgh\), linear, continuous energy spectrum
-\item molecule vs car in a gravitational field
+\item molecule vs car in a gravitational field (Table \ref{carvelectron})
 \item Barometric law for gases, \(P=P_0e^{-mgh/k_BT}\)
 \end{enumerate}
 \item Kinetic energy in 1-D example
@@ -151,6 +151,26 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \item Equipartition -- energy freely exchanged between all degrees of freedom
 \end{enumerate}
 \end{enumerate}
+
+\begin{table}[htbp]
+\caption{Car vs gas molecule at the earth's surface \label{carvelectron}}
+\centering
+\begin{tabular}{lll}
+\hline
+ & car & gas molecule\\
+\hline
+\emph{m} & \SI{1000}{kg} & \SI{1e-26}{kg}\\
+\emph{h} & \SI{1}{m} & \SI{1}{m}\\
+\emph{mgh} & \SI{9800}{J} & \SI{9.8e-26}{J}\\
+ & \SI{6.1e22}{eV} & \SI{6.1e-7}{eV}\\
+\emph{T} & \SI{298}{K} & \SI{298}{K}\\
+\(k_BT\) & \SI{0.026}{eV} & \SI{0.026}{eV}\\
+\(mgh/k_BT\) & \SI{2.4e24}{} & \SI{2.3e-5}{}\\
+\(P(\SI{1}{m})/P(0)\) & \(e^{-2.4\times 10^{-24}}\) & 0.99998\\
+\(\langle h \rangle\) & \SI{0}{m} & \SI{42}{km}\\
+\hline
+\end{tabular}
+\end{table}
 
 \begin{table}\small
 \begin{center}
@@ -226,7 +246,7 @@ plt.savefig('./Images/MB1D.png')
 \end{figure}
 
 \subsection{Lecture 2: Kinetic theory of gases}
-\label{sec:orga4fd4a3}
+\label{sec:org5ef1244}
 \begin{enumerate}
 \item Postulates
 \begin{enumerate}
@@ -376,7 +396,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
  \end{table}
 
 \subsection{Lecture 3: Transport}
-\label{sec:orge3f375b}
+\label{sec:orgaf4996d}
 \begin{enumerate}
 \item Effusion and Graham's law, \(\text{effusion rate}\propto MW^{-1/2}\)
 \item Fick's first law: net flux proportional to concentration gradient
@@ -417,46 +437,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 
 \section{Quantum Mechanics: Blurred Lines Between Particles and Waves}
-\label{sec:org4b89933}
-\subsection{Lecture 4: Duality and demise of classical physics}
-\label{sec:org6d5de8e}
-\begin{enumerate}
-\item Properties of waves
-\begin{enumerate}
-\item traveling waves, \(\psi(x,t)=A \sin(kx-\omega t)\), \(k=2\pi/\lambda\), \(\omega=2\pi\nu\)
-\item standing waves, \(\psi(x,t) = A \sin(kx) \cos(\omega t)\)
-\item interference, diffraction
-\item energy proportional to amplitude squared
-\item Expected energy of a classical oscillator, \(\langle \epsilon \rangle _\nu = k_B T\) for all \(\nu\)
-\end{enumerate}
-\item Blackbody radiation
-\begin{enumerate}
-\item Hohlraum spectrum
-\item Stefan-Boltzmann law, total irradiance
-\item Wien's displacement law
-\item Rayleigh-Jeans and ultraviolet catastrophe
-\item Planck model
-\begin{enumerate}
-\item Energy spectrum of oscillators are \emph{quantized}, \(\epsilon_\nu=nh\nu\)
-\item Expected energy of a quantized oscillator, \(\langle \epsilon \rangle_\nu = h\nu/\left (
-          e^{h\nu/k_BT}-1 \right )\)
-\item Planck expression for blackbody radiation works!
-\end{enumerate}
-\end{enumerate}
-\end{enumerate}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.6\textwidth]{./Images/PlanckEnergy.pdf}
-\caption{Planck oscillator energy \(\langle \epsilon \rangle_\lambda\) vs wavelength, normalized to \(k_B T\)}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.6\textwidth]{./Images/BlackBody.pdf}
-\caption{Black body radiation intensity \(I(\lambda,T)\) vs wavelength}
-\end{figure}
-
+\label{sec:orge843a07}
 \section{Statistical Mechanics: The Bridge from the Tiny to the Many}
-\label{sec:orgd3e1ac8}
+\label{sec:org7f93f8f}
 \end{document}

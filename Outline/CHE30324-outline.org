@@ -95,7 +95,7 @@
 
     5. Gravity example
       1. $E(h)=mgh$, linear, continuous energy spectrum
-      2. molecule vs car in a gravitational field
+      2. molecule vs car in a gravitational field (Table ref:carvelectron)
       3. Barometric law for gases, $P=P_0e^{-mgh/k_BT}$
     6. Kinetic energy in 1-D example
       1. $KE = \frac{1}{2}m v_x^2$
@@ -107,6 +107,21 @@
       4. By inspection, $\mu=\langle v_x \rangle=0$, $\sigma^2=\langle v_x^2\rangle =k_BT/m$
       5. Molecule vs car again
     7. Equipartition -- energy freely exchanged between all degrees of freedom
+
+#+CAPTION: Car vs gas molecule at the earth's surface label:carvelectron
+|-----------------------+-----------------------------+-----------------|
+|                       | car                         | gas molecule    |
+|-----------------------+-----------------------------+-----------------|
+| /m/                   | \SI{1000}{kg}               | \SI{1e-26}{kg}  |
+| /h/                   | \SI{1}{m}                   | \SI{1}{m}       |
+| /mgh/                 | \SI{9800}{J}                | \SI{9.8e-26}{J} |
+|                       | \SI{6.1e22}{eV}             | \SI{6.1e-7}{eV} |
+| /T/                   | \SI{298}{K}                 | \SI{298}{K}     |
+| \(k_BT\)              | \SI{0.026}{eV}              | \SI{0.026}{eV}  |
+| \(mgh/k_BT\)          | \SI{2.4e24}{}               | \SI{2.3e-5}{}   |
+| \(P(\SI{1}{m})/P(0)\) | \(e^{-2.4\times 10^{-24}}\) | 0.99998         |
+| \(\langle h \rangle\) | \SI{0}{m}                   | \SI{42}{km}     |
+|-----------------------+-----------------------------+-----------------|
 
 #+BEGIN_EXPORT latex
 \begin{table}\small
@@ -129,7 +144,7 @@
 \end{table}
 #+END_EXPORT
 
-#+BEGIN_SRC python :results output org drawer
+#+BEGIN_SRC python :exports none :results output org drawer 
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -351,33 +366,44 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
    3. Einstein-Smoluchowski relation
 
 * Quantum Mechanics: Blurred Lines Between Particles and Waves
-** Lecture 4: Duality and demise of classical physics
-1. Properties of waves
-   1. traveling waves, $\psi(x,t)=A \sin(kx-\omega t)$, $k=2\pi/\lambda$, $\omega=2\pi\nu$
-   2. standing waves, $\psi(x,t) = A \sin(kx) \cos(\omega t)$
-   3. interference, diffraction
-   4. energy proportional to amplitude squared
-   5. Expected energy of a classical oscillator, $\langle \epsilon \rangle _\nu = k_B T$ for all $\nu$
-2. Blackbody radiation
-   1. Hohlraum spectrum
-   2. Stefan-Boltzmann law, total irradiance 
-   3. Wien's displacement law
-   4. Rayleigh-Jeans and ultraviolet catastrophe
-   5. Planck model
-      1. Energy spectrum of oscillators are /quantized/, $\epsilon_\nu=nh\nu$ 
-      2. Expected energy of a quantized oscillator, $\langle \epsilon \rangle_\nu = h\nu/\left (
-          e^{h\nu/k_BT}-1 \right )$
-      3. Planck expression for blackbody radiation works!
-
-#+CAPTION: Planck oscillator energy $\langle \epsilon \rangle_\lambda$ vs wavelength, normalized to $k_B T$
-#+ATTR_LATEX: :width 0.6\textwidth
-[[./Images/PlanckEnergy.pdf]]
-
-#+CAPTION: Black body radiation intensity $I(\lambda,T)$ vs wavelength
-#+ATTR_LATEX: :width 0.6\textwidth
-[[./Images/BlackBody.pdf]]
-
 #+BEGIN_COMMENT
+\item{{\bf Lecture 4: Duality and demise of classical physics}}
+  \begin{outline}
+    \item{Properties of waves}
+      \begin{outline}
+      \item traveling waves, $\psi(x,t)=A \sin(kx-\omega t)$, $k=2\pi/\lambda$, $\omega=2\pi\nu$
+      \item standing waves, $\psi(x,t) = A \sin(kx) \cos(\omega t) $
+      \item interference, diffraction
+      \item energy proportional to amplitude squared
+      \item  Expected energy of a classical oscillator, $\langle \epsilon \rangle _\nu = k_B T$ for all $\nu$
+      \end{outline}
+    \item{Blackbody radiation}
+      \begin{outline}
+      \item Hohlraum spectrum
+      \item Stefan-Boltzmann law, total irradiance 
+      \item Wien's displacement law
+      \item{Rayleigh-Jeans and ultraviolet catastrophe}
+      \item{Planck model}
+        \begin{outline}
+        \item Energy spectrum of oscillators are {\em quantized}, $\epsilon_\nu=nh\nu$ 
+        \item Expected energy of a quantized oscillator, $\langle \epsilon \rangle_\nu = h\nu/\left (
+          e^{h\nu/k_BT}-1 \right ) $
+      \item Planck expression for blackbody radiation works!
+      \end{outline}
+    \end{outline}
+\begin{figure}
+\begin{center}
+\includegraphics[scale=1.25]{Images/PlanckEnergy.pdf}
+\caption{Planck oscillator energy $\langle \epsilon \rangle_\lambda$ vs.\ wavelength,
+  normalized to $k_B T$}
+\end{center}
+\end{figure}
+\begin{figure}
+\begin{center}
+\includegraphics[scale=1.25]{Images/BlackBody.pdf}
+\caption{Black body radiation intensity $I(\lambda,T)$ vs.\ wavelength}
+\end{center}
+\end{figure}
 
   \item{Heat capacities of solids and gases}
     \begin{outline}
