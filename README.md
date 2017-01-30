@@ -9,3 +9,5 @@ More detailed, living outline available as [pdf](./Outline/CHE30324-outline.pdf)
 Homework assignments and solutions available [here](./homework.org)
 
 Introduction to iPython/Jupyter notebooks [here](http://nbviewer.jupyter.org/github/jckantor/CBE20255/blob/master/notebooks/Getting%20Started%20with%20IPython.ipynb)
+
+Tutorial on Python [here](./Resources/Python+Tutorial+Draft.ipynb)
