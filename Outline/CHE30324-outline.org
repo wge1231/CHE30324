@@ -343,15 +343,28 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 5.  Expected energy of a classical oscillator, $\langle \epsilon \rangle _\nu = k_B T$ for all $\nu$
 
 *** Blackbody radiation
-1. Hohlraum spectrum
-2. Stefan-Boltzmann law, total irradiance 
-3. Wien's displacement law
-4. Rayleigh-Jeans and ultraviolet catastrophe
-5. Planck model
+1. Hohlraum spectrum (like the sun) empirically observed to obey:
+   1. Stefan-Boltzmann law, total irradiance 
+   2. Wien's displacement law
+2. Rayleigh-Jeans predicts spectrum using classical physics
+   1. standing waves + classical oscillators \(\rightarrow\) ultraviolet catastrophe
+3. Planck model
    1. Energy spectrum of oscillators are /quantized/, $\epsilon_\nu=nh\nu$ 
    2. Expected energy of a quantized oscillator, $\langle \epsilon \rangle_\nu = h\nu/\left (
           e^{h\nu/k_BT}-1 \right )$
-   3. Planck expression for blackbody radiation works!
+   3. Correctly reproduces Stefan-Boltzmann and Wien Laws!
+*** Heat capacities of solids
+1. Law of DuLong and Pettite, $C_v = 3R$, fails at low $T$
+2. Einstein model
+   1. Atomic vibrations are /quantized/, $\epsilon_n=nh\nu$
+   2. Heat capacity goes to zero at low $T$
+*** Photoelectric effect
+   1. Stopping potential and work function, $E_\text{kinetic}=h\nu -W$
+   2. Kinetic energy varies with light frequency, number of electrons varies with light intensity
+*** Compton effect
+1. light scattering of electrons changes $\lambda$
+2. Photon properties, $\epsilon = h\nu, p=h/\lambda$
+*** Wave-particle duality
 
 #+BEGIN_SRC python :results output org drawer
 import numpy as np
@@ -447,100 +460,7 @@ de Broglie equation & $\displaystyle \lambda=h/p $ \\
 #+END_EXPORT
 
 #+BEGIN_COMMENT
-\item{{\bf Lecture 4: Duality and demise of classical physics}}
-  \begin{outline}
-    \item{Properties of waves}
-      \begin{outline}
-      \item traveling waves, $\psi(x,t)=A \sin(kx-\omega t)$, $k=2\pi/\lambda$, $\omega=2\pi\nu$
-      \item standing waves, $\psi(x,t) = A \sin(kx) \cos(\omega t) $
-      \item interference, diffraction
-      \item energy proportional to amplitude squared
-      \item  Expected energy of a classical oscillator, $\langle \epsilon \rangle _\nu = k_B T$ for all $\nu$
-      \end{outline}
-    \item{Blackbody radiation}
-      \begin{outline}
-      \item Hohlraum spectrum
-      \item Stefan-Boltzmann law, total irradiance 
-      \item Wien's displacement law
-      \item{Rayleigh-Jeans and ultraviolet catastrophe}
-      \item{Planck model}
-        \begin{outline}
-        \item Energy spectrum of oscillators are {\em quantized}, $\epsilon_\nu=nh\nu$ 
-        \item Expected energy of a quantized oscillator, $\langle \epsilon \rangle_\nu = h\nu/\left (
-          e^{h\nu/k_BT}-1 \right ) $
-      \item Planck expression for blackbody radiation works!
-      \end{outline}
-    \end{outline}
-\begin{figure}
-\begin{center}
-\includegraphics[scale=1.25]{Images/PlanckEnergy.pdf}
-\caption{Planck oscillator energy $\langle \epsilon \rangle_\lambda$ vs.\ wavelength,
-  normalized to $k_B T$}
-\end{center}
-\end{figure}
-\begin{figure}
-\begin{center}
-\includegraphics[scale=1.25]{Images/BlackBody.pdf}
-\caption{Black body radiation intensity $I(\lambda,T)$ vs.\ wavelength}
-\end{center}
-\end{figure}
 
-  \item{Heat capacities of solids and gases}
-    \begin{outline}
-    \item Law of DuLong and Pettite, $C_v = 3R$, fails at low $T$
-    \item Einstein solid
-      \begin{outline}
-      \item Quantized vibrational energy, $\epsilon_n=nh\nu$
-      \item Heat capacity goes to zero at low $T$
-      \end{outline}
-  \end{outline}
-
-\begin{table} 
-\begin{center}
-    \caption{The new physics}
-    \begin{tabular}{|lr|}
-     \hline
- & \\
-Stefan-Boltzmann Law & $\displaystyle  \int I(\lambda,T)d\lambda = \sigma_\mathrm{SB} T^4$
-\\ & \\
-Wien's Law & $\displaystyle \lambda_\mathrm{max}T=2897768$ nm K \\
- & \\
-Rayleigh-Jeans eq& $\displaystyle I(\lambda,T) = \frac{8\pi}{\lambda^4} k_B T c $ \\ 
-& \\
-Blackbody irradiance & $\displaystyle I(\lambda, T) =
-\frac{8\pi}{\lambda^5}\frac{hc^2}{e^{hc/\lambda k_B T}-1}$ \\ 
-& \\
-Einstein crystal & $\displaystyle C_v=3R \left(\frac{h\nu}{k_BT}\right )^2\frac{e^{h\nu/k_BT}}{\left
-            ( e^{h\nu/k_BT}-1 \right )^2}$ \\
-& \\
-Photon energy & $\displaystyle \epsilon=h\nu $ \\
-& \\
-Rydberg equation & $\displaystyle \nu = R_H c\left (1/n^2
-        -1/k^2 \right)$ \\
-& \\
-Bohr equations & $\displaystyle l_n=n \hbar$ \\
-$\displaystyle n=1,2, \ldots $ & $\displaystyle r_n = n^2 \left ( \frac{4 \pi
-    \epsilon_0 \hbar^2}{e^2 m_e} \right ) = n^2 a_0$ \\
- & $\displaystyle E_n =-\frac{m_e e^4}{8\epsilon_0^2
-   h^2}\frac{1}{n^2}=-\frac{E_H}{2}\frac{1}{n^2}$ \\ 
- & $\displaystyle p_n =\frac{e^2}{4\pi\epsilon_0}\frac{m_e}{\hbar}\frac{1}{n} =
-p_0 \frac{1}{n} $ \\
-& \\
-de Broglie equation & $\displaystyle \lambda=h/p $ \\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-  \item{Photoelectric effect}
-    \begin{outline}
-    \item Stopping potential and work function, $T =h\nu -W$
-    \item Frequency and intensity dependence
-    \item{Wave-particle duality}
-    \item{Photon properties, $\epsilon = h\nu, p=h/\lambda$}
-    \item Compton effect, light scattering of electrons changes $\lambda$
-    \end{outline}
-  
   \item Rutherford, planetary model of atom, and inconsistency with Maxwell's equations
   \item{Bohr model of H atom}
     \begin{outline}

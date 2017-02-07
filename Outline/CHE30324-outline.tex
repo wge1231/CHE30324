@@ -1,4 +1,4 @@
-% Created 2017-01-29 Sun 19:22
+% Created 2017-02-03 Fri 07:17
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -59,9 +59,9 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 
 \section{The Classical Foundations}
-\label{sec:org0e2be1f}
+\label{sec:org145a4fa}
 \subsection{Lecture 0: Introduction}
-\label{sec:org3989815}
+\label{sec:org43ac82b}
 \begin{enumerate}
 \item Burning lighter
 \item Foundations of Physical Chemistry
@@ -101,7 +101,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{center}
 \end{table}
 \subsection{Lecture 1: Basic statistics}
-\label{sec:org73003f3}
+\label{sec:org9b3d598}
 \begin{enumerate}
 \item Discrete probability distributions---Coin flip
 \begin{enumerate}
@@ -271,7 +271,7 @@ plt.savefig('./Images/MB.png')
 \end{figure}
 
 \subsection{Lecture 2: Kinetic theory of gases}
-\label{sec:orge3f5128}
+\label{sec:org5e2c1f2}
 \begin{enumerate}
 \item Postulates
 \begin{enumerate}
@@ -365,7 +365,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
  \end{table}
 
 \subsection{Lecture 3: Transport}
-\label{sec:org7227365}
+\label{sec:org2d08b05}
 \begin{enumerate}
 \item Effusion and Graham's law, \(\text{effusion rate}\propto MW^{-1/2}\)
 \item Fick's first law: net flux proportional to concentration gradient
@@ -406,11 +406,11 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 
 \section{Quantum Mechanics: Blurred Lines Between Particles and Waves}
-\label{sec:org75a11c4}
+\label{sec:org4538734}
 \subsection{Lecture 4: Duality and demise of classical physics}
-\label{sec:org76c55cf}
+\label{sec:orgff88d31}
 \subsubsection{Properties of waves}
-\label{sec:org6658131}
+\label{sec:org752c79d}
 \begin{enumerate}
 \item traveling waves, \(\psi(x,t)=A \sin(kx-\omega t)\), \(k=2\pi/\lambda\), \(\omega=2\pi\nu\)
 \item standing waves, \(\psi(x,t) = A \sin(kx) \cos(\omega t)\)
@@ -420,20 +420,49 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 
 \subsubsection{Blackbody radiation}
-\label{sec:org13d15d4}
+\label{sec:org29c64b9}
 \begin{enumerate}
-\item Hohlraum spectrum
+\item Hohlraum spectrum (like the sun) empirically observed to obey:
+\begin{enumerate}
 \item Stefan-Boltzmann law, total irradiance
 \item Wien's displacement law
-\item Rayleigh-Jeans and ultraviolet catastrophe
+\end{enumerate}
+\item Rayleigh-Jeans predicts spectrum using classical physics
+\begin{enumerate}
+\item standing waves + classical oscillators \(\rightarrow\) ultraviolet catastrophe
+\end{enumerate}
 \item Planck model
 \begin{enumerate}
 \item Energy spectrum of oscillators are \emph{quantized}, \(\epsilon_\nu=nh\nu\)
 \item Expected energy of a quantized oscillator, \(\langle \epsilon \rangle_\nu = h\nu/\left (
           e^{h\nu/k_BT}-1 \right )\)
-\item Planck expression for blackbody radiation works!
+\item Correctly reproduces Stefan-Boltzmann and Wien Laws!
 \end{enumerate}
 \end{enumerate}
+\subsubsection{Heat capacities of solids}
+\label{sec:orgfa0852f}
+\begin{enumerate}
+\item Law of DuLong and Pettite, \(C_v = 3R\), fails at low \(T\)
+\item Einstein model
+\begin{enumerate}
+\item Atomic vibrations are \emph{quantized}, \(\epsilon_n=nh\nu\)
+\item Heat capacity goes to zero at low \(T\)
+\end{enumerate}
+\end{enumerate}
+\subsubsection{Photoelectric effect}
+\label{sec:orgabc9476}
+\begin{enumerate}
+\item Stopping potential and work function, \(E_\text{kinetic}=h\nu -W\)
+\item Kinetic energy varies with light frequency, number of electrons varies with light intensity
+\end{enumerate}
+\subsubsection{Compton effect}
+\label{sec:orgcd09631}
+\begin{enumerate}
+\item light scattering of electrons changes \(\lambda\)
+\item Photon properties, \(\epsilon = h\nu, p=h/\lambda\)
+\end{enumerate}
+\subsubsection{Wave-particle duality}
+\label{sec:orgb0efc9e}
 
 \begin{minted}[frame=lines,fontsize=\scriptsize,linenos]{python}
 import numpy as np
@@ -526,5 +555,5 @@ de Broglie equation & $\displaystyle \lambda=h/p $ \\
 \end{table}
 
 \section{Statistical Mechanics: The Bridge from the Tiny to the Many}
-\label{sec:org9e0547c}
+\label{sec:org440c166}
 \end{document}
