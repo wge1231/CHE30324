@@ -1,8 +1,8 @@
-|---+-------------+-----------+----------|
-|   | Due Date    | Homework  | Solution |
-|---+-------------+-----------+----------|
-| 1 | 25 Jan 2017 | [[./Homework/HW1-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW1-Sp17.ipynb][ipynb]] |          |
-|   |             |           |          |
-| 2 | 1 Feb 2017  |           |          |
-|   |             |           |          |
-| 3 | 8 Feb 2017  |           |          |
+|---+-------------+-----------+------------|
+|   | Due Date    | Homework  | Solution   |
+|---+-------------+-----------+------------|
+| 1 | 25 Jan 2017 | [[./Homework/HW1-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW1-Sp17.ipynb][ipynb]] | [[./Homework/HW1-Sp17-soln.pdf][pdf]]  [[./Homework/HW1-Sp17-soln.ipynb][ipynb]] |
+|   |             |           |            |
+| 2 | 6 Feb 2017  | [[./Homework/HW2-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW2-Sp17.ipynb][ipynb]] | [[./Homework/HW2-Sp17-soln.pdf][pdf]]  [[./Homework/HW2-Sp17-soln.ipynb][ipynb]] |
+|   |             |           |            |
+| 3 | 15 Feb 2017 | [[./Homework/HW3-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW3-Sp17.ipynb][ipynb]] |            |
