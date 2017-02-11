@@ -1,4 +1,4 @@
-% Created 2017-02-03 Fri 07:17
+% Created 2017-02-10 Fri 19:00
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -59,9 +59,9 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 
 \section{The Classical Foundations}
-\label{sec:org145a4fa}
+\label{sec:org571e1e5}
 \subsection{Lecture 0: Introduction}
-\label{sec:org43ac82b}
+\label{sec:org4fdf772}
 \begin{enumerate}
 \item Burning lighter
 \item Foundations of Physical Chemistry
@@ -101,7 +101,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{center}
 \end{table}
 \subsection{Lecture 1: Basic statistics}
-\label{sec:org9b3d598}
+\label{sec:orga00b93c}
 \begin{enumerate}
 \item Discrete probability distributions---Coin flip
 \begin{enumerate}
@@ -271,7 +271,7 @@ plt.savefig('./Images/MB.png')
 \end{figure}
 
 \subsection{Lecture 2: Kinetic theory of gases}
-\label{sec:org5e2c1f2}
+\label{sec:orgb3b9639}
 \begin{enumerate}
 \item Postulates
 \begin{enumerate}
@@ -365,7 +365,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
  \end{table}
 
 \subsection{Lecture 3: Transport}
-\label{sec:org2d08b05}
+\label{sec:orgf350d64}
 \begin{enumerate}
 \item Effusion and Graham's law, \(\text{effusion rate}\propto MW^{-1/2}\)
 \item Fick's first law: net flux proportional to concentration gradient
@@ -406,11 +406,11 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 
 \section{Quantum Mechanics: Blurred Lines Between Particles and Waves}
-\label{sec:org4538734}
+\label{sec:org9499e4a}
 \subsection{Lecture 4: Duality and demise of classical physics}
-\label{sec:orgff88d31}
+\label{sec:org39d257a}
 \subsubsection{Properties of waves}
-\label{sec:org752c79d}
+\label{sec:org58d7125}
 \begin{enumerate}
 \item traveling waves, \(\psi(x,t)=A \sin(kx-\omega t)\), \(k=2\pi/\lambda\), \(\omega=2\pi\nu\)
 \item standing waves, \(\psi(x,t) = A \sin(kx) \cos(\omega t)\)
@@ -420,7 +420,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 
 \subsubsection{Blackbody radiation}
-\label{sec:org29c64b9}
+\label{sec:orgb201cee}
 \begin{enumerate}
 \item Hohlraum spectrum (like the sun) empirically observed to obey:
 \begin{enumerate}
@@ -440,7 +440,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Heat capacities of solids}
-\label{sec:orgfa0852f}
+\label{sec:org5f08bac}
 \begin{enumerate}
 \item Law of DuLong and Pettite, \(C_v = 3R\), fails at low \(T\)
 \item Einstein model
@@ -450,19 +450,44 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Photoelectric effect}
-\label{sec:orgabc9476}
+\label{sec:org0ef2fa1}
 \begin{enumerate}
 \item Stopping potential and work function, \(E_\text{kinetic}=h\nu -W\)
 \item Kinetic energy varies with light frequency, number of electrons varies with light intensity
 \end{enumerate}
 \subsubsection{Compton effect}
-\label{sec:orgcd09631}
+\label{sec:org4c40769}
 \begin{enumerate}
 \item light scattering of electrons changes \(\lambda\)
 \item Photon properties, \(\epsilon = h\nu, p=h/\lambda\)
 \end{enumerate}
 \subsubsection{Wave-particle duality}
-\label{sec:orgb0efc9e}
+\label{sec:orgd81ab22}
+\subsubsection{Rutherford, planetary model of atom}
+\label{sec:org6d43bdb}
+\begin{enumerate}
+\item Inconsistent with Maxwell's equations
+\end{enumerate}
+\subsubsection{Bohr model of H atom}
+\label{sec:orgca29e2a}
+\begin{enumerate}
+\item Discrete H energy spectrum and Rydberg formala
+\item Bohr model (the old quantum mechanics)
+\begin{enumerate}
+\item Stable electron ``orbits,'' quantized angular momentum
+\item Light emission corresponds to orbital jumps, \(\nu=\Delta E/h\)
+\item Bohr equations
+\item Comparison with Rydberg formula
+\item Failure for larger atoms
+\end{enumerate}
+\end{enumerate}
+\subsubsection{de Broglie relation}
+\label{sec:org56f73e3}
+\begin{enumerate}
+\item \(\lambda=h/p\) \emph{universally}
+\item Relation to Bohr orbits
+\item Davison and Germer experiment, \(e^-\) diffraction off Ni
+\end{enumerate}
 
 \begin{minted}[frame=lines,fontsize=\scriptsize,linenos]{python}
 import numpy as np
@@ -535,7 +560,7 @@ Blackbody irradiance & $\displaystyle I(\lambda, T) =
 Einstein crystal & $\displaystyle C_v=3R \left(\frac{h\nu}{k_BT}\right )^2\frac{e^{h\nu/k_BT}}{\left
             ( e^{h\nu/k_BT}-1 \right )^2}$ \\
 & \\
-Photon energy & $\displaystyle \epsilon=h\nu $ \\
+Photon energy & $\displaystyle \epsilon=h\nu = hc/\lambda $ \\
 & \\
 Rydberg equation & $\displaystyle \nu = R_H c\left (1/n^2
         -1/k^2 \right)$ \\
@@ -548,12 +573,376 @@ $\displaystyle n=1,2, \ldots $ & $\displaystyle r_n = n^2 \left ( \frac{4 \pi
  & $\displaystyle p_n =\frac{e^2}{4\pi\epsilon_0}\frac{m_e}{\hbar}\frac{1}{n} =
 p_0 \frac{1}{n} $ \\
 & \\
-de Broglie equation & $\displaystyle \lambda=h/p $ \\
+de Broglie equation & \[\lambda=\dfrac{h}{p}\] \\
 \hline
 \end{tabular}
 \end{center}
 \end{table}
 
+\subsection{Lecture 5: Postulates of quantum mechanics}
+\label{sec:org87b4964}
+\subsubsection{Schr\"{o}dinger equation describes wave-like properties of matter}
+\label{sec:org6117418}
+\subsubsection{Born interpretation}
+\label{sec:org25ddae1}
+\begin{enumerate}
+\item wavefunction is a probability amplitude
+\item wavefunction squared is probability density
+\end{enumerate}
+\subsubsection{Postulates}
+\label{sec:org908d47d}
+\begin{enumerate}
+\item Wavefunction contains all information about a system
+\item Operators used to extract that information
+\begin{enumerate}
+\item QM operators are \emph{Hermitian}
+\item Have eigenvectors and real eigenvalues, \(\hat{O}\psi_i=o\psi_i\)
+\item Are orthogonal, \(\langle \psi_i | \psi_j \rangle = \delta_{ij}\)
+\item Always observe an eigenvalue when making an observation
+\end{enumerate}
+\item Expectation values
+\item Energy-invariant wavefunctions given by Schr\"{o}odinger equation
+\item Uncertainty principle
+\end{enumerate}
+\subsubsection{Particle in a box illustrations}
+\label{sec:orgcb77a18}
+
+\begin{table} 
+\begin{center}
+    \caption{\large{Postulates of Non-relativistic Quantum Mechanics}}
+   \begin{description}
+    \item[Postulate 1:] {{\bf The physical state of a system is completely described by
+        its wavefunction $\Psi$.}  In general, $\Psi$ is a complex function of the spatial
+      coordinates and time.  $\Psi$ is required to be:}
+    \begin{outline}
+      \item{Single-valued}
+      \item {continuous and twice differentiable}
+      \item {square-integrable ($\int \Psi^*\Psi d\tau$ is defined over all finite domains)}
+      \item {For bound systems, $\Psi$ can always be normalized such that $\int \Psi^*\Psi d\tau=1$}
+    \end{outline}
+
+  \item[Postulate 2:]  To every physical observable quantity $M$ there corresponds a
+    Hermitian operator $\hat{M}$.  {\bf The only observable values of $M$ are the
+      eignevalues of $\hat{M}$.}
+    \begin{center}
+    \begin{tabular}[h]{ccc}
+      \hline
+{\bf Physical quantity} & {\bf Operator} & {\bf Expression} \\
+\hline
+Position $x,y,z$ & $\hat{x},\hat{y},\hat{z}$ & $x\cdot, y\cdot, z\cdot$ \\ \\
+Linear momentum $p_x, \ldots$ & $\hat{p}_x,\ldots $ & $\displaystyle -i\hbar\frac{\partial}{\partial
+  x},\ldots $\\
+Angular momentum $l_x, \ldots$ & $\hat{p}_x,\ldots $ & $\displaystyle -i\hbar \left
+  (y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y}\right ), \ldots $ \\
+Kinetic energy $T$ & $\hat{T}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2$ \\
+Potential energy $V$ & $\hat{V}$ & $V({\bf r},t)$ \\
+Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf r},t)$\\ \\
+\hline
+    \end{tabular}
+  \end{center}
+    \item[Postulate 3:] {If a particular observable $M$ is measured many times on many
+      identical systems is a state $\Psi$, the average resuts with be the expectation
+      value of the operator $\hat{M}$:
+      \begin{equation*}
+        \langle M \rangle = \int \Psi^* (\hat{M}\Psi)d{\bf\tau}
+      \end{equation*}}
+    \item[Postulate 4:] {The energy-invariant states of a system are solutions of the equation
+        \begin{eqnarray*}
+          \hat{H}\Psi({\bf r},t) & = & i\hbar\frac{\partial}{\partial t}\Psi({\bf r},t) \\
+          \hat{H} & = & \hat{T}+\hat{V}
+        \end{eqnarray*}
+      The time-independent, stationary states of the system are solutions to the equation
+      \begin{equation*}
+        \hat{H}\Psi({\bf r}) = E\Psi(\bf{r})
+      \end{equation*}
+}
+    \item[Postulate 5:] (The {\bf uncertainty principle}.)  Operators that do not commute
+      $(\hat{A}(\hat{B}\Psi)\neq\hat{B}(\hat{A}\Psi))$ are called {\em conjugate}.
+      Conjugate observables cannot be determined simultaneously to arbitrary accuracy.
+      For example, the standard deviation in the measured positions and momenta of
+      particles all described by the same $\Psi$ must satisfy $\Delta x\Delta p_x \geq \hbar/2$.
+    \end{description}
+\end{center}
+\end{table}
+\subsection{Lecture 6: Particle in a box model}
+\label{sec:orgfcef887}
+\subsubsection{Particle between infinite walls, electron confined in a wire}
+\label{sec:org9310d2c}
+\subsubsection{Classical solution, either stationary or uniform bouncing back and forth}
+\label{sec:org3790628}
+\subsubsection{One-dimesional QM solutions}
+\label{sec:org597ac3a}
+\begin{enumerate}
+\item Schr\"{o}dinder equation and boundary conditions
+\item discrete, quantized solutions
+\item standing waves, \(\lambda=2 L/n\), \(n-1\) nodes, non-uniform probability
+\item Ho paper, STM of Pd wire
+\item zero point energy and uncertainty
+\item correspondence principle
+\item superpositions
+\end{enumerate}
+\subsubsection{Finite walls and tunneling}
+\label{sec:org52dc252}
+\begin{enumerate}
+\item Potential well of finite depth \(V_0\)
+\item Finite number of bound states
+\item Classical region, \(\psi(x) ~ e^{ikx}+e^{-ikx}, k=\sqrt{2mE}/\hbar\)
+\item ``Forbidden'' region, \(\psi(x) ~ e^{\kappa x}+e^{-\kappa x},
+      \kappa=\sqrt{2m(V_0-E)}/\hbar\)
+\item Non-zero probability to ``tunnel'' into forbidden region
+\item Tunneling between two adjacent wells: chemical bonding, STM, nanoelectronics
+\item H atom tunneling: NH\(_3\) inversion, H transfer, kinetic isotope effect
+\end{enumerate}
+\subsubsection{Multiple dimensions}
+\label{sec:orga5b4585}
+\begin{enumerate}
+\item separation of variables, one quantum number for each dimension
+\end{enumerate}
+\subsubsection{Introduce Pauli principle for fermions?}
+\label{sec:orgfb91921}
+
+\begin{table}[tb]
+   \begin{center}
+   \caption{Particle-in-a-box model}
+    \label{Particle-in-a-box}
+\begin{tabular}[h]{|c|}
+\hline
+ \\
+$\displaystyle       V(x) = \left \{
+        \begin{array}{rl}
+          0 & 0 < x < L \\
+          \infty & x \leq 0 \text{ or } x \geq L
+        \end{array} \right . $ \\
+ \\
+$\displaystyle     \psi_n(x) =\sqrt{\frac{2}{L}} \sin \left ( \frac{n\pi x}{L} \right )$
+\\ 
+ \\
+$\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
+ \\
+     \includegraphics[scale=.6]{Images/PIB} \\       
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+
+\subsection{Lecture 7: Harmonic oscillator}
+\label{sec:orgb0a26fa}
+\subsubsection{Classical harmonic oscillator}
+\label{sec:org3d52883}
+\begin{enumerate}
+\item Hooke's law, \(F=-k(x-x_0)\), \(k\) spring constant
+\item Continuous sinusoidal motion
+\item \(x(t)=A \sin(\frac{k}{\mu})^{1/2}t, \nu=\frac{1}{2\pi}(\frac{k}{\mu})^{1/2}, E=\frac{1}{2}kA^2\)
+\item Exchanging kinetic and potential energies
+\end{enumerate}
+\subsubsection{Quantum harmonic oscillator}
+\label{sec:org454b87a}
+\begin{enumerate}
+\item Solutions like P-I-A-B, waves, nodes
+\item Zero-point energy
+\item Expectation values \(\langle x^2 \rangle =
+      \alpha^2 (v+1/2), \langle V(x) \rangle = \frac{1}{2} h\nu (v+\frac{1}{2})\)
+\item Classical turning point and tunneling
+\item Classical limiting behavior
+\end{enumerate}
+\subsubsection{HCl example}
+\label{sec:orgbf1ba92}
+\begin{enumerate}
+\item Reduced mass, \(\frac{1}{\mu}=\frac{1}{m_A}+\frac{1}{m_B}\)
+\item Anharmonicity, Morse potential
+\end{enumerate}
+
+\begin{table}[tbh]
+   \begin{center}
+   \caption{Harmonic oscillator model}
+    \label{Harmonic-oscillator}
+\begin{tabular}[h]{|c|}
+\hline
+ \\
+$\displaystyle       V(x) = \frac{1}{2} k x^2, -\infty < x < \infty $ \\
+ \\
+$\displaystyle     \psi_v(x) = N_v H_v(x/\alpha)e^{-x^2/2\alpha^2}, v = 0, 1, 2, \ldots $ \\
+\\
+$\displaystyle \alpha=(\hbar^2/\mu k)^{1/4}, N_v=(2^vv!\alpha\sqrt{\pi})^{-1/2} $ \\
+ \\
+$\displaystyle  H_v(x/\alpha)=$ Hermite polynomials \\
+$\displaystyle H_0(y) =1, H_1(y) = 2y, H_2(y) = 4y^2-2, \ldots $ \\ 
+ \\
+$\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
+ \\
+     \includegraphics[scale=.6]{Images/HO} \\       
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+
+\subsection{Lecture 8: Vibrational spectroscopy}
+\label{sec:orgcef8c98}
+\subsubsection{Spectroscopy is quantitative measurement of interaction of light with matter}
+\label{sec:orga0834f4}
+\begin{enumerate}
+\item Observed \(I(\nu)/I(\nu_0)\)
+\item Bohr condition, \(|E_f-E_i|/h=\nu =c\tilde{\nu}=c/\lambda\)
+\item Intensities determined by state populations and transition probabilities
+\end{enumerate}
+\subsubsection{Einstein coefficients}
+\label{sec:org87058ea}
+\begin{enumerate}
+\item Stimulated absorption, \(dn_1/dt= -n_1 B\rho(\nu)\)
+\item Stimulated emission, \(dn_2/dt= -n_2 B\rho(\nu)\)
+\item Spontaneous emission, \(dn_2/dt=-n_2 A, A=\left ( \frac{8\pi h
+              \nu^3}{c^3}\right )B\)
+\item \(1/A=\) lifetime
+\end{enumerate}
+\subsubsection{Transition probability}
+\label{sec:orgb8a06b2}
+\begin{enumerate}
+\item Einstein coefficient \(B_{if}=\frac{|\mu_{if}|^2}{6\epsilon_0\hbar^2}\)
+\item Classical electric dipole, \(\overrightarrow{\mu}=q \cdot
+          \overrightarrow{l}\), quantum dipole operator \(\hat\mu = e\cdot \overrightarrow{r}\)
+\item Transition dipole moment, \(\mu_{if} = \left(
+        \frac{d\mu}{dx}\right ) \langle \psi_i|\hat\mu |\psi_f \rangle\)
+\item Selection rules---conditions that make \(\mu_{if}\) non-zero,
+``allowed'' vs ``forbidden'' transitions
+\end{enumerate}
+\subsubsection{Vibrational transitions}
+\label{sec:org73d8a76}
+\begin{enumerate}
+\item Gross selection rule: dynamic dipole \(d\mu/dx\) non-zero
+\item Specific selection rule: dipole integral \(\langle \psi_v|\hat\mu|\psi_{v^\prime} \rangle =0\)
+unless \(\Delta v = \pm 1\)
+\item Allowed \(\Delta E = h\nu\)
+\item Boltzmann, \(v=1\) states dominate at normal \(T\)
+\end{enumerate}
+\subsubsection{Vibrational spectroscopy}
+\label{sec:org37966aa}
+\begin{enumerate}
+\item Diatomics, homo- vs. heteronuclear
+\item Polyatomics, \(3n-6\) (\(3n-5\) for linear polyatomic) vibrational modes
+\item CO\(_2\) example
+\end{enumerate}
+\subsubsection{Raman spectroscopy}
+\label{sec:org2f7205d}
+
+
+\begin{table}[tbh]
+   \begin{center}
+   \caption{2-D rigid rotor model}
+    \label{Rigid rotor}
+\begin{tabular}[h]{|c|}
+\hline
+ \\
+$\displaystyle       V(\phi) = 0, 0 \leq \phi \leq 2\pi $ \\
+ \\
+$\displaystyle \hat H = -\frac{\hbar^2}{2 I} \frac{\partial^2}{\partial
+  \phi^2},\ \ \ \ \ I=\mu R^2
+$\\
+\\
+$\displaystyle     \psi_{m_l}(\phi) = \frac{1}{\sqrt{2\pi}} e^{-i m_l \phi}, m_l
+= 0, \pm 1, \pm 2, \ldots $ \\
+\\
+$\displaystyle     E_{m_l}=\frac{m_l^2 \hbar^2}{2 I^2}$ \\
+ \\
+$\displaystyle L_z = m_l \hbar$ \\
+\\
+     \includegraphics[scale=1]{Images/2Drotor.pdf} \\       
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+
+\subsection{Lecture 9: Rigid Rotor}
+\label{sec:org8f964ac}
+\subsubsection{Classical rigid rotor}
+\label{sec:org79d6bfd}
+\begin{enumerate}
+\item Rotation about an axis vs linear motion
+\item Moment of intertia \(I=\mu r^2\)
+\item Angular momentum, \({\bf l} = I {\bf \omega}= {\bf r}\times{\bf p}\), \$T=|\{\bf l\}|\^{}2/2
+\item Angular momentum and energy continuous variable
+\end{enumerate}
+\subsubsection{Quantum rotor in a plane}
+\label{sec:org5252c88}
+\begin{enumerate}
+\item Angular momentum and kinetic energy operators in polar coordinates,
+\(\hat l_z = -i\hbar \frac{d}{d\phi}\)
+\item Eigenfunctions and energy spectrum
+\item No zero point energy
+\item Angular momentum eignefunctions, \(l_z = m_l \hbar\)
+\item Energy superpositions and localization
+\end{enumerate}
+\subsubsection{Quantum rotor in 3-D}
+\label{sec:org2701896}
+\begin{enumerate}
+\item Angular momentum and kinetic energy operators in spherical coordinates
+\item Spherical harmonic solutions, \(Y_{lm_l}\)
+\item Azimuthal QN \$l=0, 1, $\backslash$
+\item Magnetic QN \(m_l = -l, -l+1, ..., l\)
+\item Energy spectrum, \(2 l + 1\) degeneracy
+\item Vector model - can only know total total \(|L|\) and \(L_z\)
+\item Wavefunctions look like atomic orbitals, \(l\) nodes
+\end{enumerate}
+\subsubsection{Particle angular momentum}
+\label{sec:orgdc04d11}
+\begin{enumerate}
+\item Fermions, mass, half-integer spin
+\begin{enumerate}
+\item Electron, \(s=1/2, m_s=\pm 1/2\)
+\end{enumerate}
+\item Bosons, force-carrying, integer spin
+\end{enumerate}
+\subsubsection{Diatomic rotational spectroscopy}
+\label{sec:org3cd3136}
+\begin{enumerate}
+\item Rotational constant \(B = \hbar/4\pi I c\) cm\(^{-1}\), \(I=\mu R^2\)
+\item Gross selection rule: dipole moment non-zero
+\item Specific selection rule: \(\Delta l=\pm 1\), \(\Delta m_l=0, \pm1\)
+\item \(\Delta \tilde E_l  = 2B(l+1)\) cm\(^{-1}\)
+\item Rotational state populations
+\end{enumerate}
+\subsubsection{Polyatomic rotational spectroscopy}
+\label{sec:org1facbd2}
+\subsubsection{Vibration-rotation spectroscopy}
+\label{sec:orgbf9ac93}
+\begin{enumerate}
+\item Harmonic oscillator + rigid rotor
+\item Selection rules: \(\Delta v = \pm 1, \Delta l=\pm 1\)
+\item \(R\) branch: \(\Delta \tilde E  = \tilde \nu + 2B(l+1), \Delta l = 1\)
+\item \(P\) branch: \(\Delta \tilde E = \tilde \nu - 2B(l), \Delta l = -1\)
+\end{enumerate}
+
+\begin{table}[tbh]
+   \begin{center}
+   \caption{3-D rigid rotor model}
+    \label{3-D Rigid rotor}
+\begin{tabular}[h]{|c|}
+\hline
+ \\
+$\displaystyle       V(\theta,\phi) = 0, 0 \leq \phi \leq 2\pi, 0 \leq \theta <
+\pi$ \\
+ \\
+$\displaystyle     \hat L^2 = -\hbar^2 \left [
+  \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}+\frac{1}{\sin
+    \theta}\frac{\partial}{\partial \theta}\left ( \sin \theta
+    \frac{\partial}{\partial \theta}\right ) \right ] $ \\
+\\
+$\displaystyle \hat H_\text{rot} = \frac{1}{2 I} \hat L^2$ \\
+\\
+$\displaystyle     Y_{lm_l}(\theta,\phi)=N_l^{|m|}P_l^{|m|}(\cos(\theta))e^{im_l\phi}$ \\
+\\
+$\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
+\\
+\\
+$\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
+ \\
+$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
+\\
+     \includegraphics[scale=0.5]{Images/3Drotor.png} \\       
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+
 \section{Statistical Mechanics: The Bridge from the Tiny to the Many}
-\label{sec:org440c166}
+\label{sec:orgd31d162}
 \end{document}
