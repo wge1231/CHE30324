@@ -1,5 +1,7 @@
 # CHE30324 - Physical Chemistry for Chemical Engineers
 
+This one semester course demonstrates the molecular bases of chemical engineering, making the connection between basic physical chemistry concepts (Boltzmann statistics, classical and quantum mechanics) and the pillars of chemical engineering (thermodynamics, kinetics, and transport). 
+
 Syllabus available [here](./syllabus_Sp17.org)
 
 Brief course outline available [here](./lectures.org)
