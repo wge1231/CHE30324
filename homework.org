@@ -8,3 +8,7 @@
 | 3 | 15 Feb 2017 | [[./Homework/HW3-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW3-Sp17.ipynb][ipynb]] | [[./Homework/HW3-Sp17-soln.pdf][pdf]]  [[./Homework/HW3-Sp17-soln.ipynb][ipynb]]  |
 |   |             |           |             |
 | 4 | 22 Feb 2017 | [[./Homework/HW4-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW4-Sp17.ipynb][ipynb]] | [[./Homework/HW4-Sp17-soln.pdf][pdf]]   [[./Homework/HW4-Sp17-soln.ipynb][ipynb]] |
+|   |             |           |             |
+| 5 | 1 Mar 2017  | [[./Homework/HW5-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW5-Sp17.ipynb][ipynb]] |             |
+|   |             |           |             |
+| 6 | 6 Mar 2017  | [[./Homework/HW6-Sp17.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW6-Sp17.ipynb][ipynb]] |             |
