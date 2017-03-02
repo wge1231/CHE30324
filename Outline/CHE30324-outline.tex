@@ -1,4 +1,4 @@
-% Created 2017-02-24 Fri 12:42
+% Created 2017-03-02 Thu 17:29
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -59,9 +59,9 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 
 \section{The Classical Foundations}
-\label{sec:org78fa5df}
+\label{sec:org38ed8c4}
 \subsection{Lecture 0: Introduction}
-\label{sec:org2ba130c}
+\label{sec:orge55c090}
 \begin{enumerate}
 \item Burning lighter
 \item Foundations of Physical Chemistry
@@ -101,7 +101,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{center}
 \end{table}
 \subsection{Lecture 1: Basic statistics}
-\label{sec:orgdfd2072}
+\label{sec:orgc834162}
 \begin{enumerate}
 \item Discrete probability distributions---Coin flip
 \begin{enumerate}
@@ -271,7 +271,7 @@ plt.savefig('./Images/MB.png')
 \end{figure}
 
 \subsection{Lecture 2: Kinetic theory of gases}
-\label{sec:orga6c56d6}
+\label{sec:org98c69cc}
 \begin{enumerate}
 \item Postulates
 \begin{enumerate}
@@ -365,7 +365,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
  \end{table}
 
 \subsection{Lecture 3: Transport}
-\label{sec:org750a32d}
+\label{sec:orge94faca}
 \begin{enumerate}
 \item Effusion and Graham's law, \(\text{effusion rate}\propto MW^{-1/2}\)
 \item Fick's first law: net flux proportional to concentration gradient
@@ -406,21 +406,39 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 
 \section{Quantum Mechanics: Blurred Lines Between Particles and Waves}
-\label{sec:org09d48b2}
+\label{sec:orge52a075}
 \subsection{Lecture 4: Duality and demise of classical physics}
-\label{sec:org0790be0}
+\label{sec:org15b04c3}
 \subsubsection{Properties of waves}
-\label{sec:org212671c}
+\label{sec:org8d2a30e}
 \begin{enumerate}
-\item traveling waves, \(\psi(x,t)=A \sin(kx-\omega t)\), \(k=2\pi/\lambda\), \(\omega=2\pi\nu\)
-\item standing waves, \(\psi(x,t) = A \sin(kx) \cos(\omega t)\)
+\item Traveling waves, standing waves
 \item interference, diffraction
-\item energy proportional to amplitude squared
 \item Expected energy of a classical oscillator, \(\langle \epsilon \rangle _\nu = k_B T\) for all \(\nu\)
 \end{enumerate}
 
+\begin{table}
+\begin{center}
+    \caption{Classical waves}
+    \begin{tabular}{|lc|}
+     \hline
+The wave equation & $\displaystyle \frac{ \partial^2 \Psi(x,t)}{\partial x^2} = \frac{1}{v^2}\frac{\partial^2 \Psi(x,t)}{\partial t^2}$ \\
+\\
+General solution & \(\Psi(x,t) = A \sin(kx -\omega t)\) \\
+Wavelength (distance) & \( \lambda = 2\pi/k \) \\
+Frequency (/time) & \( \nu = 2\pi/\omega \) \\
+Speed & \( v= \lambda \nu \) \\
+Amplitude (distance) & \(A\) \\
+Energy & \( E \propto A^2 \) \\
+Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
 \subsubsection{Blackbody radiation}
-\label{sec:org6ae804e}
+\label{sec:org96db816}
 \begin{enumerate}
 \item Hohlraum spectrum (like the sun) empirically observed to obey:
 \begin{enumerate}
@@ -440,7 +458,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Heat capacities of solids}
-\label{sec:org12407a3}
+\label{sec:org4aaa01c}
 \begin{enumerate}
 \item Law of DuLong and Pettite, \(C_v = 3R\), fails at low \(T\)
 \item Einstein model
@@ -450,26 +468,26 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Photoelectric effect}
-\label{sec:orgea9646a}
+\label{sec:org250c5ad}
 \begin{enumerate}
 \item Stopping potential and work function, \(E_\text{kinetic}=h\nu -W\)
 \item Kinetic energy varies with light frequency, number of electrons varies with light intensity
 \end{enumerate}
 \subsubsection{Compton effect}
-\label{sec:org391eb47}
+\label{sec:org8e37d7b}
 \begin{enumerate}
 \item light scattering of electrons changes \(\lambda\)
 \item Photon properties, \(\epsilon = h\nu, p=h/\lambda\)
 \end{enumerate}
 \subsubsection{Wave-particle duality}
-\label{sec:orge306d51}
+\label{sec:org2b8b46a}
 \subsubsection{Rutherford, planetary model of atom}
-\label{sec:orgb8b6850}
+\label{sec:org5a05127}
 \begin{enumerate}
 \item Inconsistent with Maxwell's equations
 \end{enumerate}
 \subsubsection{Bohr model of H atom}
-\label{sec:org0cff5c1}
+\label{sec:org3a8d173}
 \begin{enumerate}
 \item Discrete H energy spectrum and Rydberg formala
 \item Bohr model (the old quantum mechanics)
@@ -482,7 +500,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 \end{enumerate}
 \subsubsection{de Broglie relation}
-\label{sec:org4f12e46}
+\label{sec:orgdffc494}
 \begin{enumerate}
 \item \(\lambda=h/p\) \emph{universally}
 \item Relation to Bohr orbits
@@ -580,17 +598,17 @@ de Broglie equation & \[\lambda=\dfrac{h}{p}\] \\
 \end{table}
 
 \subsection{Lecture 5: Postulates of quantum mechanics}
-\label{sec:orga69d1ba}
+\label{sec:orgec85f24}
 \subsubsection{Schr\"{o}dinger equation describes wave-like properties of matter}
-\label{sec:orge8bac40}
+\label{sec:org65fcccf}
 \subsubsection{Born interpretation}
-\label{sec:orga36481f}
+\label{sec:org26dd45d}
 \begin{enumerate}
 \item wavefunction is a probability amplitude
 \item wavefunction squared is probability density
 \end{enumerate}
 \subsubsection{Postulates}
-\label{sec:org949c0d1}
+\label{sec:org505d9b5}
 \begin{enumerate}
 \item Wavefunction contains all information about a system
 \item Operators used to extract that information
@@ -605,7 +623,7 @@ de Broglie equation & \[\lambda=\dfrac{h}{p}\] \\
 \item Uncertainty principle
 \end{enumerate}
 \subsubsection{Particle in a box illustrations}
-\label{sec:orgc39052a}
+\label{sec:orge30cd6c}
 
 \begin{table} 
 \begin{center}
@@ -665,13 +683,13 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 \end{center}
 \end{table}
 \subsection{Lecture 6: Particle in a box model}
-\label{sec:org136b080}
+\label{sec:org18d1ce6}
 \subsubsection{Particle between infinite walls, electron confined in a wire}
-\label{sec:orgff2a9ba}
+\label{sec:org4258509}
 \subsubsection{Classical solution, either stationary or uniform bouncing back and forth}
-\label{sec:orgef17a65}
+\label{sec:org386b2c2}
 \subsubsection{One-dimesional QM solutions}
-\label{sec:org8e9959f}
+\label{sec:org1cd162d}
 \begin{enumerate}
 \item Schr\"{o}dinder equation and boundary conditions
 \item discrete, quantized solutions
@@ -682,7 +700,7 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 \item superpositions
 \end{enumerate}
 \subsubsection{Finite walls and tunneling}
-\label{sec:org4575e5a}
+\label{sec:orgb05877b}
 \begin{enumerate}
 \item Potential well of finite depth \(V_0\)
 \item Finite number of bound states
@@ -694,12 +712,12 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 \item H atom tunneling: NH\(_3\) inversion, H transfer, kinetic isotope effect
 \end{enumerate}
 \subsubsection{Multiple dimensions}
-\label{sec:org4ba0807}
+\label{sec:org351c56d}
 \begin{enumerate}
 \item separation of variables, one quantum number for each dimension
 \end{enumerate}
 \subsubsection{Introduce Pauli principle for fermions?}
-\label{sec:org0a0f67d}
+\label{sec:org596ed5b}
 
 \begin{table}[tb]
    \begin{center}
@@ -726,9 +744,9 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 \end{table}
 
 \subsection{Lecture 7: Harmonic oscillator}
-\label{sec:org4fc0778}
+\label{sec:org5b4fce7}
 \subsubsection{Classical harmonic oscillator}
-\label{sec:org1000f77}
+\label{sec:org3ee055b}
 \begin{enumerate}
 \item Hooke's law, \(F=-k(x-x_0)\), \(k\) spring constant
 \item Continuous sinusoidal motion
@@ -736,9 +754,9 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 \item Exchanging kinetic and potential energies
 \end{enumerate}
 \subsubsection{Quantum harmonic oscillator}
-\label{sec:org2a59e6f}
+\label{sec:orgce85e7f}
 \begin{enumerate}
-\item Solutions like P-I-A-B, waves, nodes
+\item Solutions like P-I-A-B, waves, nodes, even/odd symmetry
 \item Zero-point energy
 \item Expectation values \(\langle x^2 \rangle =
       \alpha^2 (v+1/2), \langle V(x) \rangle = \frac{1}{2} h\nu (v+\frac{1}{2})\)
@@ -746,7 +764,7 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 \item Classical limiting behavior
 \end{enumerate}
 \subsubsection{HCl example}
-\label{sec:orgb5bdb19}
+\label{sec:orgcdd9021}
 \begin{enumerate}
 \item Reduced mass, \(\frac{1}{\mu}=\frac{1}{m_A}+\frac{1}{m_B}\)
 \end{enumerate}
@@ -779,17 +797,19 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 \end{table}
 
 \subsection{Lecture 8: Rigid Rotor}
-\label{sec:org4afe8a1}
+\label{sec:org7be085f}
 \subsubsection{Classical rigid rotor}
-\label{sec:org16d938c}
+\label{sec:org9f0823b}
 \begin{enumerate}
-\item Rotation about an axis vs linear motion
+\item Compare rotation about an axis vs linear motion
 \item Moment of intertia \(I=\mu r^2\)
-\item Angular momentum, \({\bf l} = I {\bf \omega}= {\bf r}\times{\bf p}\), \$T=|\{\bf l\}|\^{}2/2
+\item Angular momentum, \(l = I \omega = r\times p\), \(T= l^2/2I\) 
+\begin{enumerate}
 \item Angular momentum and energy continuous variable
 \end{enumerate}
+\end{enumerate}
 \subsubsection{Quantum rotor in a plane}
-\label{sec:org7be605e}
+\label{sec:org6ae4a5a}
 \begin{enumerate}
 \item Angular momentum and kinetic energy operators in polar coordinates,
 \(\hat l_z = -i\hbar \frac{d}{d\phi}\)
@@ -798,181 +818,6 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 \item Angular momentum eignefunctions, \(l_z = m_l \hbar\)
 \item Energy superpositions and localization
 \end{enumerate}
-\subsubsection{Quantum rotor in 3-D}
-\label{sec:orgefdec5b}
-\begin{enumerate}
-\item Angular momentum and kinetic energy operators in spherical coordinates
-\item Spherical harmonic solutions, \(Y_{lm_l}\)
-\item Azimuthal QN \$l=0, 1, $\backslash$
-\item Magnetic QN \(m_l = -l, -l+1, ..., l\)
-\item Energy spectrum, \(2 l + 1\) degeneracy
-\item Vector model - can only know total total \(|L|\) and \(L_z\)
-\item Wavefunctions look like atomic orbitals, \(l\) nodes
-\end{enumerate}
-\subsubsection{Particle angular momentum}
-\label{sec:org0d6be11}
-\begin{enumerate}
-\item Fermions, mass, half-integer spin
-\begin{enumerate}
-\item Electron, \(s=1/2, m_s=\pm 1/2\)
-\end{enumerate}
-\item Bosons, force-carrying, integer spin
-\end{enumerate}
-\subsubsection{Diatomic rotational spectroscopy}
-\label{sec:org6e30cd6}
-\begin{enumerate}
-\item Rotational constant \(B = \hbar/4\pi I c\) cm\(^{-1}\), \(I=\mu R^2\)
-\item Gross selection rule: dipole moment non-zero
-\item Specific selection rule: \(\Delta l=\pm 1\), \(\Delta m_l=0, \pm1\)
-\item \(\Delta \tilde E_l  = 2B(l+1)\) cm\(^{-1}\)
-\item Rotational state populations
-\end{enumerate}
-\subsubsection{Polyatomic rotational spectroscopy}
-\label{sec:org836dc6b}
-\subsubsection{Vibration-rotation spectroscopy}
-\label{sec:org08fc0ab}
-\begin{enumerate}
-\item Harmonic oscillator + rigid rotor
-\item Selection rules: \(\Delta v = \pm 1, \Delta l=\pm 1\)
-\item \(R\) branch: \(\Delta \tilde E  = \tilde \nu + 2B(l+1), \Delta l = 1\)
-\item \(P\) branch: \(\Delta \tilde E = \tilde \nu - 2B(l), \Delta l = -1\)
-\end{enumerate}
-
-\begin{table}[tbh]
-   \begin{center}
-   \caption{3-D rigid rotor model}
-    \label{3-D Rigid rotor}
-\begin{tabular}[h]{|c|}
-\hline
- \\
-$\displaystyle       V(\theta,\phi) = 0, 0 \leq \phi \leq 2\pi, 0 \leq \theta <
-\pi$ \\
- \\
-$\displaystyle     \hat L^2 = -\hbar^2 \left [
-  \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}+\frac{1}{\sin
-    \theta}\frac{\partial}{\partial \theta}\left ( \sin \theta
-    \frac{\partial}{\partial \theta}\right ) \right ] $ \\
-\\
-$\displaystyle \hat H_\text{rot} = \frac{1}{2 I} \hat L^2$ \\
-\\
-$\displaystyle     Y_{lm_l}(\theta,\phi)=N_l^{|m|}P_l^{|m|}(\cos(\theta))e^{im_l\phi}$ \\
-\\
-$\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
-\\
-\\
-$\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
- \\
-$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
-\\
-     \includegraphics[scale=0.5]{Images/3Drotor.png} \\       
-\hline
-\end{tabular}
- \end{center}
-\end{table}
-
-\subsection{Lecture 9: Spectroscopy}
-\label{sec:org4baaf14}
-\subsubsection{Spectroscopy is quantitative measurement of interaction of light with matter}
-\label{sec:orgec698ea}
-\begin{enumerate}
-\item Observed \(I(\nu)/I(\nu_0)\)
-\item Bohr condition, \(|E_f-E_i|/h=\nu =c\tilde{\nu}=c/\lambda\)
-\item Intensities determined by state populations and transition probabilities
-\end{enumerate}
-\subsubsection{Einstein coefficients}
-\label{sec:org7b2cec2}
-\begin{enumerate}
-\item Stimulated absorption, \(dn_1/dt= -n_1 B\rho(\nu)\)
-\item Stimulated emission, \(dn_2/dt= -n_2 B\rho(\nu)\)
-\item Spontaneous emission, \(dn_2/dt=-n_2 A, A=\left ( \frac{8\pi h
-              \nu^3}{c^3}\right )B\)
-\item \(1/A=\) lifetime
-\end{enumerate}
-\subsubsection{Transition probability}
-\label{sec:orga8b9c9c}
-\begin{enumerate}
-\item Einstein coefficient \(B_{if}=\frac{|\mu_{if}|^2}{6\epsilon_0\hbar^2}\)
-\item Classical electric dipole, \(\overrightarrow{\mu}=q \cdot
-          \overrightarrow{l}\), quantum dipole operator \(\hat\mu = e\cdot \overrightarrow{r}\)
-\item Transition dipole moment, \(\mu_{if} = \left(
-        \frac{d\mu}{dx}\right ) \langle \psi_i|\hat\mu |\psi_f \rangle\)
-\item Selection rules---conditions that make \(\mu_{if}\) non-zero,
-``allowed'' vs ``forbidden'' transitions
-\end{enumerate}
-\subsection{Lecture 10: Vibrational and rotational spectroscopy}
-\label{sec:orga263d57}
-\subsubsection{Vibrational transitions}
-\label{sec:orga2f8f85}
-\begin{enumerate}
-\item Gross selection rule: dynamic dipole \(d\mu/dx\) non-zero
-\item Specific selection rule: dipole integral \(\langle \psi_v|\hat\mu|\psi_{v^\prime} \rangle =0\)
-unless \(\Delta v = \pm 1\)
-\item Allowed \(\Delta E = h\nu\)
-\item Boltzmann, \(v=1\) states dominate at normal \(T\)
-\end{enumerate}
-\subsubsection{Vibrational spectroscopy}
-\label{sec:org70fec08}
-\begin{enumerate}
-\item Diatomics, homo- vs. heteronuclear
-\item Polyatomics, \(3n-6\) (\(3n-5\) for linear polyatomic) vibrational modes
-\item CO\(_2\) example
-\end{enumerate}
-\subsubsection{Raman spectroscopy}
-\label{sec:org00dbec2}
-\subsubsection{Diatomic rotational spectroscopy}
-\label{sec:orgd0478df}
-\begin{enumerate}
-\item Rotational constant \(B = \hbar/4\pi I c\) cm\(^{-1}\), \(I=\mu R^2\)
-\item Gross selection rule: dipole moment non-zero
-\item Specific selection rule: \(\Delta l=\pm 1\), \(\Delta m_l=0, \pm1\)
-\item \(\Delta \tilde E_l  = 2B(l+1)\) cm\(^{-1}\)
-\item Rotational state populations
-\end{enumerate}
-\subsubsection{Polyatomic rotational spectroscopy}
-\label{sec:org0a4379a}
-\subsubsection{Vibration-rotation spectroscopy}
-\label{sec:org9b7b6bb}
-\begin{enumerate}
-\item Harmonic oscillator + rigid rotor
-\item Selection rules: \(\Delta v = \pm 1, \Delta l=\pm 1\)
-\item \(R\) branch: \(\Delta \tilde E  = \tilde \nu + 2B(l+1), \Delta l = 1\)
-\item \(P\) branch: \(\Delta \tilde E = \tilde \nu - 2B(l), \Delta l = -1\)
-\end{enumerate}
-
-\begin{table}[tbh]
-   \begin{center}
-   \caption{3-D rigid rotor model}
-    \label{3-D Rigid rotor}
-\begin{tabular}[h]{|c|}
-\hline
- \\
-$\displaystyle       V(\theta,\phi) = 0, 0 \leq \phi \leq 2\pi, 0 \leq \theta <
-\pi$ \\
- \\
-$\displaystyle     \hat L^2 = -\hbar^2 \left [
-  \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}+\frac{1}{\sin
-    \theta}\frac{\partial}{\partial \theta}\left ( \sin \theta
-    \frac{\partial}{\partial \theta}\right ) \right ] $ \\
-\\
-$\displaystyle \hat H_\text{rot} = \frac{1}{2 I} \hat L^2$ \\
-\\
-$\displaystyle     Y_{lm_l}(\theta,\phi)=N_l^{|m|}P_l^{|m|}(\cos(\theta))e^{im_l\phi}$ \\
-\\
-$\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
-\\
-\\
-$\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
- \\
-$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
-\\
-     \includegraphics[scale=0.5]{Images/3Drotor.png} \\       
-\hline
-\end{tabular}
- \end{center}
-\end{table}
-
-\subsubsection{Anharmonicity, Morse potential}
-\label{sec:orgcde0b2e}
 
 \begin{table}[tbh]
    \begin{center}
@@ -1001,7 +846,133 @@ $\displaystyle L_z = m_l \hbar$ \\
 \end{table}
 
 
+\subsubsection{Quantum rotor in 3-D}
+\label{sec:org8f9eb60}
+\begin{enumerate}
+\item Angular momentum and kinetic energy operators in spherical coordinates
+\item Spherical harmonic solutions, \(Y_{lm_l}\)
+\item Azimuthal QN \(l=0, 1, \ldots\)
+\item Magnetic QN \(m_l = -l, -l+1, ..., l\)
+\item Energy spectrum, \(2 l + 1\) degeneracy
+\item Vector model - can only know total total \(|L|\) and \(L_z\)
+\item Wavefunctions look like atomic orbitals, \(l\) nodes
+\end{enumerate}
+
+\begin{table}[tbh]
+   \begin{center}
+   \caption{3-D rigid rotor model}
+    \label{3-D Rigid rotor}
+\begin{tabular}[h]{|c|}
+\hline
+ \\
+$\displaystyle       V(\theta,\phi) = 0, 0 \leq \phi \leq 2\pi, 0 \leq \theta <
+\pi$ \\
+ \\
+$\displaystyle     \hat L^2 = -\hbar^2 \left [
+  \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}+\frac{1}{\sin
+    \theta}\frac{\partial}{\partial \theta}\left ( \sin \theta
+    \frac{\partial}{\partial \theta}\right ) \right ] $ \\
+\\
+$\displaystyle \hat H_\text{rot} = \frac{1}{2 I} \hat L^2$ \\
+\\
+$\displaystyle     Y_{lm_l}(\theta,\phi)=N_l^{|m|}P_l^{|m|}(\cos(\theta))e^{im_l\phi}$ \\
+\\
+$\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
+\\
+\\
+$\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
+ \\
+$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
+\\
+     \includegraphics[scale=0.5]{Images/3Drotor.png} \\       
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+
+\subsubsection{Particle angular momentum}
+\label{sec:orgbd8a4a2}
+\begin{enumerate}
+\item Fermions, mass, half-integer spin
+\begin{enumerate}
+\item Electron, \(s=1/2, m_s=\pm 1/2\)
+\end{enumerate}
+\item Bosons, force-carrying, integer spin
+\end{enumerate}
+\subsection{Lecture 9: Spectroscopy}
+\label{sec:org4202652}
+\subsubsection{Spectroscopy is quantitative measurement of interaction of light with matter}
+\label{sec:orgc3f9964}
+\begin{enumerate}
+\item Observed \(I(\nu)/I(\nu_0)\)
+\item Bohr condition, \(|E_f-E_i|/h=\nu =c\tilde{\nu}=c/\lambda\)
+\item Intensities determined by state populations and transition probabilities
+\end{enumerate}
+\subsubsection{Einstein coefficients}
+\label{sec:orgab977ec}
+\begin{enumerate}
+\item Stimulated absorption, \(dn_1/dt= -n_1 B\rho(\nu)\)
+\item Stimulated emission, \(dn_2/dt= -n_2 B\rho(\nu)\)
+\item Spontaneous emission, \(dn_2/dt=-n_2 A, A=\left ( \frac{8\pi h
+              \nu^3}{c^3}\right )B\)
+\item \(1/A=\) lifetime
+\end{enumerate}
+\subsubsection{Transition probability}
+\label{sec:org031cca4}
+\begin{enumerate}
+\item Einstein coefficient \(B_{if}=\frac{|\mu_{if}|^2}{6\epsilon_0\hbar^2}\)
+\item Classical electric dipole, \(\overrightarrow{\mu}=q \cdot
+          \overrightarrow{l}\), quantum dipole operator \(\hat\mu = e\cdot \overrightarrow{r}\)
+\item Transition dipole moment, \(\mu_{if} = \left(
+        \frac{d\mu}{dx}\right ) \langle \psi_i|\hat\mu |\psi_f \rangle\)
+\item Selection rules---conditions that make \(\mu_{if}\) non-zero,
+``allowed'' vs ``forbidden'' transitions
+\end{enumerate}
+\subsection{Lecture 10: Vibrational and rotational spectroscopy}
+\label{sec:orgee4cf9b}
+\subsubsection{Vibrational transitions}
+\label{sec:org0cd045b}
+\begin{enumerate}
+\item Gross selection rule: dynamic dipole \(d\mu/dx\) non-zero
+\item Specific selection rule: dipole integral \(\langle \psi_v|\hat\mu|\psi_{v^\prime} \rangle =0\)
+unless \(\Delta v = \pm 1\)
+\item Allowed \(\Delta E = h\nu\)
+\item Boltzmann, \(v=1\) states dominate at normal \(T\)
+\end{enumerate}
+\subsubsection{Vibrational spectroscopy}
+\label{sec:orgc089129}
+\begin{enumerate}
+\item Diatomics, homo- vs. heteronuclear
+\item Polyatomics, \(3n-6\) (\(3n-5\) for linear polyatomic) vibrational modes
+\item CO\(_2\) example
+\end{enumerate}
+\subsubsection{Raman spectroscopy}
+\label{sec:org2b6ad62}
+\subsubsection{Diatomic rotational spectroscopy}
+\label{sec:org44e6ccd}
+\begin{enumerate}
+\item Rotational constant \(B = \hbar/4\pi I c\) cm\(^{-1}\), \(I=\mu R^2\)
+\item Gross selection rule: dipole moment non-zero
+\item Specific selection rule: \(\Delta l=\pm 1\), \(\Delta m_l=0, \pm1\)
+\item \(\Delta \tilde E_l  = 2B(l+1)\) cm\(^{-1}\)
+\item Rotational state populations
+\end{enumerate}
+\subsubsection{Polyatomic rotational spectroscopy}
+\label{sec:org628fc71}
+\subsubsection{Vibration-rotation spectroscopy}
+\label{sec:org9f06553}
+\begin{enumerate}
+\item Harmonic oscillator + rigid rotor
+\item Selection rules: \(\Delta v = \pm 1, \Delta l=\pm 1\)
+\item \(R\) branch: \(\Delta \tilde E  = \tilde \nu + 2B(l+1), \Delta l = 1\)
+\item \(P\) branch: \(\Delta \tilde E = \tilde \nu - 2B(l), \Delta l = -1\)
+\end{enumerate}
+
+\subsubsection{Anharmonicity, Morse potential}
+\label{sec:org0f559ef}
+
+
 
 \section{Statistical Mechanics: The Bridge from the Tiny to the Many}
-\label{sec:orgff72c17}
+\label{sec:orgf427ba0}
 \end{document}
