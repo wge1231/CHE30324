@@ -628,12 +628,13 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 *** Quantum harmonic oscillator
 1. Solutions like P-I-A-B, waves, nodes, even/odd symmetry
 2. Zero-point energy
-3. Expectation values $\langle x^2 \rangle =
-      \alpha^2 (v+1/2), \langle V(x) \rangle = \frac{1}{2} h\nu (v+\frac{1}{2})$
+3. Expectation values: \(\langle x \rangle =0, \langle x^2 \rangle =
+      \alpha^2 (v+1/2), \langle V(x) \rangle = \frac{1}{2} h\nu (v+\frac{1}{2})\)
 4. Classical turning point and tunneling
 5. Classical limiting behavior
 *** HCl example
 1. Reduced mass, $\frac{1}{\mu}=\frac{1}{m_A}+\frac{1}{m_B}$
+2. ZPE, energy spacing in IR, Boltzmann probabilities
 
 #+BEGIN_EXPORT latex
 \begin{table}[tbh]
@@ -668,12 +669,12 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 *** Classical rigid rotor
 1. Compare rotation about an axis vs linear motion
 2. Moment of intertia $I=\mu r^2$
-3. Angular momentum, $l = I \omega = r\times p$, $T= l^2/2I$ 
-   1. Angular momentum and energy continuous variable
+3. Angular momentum, $\mathbf{l} = I \mathbf{\omega} = \mathbf{r}\times \mathbf{p}$, $T= l^2/2I$ 
+   1. Angular momentum and energy continuous variables
 *** Quantum rotor in a plane
 1. Angular momentum and kinetic energy operators in polar coordinates,
       $\hat l_z = -i\hbar \frac{d}{d\phi}$
-2. Eigenfunctions and energy spectrum
+2. Eigenfunctions degenerate, cw and ccw rotation
 3. No zero point energy
 4. Angular momentum eignefunctions, $l_z = m_l \hbar$
 5. Energy superpositions and localization 
@@ -798,47 +799,31 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 3. $R$ branch: $\Delta \tilde E  = \tilde \nu + 2B(l+1), \Delta l = 1$ 
 4. $P$ branch: $\Delta \tilde E = \tilde \nu - 2B(l), \Delta l = -1$       
 
-#+BEGIN_COMMENT
+*** Anharmonicity, Morse potential
 
+** Lecture 11: Hydrogen atom
+*** Schr\ouml{}dinger equation
+1. Spherical coordinates and separation of variables
+2. Coulomb potential $v_\mathrm{Coulomb}(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$
+3. Centripetal potential  $v=\hbar^2\frac{l(l+1)}{2\mu r^2}$
+*** Solutions
+1. $\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$
+2. Principle quantum number $n=1,2,...$
+  1. $K$, $L$, $M$, $N$, ... shells
+  2. $n-1$ radial nodes
+3. Azimuthal quantum number $l=0,1,...,n-1$
+  1. $s$, $p$, $d$, ... orbital sub-shells
+  2. $l$ angular nodes
+4. Magnetic quantum number $m_l=-l,-l+1,...,l$
+5. Spin quantum number $m_s=\pm 1/2$
+6. Energy spectrum and populations
+7. Electronic selection rules
+   1. $\Delta l=\pm 1$, $\Delta m_s =0$, $\Delta m_l = 0,\pm 1$
+8. Wavefunctions = "orbitals"
+9. Radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
+  1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
 
-
-
-
-\item{{\bf Lecture 10: Hydrogen atom}}
-  \begin{outline}
-  \item Schr\"odinger equation
-    \begin{outline}
-    \item Spherical coordinates and separation of variables
-    \item Coulomb potential $v_\mathrm{Coulomb}(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$
-    \item Centripetal potential  $v=\hbar^2\frac{l(l+1)}{2\mu r^2}$
-    \end{outline}
-    \item Solutions
-    \begin{outline}
-  \item{$\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$}
-  \item Principle quantum number $n=1,2,...$
-    \begin{outline}
-    \item $K$, $L$, $M$, $N$, ... shells
-    \item $n-1$ radial nodes
-    \end{outline}
-  \item Azimuthal quantum number $l=0,1,...,n-1$
-    \begin{outline}
-    \item $s$, $p$, $d$, ... orbital sub-shells
-    \item $l$ angular nodes
-    \end{outline}
-  \item Magnetic quantum number $m_l=-l,-l+1,...,l$
-  \item Spin quantum number $m_s=\pm 1/2$
-    \end{outline}
-  \item Energy spectrum and populations
-  \item Electronic selection rules
-    \begin{outline}
-    \item $\Delta l=\pm 1$, $\Delta m_s =0$, $\Delta m_l = 0,\pm 1$
-    \end{outline}
-  \item Wavefunctions = ``orbitals''
-  \item Radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
-    \begin{outline}
-    \item $\langle r\rangle = \int r P_{nl}(r) dr = (\frac{3}{2}n^2-l(l+1))a_0$
-    \end{outline}
-  \end{outline}
+#+BEGIN_EXPORT latex
 \begin{table}[tbh]
    \begin{center}
    \caption{Hydrogen atom}
@@ -875,6 +860,10 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \end{tabular}
  \end{center}
 \end{table}
+#+END_EXPORT
+
+#+BEGIN_COMMENT
+
 
 \item{{\bf Lecture 11: Many-electron atoms}}
   \begin{outline}
@@ -883,7 +872,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
       \item $e^- -e^-$ interaction terms prevent separation of variables
     \end{outline}
   \item Independent electron model basis of all solutions, describes each
-    electron by its own wavefunction, or ``orbital''
+    electron by its own wavefunction, or "orbital"
   \item Qualitative solutions
     \begin{outline}
     \item $\psi_i$ look like H atom orbitals,  labeled by same quantum numbers
@@ -1232,7 +1221,6 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 
 #+END_COMMENT
 
-*** Anharmonicity, Morse potential
 
 
 
