@@ -763,7 +763,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 *** Einstein coefficients
 1. Stimulated absorption, $dn_1/dt= -n_1 B\rho(\nu)$
 2. Stimulated emission, $dn_2/dt= -n_2 B\rho(\nu)$
-3.  Spontaneous emission, $dn_2/dt=-n_2 A, A=\left ( \frac{8\pi h
+3. Spontaneous emission, $dn_2/dt=-n_2 A, A=\left ( \frac{8\pi h
               \nu^3}{c^3}\right )B$
 4. $1/A=$ lifetime
 *** Transition probability
@@ -775,32 +775,30 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 4. Selection rules---conditions that make $\mu_{if}$ non-zero,
       "allowed" vs "forbidden" transitions
 ** Lecture 10: Vibrational and rotational spectroscopy
-*** Vibrational transitions
-1. Gross selection rule: dynamic dipole $d\mu/dx$ non-zero
-2. Specific selection rule: dipole integral $\langle \psi_v|\hat\mu|\psi_{v^\prime} \rangle =0$
-          unless $\Delta v = \pm 1$
-3. Allowed $\Delta E = h\nu$
-4. Boltzmann, $v=1$ states dominate at normal $T$
-*** Vibrational spectroscopy
-1. Diatomics, homo- vs. heteronuclear
-2. Polyatomics, $3n-6$ ($3n-5$ for linear polyatomic) vibrational modes
-3. CO$_2$ example
-*** Raman spectroscopy
 *** Diatomic rotational spectroscopy
 1. Rotational constant $B = \hbar/4\pi I c$ cm$^{-1}$, $I=\mu R^2$
 2. Gross selection rule: dipole moment non-zero
 3. Specific selection rule: $\Delta l=\pm 1$, $\Delta m_l=0, \pm1$
 4. $\Delta \tilde E_l  = 2B(l+1)$ cm$^{-1}$
 5. Rotational state populations
-*** Polyatomic rotational spectroscopy
+*** Diatomic vibrational transitions
+1. Gross selection rule: dynamic dipole $d\mu/dx$ non-zero
+2. Homo- vs. heteronuclear
+3. Specific selection rule: dipole integral $\langle \psi_v|\hat\mu|\psi_{v^\prime} \rangle =0$
+          unless $\Delta v = \pm 1$
+4. Allowed $\Delta E = h\nu$
+5. Boltzmann, $v=1$ states dominate at normal $T$
+*** Raman spectroscopy
+*** Anharmonicity, Morse potential
 *** Vibration-rotation spectroscopy
 1. Harmonic oscillator + rigid rotor
 2. Selection rules: $\Delta v = \pm 1, \Delta l=\pm 1$
 3. $R$ branch: $\Delta \tilde E  = \tilde \nu + 2B(l+1), \Delta l = 1$ 
 4. $P$ branch: $\Delta \tilde E = \tilde \nu - 2B(l), \Delta l = -1$       
-
-*** Anharmonicity, Morse potential
-
+*** Polyatomic rotational spectroscopy
+*** Polyatomic spectroscopy
+2. Polyatomics, $3n-6$ ($3n-5$ for linear polyatomic) vibrational modes
+3. CO$_2$ example
 ** Lecture 11: Hydrogen atom
 *** Schr\ouml{}dinger equation
 1. Spherical coordinates and separation of variables
@@ -808,7 +806,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 3. Centripetal potential  $v=\hbar^2\frac{l(l+1)}{2\mu r^2}$
 *** Solutions
 1. $\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$
-2. Principle quantum number $n=1,2,...$
+2. Principle quantum number $n=1,2,\ldots$
   1. $K$, $L$, $M$, $N$, ... shells
   2. $n-1$ radial nodes
 3. Azimuthal quantum number $l=0,1,...,n-1$
