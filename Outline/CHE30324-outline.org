@@ -350,7 +350,7 @@ The wave equation & $\displaystyle \frac{ \partial^2 \Psi(x,t)}{\partial x^2} = 
 \\
 General solution & \(\Psi(x,t) = A \sin(kx -\omega t)\) \\
 Wavelength (distance) & \( \lambda = 2\pi/k \) \\
-Frequency (/time) & \( \nu = 2\pi/\omega \) \\
+Frequency (/time) & \( \nu =\omega/2\pi \) \\
 Speed & \( v= \lambda \nu \) \\
 Amplitude (distance) & \(A\) \\
 Energy & \( E \propto A^2 \) \\
@@ -656,6 +656,7 @@ $\displaystyle H_1(y) = 2y$\\
 $\displaystyle H_2(y) = 4y^2-2$\\
 $\displaystyle H_{n+1}(y) = 2 y H_n(y) -2 n H_{n-1}(y)$\\
  \\
+$\displaystyle     \nu =\frac{1}{2\pi}\sqrt\frac{k}{\mu}$ \\
 $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
  \\
      \includegraphics[scale=.6]{Images/HO} \\       
