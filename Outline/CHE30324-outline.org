@@ -697,7 +697,7 @@ $\\
 $\displaystyle     \psi_{m_l}(\phi) = \frac{1}{\sqrt{2\pi}} e^{-i m_l \phi}, m_l
 = 0, \pm 1, \pm 2, \ldots $ \\
 \\
-$\displaystyle     E_{m_l}=\frac{m_l^2 \hbar^2}{2 I^2}$ \\
+$\displaystyle     E_{m_l}=\frac{\hbar^2}{2 I}m_l^2$ \\
  \\
 $\displaystyle L_z = m_l \hbar$ \\
 \\
