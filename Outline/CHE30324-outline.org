@@ -830,7 +830,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 8. Wavefunctions = "orbitals"
 9. Radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
   1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
-
+     
 #+BEGIN_EXPORT latex
 \begin{table}[tbh]
    \begin{center}
@@ -923,7 +923,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 	approximate expressions for exchange and correlation         
 4. All the potential terms $\hat v$ depend on the solutions, so equations
 	must be solved /iteratively/ to /self-consistency/
-*** Herman-Skillman code for DFT calculations on atoms
+*** DFT calculations on atoms
 
 ** Lecture 13: Molecular orbital theory of molecules
 #+BEGIN_COMMENT
@@ -1195,7 +1195,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
  #+END_COMMENT
 
 
-
+ 
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
 
