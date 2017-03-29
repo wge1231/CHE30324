@@ -817,20 +817,26 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 *** Solutions
 1. $\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$
 2. Principle quantum number $n=1,2,\ldots$
-  1. $K$, $L$, $M$, $N$, ... shells
-  2. $n-1$ radial nodes
+   1. $K$, $L$, $M$, $N$, ... shells
+   2. $n-1$ radial nodes
 3. Azimuthal quantum number $l=0,1,...,n-1$
-  1. $s$, $p$, $d$, ... orbital sub-shells
-  2. $l$ angular nodes
+   1. $s$, $p$, $d$, ... orbital sub-shells
+   2. $l$ angular nodes
 4. Magnetic quantum number $m_l=-l,-l+1,...,l$
 5. Spin quantum number $m_s=\pm 1/2$
 6. Energy spectrum and populations
 7. Electronic selection rules
-   1. $\Delta l=\pm 1$, $\Delta m_s =0$, $\Delta m_l = 0,\pm 1$
-8. Wavefunctions = "orbitals"
-9. Radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
-  1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
-     
+   1. $\Delta l=\pm 1 \quad \Delta m_s =0 \quad \Delta m_l = 0,\pm 1$
+9. Wavefunctions = "orbitals"
+10. Radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
+    1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
+*** /Variational principle/
+1. Solutions of Schr\ouml{}dinger equation always form a complete set
+2. True wavefunction energy is therefore lower bound on energy of any trial wavefunction
+\[\langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle =E_\text{trial}^\lambda \geq E_0\]
+3. Optimize wavefunction with respect to variational parameter
+\[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
+
 #+BEGIN_EXPORT latex
 \begin{table}[tbh]
    \begin{center}
@@ -857,6 +863,13 @@ $\displaystyle P_{nl}(r) = r^2 R_{nl}^2 $
 \\
 \\
 $\displaystyle n = 1, 2, \ldots,\ \  l = 0, \ldots, n-1 \ \ m_l = 0,\pm 1, \ldots, \pm l$
+\\
+\\
+$\displaystyle N_{nl} = \sqrt{\left ( \frac{2}{na_0}\right )^3 \frac{(n-l-1)!}{2n(n+l)!}}$
+\\
+\\
+$\displaystyle L_{10} = L_{21} = L_{32} = \ldots =1 \quad L_{20} = 2 - x \quad L_{31} = 4-x$
+\\
 \\
 \\
 $\displaystyle     E_{n}=-\frac{1}{2}\frac{\hbar^2}{m_e a_0^2}\frac{1}{n^2} =-\frac{E_H}{2}\frac{1}{n^2}$ \\
@@ -886,10 +899,6 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 3. Inner shell electrons "shield" outer electrons well
 4. Within a shell, $s$ shielded less than $p$ less than $d$ ..., causes degeneracy to break down
 5. Electrons in same subshell shield each other poorly, causing ionization energy to increase across the subshell
-*** /Variational principle/
-1. True wavefunction energy is lower bound on energy of any trial wavefunction
-2. Because true solutions form a complete set
-3. Use to optimize candidate wavefunctions (give an example?)
 *** Quantitative solutions
 1. Schr\ouml{}dinger equation
      \[\hat H \Psi({\bf r}_1, {\bf r}_2,...)=E \Psi({\bf r}_1, {\bf r}_2,...)\]
