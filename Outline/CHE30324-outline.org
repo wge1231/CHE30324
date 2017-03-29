@@ -933,6 +933,18 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 4. All the potential terms $\hat v$ depend on the solutions, so equations
 	must be solved /iteratively/ to /self-consistency/
 *** DFT calculations on atoms
+1. See [[http://www.chemsoft.ch/qc/fda.htm]]
+
+#+BEGIN_EXPORT latex
+\begin{table}
+   \caption{Numerical DFT Solutions for Atoms }
+\begin{tabular}{cc}
+\includegraphics[scale=0.33]{Images/Slide1.png} & \includegraphics[scale=0.33]{Images/Slide2.png} \\
+\includegraphics[scale=0.33]{Images/Slide3.png} & \includegraphics[scale=0.33]{Images/Slide4.png} \\
+\includegraphics[scale=0.33]{Images/Slide5.png} & \includegraphics[scale=0.5]{Images/Slide6.png} 
+\end{tabular}
+\end{table}
+#+END_EXPORT
 
 ** Lecture 13: Molecular orbital theory of molecules
 #+BEGIN_COMMENT
