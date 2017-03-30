@@ -743,13 +743,95 @@ $\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
 $\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
  \\
 $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
-\\
-     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
+% \\
+%     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
 \hline
 \end{tabular}
  \end{center}
 \end{table}
 #+END_EXPORT
+
+#+BEGIN_SRC python :results output org drawer
+import matplotlib.pyplot as plt
+from matplotlib import cm, colors
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+from scipy.special import sph_harm
+
+phi = np.linspace(0, np.pi, 100)
+theta = np.linspace(0, 2*np.pi, 100)
+phi, theta = np.meshgrid(phi, theta)
+
+# The Cartesian coordinates of the unit sphere
+x = np.sin(phi) * np.cos(theta)
+y = np.sin(phi) * np.sin(theta)
+z = np.cos(phi)
+
+m, l = 0, 0
+
+# Calculate the spherical harmonic Y(l,m) and normalize to [0,1]
+fcolors = sph_harm(m, l, theta, phi).real
+fmax, fmin = fcolors.max(), fcolors.min()
+fcolors = (fcolors - fmin)/(fmax - fmin)
+
+# Set the aspect ratio to 1 so our sphere looks spherical
+sfig = plt.figure(figsize=plt.figaspect(1.))
+s = sfig.add_subplot(111, projection='3d')
+s.plot_surface(x, y, z,  rstride=1, cstride=1, facecolors=cm.seismic(fcolors))
+# Turn off the axis planes
+s.set_axis_off()
+plt.savefig('./Images/s.png')
+
+m, l = 0, 1
+
+# Calculate the spherical harmonic Y(l,m) and normalize to [0,1]
+fcolors = sph_harm(m, l, theta, phi).real
+fmax, fmin = fcolors.max(), fcolors.min()
+fcolors = (fcolors - fmin)/(fmax - fmin)
+
+# Set the aspect ratio to 1 so our sphere looks spherical
+# fig = plt.figure(figsize=plt.figaspect(1.))
+pfig = plt.figure(figsize=plt.figaspect(1.))
+p = pfig.add_subplot(111, projection='3d')
+p.plot_surface(x, y, z,  rstride=1, cstride=1, facecolors=cm.seismic(fcolors))
+# Turn off the axis planes
+p.set_axis_off()
+
+plt.savefig('./Images/p.png')
+
+m, l = 1, 2
+
+# Calculate the spherical harmonic Y(l,m) and normalize to [0,1]
+fcolors = sph_harm(m, l, theta, phi).real
+fmax, fmin = fcolors.max(), fcolors.min()
+fcolors = (fcolors - fmin)/(fmax - fmin)
+
+# Set the aspect ratio to 1 so our sphere looks spherical
+# fig = plt.figure(figsize=plt.figaspect(1.))
+dfig = plt.figure(figsize=plt.figaspect(1.))
+d = dfig.add_subplot(111, projection='3d')
+d.plot_surface(x, y, z,  rstride=1, cstride=1, facecolors=cm.seismic(fcolors))
+# Turn off the axis planes
+d.set_axis_off()
+
+plt.savefig('./Images/d.png')
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+:END:
+
+#+CAPTION: Pythonic s spherical harmonic
+#+ATTR_LATEX: :width 0.25\textwidth
+[[./Images/s.png]] 
+
+#+CAPTION: Pythonic p spherical harmonic
+#+ATTR_LATEX: :width 0.25\textwidth
+[[./Images/p.png]]
+
+#+CAPTION: Pythonic d spherical harmonic
+#+ATTR_LATEX: :width 0.25\textwidth
+[[./Images/d.png]]
 
 *** Particle angular momentum
 1. Fermions, mass, half-integer spin
@@ -891,7 +973,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
  1. $\psi_i$ look like H atom orbitals,  labeled by same quantum numbers
  2. /Aufbau principle/: ``Build-up'' electron configuration by adding electrons into H-atom-like orbitals, from bottom up
  3. /Pauli exclusion principle/: Every electron in atom must have a unique set of quantum numbers, so only two per orbital (with opposite spin)
- 4. /Pauli exclusion principle} (formally)/: The wavefunction of a multi-particle system must be anti-symmetric to coordinate exchange if the particles are fermions, and symmetric to coordinate exchange if the particles are bosons
+ 4. /Pauli exclusion principle (formally)/: The wavefunction of a multi-particle system must be anti-symmetric to coordinate exchange if the particles are fermions, and symmetric to coordinate exchange if the particles are bosons
  5. /Hund's rule/: Electrons in degenerate orbitals prefer to be spin-aligned.  Configuration with highest /spin multiplicity/ is the most preferred
 *** Structure of the periodic table
 1. Electrons in different subshells experience different effective nuclear charge $Z_\mathrm{eff} = Z - \sigma_{nl}$
