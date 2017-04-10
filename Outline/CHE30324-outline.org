@@ -1029,14 +1029,14 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 #+END_EXPORT
 
 ** Lecture 13: Molecular orbital theory of molecules
-
-
 *** Clamped nucleus ("Born-Oppenheimer") approximation
 1. Write one-electron equations parametrically in terms of positions of  all atoms
-\begin{equation}
-\hat h_i = -\frac{\hbar^2}{2m_e}\nabla^2_i-\sum_\alpha \frac{Z_\alpha
-          e^2}{4\pi\epsilon_0}\frac{1}{|{\bf r}_i-{\bf R}_\alpha|}
-\end{equation}
+\begin{eqnarray}
+\hat h & = & -\frac{\hbar^2}{2m_e}\nabla^2-\sum_\alpha \frac{Z_\alpha
+          e^2}{4\pi\epsilon_0}\frac{1}{|{\bf r}-{\bf R}_\alpha|} \\
+\hat f\psi & = & \left\{\hat h + \hat v_\mathrm{Coul}[\psi_i] + \hat
+            v_\mathrm{ex}[\psi_i]+\hat v_\mathrm{corr}[\psi_i] \right\}\psi=\epsilon\psi
+\end{eqnarray}
 2. Solve as for atoms, using some model for electron-electron interactions
 3. Potential energy surface (PES)
 	\[ E({\bf R}_\alpha, {\bf
@@ -1246,7 +1246,6 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
  #+END_COMMENT
 
 
- 
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
 
