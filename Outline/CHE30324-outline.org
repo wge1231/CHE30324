@@ -1138,7 +1138,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
    3. 2p$_z$ + 2p$_z$ form second bond and anti-bond
    4. 2p$_{x,y}$ + 2p$_{x,y}$ form degenerate $\pi$ bonds and anti-bonds
    5. O$_2$ is a triplet, consistent with experiment!
-*** The H\uuml{}ckel/tight binding model
+*** The H\uuml{}ckel/tight binding model: [[http://resolver.caltech.edu/CaltechBOOK:1961.001][Roberts, Notes on Molecular Orbital Theory]]
 1. $F_{ii}=\alpha, S_{ij}=\delta_{ij}, F_{ij}=\beta$ iff $i$ adjacent to $j$
 2. Ethylene example
 3. Butadiene example
