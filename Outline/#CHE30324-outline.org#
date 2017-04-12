@@ -1154,7 +1154,6 @@ alpha,beta = symbols('alpha beta')
 M = Matrix([[alpha, beta, 0 , 0],[beta, alpha, beta, 0],[0,beta,alpha,beta],[0,0,beta,alpha]])
 
 # M = Matrix([[alpha,beta],[beta,alpha]])
-M
 
 eigs  = M.eigenvects()
 print(eigs)
@@ -1164,7 +1163,6 @@ print(type(eigs))
 
 #+RESULTS:
 :RESULTS:
-Matrix([[alpha, beta, 0, 0], [beta, alpha, beta, 0], [0, beta, alpha, beta], [0, 0, beta, alpha]])
 [(alpha - beta/2 + sqrt(5)*beta/2, 1, [Matrix([
 [4/((1 + sqrt(5))*(-sqrt(5) + 1))],
 [                -2/(1 + sqrt(5))],
