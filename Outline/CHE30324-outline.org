@@ -1154,17 +1154,13 @@ alpha,beta = symbols('alpha beta')
 M = Matrix([[alpha, beta, 0 , 0],[beta, alpha, beta, 0],[0,beta,alpha,beta],[0,0,beta,alpha]])
 
 # M = Matrix([[alpha,beta],[beta,alpha]])
-M
 
 eigs  = M.eigenvects()
 print(eigs)
-print(type(eigs))
-#print(eigs.evalf())
 #+END_SRC
 
 #+RESULTS:
 :RESULTS:
-Matrix([[alpha, beta, 0, 0], [beta, alpha, beta, 0], [0, beta, alpha, beta], [0, 0, beta, alpha]])
 [(alpha - beta/2 + sqrt(5)*beta/2, 1, [Matrix([
 [4/((1 + sqrt(5))*(-sqrt(5) + 1))],
 [                -2/(1 + sqrt(5))],
@@ -1182,7 +1178,6 @@ Matrix([[alpha, beta, 0, 0], [beta, alpha, beta, 0], [0, beta, alpha, beta], [0,
 [                -2/(1 + sqrt(5))],
 [                -2/(1 + sqrt(5))],
 [                               1]])])]
-<type 'list'>
 :END:
 
 *** Band structure of solids
@@ -1206,8 +1201,8 @@ Matrix([[alpha, beta, 0, 0], [beta, alpha, beta, 0], [0, beta, alpha, beta], [0,
    3. coefficients describing molecular orbitals
    4. total electron wavefunction, total electron density, dipole moment, $\ldots$
    5. total molecular energy
-   6. derivatives (``gradients'') of total energy w.r.t. atom positions
-3. Plot total energy vs.\ internal coordinates: potential energy surface (PES)
+   6. derivatives ("gradients") of total energy w.r.t. atom positions
+3. Plot total energy vs internal coordinates: potential energy surface (PES)
 4. Search iteratively for minimum point on PES (by hand or using gradient-driven search): equilibrium geometry
 5. Find second derivative of energy at minimum point on PES: harmonic vibrational frequency
 6. Find energy at minimum relative to atoms (or other molecules): reaction energy
@@ -1282,82 +1277,62 @@ Matrix([[alpha, beta, 0, 0], [beta, alpha, beta, 0], [0, beta, alpha, beta], [0,
        \end{outline}
      \end{outline}
 
- \item {\bf Lecture XX: Electronic and magnetic properties} - skipped
 
  #+END_COMMENT
-
-
+** Lecture XX: Electronic and magnetic properties
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
 
-#+BEGIN_COMMENT
-
-
-\item {\bf Lecture 15: Statistical mechanics}
-  \begin{outline}
-    \item Need machinary to average QM information over macroscopic systems
-    \item Equal {\em a priori} probabilities
-    \item Two-state model
-      \begin{outline}
-      \item Box of particles, each of which can have energy 0 or $\epsilon$
-      \item Thermodynamic state defined by number of elements $N$, and number of
-        quanta $q$, $U=q\epsilon$
-      \item Degeneracy of given $N$ and $q$ given by binomial distribution:
+** Lecture 15: Statistical mechanics
+***  Need machinary to average QM information over macroscopic systems
+*** Equal /a priori/ probabilities
+*** Two-state model
+1. Box of particles, each of which can have energy 0 or $\epsilon$
+2. Thermodynamic state defined by number of elements $N$, and number of quanta $q$, $U=q\epsilon$
+3. Degeneracy of given $N$ and $q$ given by binomial distribution:
         \begin{displaymath}
           \Omega=\frac{N!}{q!(N-q)!}
         \end{displaymath}
-      \item Allow energy to flow between two such systems
-        \begin{outline}
-        \item Energy of a closed system is conserved (first law!)
-        \item Degeneracy of total system is always $\geq$ degeneracy of the
-          starting parts!
-        \item Boltzmann's tombstone, $S = k_B \ln \Omega$
-        \item Clausius: entropy of the universe seeks a maximum!  Second Law...
-        \end{outline}
-      \end{outline}
-      \item Energy flow/thermal equilibrium between two large systems
-        \begin{outline}
-          \item Each subsystem has energy $U_i$ and degeneracy $\Omega_i(U_i)$
-          \item Bring in thermal contact, $U=U_1+U_2$, $\Omega=\Omega_1(U_1)\Omega_2(U_2)$
-          \item If systems are very large, one combination of $U_1$, $U_2$ and $\Omega$
-            will be much more probably than all others
-          \item What value of $U_1$ and $U_2=U-U_1$ maximizes $\Omega$?
+4. Allow energy to flow between two such systems
+- Energy of a closed system is conserved (first law!)
+- Degeneracy of total system is always $\geq$ degeneracy of the starting parts!
+- Boltzmann's tombstone, $S = k_B \ln \Omega$
+- Clausius: entropy of the universe seeks a maximum!  Second Law...
+
+*** Energy flow/thermal equilibrium between two large systems
+1. Each subsystem has energy $U_i$ and degeneracy $\Omega_i(U_i)$
+2. Bring in thermal contact, $U=U_1+U_2$, $\Omega=\Omega_1(U_1)\Omega_2(U_2)$
+3.  If systems are very large, one combination of $U_1$, $U_2$ and $\Omega$ will be much more probably than all others
+4. What value of $U_1$ and $U_2=U-U_1$ maximizes $\Omega$?
         \begin{displaymath}
  \left ( \frac{\partial \ln \Omega_1}{\partial U_1} \right )_N = \left ( \frac{\partial \ln \Omega_2}{\partial U_2} \right )_N
         \end{displaymath}
         \begin{displaymath}
  \left ( \frac{\partial S_1}{\partial U_1} \right )_N = \left ( \frac{\partial S_2}{\partial U_2} \right )_N
         \end{displaymath}
-      \item Thermal equilibrium is determined by equal {\bf temperature!}
+5. Thermal equilibrium is determined by equal *temperature*!
         \begin{displaymath}
             \frac{1}{T}=\left ( \frac{\partial S}{\partial U} \right )_N
           \end{displaymath}
-        \item When the temperatures of the two subsystems are equal, the
-          entropy of the combined system is maximized!
-        \item (Same arguments lead to requirement that equal pressures ($P_i$) and
-          equal chemical potentials ($\mu_i$) maximize entropy when volumes or
-          particles are exchanged)
-        \end{outline}
+6. When the temperatures of the two subsystems are equal, the entropy of the combined system is maximized!
+7. (Same arguments lead to requirement that equal pressures ($P_i$) and equal chemical potentials ($\mu_i$) maximize entropy when volumes or particles are exchanged)
 
-      \item Two-state model in limit of large $N$
-        \begin{outline}
-        \item Large $N$ and Stirling's approximation
-        \item Fundamental thermodynamic equation of two-state system:
+*** Two-state model in limit of large $N$
+1. Large $N$ and Stirling's approximation
+2. Fundamental thermodynamic equation of two-state system:
         \begin{displaymath}
           S(U)=-k_B \left ( x \ln x + (1-x) \ln (1-x) \right ), \mathrm{where}\
           x = q/N = U/N\epsilon
         \end{displaymath}
-      \item Temperature is derivative of entropy wrt energy yields          
+3. Temperature is derivative of entropy wrt energy yields
           \begin{displaymath}
             U(T) = \frac{N\epsilon}{1+e^{\epsilon/k_BT}}
           \end{displaymath}
-        \begin{outline}
-          \item $T \rightarrow 0, U \rightarrow 0, S \rightarrow 0$, minimum disorder
-          \item $T \rightarrow \infty, U \rightarrow N\epsilon/2, S \rightarrow
-            k_B \ln 2$, maximum disorder
-        \end{outline}
-      \item Differentiate again to get heat capacity
-      \end{outline}
+4. $T \rightarrow 0, U \rightarrow 0, S \rightarrow 0$, minimum disorder
+5. $T \rightarrow \infty, U \rightarrow N\epsilon/2, S \rightarrow k_B \ln 2$, maximum disorder
+6. Differentiate again to get heat capacity
+
+#+BEGIN_COMMENT
 
     \item Canonical ($NVT$) ensemble
       \begin{outline}
@@ -1422,14 +1397,6 @@ Matrix([[alpha, beta, 0, 0], [beta, alpha, beta, 0], [0, beta, alpha, beta], [0,
       superfluidity.}
   \end{outline}
 \end{outline}
-% \item{Molecular partition function}
-%   \begin{outline}
-%   \item{Sum over energy states of single molecule/element of system}
-%     \begin{equation}
-%       q=\sum_j e^{-\epsilon_j \beta}: \mathrm{molecular\ partition\ function}
-%     \end{equation}
-%   \item{{\em This} can be evaluated for our QM energy models}
-%   \end{outline}
 
     \item Two-state system again
       \begin{outline}
@@ -1455,6 +1422,8 @@ Matrix([[alpha, beta, 0, 0], [beta, alpha, beta, 0], [0, beta, alpha, beta], [0,
       \end{outline}
       \item Thermodynamic functions in canonical ensemble
     \end{outline}
+
+
 
 \begin{table}\small
   \begin{center}
