@@ -1183,7 +1183,7 @@ print(eigs)
 *** Band structure of solids
 
 ** Lecture 14: Computational chemistry
-*** Numerical solvers of Schr\ouml{}odinger equation for molecules readily available today
+*** Numerical solvers of Schr\ouml{}dinger equation for molecules readily available today
 *** Have to specify:
    1. Identity of atoms
    2. Positions of atoms (distances, angles, $\ldots$)
@@ -1279,12 +1279,12 @@ print(eigs)
 
 
  #+END_COMMENT
-** Lecture XX: Electronic and magnetic properties
+** Lecture 16: Electronic and magnetic properties
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
 
-** Lecture 15: Statistical mechanics
-***  Need machinary to average QM information over macroscopic systems
+** Lecture 17: Statistical mechanics
+*** Need machinary to average QM information over macroscopic systems
 *** Equal /a priori/ probabilities
 *** Two-state model
 1. Box of particles, each of which can have energy 0 or $\epsilon$
@@ -1331,52 +1331,38 @@ print(eigs)
 4. $T \rightarrow 0, U \rightarrow 0, S \rightarrow 0$, minimum disorder
 5. $T \rightarrow \infty, U \rightarrow N\epsilon/2, S \rightarrow k_B \ln 2$, maximum disorder
 6. Differentiate again to get heat capacity
+*** Example of microcanonical ("$NVE$") ensemble
+1. Direct evaluation of $S(U)$ is generally intractable, so seek simpler approach
 
-#+BEGIN_COMMENT
-
-    \item Canonical ($NVT$) ensemble
-      \begin{outline}
-      \item Previous is example of microcanonical (``$NVE$'') ensemble
-      \item Direct evaluation of $S(U)$ is generally intractable, so seek simpler approach
-      \item Imagine a system brought into thermal equilibrium with a much
-        larger ``reservoir'' of constant $T$, such that the aggregate has a
-        total energy $U$
-      \item Degeneracy of a given system microstate $j$ with energy $U_j$
-        is $\Omega_{res}(U-U_j)$
+** Lecture 18: Canonical ($NVT$) ensemble
+*** Partition function
+1. Imagine a system brought into thermal equilibrium with a much larger "reservoir" of constant $T$, such that the aggregate has a total energy $U$
+2. Degeneracy of a given system microstate $j$ with energy $U_j$ is $\Omega_{res}(U-U_j)$
         \begin{eqnarray*}
           T = \frac{dU_{res}}{k_Bd\ln\Omega_{res}} \\
           \Omega_{res}(U-U_j) \propto e^{-U_j/k_B T}
         \end{eqnarray*}
-      \item Probability for system to be in a microstate with energy $U_j$ given by Boltzmann
-        distribution!
+3. Probability for system to be in a microstate with energy $U_j$ given by Boltzmann distribution!
         \begin{displaymath}
           P(U_j) \propto e^{-U_j/k_B T} = e^{-U_j \beta}
         \end{displaymath}
-      \item Partition function ``normalizes'' distribution, $Q(T) = \sum_j
-        e^{-U_j \beta}$
-      \item For system of identical (distinguishable) elements with energy states $\epsilon_i$,
-        can factor probability to show
+4. Partition function "normalizes" distribution, $Q(T) = \sum_j e^{-U_j \beta}$
+5. For system of identical (distinguishable) elements with energy states $\epsilon_i$, can factor probability to show
         \begin{eqnarray*}
           P(\epsilon_i) \propto e^{-\epsilon_i/k_B T} = e^{-\epsilon_i \beta},\
           \ \ \ \ \beta=1/k_BT
         \end{eqnarray*}
-      \end{outline}
 
-
-\item{Energy factoring}
-  \begin{outline}
-  \item{If system is large, how to determine it's energy states $U_j$?  There
-      would be many, many of them!}
-  \item{One simplification is if we can write energy as sum of energies of
-      individual elements (atoms, molecules) of system:}
+*** Energy factoring (sidebar)
+1. If system is large, how to determine it's energy states $U_j$?  There would be many, many of them!
+2. One simplification is if we can write energy as sum of energies of individual elements (atoms, molecules) of system:
     \begin{align}
       U_j&=\epsilon_j(1)+\epsilon_j(2) + ... + \epsilon_j(N) \\
       Q(N,V,T) &= \sum_j e^{-U_j\beta} \\
       &=\sum_je^{-(\epsilon_j(1)+\epsilon_j(2) + ... + \epsilon_j(N))\beta}
     \end{align}
-    \begin{outline}
-    \item{{\em If} molecules/elements of system can be distinguished from each
-        other (like atoms in a fixed lattice), expression can be factored:}
+3. /If/ molecules/elements of system can be distinguished from each
+        other (like atoms in a fixed lattice), expression can be factored:
       \begin{align}
         Q(N,V,T)&=\left ( \sum_j e^{-\epsilon_j(1)\beta}\right )\cdots \left ( \sum_j
           e^{-\epsilon_j(N)\beta}\right ) \\
@@ -1385,46 +1371,35 @@ print(eigs)
       &= q^N \\
      q&=\sum_j e^{-\epsilon_j \beta}: \mathrm{molecular\ partition\ function}
    \end{align}
-  \item{{\em If not} distinguishable (like molecules in a liquid or gas, or
-      electrons in a solid), problem is difficult, because identical
+4. /If not/ distinguishable (like molecules in a liquid or gas, or electrons in a solid), problem is difficult, because identical
       arrangements of energy amongst elements should only be counted once.
-      Approximate solution, good almost all the time:}
+5. Approximate solution, good almost all the time:
     \begin{equation}
       Q(N,V,T)=q^N/N!
     \end{equation}
-  \item{Sidebar: ``Correct'' factoring depends on whether individual elements
-      are fermions or bosons, leads to funny things like superconductivity and
-      superfluidity.}
-  \end{outline}
-\end{outline}
+6. Sidebar: "Correct" factoring depends on whether individual elements are fermions or bosons, leads to funny things like superconductivity and superfluidity.
 
-    \item Two-state system again
-      \begin{outline}
-      \item Partition function, $q(T)=1+e^{-\epsilon\beta}$
-      \item State probabilities
-      \item{Internal energy $U(T)$}
+***  Distinguishable vs. indistinguishable particles
+1. Distinguishable (e.g., in a lattice): $Q(N,V,T) = q(V,T)^N$
+2. Indistinguishable (e.g., a gas): $Q(N,V,T)\approx q(V,T)^N/N!$
+
+*** Two-state system again
+1. Partition function, $q(T)=1+e^{-\epsilon\beta}$
+2. State probabilities
+3. Internal energy $U(T)$
         \begin{equation}
           U(T)=-N \left ( \frac{\partial \ln(1+e^{-\epsilon\beta})}{\partial\beta}
           \right)=\frac{N\epsilon e^{-\epsilon\beta}}{1+e^{-\epsilon\beta}}
         \end{equation}
-     \item Heat capacity $C_v$
-        \begin{outline}
-        \item Minimum when change in states with $T$ is small
-        \item Maximize when chagne in states with $T$ is large
-        \end{outline}
-      \item Helmholtz energy, $A= -\ln q/\beta$, decreasing function of $T$
-      \item Entropy
-      \end{outline}
-    \item Distinguishable vs.\ indistinguishable particles
-      \begin{outline}
-      \item Distinguishable (e.g., in a lattice): $Q(N,V,T) = q(V,T)^N$
-      \item Indistinguishable (e.g., a gas): $Q(N,V,T)\approx q(V,T)^N/N!$
-      \end{outline}
-      \item Thermodynamic functions in canonical ensemble
-    \end{outline}
+4. Heat capacity $C_v$
+   1. Minimum when change in states with $T$ is small
+   2. Maximize when chagne in states with $T$ is large
+5. Helmholtz energy, $A= -\ln q/\beta$, decreasing function of $T$
+6. Entropy
 
+*** Thermodynamic functions in canonical ensemble
 
-
+#+BEGIN_EXPORT latex
 \begin{table}\small
   \begin{center}
     \caption{Equations of the Canoncial ($NVT$) Ensemble}
@@ -1466,21 +1441,19 @@ Chemical potential ($\mu$) & $\displaystyle -\frac{1}{\beta}\left ( \frac{\parti
 Energy $G=A+PV$.
   \end{center}
 \end{table}
+#+END_EXPORT
 
-  \item{\bf Lecture 16: Molecular partition functions}
-    \begin{outline}
-    \item Ideal gas of molecules
+
+** Lecture 19: Molecular Partition Functions
+*** Ideal gas of molecules
       \begin{displaymath}
         Q_{ig}(N,V,T) = \frac{(q_\mathrm{trans}q_\mathrm{rot}q_\mathrm{vib})^N}{N!}
       \end{displaymath}
 
-      \item Particle-in-a-box (translational states of a gas)
-        \begin{outline}
-          \item Energy states $\epsilon_n=n^2\epsilon_0, n=1,2, \ldots$,
-            $\epsilon_0$ tiny for macroscopic $V$
-          \item $\Theta_\mathrm{trans} = \epsilon_0/k_B$ translational temperature
-          \item $\Theta_\mathrm{trans} << T \rightarrow$ {\em many} states contribute
-            to $q_\mathrm{trans}\rightarrow$ integral approximation
+*** Particle-in-a-box (translational states of a gas)
+1. Energy states $\epsilon_n=n^2\epsilon_0, n=1,2, \ldots$, $\epsilon_0$ tiny for macroscopic $V$
+2. $\Theta_\mathrm{trans} = \epsilon_0/k_B$ translational temperature
+3. $\Theta_\mathrm{trans} << T \rightarrow$ many states contribute to $q_\mathrm{trans}\rightarrow$ integral approximation
             \begin{eqnarray*}
               q_\mathrm{trans,1D} = \int_0^\infty e^{-x^2\beta\epsilon_0}dx =
               L/\Lambda \\
@@ -1488,40 +1461,34 @@ Energy $G=A+PV$.
               \mathrm{thermal\ wavelength} \\
               q_\mathrm{trans,3D} = V/\Lambda^3
             \end{eqnarray*}
-          \item Internal energy
-          \item Heat capacity
-          \item Equation of state (!)
-          \item Entropy: Sackur-Tetrode equation
-        \end{outline}
-      \item Rigid rotor (rotational states of a gas)
-        \begin{outline}
-        \item energy states and degeneracies
-        \item $\Theta_\mathrm{rot} = \hbar^2/2 I k_B$
-        \item ``High'' T $q_\mathrm{rot}(T) \approx \sigma \Theta_\mathrm{rot}/T$
-        \end{outline}
-      \item Harmonic oscillator (vibrational states of a gas)
-        \begin{outline}
-          \item $\Theta_\mathrm{vib}=h\nu/k_B$
-        \end{outline}
+4. Internal energy
+5. Heat capacity
+6. Equation of state (!)
+7. Entropy: Sackur-Tetrode equation
 
-      \item Electronic partition functions $\rightarrow$ spin multiplicity
-      \item Non-ideality
-        \begin{outline}
-          \item Real molecules interact through vdW interactions
-          \item Particle-in-a-box model breaks down, have to work harder but
-            can still get at same ideas
-          \item See Hill, {\em J. Chem. Ed.} {\bf 1948}, {\em 25}, p. 347, http://dx.doi.org/10.1021/ed025p347
-        \end{outline}
-      \end{outline}
+*** Rigid rotor (rotational states of a gas)
+1. energy states and degeneracies
+2. $\Theta_\mathrm{rot} = \hbar^2/2 I k_B$
+3. "High" T $q_\mathrm{rot}(T) \approx \sigma \Theta_\mathrm{rot}/T$
+*** Harmonic oscillator (vibrational states of a gas)
+1. $\Theta_\mathrm{vib}=h\nu/k_B$
 
-\begin{table} 
+*** Electronic partition functions $\rightarrow$ spin multiplicity
+
+*** Non-ideality
+1. Real molecules interact through vdW interactions
+2. Particle-in-a-box model breaks down, have to work harder but can still get at same ideas
+3. See Hill, /J. Chem. Ed./ *1948*, /25/, p. 347 [[http://dx.doi.org/10.1021/ed025p347]]
+
+#+BEGIN_EXPORT latex
+\begin{table}
 \begin{center}
     \caption{\large{Statistical Thermodynamics of an Ideal Gas}}
    \begin{description}
     \item[\underline{Translational DOFs}] {3-D particle in a box model}
 
 $\displaystyle \theta_\mathrm{trans}= \frac{\pi^2\hbar^2}{2 m
-  L^2 k_B}$, 
+  L^2 k_B}$,
 $\displaystyle \Lambda=h\left( \frac{\beta}{2\pi m}\right )^{1/2}$
 
 For $ T >> \Theta_\mathrm{trans}$, $\Lambda << L$, $\displaystyle
@@ -1540,17 +1507,18 @@ $\displaystyle U_\mathrm{trans}=\frac{3}{2}RT$ & $\displaystyle C_\mathrm{v,tran
 $\theta_\mathrm{rot} =hcB/k_B$
 
 \begin{equation*}
-q_\mathrm{rot}=\frac{1}{\sigma}\sum_{l=0}^\infty (2l+1)e^{-l(l+1)\theta_\mathrm{rot}/T},  
+q_\mathrm{rot}=\frac{1}{\sigma}\sum_{l=0}^\infty (2l+1)e^{-l(l+1)\theta_\mathrm{rot}/T},
 \approx \frac{1}{\sigma}\frac{T}{\theta_\mathrm{rot}},\ \ T>>\theta_\mathrm{rot}\ \ \ \sigma = \left \{
         \begin{array}{rl}
           1, & \text{unsymmetric} \\
           2, & \text{symmetric}
-        \end{array} \right . 
+        \end{array} \right .
 \end{equation*}
 \begin{tabular}{ccc}
 $\displaystyle U_\mathrm{rot}=RT$ & $\displaystyle C_\mathrm{v,rot} =
 R $ & $\displaystyle S^\circ_\mathrm{rot}=R (1-\ln(\sigma\theta_\mathrm{rot}/T)) $ \\
 \end{tabular}
+
 
 \item[Non-linear molecule]{} $\theta_{\mathrm{rot},\alpha}=hcB_\alpha/k_B$
 \begin{equation*}
@@ -1611,73 +1579,55 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
 \end{description}
 \end{center}
 \end{table}
+#+END_EXPORT
 
-
-    \item {\bf Lecture 17: Chemical reactions and equilibrium}
-      \begin{outline}
-      \item Standard states
-        \begin{outline}
-          \item Translational partition function depends on concentration $N/V$
-          \item ``Standard state'' corresponds to some standard choice for $N/V$, $c^\circ$
-          \item For ideal gas, related to pressure by $P^\circ = c^\circ k_B T$
-        \end{outline}
-      \item Chemical reaction $A \rightarrow B$
-      \item Reaction entropy $\Delta S^\circ (T) =  S^\circ_\mathrm{B}(T)-S^\circ_\mathrm{A}(T)$
-        \item Reaction energy $\Delta U^\circ (T) =
-          U^\circ_\mathrm{B}(T)-U^\circ_\mathrm{A}(T)+\Delta E(0)$
-        \item Equilibrium condition---equate chemical potentials, $\mu_A(N,V,T) = \mu_B(N,V,T)$
-        \item Equilibrium constant---evaluate from partition functions directly
+** Lecture 20: Chemical reactions and equilibria
+*** Standard states
+1. Translational partition function depends on concentration $N/V$
+2. "Standard state" corresponds to some standard choice for $N/V$, $c^\
+3. For ideal gas, related to pressure by $P^\circ = c^\circ k_B T$
+*** Chemical reaction $A \rightarrow B$
+1. Reaction entropy $\Delta S^\circ (T) =  S^\circ_\mathrm{B}(T)-S^\circ_\mathrm{A}(T)$
+2. Reaction energy $\Delta U^\circ (T) = U^\circ_\mathrm{B}(T)-U^\circ_\mathrm{A}(T)+\Delta E(0)$
+3. Equilibrium condition---equate chemical potentials, $\mu_A(N,V,T) = \mu_B(N,V,T)$
+4. Equilibrium constant---evaluate from partition functions directly
           or indirectly from thermodynamic potentials
-\item Le'Chatlier's principle
-  \begin{outline}
-    \item Response to temperature: Boltzmann distribution favors higher energy
-      things as $T$ increases
-    \item Response to volume chance: particle-in-a-box states increasingly favor
-      side with more molecules as volume increases 
-  \end{outline}
-\end{outline}
-\item {\bf Lecture 18: Chemical kinetics}
-  \begin{outline}
-  \item Kinetics and reaction rates
-    \begin{outline}
-      \item Rate: number per unit time per unit something
-    \end{outline}
+*** Le'Chatlier's principle
+1. Response to temperature: Boltzmann distribution favors higher energy things as $T$ increases
+2. Response to volume chance: particle-in-a-box states increasingly favor side with more molecules as volume increases
 
-  \item Empirical chemical kinetics
-    \begin{outline}
-    \item Rate laws, rate orders, and rate constants
-    \item Arrhenius expression, $k=A e^{-E_a/k_BT}$
-    \end{outline}
-  \item Reaction mechanisms
-  \item Elementary steps and molecularity
-  \item Collision theory---overpredicts rates
-  \item Transition state theory (TST)
-    \begin{outline}
-    \item Existence of reaction coordinate (PES)
-    \item Existence of dividing surface
-    \item Equilibrium between reactants and ``transition state''
-    \item Harmonic approximation for transition state
-    \end{outline}
-  \item Locating transition states computationally
-  \item Thermodynamic connection 
-  \item (Skipped) Diffusion-controlled reactions 
-    \begin{outline}
-      \item Intermediate complex
-      \item Steady-state approximation
-      \item Diffusion-controlled limit ($k_D = 4\pi (r_A + r_B) D_{AB}$)
-      \item Reaction-controlled limit ($k_{app}=(k_D/k_{-D})k_r$)
-    \end{outline}
+** Lecture 21: Chemical kinetics
+*** Kinetics and reaction rates
+1. Rate: number per unit time per unit something
 
-  \end{outline}
+*** Empirical chemical kinetics
+1. Rate laws, rate orders, and rate constants
+2. Arrhenius expression, $k=A e^{-E_a/k_BT}$
+*** Reaction mechanisms
+1. Elementary steps and molecularity
+2. Collision theory---overpredicts rates
+*** Transition state theory (TST)
+1. Existence of reaction coordinate (PES)
+2. Existence of dividing surface
+3. Equilibrium between reactants and "transition state"
+4. Harmonic approximation for transition state
+*** Locating transition states computationally
+*** Thermodynamic connection
+*** Diffusion-controlled reactions
+1. Intermediate complex
+2. Steady-state approximation
+3. Diffusion-controlled limit ($k_D = 4\pi (r_A + r_B) D_{AB}$)
+4. Reaction-controlled limit ($k_{app}=(k_D/k_{-D})k_r$)
 
-\begin{table} 
+#+BEGIN_EXPORT latex
+\begin{table}
 \begin{center}
     \caption{\large{Equilibrium and Rate Constants}}
    \begin{description}
    \item[Equilibrium Constants] $a~\text{A} + b~\text{B} \rightleftharpoons c~\text{C} + d~\text{D} $
      \begin{eqnarray*}
        K_{eq}(T) &=& e^{\Delta S^\circ(T,V)/k_B}e^{-\Delta H^\circ(T,V)/k_BT}
-       \\ \\ 
+       \\ \\
             K_c(T) &=&
           \left(\frac{1}{c^\circ}\right)^{\nu_c+\nu_d-\nu_a-\nu_b}\frac{(q_c/V)^{\nu_c}(q_d/V)^{\nu_d}}{(q_a/V)^{\nu_a}(q_b/V)^{\nu_b}}e^{-\Delta
             E(0)\beta}\\ \\
@@ -1689,7 +1639,7 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
   \rightarrow C$
       \begin{displaymath}
         k(T)=\nu^\ddagger \bar K^\ddagger=\frac{k_B T}{h} \frac{\bar{q}_\ddagger(T)/V}{q_A(T)/V}
-          e^{-\Delta E^\ddagger(0)\beta}               
+          e^{-\Delta E^\ddagger(0)\beta}
       \end{displaymath}
 \begin{center}
       \begin{tabular}{cc}
@@ -1703,7 +1653,7 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
       \begin{displaymath}
         k(T)=\nu^\ddagger \bar K^\ddagger=\frac{k_B T}{h} \frac{q_\ddagger(T)/V}{(q_A(T)/V)(q_B(T)/V)}\left
           (\frac{1}{c^\circ}\right )^{-1}
-        e^{-\Delta E^\ddagger(0)\beta}               
+        e^{-\Delta E^\ddagger(0)\beta}
       \end{displaymath}
       \begin{center}
         \begin{tabular}{cc}
@@ -1714,12 +1664,7 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
    \end{description}
  \end{center}
  \end{table}
+#+END_EXPORT
 
-\item {\bf Lecture 19: Conclusion}
-  \begin{outline}
-    \item Do you think about the burning lighter any differently now?  
-  \end{outline}
-
-\end{outline}
-\end{document}
-#+END_COMMENT
+** Lecture 22: Conclusion
+1. Do you think about the burning lighter any differently now?
