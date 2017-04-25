@@ -1333,7 +1333,6 @@ print(eigs)
 6. Differentiate again to get heat capacity
 *** Example of microcanonical ("$NVE$") ensemble
 1. Direct evaluation of $S(U)$ is generally intractable, so seek simpler approach
-
 ** Lecture 18: Canonical ($NVT$) ensemble
 *** Partition function
 1. Imagine a system brought into thermal equilibrium with a much larger "reservoir" of constant $T$, such that the aggregate has a total energy $U$
@@ -1352,7 +1351,6 @@ print(eigs)
           P(\epsilon_i) \propto e^{-\epsilon_i/k_B T} = e^{-\epsilon_i \beta},\
           \ \ \ \ \beta=1/k_BT
         \end{eqnarray*}
-
 *** Energy factoring (sidebar)
 1. If system is large, how to determine it's energy states $U_j$?  There would be many, many of them!
 2. One simplification is if we can write energy as sum of energies of individual elements (atoms, molecules) of system:
@@ -1396,6 +1394,96 @@ print(eigs)
    2. Maximize when chagne in states with $T$ is large
 5. Helmholtz energy, $A= -\ln q/\beta$, decreasing function of $T$
 6. Entropy
+
+#+BEGIN_SRC python :results output org drawer
+import numpy as np
+import matplotlib.pyplot as plt
+
+k = 8.61734e-5   # eV /K
+theta = 300.  # epsilon/kB
+
+
+def q(T):
+   return 1. + np.exp(-theta/T)
+
+def P1(T):
+   return 1/q(T)
+
+def P2(T):
+   return np.exp(-theta/T)/q(T)
+
+def A(T):
+   return -k*T*np.log(q(T))
+
+def U(T):
+   epsilon = theta*k
+   return epsilon * np.exp(-theta/T) / q(T)
+
+def C(T):
+   return (theta/T)**2 * np.exp(-theta/T)/(q(T)*q(T))
+
+def S(T):
+   return (U(T) - A(T))/T
+
+T = np.linspace(1,2001,500)
+
+plt.figure()
+plt.plot(T,q(T))
+plt.xlabel('Temperature (K)')
+plt.ylabel('Partition function')
+plt.title('Two-state system partition function')
+plt.savefig('./Images/2state-partition.png')
+
+plt.figure()
+plt.plot(T,P1(T),label='State 1')
+plt.plot(T,P2(T),label='State 2')
+plt.xlabel('Temperature (K)')
+plt.ylabel('Probability')
+plt.legend()
+plt.title('Two-state system probabilities')
+plt.savefig('./Images/2state-probability.png')
+
+plt.figure()
+plt.plot(T,A(T))
+plt.xlabel('Temperature (K)')
+plt.ylabel('Free energy (eV/particle)')
+plt.title('Two-state system Helmholtz free energy')
+plt.savefig('./Images/2state-helmholtz.png')
+
+plt.figure()
+plt.plot(T,U(T))
+plt.xlabel('Temperature (K)')
+plt.ylabel('Internal energy (eV/particle)')
+plt.title('Two-state system internal energy')
+plt.savefig('./Images/2state-internal.png')
+
+plt.figure()
+plt.plot(T,C(T))
+plt.xlabel('Temperature (K)')
+plt.ylabel('Heat capacity (eV/T)')
+plt.title('Two-state system heat capacity')
+plt.savefig('./Images/2state-heatcapacity.png')
+
+plt.figure()
+plt.plot(T,S(T))
+plt.xlabel('Temperature (K)')
+plt.ylabel('Entropy (eV/T)')
+plt.title('Two-state system entropy')
+plt.savefig('./Images/2state-entropy.png')
+
+
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+:END:
+
+[[./Images/2state-partition.png]]
+[[./Images/2state-probability.png]]
+[[./Images/2state-helmholtz.png]]
+[[./Images/2state-internal.png]]
+[[./Images/2state-heatcapacity.png]]
+[[./Images/2state-entropy.png]]
 
 *** Thermodynamic functions in canonical ensemble
 
@@ -1442,7 +1530,6 @@ Energy $G=A+PV$.
   \end{center}
 \end{table}
 #+END_EXPORT
-
 
 ** Lecture 19: Molecular Partition Functions
 *** Ideal gas of molecules
