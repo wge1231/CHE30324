@@ -1478,12 +1478,25 @@ plt.savefig('./Images/2state-entropy.png')
 :RESULTS:
 :END:
 
+#+BEGIN_COMMENT
 [[./Images/2state-partition.png]]
 [[./Images/2state-probability.png]]
 [[./Images/2state-helmholtz.png]]
 [[./Images/2state-internal.png]]
 [[./Images/2state-heatcapacity.png]]
 [[./Images/2state-entropy.png]]
+#+END_COMMENT
+
+#+BEGIN_EXPORT latex
+\begin{table}
+   \caption{Two-state system thermodynamics}
+\begin{tabular}{cc}
+\includegraphics[scale=0.5]{Images/2state-partition.png} & \includegraphics[scale=0.5]{Images/2state-probability.png} \\
+\includegraphics[scale=0.5]{Images/2state-helmholtz.png} & \includegraphics[scale=0.5]{Images/2state-internal.png} \\
+\includegraphics[scale=0.5]{Images/2state-heatcapacity.png} & \includegraphics[scale=0.5]{Images/2state-entropy.png}
+\end{tabular}
+\end{table}
+#+END_EXPORT
 
 *** Thermodynamic functions in canonical ensemble
 
@@ -1513,9 +1526,9 @@ Internal energy ($U$)& $\displaystyle -\left (\frac{\partial\ln
     Q}{\partial\beta}\right )_{NV}$ & $\displaystyle -N\left (\frac{\partial\ln
     q}{\partial\beta}\right )_{V}$ &  $\displaystyle -N\left (\frac{\partial\ln
     q}{\partial\beta}\right )_{V}$ \\ & & & \\
-Pressure ($P$) & $\displaystyle -\left (\frac{\partial\ln
-    Q}{\partial V}\right )_{N\beta}$ & $\displaystyle -N\left (\frac{\partial\ln
-    q}{\partial V}\right )_{\beta}$ &  $\displaystyle -N\left (\frac{\partial\ln
+Pressure ($P$) & $\displaystyle - \frac{1}{\beta}\left (\frac{\partial\ln
+    Q}{\partial V}\right )_{N\beta}$ & $\displaystyle -\frac{N}{\beta}\left (\frac{\partial\ln
+    q}{\partial V}\right )_{\beta}$ &  $\displaystyle -\frac{N}{\beta}\left (\frac{\partial\ln
     q}{\partial V}\right )_{\beta}$ \\ & & & \\
 
 Entropy ($S/k_B$) & $ \beta U + \ln Q$ & $\beta U + N \ln q$ & $\beta U +
@@ -1671,7 +1684,7 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
 ** Lecture 20: Chemical reactions and equilibria
 *** Standard states
 1. Translational partition function depends on concentration $N/V$
-2. "Standard state" corresponds to some standard choice for $N/V$, $c^\
+2. "Standard state" corresponds to some standard choice for $N/V$, $c^\circ$
 3. For ideal gas, related to pressure by $P^\circ = c^\circ k_B T$
 *** Chemical reaction $A \rightarrow B$
 1. Reaction entropy $\Delta S^\circ (T) =  S^\circ_\mathrm{B}(T)-S^\circ_\mathrm{A}(T)$
