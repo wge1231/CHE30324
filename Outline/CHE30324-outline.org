@@ -1526,9 +1526,9 @@ Internal energy ($U$)& $\displaystyle -\left (\frac{\partial\ln
     Q}{\partial\beta}\right )_{NV}$ & $\displaystyle -N\left (\frac{\partial\ln
     q}{\partial\beta}\right )_{V}$ &  $\displaystyle -N\left (\frac{\partial\ln
     q}{\partial\beta}\right )_{V}$ \\ & & & \\
-Pressure ($P$) & $\displaystyle - \frac{1}{\beta}\left (\frac{\partial\ln
-    Q}{\partial V}\right )_{N\beta}$ & $\displaystyle -\frac{N}{\beta}\left (\frac{\partial\ln
-    q}{\partial V}\right )_{\beta}$ &  $\displaystyle -\frac{N}{\beta}\left (\frac{\partial\ln
+Pressure ($P$) & $\displaystyle  \frac{1}{\beta}\left (\frac{\partial\ln
+    Q}{\partial V}\right )_{N\beta}$ & $\displaystyle \frac{N}{\beta}\left (\frac{\partial\ln
+    q}{\partial V}\right )_{\beta}$ &  $\displaystyle \frac{N}{\beta}\left (\frac{\partial\ln
     q}{\partial V}\right )_{\beta}$ \\ & & & \\
 
 Entropy ($S/k_B$) & $ \beta U + \ln Q$ & $\beta U + N \ln q$ & $\beta U +
