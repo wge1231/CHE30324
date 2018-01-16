@@ -21,11 +21,11 @@
 #+LATEX_HEADER:\renewcommand{\headrulewidth}{0.5pt}
 #+LATEX_HEADER:\renewcommand{\footrulewidth}{0.5pt}
 #+LATEX_HEADER:\lfoot{\today}
-#+LATEX_HEADER:\cfoot{\copyright\ 2017 W.\ F.\ Schneider}
+#+LATEX_HEADER:\cfoot{\copyright\ 2018 W.\ F.\ Schneider}
 #+LATEX_HEADER:\rfoot{\thepage}
 #+LATEX_HEADER:\chead{\bf{Physical Chemistry for Chemical Engineers (CHE 30324)\vspace{12pt}}}
 #+LATEX_HEADER:\lhead{\bf{Homework 1}}
-#+LATEX_HEADER:\rhead{\bf{Due January 25, 2017}}
+#+LATEX_HEADER:\rhead{\bf{Due January 24, 2018}}
 #+LATEX_HEADER:\usepackage{titlesec}
 #+LATEX_HEADER:\titlespacing*{\section}
 #+LATEX_HEADER:{0pt}{0.6\baselineskip}{0.2\baselineskip}
