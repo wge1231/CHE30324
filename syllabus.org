@@ -101,10 +101,10 @@ yourself from class.
 * Office hours
 The TA and instructor are happy to answer questions during regular office hours or by appointment if you need extra help.
 
-| Dr. Bill Schneider | \email{wschneider@nd.edu} | By appt/drop in |
-| Yujia Wang         | \email{ywang40@nd.edu}    |                 |
-| Anshu Goswami      | \email{agoswami@nd.edu}   |                 |
-| Neha Mehra         | \email{nmehra@nd.edu}     |                 |
+| Dr. Bill Schneider | \email{wschneider@nd.edu} | By appt/drop in | 123b Cushing |
+| Yujia Wang         | \email{ywang40@nd.edu}    | T 4-5           | 150 Fitz     |
+| Anshu Goswami      | \email{agoswami@nd.edu}   | W 4-5           |              |
+| Neha Mehra         | \email{nmehra@nd.edu}     | Th 4-5          | 150 Fitz     |
 
 
 #+CAPTION: Tentative Course Calendar
