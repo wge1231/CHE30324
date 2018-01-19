@@ -1,3 +1,4 @@
+
 #+BEGIN_OPTIONS
 #+AUTHOR: William F. Schneider
 #+TITLE: CBE 60553 Outline
