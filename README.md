@@ -16,4 +16,5 @@ Introduction to iPython/Jupyter notebooks [here](http://nbviewer.jupyter.org/git
 
 Tutorial on Python [here](./Resources/Python+Tutorial-Template.ipynb)
 
-Git Cheat Sheet [here] (https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+Git Cheat Sheet [here]
+(https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
