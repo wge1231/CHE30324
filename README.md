@@ -15,3 +15,8 @@ Introduction to git available [here](http://rogerdudler.github.io/git-guide/)
 Introduction to iPython/Jupyter notebooks [here](http://nbviewer.jupyter.org/github/jckantor/CBE20255/blob/master/notebooks/Getting%20Started%20with%20Jupyter%20Notebooks%20and%20Python.ipynb)
 
 Tutorial on Python [here](./Resources/Python+Tutorial-Template.ipynb)
+<<<<<<< HEAD
+=======
+
+Git cheat sheet [here](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+>>>>>>> 035723e71eef22d2682f81dbef8bc471ec3215c9
