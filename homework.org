@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 |    |             | Homework  | Solution    |
 |  1 | 24 Jan 2018 | [[./Homework/HW1.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW1.ipynb][ipynb]] | [[./Homework/HW1-soln.pdf][pdf]]  [[./Homework/HW1-soln.ipynb][ipynb]]  |
 |    |             |           |             |
