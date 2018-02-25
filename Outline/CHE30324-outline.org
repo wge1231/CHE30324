@@ -626,12 +626,15 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 3. $x(t)=A \sin(\frac{k}{\mu})^{1/2}t, \nu=\frac{1}{2\pi}(\frac{k}{\mu})^{1/2}, E=\frac{1}{2}kA^2$
 4. Exchanging kinetic and potential energies
 *** Quantum harmonic oscillator
-1. Solutions like P-I-A-B, waves, nodes, even/odd symmetry
-2. Zero-point energy
-3. Expectation values: \(\langle x \rangle =0, \langle x^2 \rangle =
+1. Schr\ouml{}dinger equation and boundary conditions
+2. Solutions like P-I-A-B + tunneling at boundaries
+3. Zero-point energy and uniform energy ladder
+4. Parity operator and even/odd symmetry:  \(\langle x \rangle =0 \)
+5. Recursion relations: \( \langle x^2 \rangle =
       \alpha^2 (v+1/2), \langle V(x) \rangle = \frac{1}{2} h\nu (v+\frac{1}{2})\)
-4. Classical turning point and tunneling
-5. Classical limiting behavior
+6. Virial theorem
+7. Classical turning point and tunneling
+8. Classical limiting behavior
 *** HCl example
 1. Reduced mass, $\frac{1}{\mu}=\frac{1}{m_A}+\frac{1}{m_B}$
 2. ZPE, energy spacing in IR, Boltzmann probabilities
