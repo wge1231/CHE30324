@@ -7,7 +7,7 @@
 |    |             |           |             |
 |  2 | 1 Feb 2018  | [[./Homework/HW2.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW2.ipynb][ipynb]] | [[./HW_Solutions/HW2-soln.pdf][pdf]]  [[./HW_Solutions/HW2-soln.ipynb][ipynb]]  |
 |    |             |           |             |
-|  3 | 9 Feb 2018  | [[./Homework/HW3.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW3.ipynb][ipynb]] | [[./HW_Solutions/HW3-soln.pdf][pdf]]  [[./HW_Solutions/HW3-soln.ipynb][ipynb]]  |
+|  3 | 9 Feb 2018  | [[./Homework/HW3.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW3.ipynb][ipynb]] | [[./HW_Solutions/HW3-Soln.pdf][pdf]]  [[./HW_Solutions/HW3-soln.ipynb][ipynb]]  |
 |    |             |           |             |
 |  4 | 20 Feb 2018 | [[./Homework/HW4.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW4.ipynb][ipynb]] | [[./HW_Solutions/HW4-soln.pdf][pdf]]  [[./HW_Solutions/HW4-soln.ipynb][ipynb]]  |
 |    |             |           |             |
