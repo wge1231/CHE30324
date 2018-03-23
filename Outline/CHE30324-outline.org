@@ -400,7 +400,7 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 2. Relation to Bohr orbits
 3. Davison and Germer experiment, $e^-$ diffraction off Ni
 
-#+BEGIN_SRC python :results output org drawer
+#+BEGIN_SRC python :exports results
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -720,41 +720,8 @@ $\displaystyle L_z = m_l \hbar$ \\
 6. Vector model - can only know total total $|L|$ and $L_z$
 7. Wavefunctions look like atomic orbitals, $l$ nodes
 
-#+BEGIN_EXPORT latex
-\begin{table}
-   \begin{center}
-   \caption{3-D rigid rotor model}
-    \label{3-D Rigid rotor}
-\begin{tabular}[h]{|c|}
-\hline
- \\
-$\displaystyle       V(\theta,\phi) = 0, 0 \leq \phi \leq 2\pi, 0 \leq \theta <
-\pi$ \\
- \\
-$\displaystyle     \hat L^2 = -\hbar^2 \left [
-  \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}+\frac{1}{\sin
-    \theta}\frac{\partial}{\partial \theta}\left ( \sin \theta
-    \frac{\partial}{\partial \theta}\right ) \right ] $ \\
-\\
-$\displaystyle \hat H_\text{rot} = \frac{1}{2 I} \hat L^2$ \\
-\\
-$\displaystyle     Y_{lm_l}(\theta,\phi)=N_l^{|m|}P_l^{|m|}(\cos(\theta))e^{im_l\phi}$ \\
-\\
-$\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
-\\
-\\
-$\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
- \\
-$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
-% \\
-%     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
-\hline
-\end{tabular}
- \end{center}
-\end{table}
-#+END_EXPORT
 
-#+BEGIN_SRC python :results output org drawer
+#+BEGIN_SRC python :exports results
 import matplotlib.pyplot as plt
 from matplotlib import cm, colors
 from mpl_toolkits.mplot3d import Axes3D
@@ -823,6 +790,41 @@ plt.savefig('./Images/d.png')
 #+RESULTS:
 :RESULTS:
 :END:
+
+#+BEGIN_EXPORT latex
+\newpage
+\begin{table}
+   \begin{center}
+   \caption{3-D rigid rotor model}
+    \label{3-D Rigid rotor}
+\begin{tabular}[h]{|c|}
+\hline
+ \\
+$\displaystyle       V(\theta,\phi) = 0, 0 \leq \phi \leq 2\pi, 0 \leq \theta <
+\pi$ \\
+ \\
+$\displaystyle     \hat L^2 = -\hbar^2 \left [
+  \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}+\frac{1}{\sin
+    \theta}\frac{\partial}{\partial \theta}\left ( \sin \theta
+    \frac{\partial}{\partial \theta}\right ) \right ] $ \\
+\\
+$\displaystyle \hat H_\text{rot} = \frac{1}{2 I} \hat L^2$ \\
+\\
+$\displaystyle     Y_{lm_l}(\theta,\phi)=N_l^{|m|}P_l^{|m|}(\cos(\theta))e^{im_l\phi}$ \\
+\\
+$\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
+\\
+\\
+$\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
+ \\
+$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
+% \\
+%     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+#+END_EXPORT
 
 #+CAPTION: Pythonic s spherical harmonic
 #+ATTR_LATEX: :width 0.25\textwidth
@@ -899,29 +901,6 @@ plt.savefig('./Images/d.png')
 1. Spherical coordinates and separation of variables
 2. Coulomb potential $v_\mathrm{Coulomb}(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$
 3. Centripetal potential  $v=\hbar^2\frac{l(l+1)}{2\mu r^2}$
-*** Solutions
-1. $\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$
-2. Principle quantum number $n=1,2,\ldots$
-   1. $K$, $L$, $M$, $N$, ... shells
-   2. $n-1$ radial nodes
-3. Azimuthal quantum number $l=0,1,...,n-1$
-   1. $s$, $p$, $d$, ... orbital sub-shells
-   2. $l$ angular nodes
-4. Magnetic quantum number $m_l=-l,-l+1,...,l$
-5. Spin quantum number $m_s=\pm 1/2$
-6. Energy spectrum and populations
-7. Electronic selection rules
-   1. $\Delta l=\pm 1 \quad \Delta m_s =0 \quad \Delta m_l = 0,\pm 1$
-9. Wavefunctions = "orbitals"
-10. Radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
-    1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
-*** /Variational principle/
-1. Solutions of Schr\ouml{}dinger equation always form a complete set
-2. True wavefunction energy is therefore lower bound on energy of any trial wavefunction
-\[\langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle =E_\text{trial}^\lambda \geq E_0\]
-3. Optimize wavefunction with respect to variational parameter
-\[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
-
 #+BEGIN_EXPORT latex
 \begin{table}[tbh]
    \begin{center}
@@ -961,12 +940,99 @@ $\displaystyle     E_{n}=-\frac{1}{2}\frac{\hbar^2}{m_e a_0^2}\frac{1}{n^2} =-\f
  \\
 $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \\
+$\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1) \right \} \frac{a_0}{Z} $ \\
+\\
 %%     \includegraphics[scale=0.4]{Images/H_atom} \\       
 \hline
 \end{tabular}
  \end{center}
 \end{table}
 #+END_EXPORT
+
+*** Solutions
+1. $\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$
+2. Principle quantum number $n=1,2,\ldots$
+   1. $K$, $L$, $M$, $N$, ... shells
+   2. $n-1$ radial nodes
+3. Azimuthal quantum number $l=0,1,...,n-1$
+   1. $s$, $p$, $d$, ... orbital sub-shells
+   2. $l$ angular nodes
+4. Magnetic quantum number $m_l=-l,-l+1,...,l$
+5. Spin quantum number $m_s=\pm 1/2$
+6. Energy spectrum and populations
+7. Electronic selection rules
+   1. $\Delta l=\pm 1 \quad \Delta m_s =0 \quad \Delta m_l = 0,\pm 1$
+9. Wavefunctions = "orbitals"
+10. Integrate out angular components to get radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
+    1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
+
+
+
+#+BEGIN_SRC python :exports results
+import matplotlib.pyplot as plt
+import numpy as np
+from sympy.physics.hydrogen import E_nl
+from sympy.physics.hydrogen import R_nl
+from sympy import symbols
+from sympy.plotting import plot
+from sympy import var
+
+#fig = plt.gcf()
+
+var('r')
+max = 10
+
+r = np.linspace(0,max,100)
+Ones = np.array([R_nl(1, 0, x) for x in r],dtype='float')
+plt.plot(r,Ones,label='1s')
+Twos = np.array([R_nl(2, 0, x) for x in r],dtype='float')
+plt.plot(r,Twos,label='2s')
+Twop = np.array([R_nl(2, 1, x) for x in r],dtype='float')
+plt.plot(r,Twop,label='2p')
+
+plt.plot([0,max],[0,0],color='black',linestyle=':')
+plt.xlim(0,max)
+plt.xlabel('Distance (a0)')
+plt.ylabel('Wavefunction R(r)')
+
+plt.legend()
+plt.savefig('./Images/H-R.png')
+
+plt.figure()
+Ones = np.array([x*x*R_nl(1, 0, x)**2 for x in r],dtype='float')
+plt.plot(r,Ones,label='1s')
+Twos = np.array([x*x*R_nl(2, 0, x)**2 for x in r],dtype='float')
+plt.plot(r,Twos,label='2s')
+Twop = np.array([x*x*R_nl(2, 1, x)**2 for x in r],dtype='float')
+plt.plot(r,Twop,label='2p')
+
+plt.plot([0,max],[0,0],color='black',linestyle=':')
+plt.xlim(0,max)
+plt.xlabel('Distance (a0)')
+plt.ylabel('Radial probability P(r)')
+
+plt.legend()
+plt.savefig('./Images/H-P.png')
+
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+:END:
+
+#+CAPTION: H atom radial wavefunctions
+#+ATTR_LATEX: :width 0.75\textwidth
+[[./Images/H-R.png]] 
+#+CAPTION: H atom radial probability
+#+ATTR_LATEX: :width 0.75\textwidth
+[[./Images/H-P.png]] 
+
+*** /Variational principle/
+1. Solutions of Schr\ouml{}dinger equation always form a complete set
+2. True wavefunction energy is therefore lower bound on energy of any trial wavefunction
+\[\langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle =E_\text{trial}^\lambda \geq E_0\]
+3. Optimize wavefunction with respect to variational parameter
+\[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
 
 ** Lecture 12: Many-electron atoms
 *** Many-electron problem, Schr\ouml{}dinger equation not exactly solvable
