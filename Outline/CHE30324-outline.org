@@ -640,7 +640,7 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 2. ZPE, energy spacing in IR, Boltzmann probabilities
 
 #+BEGIN_EXPORT latex
-\begin{table}[tbh]
+\begin{table}[]
    \begin{center}
    \caption{Harmonic oscillator model}
     \label{Harmonic-oscillator}
@@ -720,6 +720,40 @@ $\displaystyle L_z = m_l \hbar$ \\
 6. Vector model - can only know total total $|L|$ and $L_z$
 7. Wavefunctions look like atomic orbitals, $l$ nodes
 
+#+BEGIN_EXPORT latex
+\begin{table}
+   \begin{center}
+   \caption{3-D rigid rotor model}
+    \label{3-D Rigid rotor}
+\begin{tabular}[h]{|c|}
+\hline
+ \\
+$\displaystyle       V(\theta,\phi) = 0, 0 \leq \phi \leq 2\pi, 0 \leq \theta <
+\pi$ \\
+ \\
+$\displaystyle     \hat L^2 = -\hbar^2 \left [
+  \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}+\frac{1}{\sin
+    \theta}\frac{\partial}{\partial \theta}\left ( \sin \theta
+    \frac{\partial}{\partial \theta}\right ) \right ] $ \\
+\\
+$\displaystyle \hat H_\text{rot} = \frac{1}{2 I} \hat L^2$ \\
+\\
+$\displaystyle     Y_{lm_l}(\theta,\phi)=N_l^{|m|}P_l^{|m|}(\cos(\theta))e^{im_l\phi}$ \\
+\\
+$\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
+\\
+\\
+$\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
+ \\
+$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
+% \\
+%     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+#+END_EXPORT
+
 
 #+BEGIN_SRC python :exports results
 import matplotlib.pyplot as plt
@@ -791,52 +825,14 @@ plt.savefig('./Images/d.png')
 :RESULTS:
 :END:
 
-#+BEGIN_EXPORT latex
-\newpage
-\begin{table}
-   \begin{center}
-   \caption{3-D rigid rotor model}
-    \label{3-D Rigid rotor}
-\begin{tabular}[h]{|c|}
-\hline
- \\
-$\displaystyle       V(\theta,\phi) = 0, 0 \leq \phi \leq 2\pi, 0 \leq \theta <
-\pi$ \\
- \\
-$\displaystyle     \hat L^2 = -\hbar^2 \left [
-  \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}+\frac{1}{\sin
-    \theta}\frac{\partial}{\partial \theta}\left ( \sin \theta
-    \frac{\partial}{\partial \theta}\right ) \right ] $ \\
-\\
-$\displaystyle \hat H_\text{rot} = \frac{1}{2 I} \hat L^2$ \\
-\\
-$\displaystyle     Y_{lm_l}(\theta,\phi)=N_l^{|m|}P_l^{|m|}(\cos(\theta))e^{im_l\phi}$ \\
-\\
-$\displaystyle l = 0, 1, 2, \ldots, \ \ \ \ \ \ m_l = 0,\pm 1, \ldots, \pm l$
-\\
-\\
-$\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
- \\
-$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
-% \\
-%     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
-\hline
-\end{tabular}
- \end{center}
-\end{table}
+#+BEGIN_EXPORT LaTeX
+\begin{figure}
+\includegraphics[scale=0.4]{./Images/s.png}
+\includegraphics[scale=0.4]{./Images/p.png}
+\includegraphics[scale=0.4]{./Images/d.png}
+\caption{Pythonic $s$ ($l = 0$), $p$ ($l=1$), and $d$ ($l=2$) spherical harmonics. Color scale from red to white to blue corresponds to positive to zero to negative sign of wavefunction.}
+\end{figure}
 #+END_EXPORT
-
-#+CAPTION: Pythonic s spherical harmonic
-#+ATTR_LATEX: :width 0.25\textwidth
-[[./Images/s.png]] 
-
-#+CAPTION: Pythonic p spherical harmonic
-#+ATTR_LATEX: :width 0.25\textwidth
-[[./Images/p.png]]
-
-#+CAPTION: Pythonic d spherical harmonic
-#+ATTR_LATEX: :width 0.25\textwidth
-[[./Images/d.png]]
 
 *** Particle angular momentum
 1. Fermions, mass, half-integer spin
@@ -902,7 +898,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 2. Coulomb potential $v_\mathrm{Coulomb}(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$
 3. Centripetal potential  $v=\hbar^2\frac{l(l+1)}{2\mu r^2}$
 #+BEGIN_EXPORT latex
-\begin{table}[tbh]
+\begin{table}[]
    \begin{center}
    \caption{Hydrogen atom}
     \label{Hydrogen atom}
@@ -1087,7 +1083,7 @@ plt.savefig('./Images/H-P.png')
 1. See [[http://www.chemsoft.ch/qc/fda.htm]]
 
 #+BEGIN_EXPORT latex
-\begin{table}
+\begin{table}[]
    \caption{Numerical DFT Solutions for Atoms }
 \begin{tabular}{cc}
 \includegraphics[scale=0.33]{Images/Slide1.png} & \includegraphics[scale=0.33]{Images/Slide2.png} \\
@@ -1464,7 +1460,7 @@ print(eigs)
 5. Helmholtz energy, $A= -\ln q/\beta$, decreasing function of $T$
 6. Entropy
 
-#+BEGIN_SRC python :results output org drawer
+#+BEGIN_SRC python :exports results 
 import numpy as np
 import matplotlib.pyplot as plt
 
