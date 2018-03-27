@@ -20,7 +20,7 @@
 #+LATEX_HEADER:\renewcommand{\headrulewidth}{0.5pt}
 #+LATEX_HEADER:\renewcommand{\footrulewidth}{0.5pt}
 #+LATEX_HEADER:\lfoot{\today}
-#+LATEX_HEADER:\cfoot{\copyright\ 2017 W.\ F.\ Schneider}
+#+LATEX_HEADER:\cfoot{\copyright\ 2018 W.\ F.\ Schneider}
 #+LATEX_HEADER:\rfoot{\thepage}
 #+LATEX_HEADER:\lhead{\em{Physical Chemistry for Chemical Engineers}}
 #+LATEX_HEADER:\rhead{ND CHE 30324}
