@@ -1110,10 +1110,37 @@ plt.savefig('./Images/H-P.png')
 *** H$_2$ molecule as perturbation on two H atoms brought from infinite distance
 1. "Bonding" orbital, \(\sigma_g({\bf r}) = 1{\rm s_A}+1{\rm s_B}\)
 2. "Anti-bonding" orbital, $\sigma_u({\bf r}) = 1{\rm s_A}-1{\rm s_B}$
-3. Interaction scales with "overlap $\langle 1{\rm s_A} | 1{\rm
+3. Interaction scales with "overlap" $S = \langle 1{\rm s_A} | 1{\rm
             s_B} \rangle$
-4. Ground configuration $=\sigma_g^2$
-5. Bond order = $\frac{1}{2}(n-n^*)$
+4. Normalize
+     \begin{displaymath}
+     \sigma_g = \frac{1}{\sqrt{2(1-S)}}\left ( 1{\rm s_A}+1{\rm s_B} \right)     \quad\quad
+     \sigma_u = \frac{1}{\sqrt{2(1+S)}}\left ( 1{\rm s_A}-1{\rm s_B} \right)
+     \end{displaymath}
+5. Energy expectation value
+     \begin{eqnarray*}
+     \epsilon_g = \langle \sigma_g | \hat{f} | \sigma_g \rangle & = & \frac{1}{2(1+S)} \left \{ \langle 1{\rm s_A} | \hat{f} | 1{\rm s_A} \rangle +  \langle 1{\rm s_B} | \hat{f} | 1{\rm s_B} \rangle + 2 \langle 1{\rm s_A} | \hat{f} |1{\rm s_B} \rangle \right \}\\
+     & = & \frac{1}{1+S} \left ( F_{\rm AA} + F_{\rm AB} \right ) \\
+     \epsilon_u = \langle \sigma_u | \hat{f} | \sigma_u \rangle & = & \frac{1}{2(1+S)} \left \{ \langle 1{\rm s_A} | \hat{f} | 1{\rm s_A} \rangle + \langle 1{\rm s_B} | \hat{f} | 1{\rm s_B} \rangle - 2 \langle 1{\rm s_A} | \hat{f} | 1{\rm s_B} \rangle\right \}\\
+     & = & \frac{1}{1-S} \left ( F_{\rm AA} - F_{\rm AB} \right )
+     \end{eqnarray*}
+6. Matrix elements
+      \begin{eqnarray*}
+	F_{\rm AA}=F_{\rm BB}\approx \epsilon_{1\mathrm{s}}=\alpha \\
+	F_{\rm AB}=F_{\rm BA}=\beta \\
+	\alpha < \beta < 0\ \ \mathrm{typically}
+      \end{eqnarray*}
+      \begin{center}
+      \includegraphics[scale=0.5]{./Images/H2-MO}       
+      \end{center}
+7. From Taylor expansion get picture of atomic orbitals destabilized by electron repulsion $\beta S$ and split by interaction $\beta$
+      \begin{eqnarray*}
+	\epsilon_+\approx \alpha-\beta S + \beta \\
+	\epsilon_-\approx \alpha - \beta S - \beta
+      \end{eqnarray*}
+8. Makes clear that bonding stabilization $<$ anti-bonding destabilization
+9. Ground configuration $=\sigma_g^2$
+10. Bond order = $\frac{1}{2}(n-n^*)$
 *** Secular equations
 1. Expand molecular orbitals in "basis" of atomic-like orbitals
 	\begin{equation}
@@ -1147,24 +1174,8 @@ plt.savefig('./Images/H-P.png')
           \end{array} \right | = 0
       \end{displaymath}
 5. Solve for \(\epsilon\)s and back-substitute to find correspond \(c_i\)s
-*** Qualitative solutions of secular equations
-1. Lot's of insight into chemical bonding can be obtained from approximate solutions to secular equations, basis of "molecular orbital theory"
-2. Two general assumptions
-   1. Diagonal Fock elements are approximately equal to energies of corresponding atomic orbitals: $F_{ii} \approx \epsilon_{i,\mathrm{ao}}$
-   2. Off-diagonal elements proportional to overlap and inversely proportional to energy difference:
-	\begin{displaymath}
-          F_{ij} \propto \frac{S_{ij}}{\epsilon_{i,\mathrm{ao}}-\epsilon_{j,\mathrm{ao}}}
-	\end{displaymath}
-   3. (Often) set differential overlap $S_{ij}=0$
-
 *** H$_2$ example, again
-1. Assign one 1s atomic orbital (``basis function'') to each atom
-      \begin{eqnarray*}
-	F_{11}=F_{22}=\epsilon_{1\mathrm{s}}=\alpha \\
-	F_{12}=F_{21}=\beta \\
-	\alpha < \beta < 0\ \ \mathrm{typically}
-      \end{eqnarray*}
-2. Set-up and solve secular matrix
+1. Set-up and solve secular matrix
       \begin{displaymath}
        \left | \begin{array}{cc}
            \alpha-\epsilon & \beta-\epsilon S \\
@@ -1175,16 +1186,16 @@ plt.savefig('./Images/H-P.png')
 	\epsilon_+=\frac{\alpha+\beta}{1+S},\ \ c_1=c_2=\frac{1}{\sqrt{2(1+S)}} \\
 	\epsilon_-=\frac{\alpha-\beta}{1-S},\ \ c_1=-c_2=\frac{1}{\sqrt{2(1-S)}} \\
       \end{eqnarray*}
-      \begin{center}
-      \includegraphics[scale=0.3]{Images/H2-MO}       
-      \end{center}
-3. From Taylor expansion get picture of atomic orbitals destabilized by electron repulsion $\beta S$ and
-      split by interaction $\beta$
-      \begin{eqnarray*}
-	\epsilon_+\approx \alpha-\beta S + \beta \\
-	\epsilon_-\approx \alpha - \beta S - \beta
-      \end{eqnarray*}
-4. Makes clear that bonding stabilization $<$ anti-bonding destabilization
+*** Qualitative solutions of secular equations
+1. Lot's of insight into chemical bonding can be obtained from approximate solutions to secular equations, basis of "molecular orbital theory"
+2. Two general assumptions
+   1. Diagonal Fock elements are approximately equal to energies of corresponding atomic orbitals: $F_{ii} \approx \epsilon_{i,\mathrm{ao}}$
+   2. Off-diagonal elements proportional to overlap and inversely proportional to energy difference:
+	\begin{displaymath}
+          F_{ij} \propto \frac{S_{ij}}{\epsilon_{i,\mathrm{ao}}-\epsilon_{j,\mathrm{ao}}}
+	\end{displaymath}
+   3. (Often) set differential overlap $S_{ij}=0$
+
 *** Heteronuclear diatomic: LiH, HF, BH example
 1. Only AOs of appropriate symmetry, overlap, and energy match can combine to form MOs
       \begin{eqnarray*}
