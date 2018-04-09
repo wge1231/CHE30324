@@ -1096,12 +1096,12 @@ plt.savefig('./Images/H-P.png')
 ** Lecture 13: Molecular orbital theory of molecules
 *** Clamped nucleus ("Born-Oppenheimer") approximation
 1. Write one-electron equations parametrically in terms of positions of  all atoms
-\begin{eqnarray}
-\hat h & = & -\frac{\hbar^2}{2m_e}\nabla^2-\sum_\alpha \frac{Z_\alpha
+      \begin{eqnarray}
+      \hat h & = & -\frac{\hbar^2}{2m_e}\nabla^2-\sum_\alpha \frac{Z_\alpha
           e^2}{4\pi\epsilon_0}\frac{1}{|{\bf r}-{\bf R}_\alpha|} \\
-\hat f\psi & = & \left\{\hat h + \hat v_\mathrm{Coul}[\psi_i] + \hat
+      \hat f\psi & = & \left\{\hat h + \hat v_\mathrm{Coul}[\psi_i] + \hat
             v_\mathrm{ex}[\psi_i]+\hat v_\mathrm{corr}[\psi_i] \right\}\psi=\epsilon\psi
-\end{eqnarray}
+      \end{eqnarray}
 2. Solve as for atoms, using some model for electron-electron interactions
 3. Potential energy surface (PES)
 	\[ E({\bf R}_\alpha, {\bf
@@ -1225,38 +1225,48 @@ plt.savefig('./Images/H-P.png')
 from sympy import *
 init_printing(use_unicode=True)
 
+print('6. Cyclobutadiene example\n')
 alpha,beta = symbols('alpha beta')
 
-M = Matrix([[alpha, beta, 0 , 0],[beta, alpha, beta, 0],[0,beta,alpha,beta],[0,0,beta,alpha]])
+M = Matrix([[alpha, beta, 0 , beta],[beta, alpha, beta, 0],[0,beta,alpha,beta],[beta,0,beta,alpha]])
 
+print(M)
 # M = Matrix([[alpha,beta],[beta,alpha]])
 
 eigs  = M.eigenvects()
-print(eigs)
+
+print("\nEnergy state, degeneracy\n")
+for state in [0, 1, 2]:
+    print('{0}    {1}\n'.format(eigs[state][0],eigs[state][1]))
+
+#print("\nEigenvectors")
+#for state in [0, 1, 2]:
+#    print(eigs[state][2])
+
 #+END_SRC
 
 #+RESULTS:
 :RESULTS:
-[(alpha - beta/2 + sqrt(5)*beta/2, 1, [Matrix([
-[4/((1 + sqrt(5))*(-sqrt(5) + 1))],
-[                -2/(1 + sqrt(5))],
-[                 2/(1 + sqrt(5))],
-[                               1]])]), (alpha + beta/2 + sqrt(5)*beta/2, 1, [Matrix([
-[-4/((1 + sqrt(5))*(-sqrt(5) + 1))],
-[                -2/(-sqrt(5) + 1)],
-[                -2/(-sqrt(5) + 1)],
-[                                1]])]), (alpha - sqrt(5)*beta/2 - beta/2, 1, [Matrix([
-[-4/((-1 + sqrt(5))*(1 + sqrt(5)))],
-[                 2/(-1 + sqrt(5))],
-[                -2/(-1 + sqrt(5))],
-[                                1]])]), (alpha - sqrt(5)*beta/2 + beta/2, 1, [Matrix([
-[4/((-1 + sqrt(5))*(1 + sqrt(5)))],
-[                -2/(1 + sqrt(5))],
-[                -2/(1 + sqrt(5))],
-[                               1]])])]
+6. Cyclobutadiene example
+
+Matrix([[alpha, beta, 0, beta], [beta, alpha, beta, 0], [0, beta, alpha, beta], [beta, 0, beta, alpha]])
+
+Energy state, degeneracy
+
+alpha    2
+
+alpha - 2*beta    1
+
+alpha + 2*beta    1
+
 :END:
 
-*** Band structure of solids
+*** Band structure of solids  
+1. Discrete molecular orbitals transform into continuous bands
+2. Results in rich range of physical and chemical properties
+
+#+ATTR_LATEX: :width 0.9\textwidth
+[[./Images/band.pdf]]
 
 ** Lecture 14: Computational chemistry
 *** Numerical solvers of Schr\ouml{}dinger equation for molecules readily available today
