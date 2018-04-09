@@ -20,7 +20,7 @@
 #+LATEX_HEADER:\renewcommand{\headrulewidth}{0.5pt}
 #+LATEX_HEADER:\renewcommand{\footrulewidth}{0.5pt}
 #+LATEX_HEADER:\lfoot{\today}
-#+LATEX_HEADER:\cfoot{\copyright\ 2017 W.\ F.\ Schneider}
+#+LATEX_HEADER:\cfoot{\copyright\ 2018 W.\ F.\ Schneider}
 #+LATEX_HEADER:\rfoot{\thepage}
 #+LATEX_HEADER:\lhead{\em{Physical Chemistry for Chemical Engineers}}
 #+LATEX_HEADER:\rhead{ND CHE 30324}
@@ -400,7 +400,7 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 2. Relation to Bohr orbits
 3. Davison and Germer experiment, $e^-$ diffraction off Ni
 
-#+BEGIN_SRC python :results output org drawer
+#+BEGIN_SRC python :exports results
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -640,7 +640,7 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 2. ZPE, energy spacing in IR, Boltzmann probabilities
 
 #+BEGIN_EXPORT latex
-\begin{table}[tbh]
+\begin{table}[]
    \begin{center}
    \caption{Harmonic oscillator model}
     \label{Harmonic-oscillator}
@@ -754,7 +754,8 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \end{table}
 #+END_EXPORT
 
-#+BEGIN_SRC python :results output org drawer
+
+#+BEGIN_SRC python :exports results
 import matplotlib.pyplot as plt
 from matplotlib import cm, colors
 from mpl_toolkits.mplot3d import Axes3D
@@ -824,17 +825,14 @@ plt.savefig('./Images/d.png')
 :RESULTS:
 :END:
 
-#+CAPTION: Pythonic s spherical harmonic
-#+ATTR_LATEX: :width 0.25\textwidth
-[[./Images/s.png]] 
-
-#+CAPTION: Pythonic p spherical harmonic
-#+ATTR_LATEX: :width 0.25\textwidth
-[[./Images/p.png]]
-
-#+CAPTION: Pythonic d spherical harmonic
-#+ATTR_LATEX: :width 0.25\textwidth
-[[./Images/d.png]]
+#+BEGIN_EXPORT LaTeX
+\begin{figure}
+\includegraphics[scale=0.4]{./Images/s.png}
+\includegraphics[scale=0.4]{./Images/p.png}
+\includegraphics[scale=0.4]{./Images/d.png}
+\caption{Pythonic $s$ ($l = 0$), $p$ ($l=1$), and $d$ ($l=2$) spherical harmonics. Color scale from red to white to blue corresponds to positive to zero to negative sign of wavefunction.}
+\end{figure}
+#+END_EXPORT
 
 *** Particle angular momentum
 1. Fermions, mass, half-integer spin
@@ -899,31 +897,8 @@ plt.savefig('./Images/d.png')
 1. Spherical coordinates and separation of variables
 2. Coulomb potential $v_\mathrm{Coulomb}(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$
 3. Centripetal potential  $v=\hbar^2\frac{l(l+1)}{2\mu r^2}$
-*** Solutions
-1. $\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$
-2. Principle quantum number $n=1,2,\ldots$
-   1. $K$, $L$, $M$, $N$, ... shells
-   2. $n-1$ radial nodes
-3. Azimuthal quantum number $l=0,1,...,n-1$
-   1. $s$, $p$, $d$, ... orbital sub-shells
-   2. $l$ angular nodes
-4. Magnetic quantum number $m_l=-l,-l+1,...,l$
-5. Spin quantum number $m_s=\pm 1/2$
-6. Energy spectrum and populations
-7. Electronic selection rules
-   1. $\Delta l=\pm 1 \quad \Delta m_s =0 \quad \Delta m_l = 0,\pm 1$
-9. Wavefunctions = "orbitals"
-10. Radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
-    1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
-*** /Variational principle/
-1. Solutions of Schr\ouml{}dinger equation always form a complete set
-2. True wavefunction energy is therefore lower bound on energy of any trial wavefunction
-\[\langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle =E_\text{trial}^\lambda \geq E_0\]
-3. Optimize wavefunction with respect to variational parameter
-\[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
-
 #+BEGIN_EXPORT latex
-\begin{table}[tbh]
+\begin{table}[]
    \begin{center}
    \caption{Hydrogen atom}
     \label{Hydrogen atom}
@@ -961,12 +936,99 @@ $\displaystyle     E_{n}=-\frac{1}{2}\frac{\hbar^2}{m_e a_0^2}\frac{1}{n^2} =-\f
  \\
 $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \\
+$\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1) \right \} \frac{a_0}{Z} $ \\
+\\
 %%     \includegraphics[scale=0.4]{Images/H_atom} \\       
 \hline
 \end{tabular}
  \end{center}
 \end{table}
 #+END_EXPORT
+
+*** Solutions
+1. $\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$
+2. Principle quantum number $n=1,2,\ldots$
+   1. $K$, $L$, $M$, $N$, ... shells
+   2. $n-1$ radial nodes
+3. Azimuthal quantum number $l=0,1,...,n-1$
+   1. $s$, $p$, $d$, ... orbital sub-shells
+   2. $l$ angular nodes
+4. Magnetic quantum number $m_l=-l,-l+1,...,l$
+5. Spin quantum number $m_s=\pm 1/2$
+6. Energy spectrum and populations
+7. Electronic selection rules
+   1. $\Delta l=\pm 1 \quad \Delta m_s =0 \quad \Delta m_l = 0,\pm 1$
+9. Wavefunctions = "orbitals"
+10. Integrate out angular components to get radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
+    1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
+
+
+
+#+BEGIN_SRC python :exports results
+import matplotlib.pyplot as plt
+import numpy as np
+from sympy.physics.hydrogen import E_nl
+from sympy.physics.hydrogen import R_nl
+from sympy import symbols
+from sympy.plotting import plot
+from sympy import var
+
+#fig = plt.gcf()
+
+var('r')
+max = 10
+
+r = np.linspace(0,max,100)
+Ones = np.array([R_nl(1, 0, x) for x in r],dtype='float')
+plt.plot(r,Ones,label='1s')
+Twos = np.array([R_nl(2, 0, x) for x in r],dtype='float')
+plt.plot(r,Twos,label='2s')
+Twop = np.array([R_nl(2, 1, x) for x in r],dtype='float')
+plt.plot(r,Twop,label='2p')
+
+plt.plot([0,max],[0,0],color='black',linestyle=':')
+plt.xlim(0,max)
+plt.xlabel('Distance (a0)')
+plt.ylabel('Wavefunction R(r)')
+
+plt.legend()
+plt.savefig('./Images/H-R.png')
+
+plt.figure()
+Ones = np.array([x*x*R_nl(1, 0, x)**2 for x in r],dtype='float')
+plt.plot(r,Ones,label='1s')
+Twos = np.array([x*x*R_nl(2, 0, x)**2 for x in r],dtype='float')
+plt.plot(r,Twos,label='2s')
+Twop = np.array([x*x*R_nl(2, 1, x)**2 for x in r],dtype='float')
+plt.plot(r,Twop,label='2p')
+
+plt.plot([0,max],[0,0],color='black',linestyle=':')
+plt.xlim(0,max)
+plt.xlabel('Distance (a0)')
+plt.ylabel('Radial probability P(r)')
+
+plt.legend()
+plt.savefig('./Images/H-P.png')
+
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+:END:
+
+#+CAPTION: H atom radial wavefunctions
+#+ATTR_LATEX: :width 0.75\textwidth
+[[./Images/H-R.png]] 
+#+CAPTION: H atom radial probability
+#+ATTR_LATEX: :width 0.75\textwidth
+[[./Images/H-P.png]] 
+
+*** /Variational principle/
+1. Solutions of Schr\ouml{}dinger equation always form a complete set
+2. True wavefunction energy is therefore lower bound on energy of any trial wavefunction
+\[\langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle =E_\text{trial}^\lambda \geq E_0\]
+3. Optimize wavefunction with respect to variational parameter
+\[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
 
 ** Lecture 12: Many-electron atoms
 *** Many-electron problem, Schr\ouml{}dinger equation not exactly solvable
@@ -1021,7 +1083,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 1. See [[http://www.chemsoft.ch/qc/fda.htm]]
 
 #+BEGIN_EXPORT latex
-\begin{table}
+\begin{table}[]
    \caption{Numerical DFT Solutions for Atoms }
 \begin{tabular}{cc}
 \includegraphics[scale=0.33]{Images/Slide1.png} & \includegraphics[scale=0.33]{Images/Slide2.png} \\
@@ -1034,12 +1096,12 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 ** Lecture 13: Molecular orbital theory of molecules
 *** Clamped nucleus ("Born-Oppenheimer") approximation
 1. Write one-electron equations parametrically in terms of positions of  all atoms
-\begin{eqnarray}
-\hat h & = & -\frac{\hbar^2}{2m_e}\nabla^2-\sum_\alpha \frac{Z_\alpha
+      \begin{eqnarray}
+      \hat h & = & -\frac{\hbar^2}{2m_e}\nabla^2-\sum_\alpha \frac{Z_\alpha
           e^2}{4\pi\epsilon_0}\frac{1}{|{\bf r}-{\bf R}_\alpha|} \\
-\hat f\psi & = & \left\{\hat h + \hat v_\mathrm{Coul}[\psi_i] + \hat
+      \hat f\psi & = & \left\{\hat h + \hat v_\mathrm{Coul}[\psi_i] + \hat
             v_\mathrm{ex}[\psi_i]+\hat v_\mathrm{corr}[\psi_i] \right\}\psi=\epsilon\psi
-\end{eqnarray}
+      \end{eqnarray}
 2. Solve as for atoms, using some model for electron-electron interactions
 3. Potential energy surface (PES)
 	\[ E({\bf R}_\alpha, {\bf
@@ -1048,10 +1110,37 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 *** H$_2$ molecule as perturbation on two H atoms brought from infinite distance
 1. "Bonding" orbital, \(\sigma_g({\bf r}) = 1{\rm s_A}+1{\rm s_B}\)
 2. "Anti-bonding" orbital, $\sigma_u({\bf r}) = 1{\rm s_A}-1{\rm s_B}$
-3. Interaction scales with "overlap $\langle 1{\rm s_A} | 1{\rm
+3. Interaction scales with "overlap" $S = \langle 1{\rm s_A} | 1{\rm
             s_B} \rangle$
-4. Ground configuration $=\sigma_g^2$
-5. Bond order = $\frac{1}{2}(n-n^*)$
+4. Normalize
+     \begin{displaymath}
+     \sigma_g = \frac{1}{\sqrt{2(1-S)}}\left ( 1{\rm s_A}+1{\rm s_B} \right)     \quad\quad
+     \sigma_u = \frac{1}{\sqrt{2(1+S)}}\left ( 1{\rm s_A}-1{\rm s_B} \right)
+     \end{displaymath}
+5. Energy expectation value
+     \begin{eqnarray*}
+     \epsilon_g = \langle \sigma_g | \hat{f} | \sigma_g \rangle & = & \frac{1}{2(1+S)} \left \{ \langle 1{\rm s_A} | \hat{f} | 1{\rm s_A} \rangle +  \langle 1{\rm s_B} | \hat{f} | 1{\rm s_B} \rangle + 2 \langle 1{\rm s_A} | \hat{f} |1{\rm s_B} \rangle \right \}\\
+     & = & \frac{1}{1+S} \left ( F_{\rm AA} + F_{\rm AB} \right ) \\
+     \epsilon_u = \langle \sigma_u | \hat{f} | \sigma_u \rangle & = & \frac{1}{2(1+S)} \left \{ \langle 1{\rm s_A} | \hat{f} | 1{\rm s_A} \rangle + \langle 1{\rm s_B} | \hat{f} | 1{\rm s_B} \rangle - 2 \langle 1{\rm s_A} | \hat{f} | 1{\rm s_B} \rangle\right \}\\
+     & = & \frac{1}{1-S} \left ( F_{\rm AA} - F_{\rm AB} \right )
+     \end{eqnarray*}
+6. Matrix elements
+      \begin{eqnarray*}
+	F_{\rm AA}=F_{\rm BB}\approx \epsilon_{1\mathrm{s}}=\alpha \\
+	F_{\rm AB}=F_{\rm BA}=\beta \\
+	\alpha < \beta < 0\ \ \mathrm{typically}
+      \end{eqnarray*}
+      \begin{center}
+      \includegraphics[scale=0.5]{./Images/H2-MO}       
+      \end{center}
+7. From Taylor expansion get picture of atomic orbitals destabilized by electron repulsion $\beta S$ and split by interaction $\beta$
+      \begin{eqnarray*}
+	\epsilon_+\approx \alpha-\beta S + \beta \\
+	\epsilon_-\approx \alpha - \beta S - \beta
+      \end{eqnarray*}
+8. Makes clear that bonding stabilization $<$ anti-bonding destabilization
+9. Ground configuration $=\sigma_g^2$
+10. Bond order = $\frac{1}{2}(n-n^*)$
 *** Secular equations
 1. Expand molecular orbitals in "basis" of atomic-like orbitals
 	\begin{equation}
@@ -1085,24 +1174,8 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
           \end{array} \right | = 0
       \end{displaymath}
 5. Solve for \(\epsilon\)s and back-substitute to find correspond \(c_i\)s
-*** Qualitative solutions of secular equations
-1. Lot's of insight into chemical bonding can be obtained from approximate solutions to secular equations, basis of "molecular orbital theory"
-2. Two general assumptions
-   1. Diagonal Fock elements are approximately equal to energies of corresponding atomic orbitals: $F_{ii} \approx \epsilon_{i,\mathrm{ao}}$
-   2. Off-diagonal elements proportional to overlap and inversely proportional to energy difference:
-	\begin{displaymath}
-          F_{ij} \propto \frac{S_{ij}}{\epsilon_{i,\mathrm{ao}}-\epsilon_{j,\mathrm{ao}}}
-	\end{displaymath}
-   3. (Often) set differential overlap $S_{ij}=0$
-
 *** H$_2$ example, again
-1. Assign one 1s atomic orbital (``basis function'') to each atom
-      \begin{eqnarray*}
-	F_{11}=F_{22}=\epsilon_{1\mathrm{s}}=\alpha \\
-	F_{12}=F_{21}=\beta \\
-	\alpha < \beta < 0\ \ \mathrm{typically}
-      \end{eqnarray*}
-2. Set-up and solve secular matrix
+1. Set-up and solve secular matrix
       \begin{displaymath}
        \left | \begin{array}{cc}
            \alpha-\epsilon & \beta-\epsilon S \\
@@ -1113,16 +1186,16 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 	\epsilon_+=\frac{\alpha+\beta}{1+S},\ \ c_1=c_2=\frac{1}{\sqrt{2(1+S)}} \\
 	\epsilon_-=\frac{\alpha-\beta}{1-S},\ \ c_1=-c_2=\frac{1}{\sqrt{2(1-S)}} \\
       \end{eqnarray*}
-      \begin{center}
-      \includegraphics[scale=0.3]{Images/H2-MO}       
-      \end{center}
-3. From Taylor expansion get picture of atomic orbitals destabilized by electron repulsion $\beta S$ and
-      split by interaction $\beta$
-      \begin{eqnarray*}
-	\epsilon_+\approx \alpha-\beta S + \beta \\
-	\epsilon_-\approx \alpha - \beta S - \beta
-      \end{eqnarray*}
-4. Makes clear that bonding stabilization $<$ anti-bonding destabilization
+*** Qualitative solutions of secular equations
+1. Lot's of insight into chemical bonding can be obtained from approximate solutions to secular equations, basis of "molecular orbital theory"
+2. Two general assumptions
+   1. Diagonal Fock elements are approximately equal to energies of corresponding atomic orbitals: $F_{ii} \approx \epsilon_{i,\mathrm{ao}}$
+   2. Off-diagonal elements proportional to overlap and inversely proportional to energy difference:
+	\begin{displaymath}
+          F_{ij} \propto \frac{S_{ij}}{\epsilon_{i,\mathrm{ao}}-\epsilon_{j,\mathrm{ao}}}
+	\end{displaymath}
+   3. (Often) set differential overlap $S_{ij}=0$
+
 *** Heteronuclear diatomic: LiH, HF, BH example
 1. Only AOs of appropriate symmetry, overlap, and energy match can combine to form MOs
       \begin{eqnarray*}
@@ -1152,38 +1225,48 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 from sympy import *
 init_printing(use_unicode=True)
 
+print('6. Cyclobutadiene example\n')
 alpha,beta = symbols('alpha beta')
 
-M = Matrix([[alpha, beta, 0 , 0],[beta, alpha, beta, 0],[0,beta,alpha,beta],[0,0,beta,alpha]])
+M = Matrix([[alpha, beta, 0 , beta],[beta, alpha, beta, 0],[0,beta,alpha,beta],[beta,0,beta,alpha]])
 
+print(M)
 # M = Matrix([[alpha,beta],[beta,alpha]])
 
 eigs  = M.eigenvects()
-print(eigs)
+
+print("\nEnergy state, degeneracy\n")
+for state in [0, 1, 2]:
+    print('{0}    {1}\n'.format(eigs[state][0],eigs[state][1]))
+
+#print("\nEigenvectors")
+#for state in [0, 1, 2]:
+#    print(eigs[state][2])
+
 #+END_SRC
 
 #+RESULTS:
 :RESULTS:
-[(alpha - beta/2 + sqrt(5)*beta/2, 1, [Matrix([
-[4/((1 + sqrt(5))*(-sqrt(5) + 1))],
-[                -2/(1 + sqrt(5))],
-[                 2/(1 + sqrt(5))],
-[                               1]])]), (alpha + beta/2 + sqrt(5)*beta/2, 1, [Matrix([
-[-4/((1 + sqrt(5))*(-sqrt(5) + 1))],
-[                -2/(-sqrt(5) + 1)],
-[                -2/(-sqrt(5) + 1)],
-[                                1]])]), (alpha - sqrt(5)*beta/2 - beta/2, 1, [Matrix([
-[-4/((-1 + sqrt(5))*(1 + sqrt(5)))],
-[                 2/(-1 + sqrt(5))],
-[                -2/(-1 + sqrt(5))],
-[                                1]])]), (alpha - sqrt(5)*beta/2 + beta/2, 1, [Matrix([
-[4/((-1 + sqrt(5))*(1 + sqrt(5)))],
-[                -2/(1 + sqrt(5))],
-[                -2/(1 + sqrt(5))],
-[                               1]])])]
+6. Cyclobutadiene example
+
+Matrix([[alpha, beta, 0, beta], [beta, alpha, beta, 0], [0, beta, alpha, beta], [beta, 0, beta, alpha]])
+
+Energy state, degeneracy
+
+alpha    2
+
+alpha - 2*beta    1
+
+alpha + 2*beta    1
+
 :END:
 
-*** Band structure of solids
+*** Band structure of solids  
+1. Discrete molecular orbitals transform into continuous bands
+2. Results in rich range of physical and chemical properties
+
+#+ATTR_LATEX: :width 0.9\textwidth
+[[./Images/band.pdf]]
 
 ** Lecture 14: Computational chemistry
 *** Numerical solvers of Schr\ouml{}dinger equation for molecules readily available today
@@ -1398,7 +1481,7 @@ print(eigs)
 5. Helmholtz energy, $A= -\ln q/\beta$, decreasing function of $T$
 6. Entropy
 
-#+BEGIN_SRC python :results output org drawer
+#+BEGIN_SRC python :exports results 
 import numpy as np
 import matplotlib.pyplot as plt
 
