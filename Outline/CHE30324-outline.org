@@ -1663,9 +1663,9 @@ Energy $G=A+PV$.
 
 *** Many-particle molecule
 1. partition function is a product of all degrees of freedom
-   \begin{equation*}
-q(T,V) = q_\text{trans} \left ( \prod_{i=1}^3 q_\text{rot}^{(i)}\right ) \left ( \prod_{i = 1}^{3N-6} q_\text{vib}^{(i)}\right ) q_\text{elec}
-    \end{equation*}
+   \begin{displaymath}
+   q(T,V) = q_\text{trans} \left ( \prod_{i=1}^3 q_\text{rot}^{(i)}\right ) \left (  \prod_{i = 1}^{3N-6} q_\text{vib}^{(i)}\right ) q_\text{elec}
+    \end{displaymath}
 2. thermodynamic quantities are sums of all degrees of freedom
 *** Non-ideality
 1. Real molecules interact through vdW interactions
