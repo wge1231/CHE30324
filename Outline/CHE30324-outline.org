@@ -444,8 +444,6 @@ plt.savefig('./Images/Planck.png')
 #+END_SRC
 
 #+RESULTS:
-:RESULTS:
-:END:
 
 #+CAPTION: Blackbody irradiance
 #+ATTR_LATEX: :width 0.5\textwidth
