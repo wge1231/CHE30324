@@ -12,7 +12,7 @@ Homework assignments and solutions available [here](./homework.org)
 
 Introduction to git available [here](http://rogerdudler.github.io/git-guide/)
 
-Introduction to iPython/Jupyter notebooks [here](http://nbviewer.jupyter.org/github/jckantor/CBE20255/blob/master/notebooks/Getting%20Started%20with%20Jupyter%20Notebooks%20and%20Python.ipynb)
+Introduction to iPython/Jupyter notebooks [here](https://nbviewer.jupyter.org/github/jckantor/CBE30338/blob/master/notebooks/Getting%20Started%20with%20Python.ipynb)
 
 Tutorial on Python [here](./Resources/Python+Tutorial-Template.ipynb)
 
