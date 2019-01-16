@@ -70,8 +70,8 @@ and answer questions.
 | Basic Applications of Quantum Mechanics    | Chapters 15-18 |
 | Atomic Structure and Spectroscopy          | Chapters 19-22 |
 | Molecular Structure and Spectroscopy       | Chapters 23-28 |
-| Statistical Thermodynamics                 | Chapters 32-33 |
-| Chemical Kinetics                          | Chapters 35-36 |
+| Statistical Thermodynamics                 | Chapters 32-32 |
+| Chemical Kinetics                          | Chapters 33-36 |
 |--------------------------------------------+----------------|
 
 * Web
