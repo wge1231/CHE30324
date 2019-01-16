@@ -3,7 +3,7 @@
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
 |  0 | Introduction                               |                   |                                          | [[./Resources/Atkins_Structure.pdf][Structure of Physical Chemistry]] |
 |    |                                            |                   |                                          |                                 |
-|  1 | Probability and the Boltzmann Distribution | Chapter 29        | 29.1-29.6, 29.17, 29.24-29.27            |                                 |
+|  1 | Probability and the Boltzmann Distribution | Chapter 29-30      | 29.1-29.6, 29.17, 29.24-29.27, 30.1-30.6, 30.12, 30.14, 30.16, 30.22, 30.26            |                                 |   
 |    |                                            |                   |                                          |                                 |
 |  2 | Kinetic Theory of Gases                    | Chapter 33        | 33.2-33.7, 33.9-33.15, 33.18-33.20,      | [[./Resources/gas_kinetics.pdf][Gas Kinetics]]                    |
 |    |                                            |                   | 34.23-33.27, 33.29-33.33                 |                                 |
@@ -14,7 +14,7 @@
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
 |    | *EXAM 1*                                   |                   |                                          |                                 |
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
-|  5 | The Schr\o{}dinger Equation and            | Chapters 13-14    | 13.10-13.28                              | [[./Resources/Postulates.pdf][Postulates]]                      |
+|  5 | The Schr\ddot{o}dinger Equation and            | Chapters 13-14    | 13.10-13.28                              | [[./Resources/Postulates.pdf][Postulates]]                      |
 |    | the Birth of Quantum Mechanics             |                   |                                          |                                 |
 |  6 | The Particle in a Box                      | Chapters 15-16    | 15.2-15.5, 15.7-15.9, 15.11-15.12,       | [[jpcb_pib.pdf][PIB.pdf]]                         |
 |    |                                            |                   | 15.15, 15.20, 15.25, 15.28, 15.29,       |                                 |
