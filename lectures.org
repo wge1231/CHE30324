@@ -2,18 +2,19 @@
 |    | Lecture                                    | Suggested Reading | Suggested Problems                       | Supplementary Resources         |
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
 |  0 | Introduction                               |                   |                                          | [[./Resources/Atkins_Structure.pdf][Structure of Physical Chemistry]] |
-|    |                                            |                   |                                          |                                 |
-|  1 | Probability and the Boltzmann Distribution | Chapters 29-30      | 29.1-29.6, 29.17, 29.24-29.27, 30.1-30.6, 30.12, 30.14, 30.16, 30.22, 30.26            |                                 |   
-|    |                                            |                   |                                          |                                 |
-|  2 | Kinetic Theory of Gases                    | Chapter 33        | 33.2-33.7, 33.9-33.15, 33.18-33.20, 33.23-33.27, 33.29-33.33        | [[./Resources/gas_kinetics.pdf][Gas Kinetics]]                    |
-|    |                                            |                   |                                          |                                 |
-|  3 | Classical Transport Phenomena              | Chapter 34        | 34.1-34.5                                |                                 |
-|    |                                            |                   |                                          |                                 |
-|  4 | The Birth of Quantum Mechanics             | Chapter 12        | 12.4-12.16, 12.19-12.22, 12.24-12.25     |                                 |
-|    |                                            |                   |                                          |                                 |
+|    |                                            |                  |                                  |             |
+|  1 | Probability and the Boltzmann Distribution | Chapters 29-30   | 29.1-29.6, 29.17, 29.24-29.27, 30.1-30.6, 30.12, 30.14, 30.16, 30.22, 30.26            |           |   
+|    |                                            |                  |                                  |             |
+|  2 | Kinetic Theory of Gases                    | Chapter 33       | 33.2-33.7, 33.9-33.15, 33.18-33.20, 33.23-33.27, 33.29-33.33        | [[./Resources/gas_kinetics.pdf][Gas Kinetics]]                    |
+|    |                                            |                  |                                  |             |
+|  3 | Classical Transport Phenomena              | Chapter 34       | 34.1-34.5                        |             |
+|    |                                            |                  |                                  |             |
+|  4 | The Birth of Quantum Mechanics             | Chapter 12       | 12.4-12.16, 12.19-12.22, 12.24-12.25 |         |
+|    |                                            |                  |                                  |             |
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
 |    | *EXAM 1*                                   |                   |                                          |                                 |
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
+|    |                                            |                  |                                  |             |
 |  5 | The Schrodinger Equation and the Birth of Quantum Mechanics           | Chapters 13-14    | 13.10-13.28                              | [[./Resources/Postulates.pdf][Postulates]]                      |
 |    |              |                   |                                          |                                 |
 |  6 | The Particle in a Box                      | Chapters 15-16    | 15.2-15.5, 15.7-15.9, 15.11-15.12, 15.15, 15.20, 15.25, 15.28-15.29, 16.3-16.5       | [[jpcb_pib.pdf][PIB.pdf]]                         |
@@ -25,6 +26,7 @@
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
 |    | *Exam 2*                                   |                   |                                          |                                 |
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
+|    |                                            |                  |                                  |             |
 |  9 | Spectroscopy, Vibrations, and Rotations    | Chapter 19        | 19.2, 19.13-19.18              | [[https://www.webmo.net/demoserver/cgi-bin/webmo/login.cgi][WebMO]]                           |
 |    |                                            |                   |                                 |             |       
 | 10 | The Hydrogen Atom                          | Chapter 20      | 20.1-20.16, 20.19-20.21, 20.26, 20.30    | [[http://www.falstad.com/qmatom/][applet]]                          |
@@ -32,14 +34,15 @@
 | 11 | Many Electron Atoms                        | Chapter 21       | 21.1-21.2, 21.4, 21.6-21.15  | [[https://www.webelements.com/][WebElements]]    [[http://www.chemsoft.ch/qc/fda.htm][Herman-Skillman]]    [[./Resources/aos.pdf][aos.pdf]]                  |
 |    |                                            |                   |                                 |             |
 | 12 | Quantum Mechanics of Chemical Bonding      | Chapters 23-24      | 23.1-23.5, 23.7-23.8, 23.10-23.13, 24.11, 24.13, 24.16-24.18       | [[./Resources/F2-MO.pdf][F2 MOs]]                          |
-|    |                                            |                    |                                 |             |
-| 13 | Computational Chemistry                    | Chapter 26      | Nil                                        | [[./Resources/b3lyp-sto3g.html][H2 calculation]]    [[./Resources/H2-B3LYP.pdf][H2 results]]               |
+|    |                                            |                    |                                |              |
+| 13 | Computational Chemistry                    | Chapter 26      | Nil                               | [[./Resources/b3lyp-sto3g.html][H2 calculation]]    [[./Resources/H2-B3LYP.pdf][H2 results]]            |
 |    |                                            |                   |                                 |              |
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
 |    | *Exam 3*                                   |                   |                                          |                                 |
 |----+--------------------------------------------+-------------------+------------------------------------------+---------------------------------|
-| 14 | Electronic Spectroscopy                    | Chapter 25       | Questions 25.7, 25.21                    |                                 |
-|    |                                            |                   |                                |               |
+|    |                                            |                  |                                  |               |
+| 14 | Electronic Spectroscopy                    | Chapter 25       | Questions 25.7, 25.21            |               |
+|    |                                            |                   |                                 |               |
 | 15 | Statistical Mechanics and the Canonical Ensemble            | Chapter 30      | 30.1, 30.5-30.6, 30.8-30.13                |                                 |
 |    |                                            |                   |                                 |               |
 | 16 | Molecular Partition Functions and the Ideal Gas       | Chapters 31-32       | 31.1-31.5, 31.10-31.14, 31.22-31.26, 32.2-32.3, 32.11-32.12, 32.19, 32.22-32.23, 32.27, 32.37      |                                 |
