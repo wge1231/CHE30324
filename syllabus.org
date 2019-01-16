@@ -64,14 +64,14 @@ and answer questions.
 
 #+CAPTION: Brief Outline of Course Topics
 |--------------------------------------------+----------------|
-| Probability and the Boltzmann Distribution | Chapters 30-31 |
-| Physical Properties of Gases and Liquids   | Chapters 34-35 |
+| Probability and the Boltzmann Distribution | Chapters 29-31 |
+| Physical Properties of Gases and Liquids   | Chapters 07-11 |
 | Introduction to Quantum Mechanics          | Chapters 12-14 |
-| Basic Applications of Quantum Mechanics    | Chapters 15-19 |
-| Atomic Structure and Spectroscopy          | Chapters 20-22 |
-| Molecular Structure and Spectroscopy       | Chapters 23-27 |
+| Basic Applications of Quantum Mechanics    | Chapters 15-18 |
+| Atomic Structure and Spectroscopy          | Chapters 19-22 |
+| Molecular Structure and Spectroscopy       | Chapters 23-28 |
 | Statistical Thermodynamics                 | Chapters 32-33 |
-| Chemical Kinetics                          | Chapters 36-37 |
+| Chemical Kinetics                          | Chapters 35-36 |
 |--------------------------------------------+----------------|
 
 * Web
