@@ -20,7 +20,7 @@
 #+LATEX_HEADER:\renewcommand{\headrulewidth}{0.5pt}
 #+LATEX_HEADER:\renewcommand{\footrulewidth}{0.5pt}
 #+LATEX_HEADER:\lfoot{\today}
-#+LATEX_HEADER:\cfoot{\copyright\ 2018 W.\ F.\ Schneider}
+#+LATEX_HEADER:\cfoot{\copyright\ 2019 W.\ F.\ Schneider}
 #+LATEX_HEADER:\rfoot{\thepage}
 #+LATEX_HEADER:\lhead{\em{Physical Chemistry for Chemical Engineers}}
 #+LATEX_HEADER:\rhead{ND CHE 30324}
@@ -70,14 +70,14 @@
 \end{table}
 #+END_EXPORT
 ** Lecture 1: Basic statistics
-1. Discrete probability distributions---Coin flip
+*** Discrete probability distributions---Coin flip
    1. Example of Bernoulli trial, $2^n$ possible outcomes from $n$ flips
    2. Number of ways to get $i$ heads in $n$ flips, $_nC_i=n!/i!(n-i)!$
    3. Probability of $i$ heads $P_i \propto\ _nC_i$
    4. /Normalized/ probability, $\tilde P_i = P_i/\sum_i P_i =\ _nC_i/2^n$
    5. Expectation value $\langle i \rangle = \sum_i i \tilde P_i$
 
-2. Continuous distributions---temperature
+*** Continuous distributions---temperature
    1. Probability density $P(x)$ has units $1/x$
    2. Normalized $\tilde P(x) = P(x)/\int P(x) dx$
    3. (Unitless) probability $a < x < b = \int_a^b \tilde P(x) dx$
@@ -87,17 +87,20 @@
    7. Variance $\sigma^2=\langle x^2 \rangle - \langle x \rangle^2$
    8. Standard deviation $\Delta x = \sigma$
 
-3. Boltzmann distribution
-    1. $P(E) \propto e^{-E/k_BT}$, in some sense the definition of temperature
-    2. Energy and its units
-    3. Absolute temperature and its units
-    4. $k_BT$ as an energy scale, \SI{0.026}{eV} at \SI{298}{K}
-
-    5. Gravity example
+*** Boltzmann distribution
+   1. $P(E) \propto e^{-E/k_BT}$, in some sense the definition of temperature (Figure 1)
+   2. Energy and its units
+   3. Absolute temperature and its units
+   4. $k_BT$ as an energy scale, \SI{0.026}{eV} at \SI{298}{K}
+   5. Equipartition -- energy freely exchanged within and between all degrees of freedom
+*** Boltzmann distribution: Gravity example
       1. $E(h)=mgh$, linear, continuous energy spectrum
-      2. molecule vs car in a gravitational field (Table ref:carvelectron)
-      3. Barometric law for gases, $P=P_0e^{-mgh/k_BT}$
-    6. Kinetic energy in 1-D example
+      2. Exponential distribution
+         \[P(h) = \frac{1}{k_BT}\exp\left(\frac{-mgh}{k_BT}\right)\]
+      3. molecule vs car in a gravitational field (Table ref:carvelectron)
+      4. Implies exponential decrease in gas density with altitude
+      5. Barometric law for gases, $P=P_0e^{-mgh/k_BT}$
+*** Boltzmann distribution: Kinetic energy in 1-D example
       1. $KE = \frac{1}{2}m v_x^2$
       2. $P_{1D}(v_x) = \left ( \frac{m}{2\pi k_B T} \right )^{1/2}\exp\left
           (-\frac{m|v_x|^2}{2 k_BT} \right )$
@@ -106,7 +109,6 @@
           -\frac{(x-\mu)^2}{2\sigma^2} \right )\] 
       4. By inspection, $\mu=\langle v_x \rangle=0$, $\sigma^2=\langle v_x^2\rangle =k_BT/m$
       5. Molecule vs car again
-    7. Equipartition -- energy freely exchanged between all degrees of freedom
 
 #+CAPTION: Car vs gas molecule at the earth's surface label:carvelectron
 |-------------------------------+-----------------------------+-----------------|
