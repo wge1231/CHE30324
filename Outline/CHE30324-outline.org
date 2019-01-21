@@ -96,7 +96,7 @@
 *** Boltzmann distribution: Gravity example
       1. $E(h)=mgh$, linear, continuous energy spectrum
       2. Exponential distribution
-         \[P(h) = \frac{1}{k_BT}\exp\left(\frac{-mgh}{k_BT}\right)\]
+         \[P(h) = \frac{1}{\int_0^\infty \exp\left(-mgh/k_BT\right)dh }\exp\left(\frac{-mgh}{k_BT}\right )  =  \frac{1}{k_BT}\exp\left(\frac{-mgh}{k_BT}\right)\]
       3. molecule vs car in a gravitational field (Table ref:carvelectron)
       4. Implies exponential decrease in gas density with altitude
       5. Barometric law for gases, $P=P_0e^{-mgh/k_BT}$
@@ -229,11 +229,12 @@ plt.savefig('./Images/MB.png')
    1. Gas is composed of molecules in constant random, thermal motion
    2. Molecules only interact by perfectly elastic collisions
    3. Volume of molecules is $<<$ total volume
-2. Maxwell-Boltzmann distribution of molecular speeds
+2. Maxwell-Boltzmann distribution of molecular speeds (Figure 3)
    1. Speed $v=\sqrt{v_x^2+v_y^2+v_z^2}$
-   2. $P_{MB}(v) dv = P_{1D}(v_x) P_{1D}(v_y) P_{1D}(v_z) * \text{degeneracy}(v) dv$
-   3. mean speeds $\propto \sqrt{T}$
-   4. mean energy $U=\frac{3}{2} RT$ and heat capacity $C_v=\frac{3}{2} R$
+   2. $P_{MB}(v) dv = P_{1D}(v_x) P_{1D}(v_y) P_{1D}(v_z) * \text{degeneracy}(v) dv$ (Table 4)
+   3. mean speeds $\langle v \rangle = \int_{-\infty}^{\infty} v P_{MB}(v)dv \propto \sqrt{T}$
+   4. mean kinetic energy $\langle U \rangle = \frac{1}{2} m \langle v^2 \rangle =\frac{3}{2} RT$
+   5. heat capacity $C_v= dU/dT = \frac{3}{2} R$
 3. Flux and pressure
    1. Velocity flux $j(v_x) dv_x= v_x \frac{N}{V}P(v_x)dv_x$, molecules /area /time /$v_x$
    2. Wall collisions, $J_w$, total collisions /area /time
@@ -242,6 +243,7 @@ plt.savefig('./Images/MB.png')
    1. Collision cross section $\sigma=\pi d^2$, size of molecule
    2. Molecular collisions, $z$ per molecule and $z_{\mathrm{AA}}$ per volume
    3. Mean free path, $\lambda$, mean distance between collisions
+5. See Table 4 for important equations
 
 #+CAPTION: Diffusional spreading, $\sqrt{\langle x^2 \rangle} = \sqrt{2 D t}$
 #+ATTR_LATEX: :width 0.6\textwidth
