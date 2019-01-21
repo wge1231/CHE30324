@@ -96,19 +96,20 @@
 *** Boltzmann distribution: Gravity example
       1. $E(h)=mgh$, linear, continuous energy spectrum
       2. Exponential distribution
-         \[P(h) = \frac{1}{\int_0^\infty \exp\left(-mgh/k_BT\right)dh }\exp\left(\frac{-mgh}{k_BT}\right )  =  \frac{1}{k_BT}\exp\left(\frac{-mgh}{k_BT}\right)\]
+         \[P(h) = \frac{1}{\int_0^\infty \exp\left(-mgh/k_BT\right)dh }\exp\left(\frac{-mgh}{k_BT}\right )  =  \frac{mg}{k_BT}\exp\left(\frac{-mgh}{k_BT}\right)\]
       3. molecule vs car in a gravitational field (Table ref:carvelectron)
       4. Implies exponential decrease in gas density with altitude
       5. Barometric law for gases, $P=P_0e^{-mgh/k_BT}$
 *** Boltzmann distribution: Kinetic energy in 1-D example
-      1. $KE = \frac{1}{2}m v_x^2$
-      2. $P_{1D}(v_x) = \left ( \frac{m}{2\pi k_B T} \right )^{1/2}\exp\left
-          (-\frac{m|v_x|^2}{2 k_BT} \right )$
-      3. Gaussian distribution, mean $\mu$, variance $\sigma^2$
+      1. $KE = \frac{1}{2}m v_x^2$ , $P(v_x) \propto \exp \left (-m v_x^2/2 k_B T\right )$
+      2. Standard Normalized Gaussian distribution of mean $\mu$ and variance $\sigma^2$
         \[G(x)=\frac{1}{\sigma\sqrt{2\pi}} \exp\left (
           -\frac{(x-\mu)^2}{2\sigma^2} \right )\] 
-      4. By inspection, $\mu=\langle v_x \rangle=0$, $\sigma^2=\langle v_x^2\rangle =k_BT/m$
-      5. Molecule vs car again
+      3. By inspection, $\mu=\langle v_x \rangle=0$, $\sigma^2=\langle v_x^2\rangle =k_BT/m$
+      4. Normalized velocity distribution
+       \[P_{1D}(v_x) = \left ( \frac{m}{2\pi k_B T} \right )^{1/2}\exp\left
+         (-\frac{m|v_x|^2}{2 k_BT} \right ) \]
+      5. Molecule vs car again (Table  ref:carvelectron)
 
 #+CAPTION: Car vs gas molecule at the earth's surface label:carvelectron
 |-------------------------------+-----------------------------+-----------------|
@@ -231,14 +232,17 @@ plt.savefig('./Images/MB.png')
    3. Volume of molecules is $<<$ total volume
 2. Maxwell-Boltzmann distribution of molecular speeds (Figure 3)
    1. Speed $v=\sqrt{v_x^2+v_y^2+v_z^2}$
-   2. $P_{MB}(v) dv = P_{1D}(v_x) P_{1D}(v_y) P_{1D}(v_z) * \text{degeneracy}(v) dv$ (Table 4)
-   3. mean speeds $\langle v \rangle = \int_{-\infty}^{\infty} v P_{MB}(v)dv \propto \sqrt{T}$
+   2. $P_{MB}(v) dv = P_{1D}(v_x) P_{1D}(v_y) P_{1D}(v_z) * \text{degeneracy}(v) dv$
+         \[P_{\rm MB}(v) = 4\pi v^2 \left( \frac{m}{2\pi k_B T}\right)^{3/2}\exp\left(-\frac{m
+    v^2}{2k_B T}\right) \]
+   3. mean speeds $\langle v \rangle = \int_0^{\infty} v P_{MB}(v)dv \propto \sqrt{T}$
    4. mean kinetic energy $\langle U \rangle = \frac{1}{2} m \langle v^2 \rangle =\frac{3}{2} RT$
    5. heat capacity $C_v= dU/dT = \frac{3}{2} R$
 3. Flux and pressure
    1. Velocity flux $j(v_x) dv_x= v_x \frac{N}{V}P(v_x)dv_x$, molecules /area /time /$v_x$
    2. Wall collisions, $J_w$, total collisions /area /time
-   3. Momentum exchange, pressure, ideal gas law
+   3. Momentum change with wall collisions ($\Delta$ momentum/area/time):
+      \[ P = \int_0^\infty 2 m v_x j_x(v_x) dv_x = m (N/V) \lange v_x^2 \rangle = N k_B T/V \]
 4. Collisions and mean free path
    1. Collision cross section $\sigma=\pi d^2$, size of molecule
    2. Molecular collisions, $z$ per molecule and $z_{\mathrm{AA}}$ per volume

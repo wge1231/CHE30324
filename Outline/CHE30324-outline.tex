@@ -1,4 +1,4 @@
-% Created 2019-01-21 Mon 08:58
+% Created 2019-01-21 Mon 11:52
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -60,9 +60,9 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 
 \section{The Classical Foundations}
-\label{sec:org3eebcc3}
+\label{sec:org8fea5c9}
 \subsection{Lecture 0: Introduction}
-\label{sec:org907eb90}
+\label{sec:org6cfcc9b}
 \begin{enumerate}
 \item Burning lighter
 \item Foundations of Physical Chemistry
@@ -102,9 +102,9 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{center}
 \end{table}
 \subsection{Lecture 1: Basic statistics}
-\label{sec:orgcda8b04}
+\label{sec:orgbc2472c}
 \subsubsection{Discrete probability distributions---Coin flip}
-\label{sec:org8ed34b3}
+\label{sec:org524a05b}
 \begin{enumerate}
 \item Example of Bernoulli trial, \(2^n\) possible outcomes from \(n\) flips
 \item Number of ways to get \(i\) heads in \(n\) flips, \(_nC_i=n!/i!(n-i)!\)
@@ -114,7 +114,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{enumerate}
 
 \subsubsection{Continuous distributions---temperature}
-\label{sec:org03740ae}
+\label{sec:org8852de1}
 \begin{enumerate}
 \item Probability density \(P(x)\) has units \(1/x\)
 \item Normalized \(\tilde P(x) = P(x)/\int P(x) dx\)
@@ -127,7 +127,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{enumerate}
 
 \subsubsection{Boltzmann distribution}
-\label{sec:orgf9f57db}
+\label{sec:org0068391}
 \begin{enumerate}
 \item \(P(E) \propto e^{-E/k_BT}\), in some sense the definition of temperature (Figure 1)
 \item Energy and its units
@@ -136,26 +136,27 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \item Equipartition -- energy freely exchanged within and between all degrees of freedom
 \end{enumerate}
 \subsubsection{Boltzmann distribution: Gravity example}
-\label{sec:org9cf5cce}
+\label{sec:org5d414c6}
 \begin{enumerate}
 \item \(E(h)=mgh\), linear, continuous energy spectrum
 \item Exponential distribution
-\[P(h) = \frac{1}{\int_0^\infty \exp\left(-mgh/k_BT\right)dh }\exp\left(\frac{-mgh}{k_BT}\right )  =  \frac{1}{k_BT}\exp\left(\frac{-mgh}{k_BT}\right)\]
+\[P(h) = \frac{1}{\int_0^\infty \exp\left(-mgh/k_BT\right)dh }\exp\left(\frac{-mgh}{k_BT}\right )  =  \frac{mg}{k_BT}\exp\left(\frac{-mgh}{k_BT}\right)\]
 \item molecule vs car in a gravitational field (Table \ref{carvelectron})
 \item Implies exponential decrease in gas density with altitude
 \item Barometric law for gases, \(P=P_0e^{-mgh/k_BT}\)
 \end{enumerate}
 \subsubsection{Boltzmann distribution: Kinetic energy in 1-D example}
-\label{sec:org371c132}
+\label{sec:org670e87b}
 \begin{enumerate}
-\item \(KE = \frac{1}{2}m v_x^2\)
-\item \(P_{1D}(v_x) = \left ( \frac{m}{2\pi k_B T} \right )^{1/2}\exp\left
-          (-\frac{m|v_x|^2}{2 k_BT} \right )\)
-\item Gaussian distribution, mean \(\mu\), variance \(\sigma^2\)
+\item \(KE = \frac{1}{2}m v_x^2\) , \(P(v_x) \propto \exp \left (-m v_x^2/2 k_B T\right )\)
+\item Standard Normalized Gaussian distribution of mean \(\mu\) and variance \(\sigma^2\)
 \[G(x)=\frac{1}{\sigma\sqrt{2\pi}} \exp\left (
           -\frac{(x-\mu)^2}{2\sigma^2} \right )\]
 \item By inspection, \(\mu=\langle v_x \rangle=0\), \(\sigma^2=\langle v_x^2\rangle =k_BT/m\)
-\item Molecule vs car again
+\item Normalized velocity distribution
+\[P_{1D}(v_x) = \left ( \frac{m}{2\pi k_B T} \right )^{1/2}\exp\left
+         (-\frac{m|v_x|^2}{2 k_BT} \right ) \]
+\item Molecule vs car again (Table  \ref{carvelectron})
 \end{enumerate}
 
 \begin{table}[htbp]
@@ -219,7 +220,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{figure}
 
 \subsection{Lecture 2: Kinetic theory of gases}
-\label{sec:orgbca31b0}
+\label{sec:orgc23837c}
 \begin{enumerate}
 \item Postulates
 \begin{enumerate}
@@ -230,8 +231,10 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \item Maxwell-Boltzmann distribution of molecular speeds (Figure 3)
 \begin{enumerate}
 \item Speed \(v=\sqrt{v_x^2+v_y^2+v_z^2}\)
-\item \(P_{MB}(v) dv = P_{1D}(v_x) P_{1D}(v_y) P_{1D}(v_z) * \text{degeneracy}(v) dv\) (Table 4)
-\item mean speeds \(\langle v \rangle = \int_{-\infty}^{\infty} v P_{MB}(v)dv \propto \sqrt{T}\)
+\item \(P_{MB}(v) dv = P_{1D}(v_x) P_{1D}(v_y) P_{1D}(v_z) * \text{degeneracy}(v) dv\)
+\[P_{\rm MB}(v) = 4\pi v^2 \left( \frac{m}{2\pi k_B T}\right)^{3/2}\exp\left(-\frac{m
+    v^2}{2k_B T}\right) \]
+\item mean speeds \(\langle v \rangle = \int_0^{\infty} v P_{MB}(v)dv \propto \sqrt{T}\)
 \item mean kinetic energy \(\langle U \rangle = \frac{1}{2} m \langle v^2 \rangle =\frac{3}{2} RT\)
 \item heat capacity \(C_v= dU/dT = \frac{3}{2} R\)
 \end{enumerate}
@@ -239,7 +242,8 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \begin{enumerate}
 \item Velocity flux \(j(v_x) dv_x= v_x \frac{N}{V}P(v_x)dv_x\), molecules /area /time /\(v_x\)
 \item Wall collisions, \(J_w\), total collisions /area /time
-\item Momentum exchange, pressure, ideal gas law
+\item Momentum change with wall collisions (\(\Delta\) momentum/area/time):
+\[ P = \int_0^\infty 2 m v_x j_x(v_x) dv_x = m (N/V) \lange v_x^2 \rangle = N k_B T/V \]
 \end{enumerate}
 \item Collisions and mean free path
 \begin{enumerate}
@@ -315,7 +319,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
  \end{table}
 
 \subsection{Lecture 3: Transport}
-\label{sec:org01a467d}
+\label{sec:org662346f}
 \begin{enumerate}
 \item Effusion and Graham's law, \(\text{effusion rate}\propto MW^{-1/2}\)
 \item Fick's first law: net flux proportional to concentration gradient
@@ -356,11 +360,11 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 \end{enumerate}
 
 \section{Quantum Mechanics: Blurred Lines Between Particles and Waves}
-\label{sec:org8d18a3a}
+\label{sec:org0ba041c}
 \subsection{Lecture 4: Duality and demise of classical physics}
-\label{sec:org4b074a7}
+\label{sec:org32132db}
 \subsubsection{Properties of waves}
-\label{sec:org7813635}
+\label{sec:org52e305e}
 \begin{enumerate}
 \item Traveling waves, standing waves
 \item interference, diffraction
@@ -388,7 +392,7 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 
 
 \subsubsection{Blackbody radiation}
-\label{sec:org29a0712}
+\label{sec:org2f0c639}
 \begin{enumerate}
 \item Hohlraum spectrum (like the sun) empirically observed to obey:
 \begin{enumerate}
@@ -408,7 +412,7 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Heat capacities of solids}
-\label{sec:org1a7515b}
+\label{sec:org6de4ce4}
 \begin{enumerate}
 \item Law of DuLong and Pettite, \(C_v = 3R\), fails at low \(T\)
 \item Einstein model
@@ -418,26 +422,26 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Photoelectric effect}
-\label{sec:org8593da0}
+\label{sec:org24f0a07}
 \begin{enumerate}
 \item Stopping potential and work function, \(E_\text{kinetic}=h\nu -W\)
 \item Kinetic energy varies with light frequency, number of electrons varies with light intensity
 \end{enumerate}
 \subsubsection{Compton effect}
-\label{sec:org8651d0c}
+\label{sec:org9b82457}
 \begin{enumerate}
 \item light scattering of electrons changes \(\lambda\)
 \item Photon properties, \(\epsilon = h\nu, p=h/\lambda\)
 \end{enumerate}
 \subsubsection{Wave-particle duality}
-\label{sec:org6b87371}
+\label{sec:org46772b2}
 \subsubsection{Rutherford, planetary model of atom}
-\label{sec:org6beabd7}
+\label{sec:org76e7add}
 \begin{enumerate}
 \item Inconsistent with Maxwell's equations
 \end{enumerate}
 \subsubsection{Bohr model of H atom}
-\label{sec:orgdf9c319}
+\label{sec:org28c48ff}
 \begin{enumerate}
 \item Discrete H energy spectrum and Rydberg formala
 \item Bohr model (the old quantum mechanics)
@@ -450,7 +454,7 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 \end{enumerate}
 \end{enumerate}
 \subsubsection{de Broglie relation}
-\label{sec:orga4f09f6}
+\label{sec:org2eeecf9}
 \begin{enumerate}
 \item \(\lambda=h/p\) \emph{universally}
 \item Relation to Bohr orbits
@@ -506,17 +510,17 @@ de Broglie equation & \[\lambda=\dfrac{h}{p}\] \\
 \end{table}
 
 \subsection{Lecture 5: Postulates of quantum mechanics}
-\label{sec:orgbf6e43e}
+\label{sec:org9e97924}
 \subsubsection{Schr\"{o}dinger equation describes wave-like properties of matter}
-\label{sec:orgf6dd698}
+\label{sec:orge804c03}
 \subsubsection{Born interpretation}
-\label{sec:org27e9445}
+\label{sec:orgf37ac99}
 \begin{enumerate}
 \item wavefunction is a probability amplitude
 \item wavefunction squared is probability density
 \end{enumerate}
 \subsubsection{Postulates}
-\label{sec:orge52d99c}
+\label{sec:org2c71afc}
 \begin{enumerate}
 \item Wavefunction contains all information about a system
 \item Operators used to extract that information
@@ -531,7 +535,7 @@ de Broglie equation & \[\lambda=\dfrac{h}{p}\] \\
 \item Uncertainty principle
 \end{enumerate}
 \subsubsection{Particle in a box illustrations}
-\label{sec:orgd2d7d41}
+\label{sec:orgb3f95df}
 
 \begin{table} 
 \begin{center}
@@ -591,13 +595,13 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 \end{center}
 \end{table}
 \subsection{Lecture 6: Particle in a box model}
-\label{sec:org9d41238}
+\label{sec:org3198e5c}
 \subsubsection{Particle between infinite walls, electron confined in a wire}
-\label{sec:orgd93342b}
+\label{sec:org449d619}
 \subsubsection{Classical solution, either stationary or uniform bouncing back and forth}
-\label{sec:org04469cd}
+\label{sec:org4961fb1}
 \subsubsection{One-dimesional QM solutions}
-\label{sec:orga69765d}
+\label{sec:org1695220}
 \begin{enumerate}
 \item Schr\"{o}dinder equation and boundary conditions
 \item discrete, quantized solutions
@@ -608,7 +612,7 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 \item superpositions
 \end{enumerate}
 \subsubsection{Finite walls and tunneling}
-\label{sec:org13ec571}
+\label{sec:org9252523}
 \begin{enumerate}
 \item Potential well of finite depth \(V_0\)
 \item Finite number of bound states
@@ -620,12 +624,12 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 \item H atom tunneling: NH\(_3\) inversion, H transfer, kinetic isotope effect
 \end{enumerate}
 \subsubsection{Multiple dimensions}
-\label{sec:org6c1fee1}
+\label{sec:org30f5365}
 \begin{enumerate}
 \item separation of variables, one quantum number for each dimension
 \end{enumerate}
 \subsubsection{Introduce Pauli principle for fermions?}
-\label{sec:org37bd04a}
+\label{sec:orgfd0ce0e}
 
 \begin{table}[tb]
    \begin{center}
@@ -652,9 +656,9 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 \end{table}
 
 \subsection{Lecture 7: Harmonic oscillator}
-\label{sec:orgbbbf603}
+\label{sec:org718e86e}
 \subsubsection{Classical harmonic oscillator}
-\label{sec:org64d3511}
+\label{sec:org89b165a}
 \begin{enumerate}
 \item Hooke's law, \(F=-k(x-x_0)\), \(k\) spring constant
 \item Continuous sinusoidal motion
@@ -662,7 +666,7 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 \item Exchanging kinetic and potential energies
 \end{enumerate}
 \subsubsection{Quantum harmonic oscillator}
-\label{sec:org631a626}
+\label{sec:orgdb89122}
 \begin{enumerate}
 \item Schr\"{o}dinger equation and boundary conditions
 \item Solutions like P-I-A-B + tunneling at boundaries
@@ -675,7 +679,7 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 \item Classical limiting behavior
 \end{enumerate}
 \subsubsection{HCl example}
-\label{sec:orga3f5e90}
+\label{sec:org613990f}
 \begin{enumerate}
 \item Reduced mass, \(\frac{1}{\mu}=\frac{1}{m_A}+\frac{1}{m_B}\)
 \item ZPE, energy spacing in IR, Boltzmann probabilities
@@ -710,9 +714,9 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 \end{table}
 
 \subsection{Lecture 8: Rigid Rotor}
-\label{sec:orgd562f0f}
+\label{sec:org72ade30}
 \subsubsection{Classical rigid rotor}
-\label{sec:org0468e0a}
+\label{sec:orgd7a4e58}
 \begin{enumerate}
 \item Compare rotation about an axis vs linear motion
 \item Moment of intertia \(I=\mu r^2\)
@@ -722,7 +726,7 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Quantum rotor in a plane}
-\label{sec:orgc3ee4dd}
+\label{sec:orgd56f41b}
 \begin{enumerate}
 \item Angular momentum and kinetic energy operators in polar coordinates,
 \(\hat l_z = -i\hbar \frac{d}{d\phi}\)
@@ -759,7 +763,7 @@ $\displaystyle L_z = m_l \hbar$ \\
 \end{table}
 
 \subsubsection{Quantum rotor in 3-D}
-\label{sec:org88ba278}
+\label{sec:org08ca299}
 \begin{enumerate}
 \item Angular momentum and kinetic energy operators in spherical coordinates
 \item Spherical harmonic solutions, \(Y_{lm_l}\)
@@ -811,7 +815,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \end{figure}
 
 \subsubsection{Particle angular momentum}
-\label{sec:orgc97fb79}
+\label{sec:org51ae3e6}
 \begin{enumerate}
 \item Fermions, mass, half-integer spin
 \begin{enumerate}
@@ -820,16 +824,16 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \item Bosons, force-carrying, integer spin
 \end{enumerate}
 \subsection{Lecture 9: Spectroscopy}
-\label{sec:org62b321f}
+\label{sec:org034ef2a}
 \subsubsection{Spectroscopy is quantitative measurement of interaction of light with matter}
-\label{sec:org7a0082f}
+\label{sec:org1e8016d}
 \begin{enumerate}
 \item Observed \(I(\nu)/I(\nu_0)\)
 \item Bohr condition, \(|E_f-E_i|/h=\nu =c\tilde{\nu}=c/\lambda\)
 \item Intensities determined by state populations and transition probabilities
 \end{enumerate}
 \subsubsection{Einstein coefficients}
-\label{sec:orgd2573be}
+\label{sec:orge957cec}
 \begin{enumerate}
 \item Stimulated absorption, \(dn_1/dt= -n_1 B\rho(\nu)\)
 \item Stimulated emission, \(dn_2/dt= -n_2 B\rho(\nu)\)
@@ -838,7 +842,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \item \(1/A=\) lifetime
 \end{enumerate}
 \subsubsection{Transition probability}
-\label{sec:org479ab98}
+\label{sec:org013edd7}
 \begin{enumerate}
 \item Einstein coefficient \(B_{if}=\frac{|\mu_{if}|^2}{6\epsilon_0\hbar^2}\)
 \item Classical electric dipole, \(\overrightarrow{\mu}=q \cdot
@@ -849,9 +853,9 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 ``allowed'' vs ``forbidden'' transitions
 \end{enumerate}
 \subsection{Lecture 10: Vibrational and rotational spectroscopy}
-\label{sec:org9b004d8}
+\label{sec:orga295578}
 \subsubsection{Diatomic rotational spectroscopy}
-\label{sec:org32cb117}
+\label{sec:orgf66e6e3}
 \begin{enumerate}
 \item Rotational constant \(B = \hbar/4\pi I c\) cm\(^{-1}\), \(I=\mu R^2\)
 \item Gross selection rule: dynamic dipole moment non-zero (heteronuclear, not homonuclear)
@@ -860,7 +864,7 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \item Rotational state populations
 \end{enumerate}
 \subsubsection{Diatomic vibrational transitions}
-\label{sec:org242d266}
+\label{sec:orge6ae26e}
 \begin{enumerate}
 \item Gross selection rule: dynamic dipole \(d\mu/dx\) non-zero
 \item Homo- vs. heteronuclear
@@ -870,7 +874,7 @@ unless \(\Delta v = \pm 1\)
 \item Boltzmann distribution implies \(v=1\) states dominate at normal \(T\)
 \end{enumerate}
 \subsubsection{Raman spectroscopy}
-\label{sec:org6982d53}
+\label{sec:orgb9b36cd}
 \begin{enumerate}
 \item Shine in light of arbitrary frequency \(\tilde{\nu_0}\), mostly get out the same
 \item Some light comes out at \(\tilde{\nu_0}-\tilde{\nu}\) (Stoke's line)
@@ -878,9 +882,9 @@ unless \(\Delta v = \pm 1\)
 \item Gross selection rule: dynamic polarizability non-zero (homonuclear, not heteronuclear)
 \end{enumerate}
 \subsubsection{Anharmonicity, Morse potential}
-\label{sec:orgd64dccd}
+\label{sec:org17246a8}
 \subsubsection{Vibration-rotation spectroscopy}
-\label{sec:org1817c30}
+\label{sec:orgb42cbbc}
 \begin{enumerate}
 \item Harmonic oscillator + rigid rotor
 \item Selection rules: \(\Delta v = \pm 1, \Delta l=\pm 1\)
@@ -893,22 +897,22 @@ unless \(\Delta v = \pm 1\)
 \caption{Rovibrational spectrum of carbon monoxide}
 \end{figure}
 \subsubsection{Polyatomic vibrational spectroscopy}
-\label{sec:orgefdc445}
+\label{sec:org0ab2de4}
 \begin{enumerate}
 \item Polyatomics, \(3n-6\) (\(3n-5\) for linear polyatomic) vibrational modes
 \item Selection rules and degeneracies affect number of observed features
 \item CO\(_2\) example
 \end{enumerate}
 \subsubsection{Polyatomic rotational spectroscopy}
-\label{sec:org26df48c}
+\label{sec:org63139f3}
 \begin{enumerate}
 \item Three distinct moments of intertia (\(I_x, I_y, I_z\))
 \item Spectra more complex
 \end{enumerate}
 \subsection{Lecture 11: Hydrogen atom}
-\label{sec:org449a909}
+\label{sec:orga4bb917}
 \subsubsection{Schr\"{o}dinger equation}
-\label{sec:org01e10d7}
+\label{sec:org8c897cb}
 \begin{enumerate}
 \item Spherical coordinates and separation of variables
 \item Coulomb potential \(v_\mathrm{Coulomb}(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}\)
@@ -961,7 +965,7 @@ $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1)
 \end{table}
 
 \subsubsection{Solutions}
-\label{sec:org7c453f0}
+\label{sec:org198efb1}
 \begin{enumerate}
 \item \(\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)\)
 \item Principle quantum number \(n=1,2,\ldots\)
@@ -1002,7 +1006,7 @@ $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1)
 \end{figure} 
 
 \subsubsection{\emph{Variational principle}}
-\label{sec:orgf29a4eb}
+\label{sec:org41975e9}
 \begin{enumerate}
 \item Solutions of Schr\"{o}dinger equation always form a complete set
 \item True wavefunction energy is therefore lower bound on energy of any trial wavefunction
@@ -1014,15 +1018,15 @@ $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1)
 \[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
 
 \subsection{Lecture 12: Many-electron atoms}
-\label{sec:org2af7d3a}
+\label{sec:orgf2820d2}
 \subsubsection{Many-electron problem, Schr\"{o}dinger equation not exactly solvable}
-\label{sec:org82c4fe8}
+\label{sec:org1e808a2}
 \begin{enumerate}
 \item \(e^- -e^-\) interaction terms prevent separation of variables
 \item Independent electron model basis of all solutions, describes each electron by its own wavefunction, or ``orbital''
 \end{enumerate}
 \subsubsection{Qualitative solutions}
-\label{sec:orgaf0c290}
+\label{sec:org3a025b3}
 \begin{enumerate}
 \item \(\psi_i\) look like H atom orbitals,  labeled by same quantum numbers
 \item \emph{Aufbau principle}: ``Build-up'' electron configuration by adding electrons into H-atom-like orbitals, from bottom up
@@ -1031,7 +1035,7 @@ $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1)
 \item \emph{Hund's rule}: Electrons in degenerate orbitals prefer to be spin-aligned.  Configuration with highest \emph{spin multiplicity} is the most preferred
 \end{enumerate}
 \subsubsection{Structure of the periodic table}
-\label{sec:orgb3e7944}
+\label{sec:org582c232}
 \begin{enumerate}
 \item Electrons in different subshells experience different effective nuclear charge \(Z_\mathrm{eff} = Z - \sigma_{nl}\)
 \item Inner (``core'') shells not shielded well at
@@ -1040,7 +1044,7 @@ $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1)
 \item Electrons in same subshell shield each other poorly, causing ionization energy to increase across the subshell
 \end{enumerate}
 \subsubsection{Quantitative solutions}
-\label{sec:org3da55ab}
+\label{sec:orgf40b0b4}
 \begin{enumerate}
 \item Schr\"{o}dinger equation
 \[\hat H \Psi({\bf r}_1, {\bf r}_2,...)=E \Psi({\bf r}_1, {\bf r}_2,...)\]
@@ -1064,7 +1068,7 @@ $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1)
 other electrons, adding an electron to a known set of \(\psi_i\)
 \end{enumerate}
 \subsubsection{Electron-electron interactions}
-\label{sec:org9d75ed1}
+\label{sec:org59a6b59}
 \begin{enumerate}
 \item Coulomb (\(\hat v_\mathrm{Coul}\)): classical repulsion between distinguishable electron ``clouds''
 \item Exchange (\(\hat v_\mathrm{ex}\)): accounts for electron indistinguishability (Pauli principle for fermions).  Decreases Coulomb repulsion because electrons of like spin intrinsically avoid one another
@@ -1072,7 +1076,7 @@ other electrons, adding an electron to a known set of \(\psi_i\)
 \item General form of exchange potential is expensive to calculate; general form of correlation potential is unknown
 \end{enumerate}
 \subsubsection{Popular models}
-\label{sec:orge8ee951}
+\label{sec:org8609478}
 \begin{enumerate}
 \item \emph{Hartree model}: Include only classical Coulomb repulsion \(\hat v_\mathrm{Coul}\)
 \item \emph{Hartree-Fock model}: Include Coulomb and exchange
@@ -1082,7 +1086,7 @@ approximate expressions for exchange and correlation
 must be solved \emph{iteratively} to \emph{self-consistency}
 \end{enumerate}
 \subsubsection{DFT calculations on atoms}
-\label{sec:orgdb4a3e0}
+\label{sec:org00cf94f}
 \begin{enumerate}
 \item See \url{http://www.chemsoft.ch/qc/fda.htm}
 \end{enumerate}
@@ -1097,9 +1101,9 @@ must be solved \emph{iteratively} to \emph{self-consistency}
 \end{table}
 
 \subsection{Lecture 13: Molecular orbital theory of molecules}
-\label{sec:orgbfc45ff}
+\label{sec:org620190a}
 \subsubsection{Clamped nucleus (``Born-Oppenheimer'') approximation}
-\label{sec:org59074da}
+\label{sec:org394e796}
 \begin{enumerate}
 \item Write one-electron equations parametrically in terms of positions of  all atoms
 \begin{eqnarray}
@@ -1115,7 +1119,7 @@ must be solved \emph{iteratively} to \emph{self-consistency}
             Z_\beta}{|{\bf R}_\alpha-{\bf R}_\beta|} \]
 \end{enumerate}
 \subsubsection{H\(_2\) molecule as perturbation on two H atoms brought from infinite distance}
-\label{sec:org2239083}
+\label{sec:orgaf9b699}
 \begin{enumerate}
 \item ``Bonding'' orbital, \(\sigma_g({\bf r}) = 1{\rm s_A}+1{\rm s_B}\)
 \item ``Anti-bonding'' orbital, \(\sigma_u({\bf r}) = 1{\rm s_A}-1{\rm s_B}\)
@@ -1152,7 +1156,7 @@ must be solved \emph{iteratively} to \emph{self-consistency}
 \item Bond order = \(\frac{1}{2}(n-n^*)\)
 \end{enumerate}
 \subsubsection{Secular equations}
-\label{sec:orga91a4ce}
+\label{sec:orgb35bf72}
 \begin{enumerate}
 \item Expand molecular orbitals in ``basis'' of atomic-like orbitals
 \begin{equation}
@@ -1190,7 +1194,7 @@ must be solved \emph{iteratively} to \emph{self-consistency}
 \item Solve for \(\epsilon\)s and back-substitute to find correspond \(c_i\)s
 \end{enumerate}
 \subsubsection{H\(_2\) example, again}
-\label{sec:org7c0791c}
+\label{sec:org759479f}
 \begin{enumerate}
 \item Set-up and solve secular matrix
 \begin{displaymath}
@@ -1205,7 +1209,7 @@ must be solved \emph{iteratively} to \emph{self-consistency}
 \end{eqnarray*}
 \end{enumerate}
 \subsubsection{Qualitative solutions of secular equations}
-\label{sec:org507f939}
+\label{sec:org3da4da4}
 \begin{enumerate}
 \item Lot's of insight into chemical bonding can be obtained from approximate solutions to secular equations, basis of ``molecular orbital theory''
 \item Two general assumptions
@@ -1220,7 +1224,7 @@ must be solved \emph{iteratively} to \emph{self-consistency}
 \end{enumerate}
 
 \subsubsection{Heteronuclear diatomic: LiH, HF, BH example}
-\label{sec:org2217efa}
+\label{sec:orgc8bd2e1}
 \begin{enumerate}
 \item Only AOs of appropriate symmetry, overlap, and energy match can combine to form MOs
 \begin{eqnarray*}
@@ -1232,7 +1236,7 @@ must be solved \emph{iteratively} to \emph{self-consistency}
 \item BH: H 1s, B 2s and 2p\(_z \rightarrow\) bonding, non-bonding, anti-bonding orbitals
 \end{enumerate}
 \subsubsection{Homonuclear diatomic: O\(_2\)}
-\label{sec:org51b4276}
+\label{sec:orga815534}
 \begin{enumerate}
 \item Assign aos, 1s, 2s, 2p for each atom (10 total)
 \item In principle, solve \(10\times 10\) secular matrix
@@ -1246,7 +1250,7 @@ must be solved \emph{iteratively} to \emph{self-consistency}
 \end{enumerate}
 \end{enumerate}
 \subsubsection{The H\"{u}ckel/tight binding model: \href{http://resolver.caltech.edu/CaltechBOOK:1961.001}{Roberts, Notes on Molecular Orbital Theory}}
-\label{sec:org2fa38ec}
+\label{sec:orgb4c9732}
 \begin{enumerate}
 \item \(F_{ii}=\alpha, S_{ij}=\delta_{ij}, F_{ij}=\beta\) iff \(i\) adjacent to \(j\)
 \item Ethylene example
@@ -1294,7 +1298,7 @@ alpha - 2*beta    1
 alpha + 2*beta    1
 
 \subsubsection{Band structure of solids}
-\label{sec:org1799f2f}
+\label{sec:org3a1303b}
 \begin{enumerate}
 \item Discrete molecular orbitals transform into continuous bands
 \item Results in rich range of physical and chemical properties
@@ -1305,11 +1309,11 @@ alpha + 2*beta    1
 \end{center}
 
 \subsection{Lecture 14: Computational chemistry}
-\label{sec:orgca0e15f}
+\label{sec:org3141e40}
 \subsubsection{Numerical solvers of Schr\"{o}dinger equation for molecules readily available today}
-\label{sec:org1c5aaaf}
+\label{sec:org6faeaa5}
 \subsubsection{Have to specify:}
-\label{sec:org489d6b7}
+\label{sec:org10312bd}
 \begin{enumerate}
 \item Identity of atoms
 \item Positions of atoms (distances, angles, \(\ldots\))
@@ -1323,7 +1327,7 @@ alpha + 2*beta    1
 \item initial guess of wavefunction coefficients (often guessed for you)
 \end{enumerate}
 \subsubsection{Secular equations solved iteratively until input coefficients = output coefficients}
-\label{sec:orgdcbd00f}
+\label{sec:org6def808}
 \begin{enumerate}
 \item ``self-consistent field''
 \item Output
@@ -1341,33 +1345,33 @@ alpha + 2*beta    1
 \item Find energy at minimum relative to atoms (or other molecules): reaction energy
 \end{enumerate}
 \subsubsection{H\(_2\) example}
-\label{sec:org8b11b1e}
+\label{sec:orgc2b85a4}
 \begin{center}
   \includegraphics[scale=0.6]{Images/H2-PES}
 \end{center}
 \subsubsection{Polyatomic molecules}
-\label{sec:org4a234f4}
+\label{sec:org6704da3}
 \begin{enumerate}
 \item Gradient-driven optimizations, \(3n-6\) degrees of freedom
 \item Hessian matrix for frequencies
 \end{enumerate}
 
 \subsection{Lecture 15: Electronic spectroscopy}
-\label{sec:org5893131}
+\label{sec:org776e2af}
 \subsection{Lecture 16: Electronic and magnetic properties}
-\label{sec:orgbfbc7ee}
+\label{sec:org52bbb64}
 
 \section{Statistical Mechanics: The Bridge from the Tiny to the Many}
-\label{sec:orgb85df70}
+\label{sec:org4b51f72}
 
 \subsection{Lecture 17: Statistical mechanics}
-\label{sec:org0e85a61}
+\label{sec:org9f561bc}
 \subsubsection{Need machinary to average QM information over macroscopic systems}
-\label{sec:orgb8ea748}
+\label{sec:org7c0f640}
 \subsubsection{Equal \emph{a priori} probabilities}
-\label{sec:org4340f49}
+\label{sec:org2279beb}
 \subsubsection{Two-state model}
-\label{sec:orgec7e822}
+\label{sec:org31b342d}
 \begin{enumerate}
 \item Box of particles, each of which can have energy 0 or \(\epsilon\)
 \item Thermodynamic state defined by number of elements \(N\), and number of quanta \(q\), \(U=q\epsilon\)
@@ -1385,7 +1389,7 @@ alpha + 2*beta    1
 \end{enumerate}
 
 \subsubsection{Energy flow/thermal equilibrium between two large systems}
-\label{sec:orgb88ab72}
+\label{sec:org3348695}
 \begin{enumerate}
 \item Each subsystem has energy \(U_i\) and degeneracy \(\Omega_i(U_i)\)
 \item Bring in thermal contact, \(U=U_1+U_2\), \(\Omega=\Omega_1(U_1)\Omega_2(U_2)\)
@@ -1406,7 +1410,7 @@ alpha + 2*beta    1
 \end{enumerate}
 
 \subsubsection{Two-state model in limit of large \(N\)}
-\label{sec:org6be7a44}
+\label{sec:org29d5ba0}
 \begin{enumerate}
 \item Large \(N\) and Stirling's approximation
 \item Fundamental thermodynamic equation of two-state system:
@@ -1423,14 +1427,14 @@ alpha + 2*beta    1
 \item Differentiate again to get heat capacity
 \end{enumerate}
 \subsubsection{Example of microcanonical (``\(NVE\)'') ensemble}
-\label{sec:org18586ff}
+\label{sec:orgc22336b}
 \begin{enumerate}
 \item Direct evaluation of \(S(U)\) is generally intractable, so seek simpler approach
 \end{enumerate}
 \subsection{Lecture 18: Canonical (\(NVT\)) ensemble}
-\label{sec:org552dcae}
+\label{sec:org4c1b2f1}
 \subsubsection{Partition function}
-\label{sec:orga9d1664}
+\label{sec:org50b58b8}
 \begin{enumerate}
 \item Imagine a system brought into thermal equilibrium with a much larger ``reservoir'' of constant \(T\), such that the aggregate has a total energy \(U\)
 \item Degeneracy of a given system microstate \(j\) with energy \(U_j\) is \(\Omega_{res}(U-U_j)\)
@@ -1449,7 +1453,7 @@ alpha + 2*beta    1
 \item \textbf{Partition function counts the number of states accessible to a system at a given \(T\) and \(V\)}
 \end{enumerate}
 \subsubsection{Energy factoring (sidebar)}
-\label{sec:orgf6c3d76}
+\label{sec:org6c27d4e}
 \begin{enumerate}
 \item If system is large, how to determine it's energy states \(U_j\)?  There would be many, many of them!
 \item One simplification is if we can write energy as sum of energies of individual elements (atoms, molecules) of system:
@@ -1478,7 +1482,7 @@ arrangements of energy amongst elements should only be counted once.
 \end{enumerate}
 
 \subsubsection{Distinguishable vs. indistinguishable particles}
-\label{sec:org9aefe5f}
+\label{sec:org173cfc3}
 \begin{enumerate}
 \item \(q(V,T)\) counts states available to a single element of a system, like a molecule in a gas or in a solid
 \item Distinguishable (e.g., in a solid): \(Q(N,V,T) = q(V,T)^N\)
@@ -1486,7 +1490,7 @@ arrangements of energy amongst elements should only be counted once.
 \end{enumerate}
 
 \subsubsection{Two-state system again}
-\label{sec:orgb80183e}
+\label{sec:org8ba6356}
 \begin{enumerate}
 \item Partition function, \(q(T)=1+e^{-\epsilon\beta}\)
 \item State probabilities
@@ -1514,7 +1518,7 @@ arrangements of energy amongst elements should only be counted once.
 \end{table}
 
 \subsubsection{Thermodynamic functions in canonical ensemble}
-\label{sec:org860e20f}
+\label{sec:org33b3d49}
 
 \begin{table}\small
   \begin{center}
@@ -1559,15 +1563,15 @@ Energy $G=A+PV$.
 \end{table}
 
 \subsection{Lecture 19: Molecular Partition Functions}
-\label{sec:org4bebe0a}
+\label{sec:orgae3ff5c}
 \subsubsection{Ideal gas of molecules}
-\label{sec:orgca3da05}
+\label{sec:org85de825}
 \begin{displaymath}
   Q_{ig}(N,V,T) = \frac{(q_\mathrm{trans}q_\mathrm{rot}q_\mathrm{vib})^N}{N!}
 \end{displaymath}
 
 \subsubsection{Particle-in-a-box (translational states of a gas)}
-\label{sec:orgf2e6520}
+\label{sec:org7f53d33}
 \begin{enumerate}
 \item Energy states \(\epsilon_n=n^2\epsilon_0, n=1,2, \ldots\), \(\epsilon_0\) tiny for macroscopic \(V\)
 \item \(\Theta_\mathrm{trans} = \epsilon_0/k_B\) translational temperature
@@ -1586,23 +1590,23 @@ Energy $G=A+PV$.
 \end{enumerate}
 
 \subsubsection{Rigid rotor (rotational states of a gas)}
-\label{sec:orgac0606f}
+\label{sec:orgbef9df1}
 \begin{enumerate}
 \item recall energy states and degeneracies of rigid rotor
 \item \(\Theta_\mathrm{rot} = \hbar^2/2 I k_B\)
 \item ``High'' T \(q_\mathrm{rot}(T) \approx \sigma \Theta_\mathrm{rot}/T\)
 \end{enumerate}
 \subsubsection{Harmonic oscillator (vibrational states of a gas)}
-\label{sec:org2049508}
+\label{sec:orgd456dd9}
 \begin{enumerate}
 \item \(\Theta_\mathrm{vib}=h\nu/k_B\)
 \end{enumerate}
 
 \subsubsection{Electronic partition functions \(\rightarrow\) spin multiplicity}
-\label{sec:org007c71f}
+\label{sec:org8ff4870}
 
 \subsubsection{Many-particle molecule}
-\label{sec:org75f6440}
+\label{sec:org51ee40d}
 \begin{enumerate}
 \item partition function is a product of all degrees of freedom
 \begin{displaymath}
@@ -1611,7 +1615,7 @@ q(T,V) = q_\text{trans} \left ( \prod_{i=1}^3 q_\text{rot}^{(i)}\right ) \left (
 \item thermodynamic quantities are sums of all degrees of freedom
 \end{enumerate}
 \subsubsection{Non-ideality}
-\label{sec:org0c24ce3}
+\label{sec:org80d3c66}
 \begin{enumerate}
 \item Real molecules interact through vdW interactions
 \item Particle-in-a-box model breaks down, have to work harder but can still get at same ideas
@@ -1737,9 +1741,9 @@ electronic & \(\approx 10,000\) & \(\approx 10,000\) & 1 & non-classical\\
 \end{table}
 
 \subsection{Lecture 20: Chemical reactions and equilibria}
-\label{sec:org5995861}
+\label{sec:org6c32b3f}
 \subsubsection{Standard states}
-\label{sec:org1de3521}
+\label{sec:orga044046}
 \begin{enumerate}
 \item Translational partition function depends on concentration \(N/V\)
 \item ``Standard state'' corresponds to some standard choice, \((N/V)^\circ = c^\circ\)
@@ -1750,7 +1754,7 @@ A(T,N/V)  = A^\circ(T) + k T \ln\left ( (N/V)/(N/V)^\circ \right ) =A^\circ(T) +
 \item For ideal gas, related to pressure by \(P^\circ = c^\circ k_B T\)
 \end{enumerate}
 \subsubsection{Chemical reaction \(A \rightarrow B\)}
-\label{sec:org7bb6639}
+\label{sec:orgb585014}
 \begin{enumerate}
 \item Reaction entropy \(\Delta S^\circ (T) =  S^\circ_\mathrm{B}(T)-S^\circ_\mathrm{A}(T)\)
 \item Reaction energy must capture difference in \SI{0}{K} electronic energy
@@ -1770,22 +1774,22 @@ K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT}
  \end{eqnarray*}
 \end{enumerate}
 \subsubsection{Le'Chatlier's principle}
-\label{sec:org1e4197c}
+\label{sec:org8038fd9}
 \begin{enumerate}
 \item Response to temperature: Boltzmann distribution favors higher energy things as \(T\) increases
 \item Response to volume chance: particle-in-a-box states increasingly favor side with more molecules as volume increases
 \end{enumerate}
 
 \subsection{Lecture 21: Chemical kinetics}
-\label{sec:org6736f01}
+\label{sec:orgdc2bc1d}
 \subsubsection{Kinetics and reaction rates}
-\label{sec:orga847f69}
+\label{sec:org6acc55f}
 \begin{enumerate}
 \item Rate: number per unit time per unit something
 \end{enumerate}
 
 \subsubsection{Empirical chemical kinetics}
-\label{sec:orgdc3d2a7}
+\label{sec:orgc53dd32}
 \begin{enumerate}
 \item Rate laws, rate orders, and rate constants
 \item Functions of \(T\), \(P\), composition \(C_i\)
@@ -1793,7 +1797,7 @@ K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT}
 \item Arrhenius expression, \(k=A e^{-E_a/k_BT}\)
 \end{enumerate}
 \subsubsection{Reaction mechanisms}
-\label{sec:org55a893a}
+\label{sec:org260f3f9}
 \begin{enumerate}
 \item Elementary steps and molecularity
 \item Collision theory
@@ -1809,7 +1813,7 @@ K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT}
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Transition state theory (TST)}
-\label{sec:org54c944c}
+\label{sec:org13977ec}
 \begin{enumerate}
 \item Assumptions
 \begin{enumerate}
@@ -1829,11 +1833,11 @@ K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT}
 \end{center}
 
 \subsubsection{Locating transition states computationally}
-\label{sec:orge1dab87}
+\label{sec:orgbfa2155}
 \subsubsection{Thermodynamic connection}
-\label{sec:orgfe6b512}
+\label{sec:org15d2657}
 \subsubsection{Diffusion-controlled reactions}
-\label{sec:org03e58b7}
+\label{sec:orgc130a02}
 \begin{enumerate}
 \item Intermediate complex
 \item Steady-state approximation
@@ -1887,7 +1891,7 @@ K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT}
  \end{table}
 
 \subsection{Lecture 22: Conclusion}
-\label{sec:org53d1dcc}
+\label{sec:orgf75afa4}
 \begin{enumerate}
 \item Do you think about the burning lighter any differently now?
 \end{enumerate}
