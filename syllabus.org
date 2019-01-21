@@ -60,7 +60,7 @@ Engel and Reid, /Physical Chemistry/, Benjamin-Cummings, 2006 or 2009. Each topi
 * Lecture
 The topics will be presented in a series of self-contained
 lectures. Attendance is expected, and you should be prepared to ask
-and answer questions.  
+and answer questions. Chapter numbers are for the Second Edition of the suggested reading, "Physical Chemistry". In other editions the chapter numbers will vary, but titles will be the same. 
 
 #+CAPTION: Brief Outline of Course Topics
 |--------------------------------------------+----------------|
