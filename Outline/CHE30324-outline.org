@@ -231,27 +231,36 @@ plt.savefig('./Images/MB.png')
    2. Molecules only interact by perfectly elastic collisions
    3. Volume of molecules is $<<$ total volume
 2. Maxwell-Boltzmann distribution of molecular speeds (Figure 3)
-   1. Speed $v=\sqrt{v_x^2+v_y^2+v_z^2}$
-   2. $P_{MB}(v) dv = P_{1D}(v_x) P_{1D}(v_y) P_{1D}(v_z) * \text{degeneracy}(v) dv$
-         \[P_{\rm MB}(v) = 4\pi v^2 \left( \frac{m}{2\pi k_B T}\right)^{3/2}\exp\left(-\frac{m
-    v^2}{2k_B T}\right) \]
-   3. mean speeds $\langle v \rangle = \int_0^{\infty} v P_{MB}(v)dv \propto \sqrt{T}$
-   4. mean kinetic energy $\langle U \rangle = \frac{1}{2} m \langle v^2 \rangle =\frac{3}{2} RT$
-   5. heat capacity $C_v= dU/dT = \frac{3}{2} R$
+   1. Speed $v=\sqrt{v_x^2+v_y^2+v_z^2}$, spherical coordinates
+     \begin{eqnarray*}   
+       P_{\rm MB}(v) & = &\int\int P_{1D}(v_x) P_{1D}(v_y) P_{1D}(v_z) v^2 \sin(\theta) d\theta d\phi \\
+         & = &4\pi v^2 \left( \frac{m}{2\pi k_B T}\right)^{3/2}\exp\left(-\frac{m
+    v^2}{2k_B T}\right)
+     \end{eqnarray*}
+   2. mean speeds $\langle v \rangle = \int_0^{\infty} v P_{MB}(v)dv \propto \sqrt{T}$
+   3. mean kinetic energy $\langle U \rangle = \frac{1}{2} m \langle v^2 \rangle =\frac{3}{2} RT$
+   4. heat capacity $C_v= dU/dT = \frac{3}{2} R$
 3. Flux and pressure
    1. Velocity flux $j(v_x) dv_x= v_x \frac{N}{V}P(v_x)dv_x$, molecules /area /time /$v_x$
-   2. Wall collisions, $J_w$, total collisions /area /time
+   2. Wall collisions, $J_w = \int j(v_x) dv_x$, total collisions /area /time
    3. Momentum change with wall collisions ($\Delta$ momentum/area/time):
       \[ P = \int_0^\infty 2 m v_x j_x(v_x) dv_x = m (N/V) \lange v_x^2 \rangle = N k_B T/V \]
 4. Collisions and mean free path
-   1. Collision cross section $\sigma=\pi d^2$, size of molecule
-   2. Molecular collisions, $z$ per molecule and $z_{\mathrm{AA}}$ per volume
-   3. Mean free path, $\lambda$, mean distance between collisions
-5. See Table 4 for important equations
+   1. Collision cross section $\sigma=\pi d^2$, area swept by molecule
+   2. Molecular collisions per molecule = volume swept * density of targets = $z = \sigma \langle v \rangle (N/V) \sqrt{2}$
+   3. Total collisions per volume = $z_{\mathrm{AA}} = z  (N/V) (1/2)$ 
+   4. Mean free path, $\lambda = \langle v \rangle/z$ , mean distance between collisions
 
-#+CAPTION: Diffusional spreading, $\sqrt{\langle x^2 \rangle} = \sqrt{2 D t}$
-#+ATTR_LATEX: :width 0.6\textwidth
-[[./Images/Diffusion.pdf]]
+#+CAPTION: \ce{N2} at \SI{298}{K} and \SI{25}{\liter\per\mole}
+|---------------------+---------------------------------------------------------|
+| $\langle v \rangle$ | \SI{475}{\meter\per\second} = \SI{1060}{\mile\per\hour} |
+| $J_W$               | \SI{0.48}{\mole\per\centi\meter\squared\per\second}     |
+| $P$                 | \SI{1}{bar}                                             |
+| $\sigma$            | \SI{0.43}{nm^2}                                         |
+| $z$                 | \SI{7e9}{\per\second}                                   |
+| $Z_{\rm AA}$        | \SI{8e28}{\per\second\per\centi\meter\cubed}            |
+| \lambda             | $\SI{68}{nm} = 183 \sigma$                              |
+|---------------------+---------------------------------------------------------|
 
 #+BEGIN_EXPORT latex
 \begin{table} 
@@ -322,11 +331,17 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 4. Fick's second law: time evolution of concentration gradient
    1. Continuity with no advection: \(\frac{\partial c}{\partial t}
           = -\nabla\cdot \vec{j} + \text{gen}\)
-   2. One-dimension: $\frac{d c}{d t} = D \frac{d^2 c}{dx^2}$
-   3. Diffusion has Gaussian probability distribution: \(c(x,t)/c_0 = [2 \sqrt{\pi D
+   2. One-dimension, point source: $\frac{d c}{d t} = D \frac{d^2 c}{dx^2}$, $c(x,t=0) =c_0$ 
+   3. Separate variables $c(x,t) = X(x)t(t)$
+   4. Diffusion has Gaussian probability distribution: \(c(x,t)/c_0 = [2 \sqrt{\pi D
           t}]^{-1} \exp(-x^2/4Dt)\)
-
-5. Seeing is believing---Brownian motion
+5. Random walk model of diffusion
+   1. $N$ steps, $n_r$ to the right, $P(n_r ) = \left ( \begin{smallmatrix}N \\ n_r \end{smallmatrix} \right )\frac{1}{2^N}$
+   3. Large $N$ and Stirling approximation, $N! \approx \left (2\pi N\right)^{1/2} N^N e^{-N}$
+   4. Let $x = \delta (n_r - n_l)$, $N = t/\tau$, Gaussian reappears!
+     \[ P(x,t) = \left ( \frac{2\tau}{\pi t}\right )^{1/2} e^{-x^2/2\tau\delta^2} \]
+   5. Einstein-Smoluchowski relation $D = \delta^2/2\tau$
+6. Seeing is believing---Brownian motion
    1. Seemingly random motion of large particles (``dust'') due to ``kicks'' from invisible molecules
    2. Einstein receives Nobel Prize for showing:
       1. Motion follows same Gaussian diffusion behavior
@@ -336,10 +351,9 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
    4. Allows measurement of Avogadro's number, final proof of kinetic theory
    5. Similar model for diffusion of liquid molecules, slip boundary
 
-6. Random walk model of diffusion
-   1. Binomial distribution
-   2. Large $N$ and Stirling approximation
-   3. Einstein-Smoluchowski relation
+#+CAPTION: Diffusional spreading, $\sqrt{\langle x^2 \rangle} = \sqrt{2 D t}$
+#+ATTR_LATEX: :width 0.6\textwidth
+[[./Images/Diffusion.pdf]]
 
 * Quantum Mechanics: Blurred Lines Between Particles and Waves
 ** Lecture 4: Duality and demise of classical physics
