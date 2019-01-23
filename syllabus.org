@@ -103,7 +103,7 @@ The TA and instructor are happy to answer questions during regular office hours 
 
 | Dr. Bill Schneider | \email{wschneider@nd.edu} | By appt/drop in | 182 Fitz |
 | Jerry Crum         | \email{jcrum@nd.edu}      | M 4-5           | 150 Fitz |
-| Yixiao Hou         | \email{yhou@nd.edu}       | T 4-5           | 150 Fitz |
+| Yixiao Hou         | \email{yhou@nd.edu}       | T 3-4           | 150 Fitz |
 | Jian-Ren Lim       | \email{jlim6@nd.edu}      | T 4-5           | 150 Fitz |
 | Craig Waitt        | \email{cwaitt@nd.edu}     | Th 4-5          | 150 Fitz |
 
