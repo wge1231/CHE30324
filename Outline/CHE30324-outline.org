@@ -341,7 +341,7 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
    1. $N$ steps, $n = n_r - n_l$ net to the right, $P(n) = \left ( \begin{smallmatrix}N \\ n_r \end{smallmatrix} \right )2^{-N}$
    2. Large $N$ and Stirling approximation, $N! \approx \left (2\pi N\right)^{1/2} N^N e^{-N}$
    3. Let $x = \delta (n_r - n_l)$, $N = t/\tau$, Gaussian reappears!
-     \[ P(x,t) = \left ( \frac{2\tau}{\pi t}\right )^{1/2} e^{-x^2/2\tau\delta^2} \]
+     \[ P(x,t) = \left ( \frac{2\tau}{\pi t}\right )^{1/2} e^{-x^2\tau/2t\delta^2} \]
    4. Einstein-Smoluchowski relation $D = \delta^2/2\tau$
 6. Knudsen diffusion, $\delta = (3/2)l$, $\delta/\tau = \langle v \rangle$, $D=\frac{1}{3}l \langle v \rangle$
 7. Seeing is believing---Brownian motion
