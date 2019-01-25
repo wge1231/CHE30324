@@ -260,6 +260,7 @@ plt.savefig('./Images/MB.png')
 | $z$                 | \SI{7e9}{\per\second}                                   |
 | $Z_{\rm AA}$        | \SI{8e28}{\per\second\per\centi\meter\cubed}            |
 | \lambda             | $\SI{68}{nm} = 183 \sigma$                              |
+| $D_{11}$            | \SI{1.1e-5}{\meter\squared\per\second}                  |
 |---------------------+---------------------------------------------------------|
 
 #+BEGIN_EXPORT latex
@@ -323,11 +324,12 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
 #+END_EXPORT
 
 ** Lecture 3: Transport
-1. Effusion and Graham's law, $\text{effusion rate}\propto MW^{-1/2}$
-2. Fick's first law: net flux proportional to concentration gradient
-   1. $j_x = -D \frac{d c}{d x}$
-   2. Self-diffusion constant, $D=\frac{1}{3}\lambda \langle v \rangle$
-3. Knudsen diffusion, $D=\frac{1}{3}l \langle v \rangle$
+1. Transport of energy, momentum, mass across a gradient.
+2. Infinite gradient: effusion and Graham's law, $\text{effusion rate}\propto MW^{-1/2}$
+3. Finite gradient: Fick's first law 
+   1. net flux proportional to concentration gradient
+   2. $j_x = -D \frac{d c}{d x}$
+   3. Self-diffusion constant, $D=\frac{1}{3}\lambda \langle v \rangle$
 4. Fick's second law: time evolution of concentration gradient
    1. Continuity with no advection: \(\frac{\partial c}{\partial t}
           = -\nabla\cdot \vec{j} + \text{gen}\)
@@ -336,19 +338,21 @@ Stokes-Einstein equation for liquids & $\displaystyle D_{11}=\frac{k_BT}{4\pi\et
    4. Diffusion has Gaussian probability distribution: \(c(x,t)/c_0 = [2 \sqrt{\pi D
           t}]^{-1} \exp(-x^2/4Dt)\)
 5. Random walk model of diffusion
-   1. $N$ steps, $n_r$ to the right, $P(n_r ) = \left ( \begin{smallmatrix}N \\ n_r \end{smallmatrix} \right )\frac{1}{2^N}$
-   3. Large $N$ and Stirling approximation, $N! \approx \left (2\pi N\right)^{1/2} N^N e^{-N}$
-   4. Let $x = \delta (n_r - n_l)$, $N = t/\tau$, Gaussian reappears!
+   1. $N$ steps, $n = n_r - n_l$ net to the right, $P(n) = \left ( \begin{smallmatrix}N \\ n_r \end{smallmatrix} \right )2^{-N}$
+   2. Large $N$ and Stirling approximation, $N! \approx \left (2\pi N\right)^{1/2} N^N e^{-N}$
+   3. Let $x = \delta (n_r - n_l)$, $N = t/\tau$, Gaussian reappears!
      \[ P(x,t) = \left ( \frac{2\tau}{\pi t}\right )^{1/2} e^{-x^2/2\tau\delta^2} \]
-   5. Einstein-Smoluchowski relation $D = \delta^2/2\tau$
-6. Seeing is believing---Brownian motion
+   4. Einstein-Smoluchowski relation $D = \delta^2/2\tau$
+6. Knudsen diffusion, $\delta = (3/2)l$, $\delta/\tau = \langle v \rangle$, $D=\frac{1}{3}l \langle v \rangle$
+7. Seeing is believing---Brownian motion
    1. Seemingly random motion of large particles (``dust'') due to ``kicks'' from invisible molecules
-   2. Einstein receives Nobel Prize for showing:
-      1. Motion follows same Gaussian diffusion behavior
-      2. From steady-state arguments in a field, diffusion constant is ratio of Boltzmann energy, $k_B T$, to mobility
+   2. Einstein in one of his four 1905 /Annus Mirabilis/ [[https://einsteinpapers.press.princeton.edu/vol2-trans/137][papers]] shows
+      1. Motion of particles suspened in a fluid of molecules must
+         follow same Gaussian diffusion behavior
+      2. From steady-state arguments in a field, diffusion constant is Boltzmann energy, $k_B T$, times mobility
       3. Mobility inversely related to viscosity
    3. Stokes-Einstein equation
-   4. Allows measurement of Avogadro's number, final proof of kinetic theory
+   4. Allows measurement of Avogadro's number, final proof of kinetic theory of matter
    5. Similar model for diffusion of liquid molecules, slip boundary
 
 #+BEGIN_SRC python :exports none :results output org drawer
@@ -366,7 +370,8 @@ lambd = V/(N * sigma * np.sqrt(2))  # m
 
 v = np.sqrt(8 * R0 * T/(np.pi *mass))  # m/s
 
-D = (1./3.) * v * lambd # m^2/s
+D = (1./3.) * v * lambd # m^2/s, in 3-D
+# print(D)
 
 def conc(x,t):
     return 0.5*np.sqrt(1./(np.pi * D * t)) * np.exp(-x*x/(4*D*t))
