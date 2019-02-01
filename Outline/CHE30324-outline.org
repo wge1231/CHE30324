@@ -402,8 +402,9 @@ plt.savefig('./Images/diffusion.png')
 ** Lecture 4: Duality and demise of classical physics
 *** Properties of waves
 1. Traveling waves, standing waves
-2. interference, diffraction
-3.  Expected energy of a classical oscillator, $\langle \epsilon \rangle _\nu = k_B T$ for all $\nu$
+2. Interference, diffraction
+3. Characteristic of light, among other thing
+4. Expected energy of a classical wave, $\langle \epsilon \rangle _\nu = k_B T$ for all $\nu$
 
 #+BEGIN_EXPORT latex
 \begin{table}
@@ -411,7 +412,7 @@ plt.savefig('./Images/diffusion.png')
     \caption{Classical waves}
     \begin{tabular}{|lc|}
      \hline
-The wave equation & $\displaystyle \frac{ \partial^2 \Psi(x,t)}{\partial x^2} = \frac{1}{v^2}\frac{\partial^2 \Psi(x,t)}{\partial t^2}$ \\
+The free wave equation & $\displaystyle \frac{ \partial^2 \Psi(x,t)}{\partial x^2} = \frac{1}{v^2}\frac{\partial^2 \Psi(x,t)}{\partial t^2}$ \\
 \\
 General solution & \(\Psi(x,t) = A \sin(kx -\omega t)\) \\
 Wavelength (distance) & \( \lambda = 2\pi/k \) \\
@@ -427,15 +428,15 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 #+END_EXPORT
 
 
-*** Blackbody radiation
-1. Hohlraum spectrum (like the sun) empirically observed to obey:
-   1. Stefan-Boltzmann law, total irradiance 
-   2. Wien's displacement law
+*** Blackbody radiation - light emitted by all bodies due to their temperature
+1. Blackbody/Hohlraum spectrum (like the sun)
+   1. Stefan-Boltzmann law, total irradiance \(I(\lambda,T)\)
+   2. Wien's displacement law, $\lambda_\mathrrm{text}T = \mathrm{constant}$
 2. Rayleigh-Jeans predicts spectrum using classical physics
-   1. standing waves + classical oscillators \(\rightarrow\) ultraviolet catastrophe
-3. Planck model
-   1. Energy spectrum of oscillators are /quantized/, $\epsilon_\nu=nh\nu$ 
-   2. Expected energy of a quantized oscillator, $\langle \epsilon \rangle_\nu = h\nu/\left (
+   1. standing waves + classical wave energy \(\rightarrow\) ultraviolet catastrophe
+3. Planck model, 1900
+   1. Energy spectrum of waves are /quantized/, $\epsilon_\nu=nh\nu$ 
+   2. Expected energy of a quantized wave, $\langle \epsilon \rangle_\nu = h\nu/\left (
           e^{h\nu/k_BT}-1 \right )$
    3. Correctly reproduces Stefan-Boltzmann and Wien Laws!
 *** Heat capacities of solids
@@ -443,12 +444,16 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 2. Einstein model
    1. Atomic vibrations are /quantized/, $\epsilon_n=nh\nu$
    2. Heat capacity goes to zero at low $T$
-*** Photoelectric effect
+*** Photoelectric effect - electrons emitted when light shined on a metal
 1. Stopping potential and work function, $E_\text{kinetic}=h\nu -W$
 2. Kinetic energy varies with light frequency, number of electrons varies with light intensity
+3. Einstein model, 1905 (Nobel prize)
+   1. Light is both wave-like /and/ composed of particle-like "photons"
+   2. Photon energy related to frequency: \(\epsilon = h \nu\ = hc/\lambda)
+   3. Light intensity related to number of photons
 *** Compton effect
-1. light scattering of electrons changes $\lambda$
-2. Photon properties, $\epsilon = h\nu, p=h/\lambda$
+1. light scattering off electrons changes $\lambda$
+2. Demonstrates that photons carry momentum, $p=h/\lambda$
 *** Wave-particle duality
 *** Rutherford, planetary model of atom
 1. Inconsistent with Maxwell's equations
