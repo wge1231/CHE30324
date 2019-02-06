@@ -401,10 +401,11 @@ plt.savefig('./Images/diffusion.png')
 * Quantum Mechanics: Blurred Lines Between Particles and Waves
 ** Lecture 4: Duality and demise of classical physics
 *** Properties of waves
-1. Traveling waves, standing waves
-2. Interference, diffraction
-3. Characteristic of light, among other thing
-4. Expected energy of a classical wave, $\langle \epsilon \rangle _\nu = k_B T$ for all $\nu$
+1. Characterized by frequency, wavelength, amplitude, \ldots
+2. Traveling waves, standing waves
+3. Interference, diffraction
+4. Characteristic of light, among other thing
+5. Expected energy of a classical wave, $\langle \epsilon \rangle _\nu = k_B T$ for all $\nu$
 
 #+BEGIN_EXPORT latex
 \begin{table}
@@ -431,44 +432,52 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 *** Blackbody radiation - light emitted by all bodies due to their temperature
 1. Blackbody/Hohlraum spectrum (like the sun)
    1. Stefan-Boltzmann law, total irradiance \(I(\lambda,T)\)
-   2. Wien's displacement law, $\lambda_\mathrrm{text}T = \mathrm{constant}$
+   2. Wien's displacement law, $\lambda_\mathrm{text}T = \mathrm{constant}$
 2. Rayleigh-Jeans predicts spectrum using classical physics
    1. standing waves + classical wave energy \(\rightarrow\) ultraviolet catastrophe
+   2.   \(I(\lambda, T) = (8\pi/\lambda^4) \cdot k_B T \cdot c \)
 3. Planck model, 1900
-   1. Energy spectrum of waves are /quantized/, $\epsilon_\nu=nh\nu$ 
-   2. Expected energy of a quantized wave, $\langle \epsilon \rangle_\nu = h\nu/\left (
-          e^{h\nu/k_BT}-1 \right )$
-   3. Correctly reproduces Stefan-Boltzmann and Wien Laws!
+   1. Energy spectrum of waves are /quantized/, $\epsilon_\nu=nh\nu$, $n = 0,1,2, \ldots$
+   2. Expected energy of a quantized wave: 
+      \[\langle \epsilon \rangle_\nu = \sum_{n=0}^\infty e^{-nh\nu/k_BT} = h\nu/\left (
+          e^{h\nu/k_BT}-1 \right )\]
+   3. Intensity:
+      \[I(\lambda, T) = \frac{8\pi}{\lambda^4} \cdot \langle\epsilon \rangle_\nu \cdot c \]
+   4. Correctly reproduces Stefan-Boltzmann and Wien Laws!
 *** Heat capacities of solids
 1. Law of DuLong and Pettite, $C_v = 3R$, fails at low $T$
 2. Einstein model
-   1. Atomic vibrations are /quantized/, $\epsilon_n=nh\nu$
-   2. Heat capacity goes to zero at low $T$
+   1. Energy of atomic vibrations $\nu$ are /quantized/, $\epsilon_\nu=nh\nu$, $n = 0,1,2, \ldots$
+   2. Expected energy of vibration exactly same as Planck's quantized waves
+   3. Heat capacity = derivative of energy wrt temperature goes to zero at low $T$
 *** Photoelectric effect - electrons emitted when light shined on a metal
-1. Stopping potential and work function, $E_\text{kinetic}=h\nu -W$
-2. Kinetic energy varies with light frequency, number of electrons varies with light intensity
-3. Einstein model, 1905 (Nobel prize)
+1. Energy of most weakly bound electrons to a material defined as work function, $W$
+2. Shine light on metal, observe kinetic energy of electrons $E_\text{kinetic}=h\nu -W$
+3. Kinetic energy varies with light frequency, number of electrons varies with light intensity
+4. Einstein model, 1905 (Nobel prize)
    1. Light is both wave-like /and/ composed of particle-like "photons"
-   2. Photon energy related to frequency: \(\epsilon = h \nu\ = hc/\lambda)
+   2. Photon energy related to frequency: \(\epsilon = h \nu\ = hc/\lambda\)
    3. Light intensity related to number of photons
-*** Compton effect
-1. light scattering off electrons changes $\lambda$
-2. Demonstrates that photons carry momentum, $p=h/\lambda$
-*** Wave-particle duality
+*** Special theory of relative (Einstein, 1905)
+1. speed of light /c/ in a vacuum is a constant for all observes, independent of \(\vu\)
+2. photons carry momentum  $p=h/\lambda$
+3. demonstrated by Compton effect, light scattering off electrons changes $\lambda$
 *** Rutherford, planetary model of atom
 1. Inconsistent with Maxwell's equations
 *** Bohr model of H atom
-1. Discrete H energy spectrum and Rydberg formala
-2. Bohr model (the old quantum mechanics)
+1. Bohr model (the old quantum mechanics)
    1. Stable electron "orbits," quantized angular momentum
    2. Light emission corresponds to orbital jumps, $\nu=\Delta E/h$
    3. Bohr equations
    4. Comparison with Rydberg formula
    5. Failure for larger atoms
+2. Explains discrete H energy spectrum and Rydberg formala
 *** de Broglie relation
 1. $\lambda=h/p$ /universally/
 2. Relation to Bohr orbits
 3. Davison and Germer experiment, $e^-$ diffraction off Ni
+4. Basis of modern electron diffraction to observe structure of materials
+*** Wave-particle duality
 
 #+BEGIN_SRC python :exports results
 import numpy as np
@@ -563,6 +572,11 @@ de Broglie equation & \[\lambda=\dfrac{h}{p}\] \\
 
 ** Lecture 5: Postulates of quantum mechanics
 *** Schr\ouml{}dinger equation describes wave-like properties of matter
+1. Attempt to mathematically elaborate de'Broglie idea
+2. Statement of conservation of energy, kinetic + potential = total
+3. One-dimensional, time-independent, single particle Schr\ouml{}dinger equation:
+    \[-\frac{\hbar^2}{2 m} \frac{d^2 \psi(x)}{dx^2} + V(x) \psi(x) = E \psi(x)\]
+4. Second-order differential equation, solutions are steady-states of the system, discrete /eigenvalues/ $E$ and /eigenvectors/ $\psi(x)$
 *** Born interpretation
 1. wavefunction is a probability amplitude
 2. wavefunction squared is probability density
