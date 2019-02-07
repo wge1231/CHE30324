@@ -577,9 +577,10 @@ de Broglie equation & \[\lambda=\dfrac{h}{p}\] \\
 3. One-dimensional, time-independent, single particle Schr\ouml{}dinger equation:
     \[-\frac{\hbar^2}{2 m} \frac{d^2 \psi(x)}{dx^2} + V(x) \psi(x) = E \psi(x)\]
 4. Second-order differential equation, solutions are steady-states of the system, discrete /eigenvalues/ $E$ and /eigenvectors/ $\psi(x)$
+5. Applied to H atom by Schr\ouml{}dinger to recover Bohr energies
 *** Born interpretation
-1. wavefunction is a probability amplitude
-2. wavefunction squared is probability density
+1. wavefunction \(\psi(x)\) is a probability amplitude
+2. wavefunction squared \(|\psi(s)|^2\) is probability density
 *** Postulates
 1. Wavefunction contains all information about a system
 2. Operators used to extract that information
@@ -653,7 +654,7 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 #+END_EXPORT
 ** Lecture 6: Particle in a box model
 *** Particle between infinite walls, electron confined in a wire
-*** Classical solution, either stationary or uniform bouncing back and forth
+1. Classical solution, either stationary or uniform bouncing back and forth
 *** One-dimesional QM solutions
 1. Schr\ouml{}dinder equation and boundary conditions
 2. discrete, quantized solutions
@@ -694,12 +695,49 @@ $\displaystyle     \psi_n(x) =\sqrt{\frac{2}{L}} \sin \left ( \frac{n\pi x}{L} \
  \\
 $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
  \\
-     \includegraphics[scale=.6]{Images/PIB} \\       
+     \includegraphics[scale=.5]{Images/PIAB.png} \\       
 \hline
 \end{tabular}
  \end{center}
 \end{table}
 #+END_EXPORT
+
+#+BEGIN_SRC python :exports results
+import numpy as np
+import matplotlib.pyplot as plt
+
+hc = 1239.8      # eV nm
+c = 2.9979e8 * 1.e9   # nm/s
+k = 8.61734e-5   # eV /K
+hck = hc/k       # nm K
+me = 5.685630e-30  # eV/(nm/s)^2
+hbar = 6.58212e-16 # eV s 
+
+L = 1.0 ; # nm
+E0 = (1./(2.*me))*(np.pi * hbar/L)**2  # eV
+
+def psi(n,x):
+      return np.sqrt(2./L)*np.sin(n*np.pi*x/L)
+def eig(n):
+      return E0*n*n
+
+plt.figure()
+wl=np.linspace(0,L,500)
+for n in [1,2,3,4,5]:
+    waveftn = psi(n,wl)
+    energy = eig(n)
+    plt.plot([0,L],[energy,energy],ls='--',color='black')
+    offset = waveftn + energy
+    plt.plot(wl,offset,label='n = {}'.format(n))
+
+legend=plt.legend()
+plt.xlabel('Distance (L)')
+plt.ylabel('Energy (eV)')
+plt.title('Energies and wavefunctions of an electron confined to a 1 nm box')
+plt.savefig('./Images/PIAB.png')
+#+END_SRC
+
+#+RESULTS:
 
 ** Lecture 7: Harmonic oscillator
 *** Classical harmonic oscillator
