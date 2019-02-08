@@ -428,7 +428,6 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 \end{table}
 #+END_EXPORT
 
-
 *** Blackbody radiation - light emitted by all bodies due to their temperature
 1. Blackbody/Hohlraum spectrum (like the sun)
    1. Stefan-Boltzmann law, total irradiance \(I(\lambda,T)\)
@@ -580,7 +579,7 @@ de Broglie equation & \[\lambda=\dfrac{h}{p}\] \\
 5. Applied to H atom by Schr\ouml{}dinger to recover Bohr energies
 *** Born interpretation
 1. wavefunction \(\psi(x)\) is a probability amplitude
-2. wavefunction squared \(|\psi(s)|^2\) is probability density
+2. wavefunction squared \(|\psi(x)|^2\) is probability density
 *** Postulates
 1. Wavefunction contains all information about a system
 2. Operators used to extract that information
