@@ -5,11 +5,11 @@
 |    |             |           |             |
 |  3 | 7 Feb 2019  | [[./Homework/HW3.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW3.ipynb][ipynb]] | [[./Homework/HW3-Soln.pdf][pdf]]  [[./Homework/HW3-Soln.ipynb][ipynb]]  |
 |    |             |           |             |
-|  4 | 18 Feb 2019 | [[./Homework/HW4.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW4.ipynb][ipynb]] | [[./HW_Solutions/HW4-soln.pdf][pdf]]  [[./HW_Solutions/HW4-soln.ipynb][ipynb]]  |
+|  4 | 18 Feb 2019 | [[./Homework/HW4.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW4.ipynb][ipynb]] | [[./Homework/HW4-soln.pdf][pdf]]  [[./Homework/HW4-soln.ipynb][ipynb]]  |
 |    |             |           |             |
-|  5 | 23 Feb 2019 | [[./Homework/HW5.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW5.ipynb][ipynb]] | [[./HW_Solutions/HW5-soln.pdf][pdf]]   [[./HW_Solutions/HW5-soln.ipynb][ipynb]] |
+|  5 | 25 Feb 2019 | [[./Homework/HW5.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW5.ipynb][ipynb]] | [[./HW_Solutions/HW5-soln.pdf][pdf]]   [[./HW_Solutions/HW5-soln.ipynb][ipynb]] |
 |    |             |           |             |
-|  6 | 1 Mar 2019  | [[./Homework/HW6.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW6.ipynb][ipynb]] | [[./HW_Solutions/HW6-soln.pdf][pdf]]   [[./HW_Solutions/HW6-soln.ipynb][ipynb]] |
+|  6 | 4 Mar 2019  | [[./Homework/HW6.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW6.ipynb][ipynb]] | [[./HW_Solutions/HW6-soln.pdf][pdf]]   [[./HW_Solutions/HW6-soln.ipynb][ipynb]] |
 |    |             |           |             |
 |  7 | 20 Mar 2019 | [[./Homework/HW7.pdf][pdf]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Homework/HW7.ipynb][ipynb]] | [[./HW_Solutions/HW7-soln.pdf][pdf]]   [[./HW_Solutions/HW7-soln.ipynb][ipynb]] |
 |    |             |           |             |
