@@ -746,14 +746,14 @@ plt.savefig('./Images/PIAB.png')
 4. Exchanging kinetic and potential energies
 *** Quantum harmonic oscillator
 1. Schr\ouml{}dinger equation and boundary conditions
-2. Solutions like P-I-A-B + tunneling at boundaries
+2. Solutions like P-I-A-B + tunneling at boundaries (see Table 10)
 3. Zero-point energy and uniform energy ladder
 4. Parity operator and even/odd symmetry:  \(\langle x \rangle =0 \)
 5. Recursion relations: \( \langle x^2 \rangle =
       \alpha^2 (v+1/2), \langle V(x) \rangle = \frac{1}{2} h\nu (v+\frac{1}{2})\)
-6. Virial theorem
+6. Virial theorem: $V(x) \propto x^n \rightarrow \langle T \rangle = \frac{n}{2}\langle V \rangle$
 7. Classical turning point and tunneling
-8. Classical limiting behavior
+8. Classical limiting behavior: large 
 *** HCl example
 1. Reduced mass, $\frac{1}{\mu}=\frac{1}{m_A}+\frac{1}{m_B}$
 2. ZPE, energy spacing in IR, Boltzmann probabilities
@@ -787,6 +787,146 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
  \end{center}
 \end{table}
 #+END_EXPORT
+
+#+BEGIN_COMMENT
+#+BEGIN_SRC python :exports results
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.interpolate import interp1d
+from scipy import linalg as LA
+
+
+# In[164]:
+
+
+# Read potential energy file
+X = np.loadtxt(r'real62.csv',delimiter=',',usecols=(0,))
+E = np.loadtxt(r'real62.csv',delimiter=',',usecols=(1,))
+E -=min(E)
+
+eVolt = 1.60218e-19 # conversion factor from eV to J
+heV = 4.135667662e-15 # Planck's constant in ev.s
+A2M2 = 1e-20 # conversion factor from sq. Angstrom to sq m
+mAds = 1.574528e-27 # mass of proton
+c = 29979245800 # speed of light
+
+# Calculate the kinetic energy cefficient
+KE = heV*heV*eVolt/(8*np.pi**2*mAds*A2M2)
+
+# Min and max for grid
+xMin = min(X)
+xMax = max(X)
+
+# Fit a curve to X,E data
+xnew = np.linspace(xMin,xMax,100)
+V = interp1d(X,E, kind='cubic',bounds_error=False,fill_value='extrapolate')
+# fig = plt.figure()
+# ax = fig.add_subplot(1,1,1)
+# ax.plot(xnew,V(xnew))
+# plt.show()
+plt.plot(xnew,V(xnew),color='b',label='Anharmonic')
+
+# Solving the Schrodinger equation using finite difference
+L = xMax +.5
+n = 1000;
+dx = 2*L/n
+xGrid = np.arange(-L+dx,L,dx)
+A = np.zeros((n-1,n-1))
+for i in range(n-1):
+    for j in range(n-1):
+        if i==j+1 or i==j-1:
+            A[i,j]=-3/2*KE/dx**2
+        if i==j+2 or i==j-2:
+            A[i,j]=3/20*KE/dx**2
+        if i==j+3 or i==j-3:
+            A[i,j]=-1/90*KE/dx**2
+    A[i,i]=49/18*KE/dx**2+V(xGrid[i]) 
+
+# Solve for eigenvalues
+E, wfn = LA.eigh(A)
+lz = []
+print('-----------------------------------')
+print('Harmonic Energy State Data')
+print('-----------------------------------')
+for i in range(5):
+    v = E[i+1]-E[i]
+    w = v/heV/c
+    print('Energy state {0} - Energy State {1}'.format(i+2,i+1))
+    print('Energy difference: \t{} eV'.format(v))
+    print('Vibrational frequency: \t{} cm-1'.format(w))
+    print('-----------------------------------')
+    lz.append(E[i])
+for i in range(5):
+    plt.plot(xGrid,wfn[:,i]+lz[i],color='b',label=None)
+    
+# Read harmonic potential energy file
+X = np.loadtxt(r'harmonic62.csv',delimiter=',',usecols=(0,))
+E = np.loadtxt(r'harmonic62.csv',delimiter=',',usecols=(1,))
+E -=min(E)
+
+eVolt = 1.60218e-19 # conversion factor from eV to J
+heV = 4.135667662e-15 # Planck's constant in ev.s
+A2M2 = 1e-20 # conversion factor from sq. Angstrom to sq m
+mAds = 1.574528e-27 # mass of proton
+c = 29979245800 # speed of light
+
+# Calculate the kinetic energy cefficient
+KE = heV*heV*eVolt/(8*np.pi**2*mAds*A2M2)
+
+# Min and max for grid
+xMin = min(X)
+xMax = max(X)
+
+# Fit a curve to X,E data
+xnew = np.linspace(xMin,xMax,100)
+V = interp1d(X,E, kind='cubic',bounds_error=False,fill_value='extrapolate')
+# fig = plt.figure()
+# ax = fig.add_subplot(1,1,1)
+# ax.plot(xnew,V(xnew))
+# plt.show()
+plt.plot(xnew,V(xnew),color='r',label='Harmonic')
+
+# Solving the Schrodinger equation using finite difference
+L = xMax +.5
+n = 1000;
+dx = 2*L/n
+xGrid = np.arange(-L+dx,L,dx)
+A = np.zeros((n-1,n-1))
+for i in range(n-1):
+    for j in range(n-1):
+        if i==j+1 or i==j-1:
+            A[i,j]=-3/2*KE/dx**2
+        if i==j+2 or i==j-2:
+            A[i,j]=3/20*KE/dx**2
+        if i==j+3 or i==j-3:
+            A[i,j]=-1/90*KE/dx**2
+    A[i,i]=49/18*KE/dx**2+V(xGrid[i]) 
+
+# Solve for eigenvalues
+E, wfn = LA.eigh(A)
+lz = []
+print('-----------------------------------')
+print('Harmonic Energy State Data')
+print('-----------------------------------')
+for i in range(5):
+    v = E[i+1]-E[i]
+    w = v/heV/c
+    print('Energy state {0} - Energy State {1}'.format(i+2,i+1))
+    print('Energy difference: \t{} eV'.format(v))
+    print('Vibrational frequency: \t{} cm-1'.format(w))
+    print('-----------------------------------')
+    lz.append(E[i])
+for i in range(5):
+    plt.plot(xGrid,wfn[:,i]+lz[i],color='r',label=None)
+plt.ylim([0,2.2])
+plt.ylabel('Energy (eV)')
+plt.xlabel('Distance (Å)')
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fancybox = True, shadow = True)
+plt.show()
+#+END_SRC
+
+#+END_COMMENT
+
 
 ** Lecture 8: Rigid Rotor
 *** Classical rigid rotor
