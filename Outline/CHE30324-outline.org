@@ -927,7 +927,6 @@ plt.show()
 
 #+END_COMMENT
 
-
 ** Lecture 8: Rigid Rotor
 *** Classical rigid rotor
 1. Compare rotation about an axis vs linear motion
@@ -1101,7 +1100,7 @@ plt.savefig('./Images/d.png')
 *** Spectroscopy is quantitative measurement of interaction of light with matter
 1. Observed $I(\nu)/I(\nu_0)$
 2. Bohr condition, $|E_f-E_i|/h=\nu =c\tilde{\nu}=c/\lambda$
-3. Intensities determined by state populations and transition probabilities
+3. Intensities determined by populations of initial and final states (from Boltzmann distribtuion) and transition probabilities
 *** Einstein coefficients
 1. Stimulated absorption, $dn_1/dt= -n_1 B\rho(\nu)$
 2. Stimulated emission, $dn_2/dt= -n_2 B\rho(\nu)$
@@ -1118,18 +1117,23 @@ plt.savefig('./Images/d.png')
       "allowed" vs "forbidden" transitions
 ** Lecture 10: Vibrational and rotational spectroscopy
 *** Diatomic rotational spectroscopy
-1. Rotational constant $B = \hbar/4\pi I c$ cm$^{-1}$, $I=\mu R^2$
-2. Gross selection rule: dynamic dipole moment non-zero (heteronuclear, not homonuclear)
-3. Specific selection rule: $\Delta l=\pm 1$, $\Delta m_l=0, \pm1$
-4. $\Delta \tilde E_l  = 2B(l+1)$ cm$^{-1}$
-5. Rotational state populations
-*** Diatomic vibrational transitions
-1. Gross selection rule: dynamic dipole $d\mu/dx$ non-zero
-2. Homo- vs. heteronuclear
-3. Specific selection rule: dipole integral $\langle \psi_v|\hat\mu|\psi_{v^\prime} \rangle =0$
+1. Apply rigid rotor model
+2. Rotational constant $\tilde{B} = (\hbar^2/2I)/hc = \hbar/4\pi I c$ cm$^{-1}$, $I=\mu R_\mathrm{eq}^2$
+3. Gross selection rule: dynamic dipole moment non-zero (heteronuclear, not homonuclear)
+4. Specific selection rule: $\Delta l=\pm 1$, $\Delta m_l=0, \pm1$
+5. $\Delta \tilde{E_l}  = 2\tilde{B}(l+1)$ cm$^{-1}$
+6. Rotational state populations
+*** Polyatomic rotational spectroscopy
+1. Three distinct moments of intertia ($I_x, I_y, I_z$)
+2. Spectra more complex
+*** Diatomic vibrational spectroscopy
+1. Apply harmonic oscillator model
+2. Vibrational constant $\tilde{\nu} = (\sqrt{k/\mu}/2\pi)/hc$ cm$^{-1}$
+3. Gross selection rule: dynamic dipole $d\mu/dx$ non-zero (heteronuclear, non homonuclear)
+4. Specific selection rule: dipole integral $\langle \psi_v|\hat\mu|\psi_{v^\prime} \rangle =0$
           unless $\Delta v = \pm 1$
-4. Allowed $\Delta E = h\nu$
-5. Boltzmann distribution implies $v=1$ states dominate at normal $T$
+5. Allowed $\Delta \tilde{E}_v = \tilde{\nu}$ cm$^{-1}$
+6. Boltzmann distribution implies $v=0$ states dominate at normal $T$
 *** Raman spectroscopy
 1. Shine in light of arbitrary frequency $\tilde{\nu_0}$, mostly get out the same
 2. Some light comes out at $\tilde{\nu_0}-\tilde{\nu}$ (Stoke's line)
@@ -1148,9 +1152,6 @@ plt.savefig('./Images/d.png')
 1. Polyatomics, $3n-6$ ($3n-5$ for linear polyatomic) vibrational modes
 2. Selection rules and degeneracies affect number of observed features
 3. CO$_2$ example
-*** Polyatomic rotational spectroscopy
-1. Three distinct moments of intertia ($I_x, I_y, I_z$)
-2. Spectra more complex
 ** Lecture 11: Hydrogen atom
 *** Schr\ouml{}dinger equation
 1. Spherical coordinates and separation of variables
