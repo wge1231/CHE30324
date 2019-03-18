@@ -789,6 +789,7 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 #+END_EXPORT
 
 #+BEGIN_SRC python :exports results
+# Stub to solve Schrodinger eq numerically
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
@@ -812,7 +813,7 @@ def harmonic(k,x):
 def Hmat(mass,V):
     hbar2mu = -hbar*hbar/(2 * mass) # eV nm^2
     n = np.size(V)
-    print(n)
+#    print(n)
 
     A = np.zeros((n-1,n-1))
     for i in range(n-1):
@@ -827,13 +828,13 @@ def Hmat(mass,V):
     return A
 
 X = np.linspace(-0.01,0.01,100)
-print(X)
-print(np.size(X))
+#print(X)
+#print(np.size(X))
 V = harmonic(k,X)
-print(V)
-print(np.size(V))
+#print(V)
+#print(np.size(V))
 H = Hmat(mH,V)
-print(H)
+#print(H)
 # eigenE, eigenfn = LA.eigh(A)
 
 # print(eigenE)
@@ -849,8 +850,6 @@ print(H)
 #+END_SRC
 
 #+RESULTS:
-
-[[./Images/harmonic.png]]
 
 #+BEGIN_COMMENT
 #+BEGIN_SRC python :exports results
@@ -1315,6 +1314,7 @@ plt.xlabel('Distance (a0)')
 plt.ylabel('Wavefunction R(r)')
 
 plt.legend()
+plt.title('H atom radial wavefunctions')
 plt.savefig('./Images/H-R.png')
 
 plt.figure()
@@ -1329,6 +1329,7 @@ plt.plot([0,max],[0,0],color='black',linestyle=':')
 plt.xlim(0,max)
 plt.xlabel('Distance (a0)')
 plt.ylabel('Radial probability P(r)')
+plt.title('H atom radial probability functions')
 
 plt.legend()
 plt.savefig('./Images/H-P.png')
@@ -1339,11 +1340,11 @@ plt.savefig('./Images/H-P.png')
 :RESULTS:
 :END:
 
-#+CAPTION: H atom radial wavefunctions
-#+ATTR_LATEX: :width 0.75\textwidth
+#+CAPTION: H atom wavefunctions
+#+ATTR_LATEX: :width 0.5\textwidth
 [[./Images/H-R.png]] 
 #+CAPTION: H atom radial probability
-#+ATTR_LATEX: :width 0.75\textwidth
+#+ATTR_LATEX: :width 0.5\textwidth
 [[./Images/H-P.png]] 
 
 *** /Variational principle/
@@ -1354,18 +1355,24 @@ plt.savefig('./Images/H-P.png')
 \[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
 
 ** Lecture 12: Many-electron atoms
-*** Many-electron problem, Schr\ouml{}dinger equation not exactly solvable
+*** Many-electron problem, Schr\ouml{}dinger equation not exactly solvable (Sad!)
 1.  $e^- -e^-$ interaction terms prevent separation of variables
-2.  Independent electron model basis of all solutions, describes each electron by its own wavefunction, or "orbital"
+2.  /Independent electron/ model basis of all solutions, describes each electron by its own wavefunction, or "orbital," $\psi_i$
 *** Qualitative solutions
  1. $\psi_i$ look like H atom orbitals,  labeled by same quantum numbers
  2. /Aufbau principle/: ``Build-up'' electron configuration by adding electrons into H-atom-like orbitals, from bottom up
  3. /Pauli exclusion principle/: Every electron in atom must have a unique set of quantum numbers, so only two per orbital (with opposite spin)
  4. /Pauli exclusion principle (formally)/: The wavefunction of a multi-particle system must be anti-symmetric to coordinate exchange if the particles are fermions, and symmetric to coordinate exchange if the particles are bosons
  5. /Hund's rule/: Electrons in degenerate orbitals prefer to be spin-aligned.  Configuration with highest /spin multiplicity/ is the most preferred
+| $S$   | $2S+1$ | multiplicity |
+|-------+--------+--------------|
+| 0     |      1 | singlet      |
+| $1/2$ |      2 | doublet      |
+| 1     |      3 | triplet      |
+| $3/2$ |      4 | quartet      |
 *** Structure of the periodic table
 1. Electrons in different subshells experience different effective nuclear charge $Z_\mathrm{eff} = Z - \sigma_{nl}$
-2. Inner ("core") shells not shielded well at 
+2. Inner ("core") shells not shielded well
 3. Inner shell electrons "shield" outer electrons well
 4. Within a shell, $s$ shielded less than $p$ less than $d$ ..., causes degeneracy to break down
 5. Electrons in same subshell shield each other poorly, causing ionization energy to increase across the subshell
@@ -1400,10 +1407,46 @@ plt.savefig('./Images/H-P.png')
 2. /Hartree-Fock model/: Include Coulomb and exchange
 3. /Density-functional theory/ (DFT): Include Coulomb and
 	approximate expressions for exchange and correlation         
-4. All the potential terms $\hat v$ depend on the solutions, so equations
-	must be solved /iteratively/ to /self-consistency/
+*** Numerical solution 
+1. All potential terms $\hat v$ depend on the solutions, so  equations must be solved /iteratively/ to /self-consistency/
+2. Solved numerically on a grid or by expanding solutions in a basis set
 *** DFT calculations on atoms
 1. See [[http://www.chemsoft.ch/qc/fda.htm]]
+
+#+BEGIN_SRC python :exports results
+import matplotlib.pyplot as plt
+import numpy as np
+from sympy.physics.hydrogen import E_nl
+from sympy.physics.hydrogen import R_nl
+from sympy import symbols
+from sympy.plotting import plot
+from sympy import var
+
+#fig = plt.gcf()
+aueV = 27.2114
+
+Atom = ["He", "Ne", "Ar", "Kr"]
+IPexpt = np.array([24.59, 21.56, 15.76,14.00])
+IPXalpha = np.array([0.8998,0.7912,0.5735,0.5130]) # Hartree
+IPXalphaeV = IPXalpha*aueV
+
+offset = -0.7
+plt.figure()
+for i in [0,1,2,3]:
+    plt.scatter(IPexpt[i],IPXalphaeV[i],color='black')
+    plt.text(IPexpt[i],IPXalphaeV[i]+offset,Atom[i],color='black')
+plt.plot([13,25],[13,25],color='black',linestyle=':',label='y=x')
+plt.xlabel('Experiment (eV)')
+plt.ylabel('DFT (eV)')
+plt.legend()
+
+plt.title('DFT-computed vs experimental 1st ionization energies')
+
+plt.savefig('./Images/Ionization.png')
+
+#+END_SRC
+
+#+RESULTS:
 
 #+BEGIN_EXPORT latex
 \begin{table}[]
@@ -1411,7 +1454,7 @@ plt.savefig('./Images/H-P.png')
 \begin{tabular}{cc}
 \includegraphics[scale=0.33]{Images/Slide1.png} & \includegraphics[scale=0.33]{Images/Slide2.png} \\
 \includegraphics[scale=0.33]{Images/Slide3.png} & \includegraphics[scale=0.33]{Images/Slide4.png} \\
-\includegraphics[scale=0.33]{Images/Slide5.png} & \includegraphics[scale=0.5]{Images/Slide6.png} 
+\includegraphics[scale=0.33]{Images/Slide5.png} & \includegraphics[scale=0.5]{Images/Ionization.png} 
 \end{tabular}
 \end{table}
 #+END_EXPORT
