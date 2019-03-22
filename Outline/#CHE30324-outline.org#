@@ -1,4 +1,4 @@
-#+BEGIN_OPTIONS
+#+Begin_OPTIONS
 #+AUTHOR: William F. Schneider
 #+TITLE: CHE 30324 Outline
 #+EMAIL: wschneider@nd.edu
@@ -1508,12 +1508,12 @@ plt.savefig('./Images/Ionization.png')
 9. Ground configuration $=\sigma_g^2$
 10. Bond order = $\frac{1}{2}(n-n^*)$
 *** Secular equations
-1. Expand wavefunctions ("molecular orbitals") in "basis" of atomic-like orbitals
+1. Expand molecular orbitals in "basis" of atomic-like orbitals
 	\begin{equation}
           \psi_\mathrm{MO}=\sum_a c_a\phi_a({\bf r})
 	\end{equation}
-2. Problem reduces to finding set of $c_a$ that give best wavefunctions (MOs)
-3. Substituting into Schr\ouml{}dinger equation and integrating yields set of linear equations for the $c_a$ for each MO
+2. Problem reduces to finding set of $c_a$ that give best molecular orbitals (MOs)
+3. Substituting into Fock equation and integrating yields set of linear equations for the $c_a$ for each MO
 	\begin{displaymath}
           \left ( \begin{array}{ccc}
             F_{11}-\epsilon S_{11} & F_{12}-\epsilon S_{12} & \ldots \\
@@ -1526,7 +1526,7 @@ plt.savefig('./Images/Ionization.png')
             \vdots
           \end{array} \right ) = 0
       \end{displaymath}
-   1. $F_{ij} = F_{ji} = \langle \phi_i | \hat f | \phi_j \rangle$ are
+   1. $F_{ij} = F_{ji} = \langle \phi_i | \hat f | \phi_j \rangle$ are Fock
 	``matrix elements''
    2. $S_{ij} = S_{ji} = \langle \phi_i | \phi_j \rangle$ are overlaps
    3. Typically basis functions normalized such that $S_{ii} = 1$
@@ -1555,7 +1555,7 @@ plt.savefig('./Images/Ionization.png')
 *** Qualitative solutions of secular equations
 1. Lot's of insight into chemical bonding can be obtained from approximate solutions to secular equations, basis of "molecular orbital theory"
 2. Two general assumptions
-   1. Diagonal matrix elements are approximately equal to energies of corresponding atomic orbitals: $F_{ii} \approx \epsilon_{i,\mathrm{ao}}$
+   1. Diagonal Fock elements are approximately equal to energies of corresponding atomic orbitals: $F_{ii} \approx \epsilon_{i,\mathrm{ao}}$
    2. Off-diagonal elements proportional to overlap and inversely proportional to energy difference:
 	\begin{displaymath}
           F_{ij} \propto \frac{S_{ij}}{\epsilon_{i,\mathrm{ao}}-\epsilon_{j,\mathrm{ao}}}
