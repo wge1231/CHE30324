@@ -1734,7 +1734,6 @@ alpha + 2*beta    1
 ** Lecture 16: Electronic and magnetic properties
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
-
 ** Lecture 17: Statistical mechanics
 *** Need machinary to average QM information over macroscopic systems
 *** Equal /a priori/ probabilities
