@@ -1667,70 +1667,41 @@ alpha + 2*beta    1
 2. Hessian matrix for frequencies
 
 ** Lecture 15: Electronic spectroscopy
-#+BEGIN_COMMENT
- \item {\bf Lecture 14: Electronic spectroscopy}
-   \begin{outline}
-   \item Electronic spectroscopy examines electron jumps between energy states (“orbitals”)
-   \item The orbital structure of each substance is unique, so unlike vibrational or rotational spectroscopy, there is no simple general energy model for electronic transitions.  There are a couple general rules, though:
-     \begin{outline}
-       \item Spin selection rule: $\Delta S = 0$
-         \begin{outline}
-           \item electron spins are ``forbidden to change''
-         \end{outline}
-       \item Koopman’s ``theorem'':
-         \begin{outline}
-         \item the energy of an electronic transition is approximately the difference in energy between the orbital an electron starts in and the one it ends up in
-           \begin{outline}
-           \item $h \nu \approx \epsilon_\mathrm{final}-\epsilon_\mathrm{initial}$
-           \end{outline}
-         \item this “theorem” is an approximation because the orbitals are not static; more correctly, the energy difference is given by a full electronic structure calculation on the initial and final states
-         \end{outline}
-       \end{outline}
-     \item Various classes of transitions
-       \begin{outline}
-       \item UV/visible spectroscopy
-         \begin{outline}
-         \item electron jumps from valence filled to empty orbital
-         \item energies of an eV or so
-         \item $\pi$ to $\pi^*$ classic example
-         \end{outline}
-       \item UV photoelectron spectroscopy
-         \begin{outline}
-         \item electron ionized from valence filled orbital          
-         \end{outline}
-       \item X-ray spectroscopy
-         \begin{outline}
-         \item electron ionized from core orbital or promoted from core to an empty orbital 
-         \item 10’s-1000’s eV energies
-         \item many types, from lab scale to massive synchrotrons
-         \item information about elemental composition, oxidation state, coordination, ...          
-         \end{outline}
-       \end{outline}
+*** Electronic spectroscopy probes electron jumps between energy states, or "orbitals"
+1. The electronic structure of each substance is unique, so no general energy expression for electronic transitions
+2. Core, valence, virtual, vacuum states
+3.  Transitions approximately difference between orbital energies (Koopman's theorem)
+  \[h \nu \approx \epsilon_\mathrm{final}-\epsilon_\mathrm{initial} \]
+4. This "theorem" is an approximation because the orbitals are not static; more correctly, the energy difference is given by a full electronic structure calculation on the initial and final states
 
-     \item Various classes of electron events
-       \begin{outline}
-       \item stimulated absorption
-         \begin{outline}
-         \item photon causes jump from lower to higher energy electronic state
-         \item often convoluted with jumps to different vibrational, rotational states          
-         \end{outline}
-       \item spontaneous emission
-         \begin{outline}
-         \item electron spontaneously jumps to a lower energy state and emits a photon
-         \item basis of fluorescence ($\Delta S = 0$)
-         \item basis of long-lived phosphorescence ($\Delta S \neq  0$)
-         \item long-lived because it breaks the spin selection rule
-         \end{outline}
-       \item stimulated emission
-         \begin{outline}
-         \item passing photon causes electron to jump from higher to a lower energy state and to emit another photon
-         \item cascade of such stimulated events is the basis of laser action
-         \end{outline}
-       \end{outline}
-     \end{outline}
+*** Selection Rules
+1. $\Delta S = 0$ "allowed"
+2. $\Delta S \ne 0$ "forbidden"
 
-
- #+END_COMMENT
+** Classes of transitions
+*** UV/visible spectroscopy
+1. electron jumps from valence filled to empty orbital
+2. energies of an eV or so
+3. $\pi$ to $\pi^*$ classic example
+*** UV photoelectron spectroscopy
+1. electron ionized from valence filled orbital
+2. 10's of eVs
+*** X-ray spectroscopy
+1. electron ionized from core orbital or promoted from core to an empty orbital 
+2. 100's-1000's eV energies
+3. many types, from lab scale to massive synchrotrons
+4. information about elemental composition, oxidation state, coordination, ...          
+*** Stimulated absorption
+1. photon causes jump from lower to higher energy electronic state
+2. often convoluted with jumps to different vibrational, rotational states          
+*** Spontaneous emission
+1. electron spontaneously drops to a lower energy state and emits a photon
+2. basis of fluorescence ($\Delta S = 0$)
+3. basis of long-lived phosphorescence ($\Delta S \neq  0$)
+4. long-lived because it breaks the spin selection rule
+*** Stimulated emission
+1. passing photon causes electron to jump from higher to a lower energy state and to emit another photon
+2. cascade of such stimulated events is the basis of laser action
 ** Lecture 16: Electronic and magnetic properties
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
@@ -1745,8 +1716,8 @@ alpha + 2*beta    1
           \Omega=\frac{N!}{q!(N-q)!}
         \end{displaymath}
 4. Allow energy to flow between two such systems
-   1. Energy of a closed system is conserved (first law!)
-   2. Degeneracy of total system is always $\geq$ degeneracy of the starting parts!
+   1. Energy of a closed system is conserved (first law)
+   2. Degeneracy of total system ($\Omega_1\Omega_2$) is always $\geq$ degeneracy of the starting parts
    3. Boltzmann's tombstone, $S = k_B \ln \Omega$
    4. Clausius: entropy of the universe seeks a maximum!  Second Law...
 
