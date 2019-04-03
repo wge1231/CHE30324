@@ -1701,7 +1701,11 @@ alpha + 2*beta    1
 4. long-lived because it breaks the spin selection rule
 *** Stimulated emission
 1. passing photon causes electron to jump from higher to a lower energy state and to emit another photon
+<<<<<<< HEAD
 2. cascade of such stimulated events is the basis of laser action#+BEGIN_COMMENT
+=======
+2. cascade of such stimulated events is the basis of laser action
+>>>>>>> 59d8a45957dd6429b83d0ae08e6c65abb168423c
 ** Lecture 16: Electronic and magnetic properties
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
@@ -1715,10 +1719,16 @@ alpha + 2*beta    1
         \begin{displaymath}
           \Omega(N,q)=\frac{N!}{q!(N-q)!}
         \end{displaymath}
+<<<<<<< HEAD
 4. Allow energy (heat!) to exchange between two such systems
    1. Energy of composite system is sum of individual systems (first law, \(q_1+q_2=q\))
    2. Degeneracy of composite system is always $\geq$ degeneracy of the starting parts!
           \[\Omega(N_1+N_2,q_1+q_2) > \Omega(N_1,q_1)\cdot \Omega(N_2,q_2) \]
+=======
+4. Allow energy to flow between two such systems
+   1. Energy of a closed system is conserved (first law)
+   2. Degeneracy of total system ($\Omega_1\Omega_2$) is always $\geq$ degeneracy of the starting parts
+>>>>>>> 59d8a45957dd6429b83d0ae08e6c65abb168423c
    3. Boltzmann's tombstone, $S = k_B \ln \Omega$
    4. Second Law:
 #+BEGIN_QUOTE
