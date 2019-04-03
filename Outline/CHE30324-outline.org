@@ -1635,7 +1635,7 @@ alpha + 2*beta    1
 [[./Images/band.pdf]]
 
 ** Lecture 14: Computational chemistry
-*** Numerical solvers of Schr\ouml{}dinger equation for molecules readily available today
+*** Numerical Schr\ouml{}dinger equation solvers for discrete (molecule) and periodic (solids/liquids/interfaces) readily available today
 *** Have to specify:
    1. Identity of atoms
    2. Positions of atoms (distances, angles, $\ldots$)
@@ -1742,18 +1742,104 @@ alpha + 2*beta    1
 2. Thermodynamic state defined by number of elements $N$, and number of quanta $q$, $U=q\epsilon$
 3. Degeneracy of given $N$ and $q$ given by binomial distribution:
         \begin{displaymath}
-          \Omega=\frac{N!}{q!(N-q)!}
+          \Omega(N,q)=\frac{N!}{q!(N-q)!}
         \end{displaymath}
-4. Allow energy to flow between two such systems
-   1. Energy of a closed system is conserved (first law!)
-   2. Degeneracy of total system is always $\geq$ degeneracy of the starting parts!
+4. Allow energy (heat!) to exchange between two such systems
+   1. Energy of composite system is sum of individual systems (first law, \(q_1+q_2=q\))
+   2. Degeneracy of composite system is always $\geq$ degeneracy of the starting parts!
+          \[\Omega(N_1+N_2,q_1+q_2) > \Omega(N_1,q_1)\cdot \Omega(N_2,q_2) \]
    3. Boltzmann's tombstone, $S = k_B \ln \Omega$
-   4. Clausius: entropy of the universe seeks a maximum!  Second Law...
+   4. Second Law:
+#+BEGIN_QUOTE
+Die Energie der Welt ist constant.  Die Entropie der Welt strebt einem Maximum zu. - Clausius
+#+END_QUOTE
 
-*** Energy flow/thermal equilibrium between two large systems
+*** Large two-state system
+1. Stirling's approximation:
+     \[\Omega(N,q) \approx N^N/(N-q)^{(N-q)}\]
+2. Composite system
+     \[\Omega(N,q) = \sum_{i\le q} \Omega(N_1,i)\cdot \Omega(N_2,q-i) \]
+3. For large $N$, one term /overwhelmingly/ dominates sum
+#+BEGIN_SRC python :exports results
+import numpy as np
+import matplotlib.pyplot as plt
+
+def Omega(N,q):
+    return (N**N)/((N-q)**(N-q))
+def LOmega(N,q):
+    return N*np.log(N)-(N-q)*np.log(N-q)
+
+plt.figure()
+N1 = 100
+N2 = 100
+qtot = 50
+q1=np.linspace(0,qtot,qtot+1)
+q2 = qtot - q1
+
+lomega1 = LOmega(N1,q1)
+lomega2 = LOmega(N2,q2)
+
+plt.subplot(1,2,1)
+plt.plot(q1,lomega1,label="System 1")
+plt.plot(q1,lomega2,label="System 2")
+composite=lomega1+lomega2
+plt.plot(q1,composite,label="Composite")
+plt.ylabel("Log Omega")
+plt.legend()
+
+plt.subplot(1,2,2)
+lomegamax=np.max(composite)
+plt.plot(q1,np.exp((lomega1+lomega2)-lomegamax),color='green',label="exp")
+plt.ylim([0,1])
+plt.ylabel("Relative probability")
+plt.legend()
+plt.title("N1 = N2 = 100, q = 50")
+
+plt.savefig("./Images/2state-100.png")
+
+plt.figure()
+N1 = 100000
+N2 = 100000
+qtot = 50000
+q1=np.linspace(0,qtot,qtot+1)
+q2 = qtot - q1
+
+lomega1 = LOmega(N1,q1)
+lomega2 = LOmega(N2,q2)
+
+plt.subplot(1,2,1)
+plt.plot(q1,lomega1,label="System 1")
+plt.plot(q1,lomega2,label="System 2")
+composite=lomega1+lomega2
+plt.plot(q1,composite,label="Composite")
+plt.ylabel("Log Omega")
+plt.legend()
+
+plt.subplot(1,2,2)
+lomegamax=np.max(composite)
+plt.plot(q1,np.exp((lomega1+lomega2)-lomegamax),color='green',label="Composite")
+plt.ylim([0,1])
+plt.ylabel("Relative probability")
+plt.legend()
+plt.title("N1 = N2 = 100000, q = 50000")
+
+plt.savefig("./Images/2state-100000.png")
+
+#+END_SRC
+
+#+BEGIN_EXPORT latex
+\begin{table}
+   \caption{Left: Energy distribution in two small, interacting two-state systems.  Right: Energy distribution in two large interacting two-state systems}
+\begin{tabular}{cc}
+\includegraphics[scale=0.5]{Images/2state-100.png} & \includegraphics[scale=0.5]{Images/2state-100000.png}
+\end{tabular}
+\end{table}
+#+END_EXPORT
+
+*** Consequences of energy flow between two large systems
 1. Each subsystem has energy $U_i$ and degeneracy $\Omega_i(U_i)$
-2. Bring in thermal contact, $U=U_1+U_2$, $\Omega=\Omega_1(U_1)\Omega_2(U_2)$
-3.  If systems are very large, one combination of $U_1$, $U_2$ and $\Omega$ will be much more probably than all others
+2. Bring in thermal contact, $U=U_1+U_2$, $\Omega=\Sum_{U_1}\Omega_1(U_1)\Omega_2(U_2)$
+3. If systems are very large, one combination of $U_1$, $U_2$ and $\Omega$ will dominate sum
 4. What value of $U_1$ and $U_2=U-U_1$ maximizes $\Omega$?
         \begin{displaymath}
  \left ( \frac{\partial \ln \Omega_1}{\partial U_1} \right )_N = \left ( \frac{\partial \ln \Omega_2}{\partial U_2} \right )_N
@@ -1765,7 +1851,7 @@ alpha + 2*beta    1
         \begin{displaymath}
             \frac{1}{T}=\left ( \frac{\partial S}{\partial U} \right )_N
           \end{displaymath}
-6. When the temperatures of the two subsystems are equal, the entropy of the combined system is maximized!
+6. Equal temperatures \rightarrow most probable distribution of energy between subsystems. 
 7. (Same arguments lead to requirement that equal pressures ($P_i$) and equal chemical potentials ($\mu_i$) maximize entropy when volumes or particles are exchanged)
 
 *** Two-state model in limit of large $N$
@@ -1802,7 +1888,7 @@ alpha + 2*beta    1
 #           P(\epsilon_i) \propto e^{-\epsilon_i/k_B T} = e^{-\epsilon_i \beta},\
 #           \ \ \ \ \beta=1/k_BT
 #         \end{eqnarray*}
-6. *Partition function counts the number of states accessible to a system at a given $T$ and $V$*
+6. *Partition function counts the number of states accessible to a system at a given $V$ and in equilibrium with a reservoir at $T$
 *** Energy factoring (sidebar)
 1. If system is large, how to determine it's energy states $U_j$?  There would be many, many of them!
 2. One simplification is if we can write energy as sum of energies of individual elements (atoms, molecules) of system:
