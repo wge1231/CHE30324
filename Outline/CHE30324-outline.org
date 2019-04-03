@@ -1667,70 +1667,41 @@ alpha + 2*beta    1
 2. Hessian matrix for frequencies
 
 ** Lecture 15: Electronic spectroscopy
-#+BEGIN_COMMENT
- \item {\bf Lecture 14: Electronic spectroscopy}
-   \begin{outline}
-   \item Electronic spectroscopy examines electron jumps between energy states (“orbitals”)
-   \item The orbital structure of each substance is unique, so unlike vibrational or rotational spectroscopy, there is no simple general energy model for electronic transitions.  There are a couple general rules, though:
-     \begin{outline}
-       \item Spin selection rule: $\Delta S = 0$
-         \begin{outline}
-           \item electron spins are ``forbidden to change''
-         \end{outline}
-       \item Koopman’s ``theorem'':
-         \begin{outline}
-         \item the energy of an electronic transition is approximately the difference in energy between the orbital an electron starts in and the one it ends up in
-           \begin{outline}
-           \item $h \nu \approx \epsilon_\mathrm{final}-\epsilon_\mathrm{initial}$
-           \end{outline}
-         \item this “theorem” is an approximation because the orbitals are not static; more correctly, the energy difference is given by a full electronic structure calculation on the initial and final states
-         \end{outline}
-       \end{outline}
-     \item Various classes of transitions
-       \begin{outline}
-       \item UV/visible spectroscopy
-         \begin{outline}
-         \item electron jumps from valence filled to empty orbital
-         \item energies of an eV or so
-         \item $\pi$ to $\pi^*$ classic example
-         \end{outline}
-       \item UV photoelectron spectroscopy
-         \begin{outline}
-         \item electron ionized from valence filled orbital          
-         \end{outline}
-       \item X-ray spectroscopy
-         \begin{outline}
-         \item electron ionized from core orbital or promoted from core to an empty orbital 
-         \item 10’s-1000’s eV energies
-         \item many types, from lab scale to massive synchrotrons
-         \item information about elemental composition, oxidation state, coordination, ...          
-         \end{outline}
-       \end{outline}
+*** Electronic spectroscopy probes electron jumps between energy states, or "orbitals"
+1. The electronic structure of each substance is unique, so no general energy expression for electronic transitions
+2. Core, valence, virtual, vacuum states
+3.  Transitions approximately difference between orbital energies (Koopman's theorem)
+  \[h \nu \approx \epsilon_\mathrm{final}-\epsilon_\mathrm{initial} \]
+4. This "theorem" is an approximation because the orbitals are not static; more correctly, the energy difference is given by a full electronic structure calculation on the initial and final states
 
-     \item Various classes of electron events
-       \begin{outline}
-       \item stimulated absorption
-         \begin{outline}
-         \item photon causes jump from lower to higher energy electronic state
-         \item often convoluted with jumps to different vibrational, rotational states          
-         \end{outline}
-       \item spontaneous emission
-         \begin{outline}
-         \item electron spontaneously jumps to a lower energy state and emits a photon
-         \item basis of fluorescence ($\Delta S = 0$)
-         \item basis of long-lived phosphorescence ($\Delta S \neq  0$)
-         \item long-lived because it breaks the spin selection rule
-         \end{outline}
-       \item stimulated emission
-         \begin{outline}
-         \item passing photon causes electron to jump from higher to a lower energy state and to emit another photon
-         \item cascade of such stimulated events is the basis of laser action
-         \end{outline}
-       \end{outline}
-     \end{outline}
+*** Selection Rules
+1. $\Delta S = 0$ "allowed"
+2. $\Delta S \ne 0$ "forbidden"
 
-
- #+END_COMMENT
+** Classes of transitions
+*** UV/visible spectroscopy
+1. electron jumps from valence filled to empty orbital
+2. energies of an eV or so
+3. $\pi$ to $\pi^*$ classic example
+*** UV photoelectron spectroscopy
+1. electron ionized from valence filled orbital
+2. 10's of eVs
+*** X-ray spectroscopy
+1. electron ionized from core orbital or promoted from core to an empty orbital 
+2. 100's-1000's eV energies
+3. many types, from lab scale to massive synchrotrons
+4. information about elemental composition, oxidation state, coordination, ...          
+*** Stimulated absorption
+1. photon causes jump from lower to higher energy electronic state
+2. often convoluted with jumps to different vibrational, rotational states          
+*** Spontaneous emission
+1. electron spontaneously drops to a lower energy state and emits a photon
+2. basis of fluorescence ($\Delta S = 0$)
+3. basis of long-lived phosphorescence ($\Delta S \neq  0$)
+4. long-lived because it breaks the spin selection rule
+*** Stimulated emission
+1. passing photon causes electron to jump from higher to a lower energy state and to emit another photon
+2. cascade of such stimulated events is the basis of laser action#+BEGIN_COMMENT
 ** Lecture 16: Electronic and magnetic properties
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
@@ -1789,9 +1760,9 @@ plt.legend()
 
 plt.subplot(1,2,2)
 lomegamax=np.max(composite)
-plt.plot(q1,np.exp((lomega1+lomega2)-lomegamax),color='green',label="exp")
+plt.plot(q1,np.exp((lomega1+lomega2)-lomegamax),color='green',label="Composite")
 plt.ylim([0,1])
-plt.ylabel("Relative probability")
+plt.ylabel("Relative contribution")
 plt.legend()
 plt.title("N1 = N2 = 100, q = 50")
 
@@ -1819,13 +1790,15 @@ plt.subplot(1,2,2)
 lomegamax=np.max(composite)
 plt.plot(q1,np.exp((lomega1+lomega2)-lomegamax),color='green',label="Composite")
 plt.ylim([0,1])
-plt.ylabel("Relative probability")
+plt.ylabel("Relative contribution")
 plt.legend()
 plt.title("N1 = N2 = 100000, q = 50000")
 
 plt.savefig("./Images/2state-100000.png")
 
 #+END_SRC
+
+#+RESULTS:
 
 #+BEGIN_EXPORT latex
 \begin{table}
@@ -1838,9 +1811,11 @@ plt.savefig("./Images/2state-100000.png")
 
 *** Consequences of energy flow between two large systems
 1. Each subsystem has energy $U_i$ and degeneracy $\Omega_i(U_i)$
-2. Bring in thermal contact, $U=U_1+U_2$, $\Omega=\Sum_{U_1}\Omega_1(U_1)\Omega_2(U_2)$
-3. If systems are very large, one combination of $U_1$, $U_2$ and $\Omega$ will dominate sum
-4. What value of $U_1$ and $U_2=U-U_1$ maximizes $\Omega$?
+2. Bring in thermal contact, $U=U_1+U_2$, $\Omega=\sum_{U_1}\Omega_1(U_1)\Omega_2(U-U_1)$
+3. If systems are very large, one combination of $U_1$, $U_2$ will dominate \Omega sum. Find largest term.
+        \begin{displaymath}
+           \left ( \frac{\partial \Omega}{\partial U_1} \right )_{N} = 0
+        \end{displaymath}
         \begin{displaymath}
  \left ( \frac{\partial \ln \Omega_1}{\partial U_1} \right )_N = \left ( \frac{\partial \ln \Omega_2}{\partial U_2} \right )_N
         \end{displaymath}
@@ -1861,7 +1836,7 @@ plt.savefig("./Images/2state-100000.png")
           S(U)=-k_B \left ( x \ln x + (1-x) \ln (1-x) \right ), \mathrm{where}\
           x = q/N = U/N\epsilon
         \end{displaymath}
-3. Temperature is derivative of entropy wrt energy yields
+3. Temperature is derivative of entropy wrt energy, yields
           \begin{displaymath}
             U(T) = \frac{N\epsilon}{1+e^{\epsilon/k_BT}}
           \end{displaymath}
@@ -1870,70 +1845,6 @@ plt.savefig("./Images/2state-100000.png")
 6. Differentiate again to get heat capacity
 *** Example of microcanonical ("$NVE$") ensemble
 1. Direct evaluation of $S(U)$ is generally intractable, so seek simpler approach
-** Lecture 18: Canonical ($NVT$) ensemble
-*** Partition function
-1. Imagine a system brought into thermal equilibrium with a much larger "reservoir" of constant $T$, such that the aggregate has a total energy $U$
-2. Degeneracy of a given system microstate $j$ with energy $U_j$ is $\Omega_{res}(U-U_j)$
-        \begin{eqnarray*}
-          T = \frac{dU_{res}}{k_Bd\ln\Omega_{res}} \\
-          \Omega_{res}(U-U_j) \propto e^{-U_j/k_B T}
-        \end{eqnarray*}
-3. Probability for system to be in a microstate with energy $U_j$ given by Boltzmann distribution!
-        \begin{displaymath}
-          P(U_j) \propto e^{-U_j/k_B T} = e^{-U_j \beta}
-        \end{displaymath}
-4. Partition function "normalizes" distribution, $Q(T,V) = \sum_j e^{-U_j \beta}$
-# 5. For system of identical (distinguishable) elements with energy states $\epsilon_i$, can factor probability to show
-#         \begin{eqnarray*}
-#           P(\epsilon_i) \propto e^{-\epsilon_i/k_B T} = e^{-\epsilon_i \beta},\
-#           \ \ \ \ \beta=1/k_BT
-#         \end{eqnarray*}
-6. *Partition function counts the number of states accessible to a system at a given $V$ and in equilibrium with a reservoir at $T$
-*** Energy factoring (sidebar)
-1. If system is large, how to determine it's energy states $U_j$?  There would be many, many of them!
-2. One simplification is if we can write energy as sum of energies of individual elements (atoms, molecules) of system:
-    \begin{align}
-      U_j&=\epsilon_j(1)+\epsilon_j(2) + ... + \epsilon_j(N) \\
-      Q(N,V,T) &= \sum_j e^{-U_j\beta} \\
-      &=\sum_je^{-(\epsilon_j(1)+\epsilon_j(2) + ... + \epsilon_j(N))\beta}
-    \end{align}
-3. /If/ molecules/elements of system can be distinguished from each
-        other (like atoms in a fixed lattice), expression can be factored:
-      \begin{align}
-        Q(N,V,T)&=\left ( \sum_j e^{-\epsilon_j(1)\beta}\right )\cdots \left ( \sum_j
-          e^{-\epsilon_j(N)\beta}\right ) \\
-      &= q(1)\cdots q(N) \\
-      \text{Assuming all the elements are the same:}\\
-      &= q^N \\
-     q&=\sum_j e^{-\epsilon_j \beta}: \mathrm{molecular\ partition\ function}
-   \end{align}
-4. /If not/ distinguishable (like molecules in a liquid or gas, or electrons in a solid), problem is difficult, because identical
-      arrangements of energy amongst elements should only be counted once.
-5. Approximate solution, good almost all the time:
-    \begin{equation}
-      Q(N,V,T)=q^N/N!
-    \end{equation}
-6. Sidebar: "Correct" factoring depends on whether individual elements are fermions or bosons, leads to funny things like superconductivity and superfluidity.
-
-***  Distinguishable vs. indistinguishable particles
-1. $q(V,T)$ counts states available to a single element of a system, like a molecule in a gas or in a solid
-2. Distinguishable (e.g., in a solid): $Q(N,V,T) = q(V,T)^N$
-3. Indistinguishable (e.g., a gas): $Q(N,V,T)\approx q(V,T)^N/N!$
-
-*** Two-state system again
-1. Partition function, $q(T)=1+e^{-\epsilon\beta}$
-2. State probabilities
-3. Internal energy $U(T)$
-        \begin{equation}
-          U(T)=-N \left ( \frac{\partial \ln(1+e^{-\epsilon\beta})}{\partial\beta}
-          \right)=\frac{N\epsilon e^{-\epsilon\beta}}{1+e^{-\epsilon\beta}}
-        \end{equation}
-4. Heat capacity $C_v$
-   1. Minimum when change in states with $T$ is small
-   2. Maximize when chagne in states with $T$ is large
-5. Helmholtz energy, $A= -\ln q/\beta$, decreasing function of $T$
-6. Entropy
-
 #+BEGIN_SRC python :exports results 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -2036,6 +1947,70 @@ plt.savefig('./Images/2state-entropy.png')
 \end{tabular}
 \end{table}
 #+END_EXPORT
+** Lecture 18: Canonical ($NVT$) ensemble
+*** Partition function
+1. Imagine a system brought into thermal equilibrium with a much larger "reservoir" of constant $T$, such that the aggregate has a total energy $U$
+2. Degeneracy of a given system microstate $j$ with energy $U_j$ is $\Omega_{res}(U-U_j)$
+        \begin{eqnarray*}
+          T = \frac{dU_{res}}{k_Bd\ln\Omega_{res}} \\
+          \Omega_{res}(U-U_j) \propto e^{-U_j/k_B T}
+        \end{eqnarray*}
+3. Probability for system to be in a microstate with energy $U_j$ given by Boltzmann distribution!
+        \begin{displaymath}
+          P(U_j) \propto e^{-U_j/k_B T} = e^{-U_j \beta}
+        \end{displaymath}
+4. Partition function "normalizes" distribution, $Q(T,V) = \sum_j e^{-U_j \beta}$
+# 5. For system of identical (distinguishable) elements with energy states $\epsilon_i$, can factor probability to show
+#         \begin{eqnarray*}
+#           P(\epsilon_i) \propto e^{-\epsilon_i/k_B T} = e^{-\epsilon_i \beta},\
+#           \ \ \ \ \beta=1/k_BT
+#         \end{eqnarray*}
+6. *Partition function counts the number of states accessible to a system at a given $V$ and in equilibrium with a reservoir at $T$
+*** Energy factoring (sidebar)
+1. If system is large, how to determine it's energy states $U_j$?  There would be many, many of them!
+2. One simplification is if we can write energy as sum of energies of individual elements (atoms, molecules) of system:
+    \begin{align}
+      U_j&=\epsilon_j(1)+\epsilon_j(2) + ... + \epsilon_j(N) \\
+      Q(N,V,T) &= \sum_j e^{-U_j\beta} \\
+      &=\sum_je^{-(\epsilon_j(1)+\epsilon_j(2) + ... + \epsilon_j(N))\beta}
+    \end{align}
+3. /If/ molecules/elements of system can be distinguished from each
+        other (like atoms in a fixed lattice), expression can be factored:
+      \begin{align}
+        Q(N,V,T)&=\left ( \sum_j e^{-\epsilon_j(1)\beta}\right )\cdots \left ( \sum_j
+          e^{-\epsilon_j(N)\beta}\right ) \\
+      &= q(1)\cdots q(N) \\
+      \text{Assuming all the elements are the same:}\\
+      &= q^N \\
+     q&=\sum_j e^{-\epsilon_j \beta}: \mathrm{molecular\ partition\ function}
+   \end{align}
+4. /If not/ distinguishable (like molecules in a liquid or gas, or electrons in a solid), problem is difficult, because identical
+      arrangements of energy amongst elements should only be counted once.
+5. Approximate solution, good almost all the time:
+    \begin{equation}
+      Q(N,V,T)=q^N/N!
+    \end{equation}
+6. Sidebar: "Correct" factoring depends on whether individual elements are fermions or bosons, leads to funny things like superconductivity and superfluidity.
+
+***  Distinguishable vs. indistinguishable particles
+1. $q(V,T)$ counts states available to a single element of a system, like a molecule in a gas or in a solid
+2. Distinguishable (e.g., in a solid): $Q(N,V,T) = q(V,T)^N$
+3. Indistinguishable (e.g., a gas): $Q(N,V,T)\approx q(V,T)^N/N!$
+
+*** Two-state system again
+1. Partition function, $q(T)=1+e^{-\epsilon\beta}$
+2. State probabilities
+3. Internal energy $U(T)$
+        \begin{equation}
+          U(T)=-N \left ( \frac{\partial \ln(1+e^{-\epsilon\beta})}{\partial\beta}
+          \right)=\frac{N\epsilon e^{-\epsilon\beta}}{1+e^{-\epsilon\beta}}
+        \end{equation}
+4. Heat capacity $C_v$
+   1. Minimum when change in states with $T$ is small
+   2. Maximize when chagne in states with $T$ is large
+5. Helmholtz energy, $A= -\ln q/\beta$, decreasing function of $T$
+6. Entropy
+
 
 *** Thermodynamic functions in canonical ensemble
 
