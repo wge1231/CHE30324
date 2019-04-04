@@ -25,7 +25,7 @@
 #+LATEX_HEADER:\lhead{\em{Physical Chemistry for Chemical Engineers}}
 #+LATEX_HEADER:\rhead{ND CHE 30324}
 
-#+OPTIONS: toc:t
+#+OPTIONS: toc:nil
 #+OPTIONS: H:3 num:3
 #+OPTIONS: ':t
 #+END_OPTIONS
@@ -1960,10 +1960,15 @@ plt.savefig('./Images/2state-entropy.png')
           P(U_j) \propto e^{-U_j/k_B T} = e^{-U_j \beta}
         \end{displaymath}
 4. Partition function "normalizes" distribution, $Q(T,V) = \sum_j e^{-U_j \beta}$
-5. Partition function counts the number of states accessible to a system at a given $V$ and in equilibrium with a reservoir at $T$
+# 5. For system of identical (distinguishable) elements with energy states $\epsilon_i$, can factor probability to show
+#         \begin{eqnarray*}
+#           P(\epsilon_i) \propto e^{-\epsilon_i/k_B T} = e^{-\epsilon_i \beta},\
+#           \ \ \ \ \beta=1/k_BT
+#         \end{eqnarray*}
+6. *Partition function counts the number of states accessible to a system at a given $V$ and in equilibrium with a reservoir at $T$
 *** Energy factoring (sidebar)
 1. If system is large, how to determine it's energy states $U_j$?  There would be many, many of them!
-2. One simplification is if we can write energy as sum of energies of individual elements (atoms, molecules, degrees of freedom) of system:
+2. One simplification is if we can write energy as sum of energies of individual elements (atoms, molecules) of system:
     \begin{align}
       U_j&=\epsilon_j(1)+\epsilon_j(2) + ... + \epsilon_j(N) \\
       Q(N,V,T) &= \sum_j e^{-U_j\beta} \\
