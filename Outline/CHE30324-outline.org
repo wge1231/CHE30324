@@ -1607,36 +1607,13 @@ for state in [0, 1, 2]:
 
 pprint("\nEigenvectors")
 for state in [2,1,0]:
-    print(eigs[state][2])
+    print("Eigenvector(s) of state",state,":",eigs[state][2])
+    print(" ")
 
 #+END_SRC
 
 #+RESULTS:
 :RESULTS:
-6. Cyclobutadiene example
-
-[alpha  beta     0    beta ]
-[                          ]
-[beta   alpha  beta     0  ]
-[                          ]
-[  0    beta   alpha  beta ]
-[                          ]
-[beta     0    beta   alpha]
-                        
-Energy state, degeneracy
-alpha    2
-
-alpha - 2*beta    1
-
-alpha + 2*beta    1
-
-            
-Eigenvectors
-[Matrix([
-[1],
-[1],
-[1],
-[1]])]
 :END:
 
 *** Band structure of solids  
