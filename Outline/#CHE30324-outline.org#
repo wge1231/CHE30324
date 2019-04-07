@@ -1637,6 +1637,20 @@ Eigenvectors
 [1],
 [1],
 [1]])]
+[Matrix([
+[-1],
+[ 1],
+[-1],
+[ 1]])]
+[Matrix([
+[-1],
+[ 0],
+[ 1],
+[ 0]]), Matrix([
+[ 0],
+[-1],
+[ 0],
+[ 1]])]
 :END:
 
 *** Band structure of solids  
