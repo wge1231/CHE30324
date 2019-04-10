@@ -1667,30 +1667,30 @@ for state in [2,1,0]:
 1. $\Delta S = 0$ "allowed"
 2. $\Delta S \ne 0$ "forbidden"
 
-** Classes of transitions
-*** UV/visible spectroscopy
-1. electron jumps from valence filled to empty orbital
-2. energies of an eV or so
-3. $\pi$ to $\pi^*$ classic example
-*** UV photoelectron spectroscopy
-1. electron ionized from valence filled orbital
-2. 10's of eVs
-*** X-ray spectroscopy
-1. electron ionized from core orbital or promoted from core to an empty orbital 
-2. 100's-1000's eV energies
-3. many types, from lab scale to massive synchrotrons
-4. information about elemental composition, oxidation state, coordination, ...          
-*** Stimulated absorption
-1. photon causes jump from lower to higher energy electronic state
-2. often convoluted with jumps to different vibrational, rotational states          
-*** Spontaneous emission
-1. electron spontaneously drops to a lower energy state and emits a photon
-2. basis of fluorescence ($\Delta S = 0$)
-3. basis of long-lived phosphorescence ($\Delta S \neq  0$)
-4. long-lived because it breaks the spin selection rule
-*** Stimulated emission
-1. passing photon causes electron to jump from higher to a lower energy state and to emit another photon
-2. cascade of such stimulated events is the basis of laser action#+BEGIN_COMMENT
+*** Classes of transitions
+**** UV/visible spectroscopy
+ 1. electron jumps from valence filled to empty orbital
+ 2. energies of an eV or so
+ 3. $\pi$ to $\pi^*$ classic example
+**** UV photoelectron spectroscopy
+ 1. electron ionized from valence filled orbital
+ 2. 10's of eVs
+**** X-ray spectroscopy
+ 1. electron ionized from core orbital or promoted from core to an empty orbital 
+ 2. 100's-1000's eV energies
+ 3. many types, from lab scale to massive synchrotrons
+ 4. information about elemental composition, oxidation state, coordination, ...          
+**** Stimulated absorption
+ 1. photon causes jump from lower to higher energy electronic state
+ 2. often convoluted with jumps to different vibrational, rotational states          
+**** Spontaneous emission
+ 1. electron spontaneously drops to a lower energy state and emits a photon
+ 2. basis of fluorescence ($\Delta S = 0$)
+ 3. basis of long-lived phosphorescence ($\Delta S \neq  0$)
+ 4. long-lived because it breaks the spin selection rule
+**** Stimulated emission
+ 1. passing photon causes electron to jump from higher to a lower energy state and to emit another photon
+ 2. cascade of such stimulated events is the basis of laser action#+BEGIN_COMMENT
 ** Lecture 16: Electronic and magnetic properties
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
@@ -2065,11 +2065,13 @@ Energy $G=A+PV$.
 7. Entropy: Sackur-Tetrode equation
 
 *** Rigid rotor (rotational states of a gas)
-1. recall energy states and degeneracies of rigid rotor
+1. sum over rigid energy states and degeneracies of rigid rotor
 2. $\Theta_\mathrm{rot} = \hbar^2/2 I k_B$
-4. "High" T $q_\mathrm{rot}(T) \approx \sigma \Theta_\mathrm{rot}/T$
+3. "High" T $q_\mathrm{rot}(T) \approx \sigma \Theta_\mathrm{rot}/T$, most often true
 *** Harmonic oscillator (vibrational states of a gas)
-1. $\Theta_\mathrm{vib}=h\nu/k_B$
+1. sum over harmonic oscillator energy states
+2. $\Theta_\mathrm{vib}=h\nu/k_B$, typically 100's to 1000's K
+3. introduce strong non-linear $T$ dependence to thermodynamic properties
 
 *** Electronic partition functions $\rightarrow$ spin multiplicity
 
@@ -2081,7 +2083,7 @@ Energy $G=A+PV$.
 2. thermodynamic quantities are sums of all degrees of freedom
 *** Non-ideality
 1. Real molecules interact through vdW interactions
-2. Particle-in-a-box model breaks down, have to work harder but can still get at same ideas
+2. Particle-in-a-box model is a start, have to elaborate to get at properties of liquids, solutions, ....
 3. See Hill, /J. Chem. Ed./ *1948*, /25/, p. 347 [[http://dx.doi.org/10.1021/ed025p347]]
 
 #+BEGIN_EXPORT latex
@@ -2255,7 +2257,7 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
    4. Harmonic approximation for transition state
 2. rate proportional to concentration of "activated complex" over reactants times crossing frequency
    \begin{displaymath}
-      r = k C_A C_B , k = \frac{k_B T}{h} frac{q^\ddagger}{q_A q_B}  e^-{\Delta E(0)/k_BT}
+      r = k C_A C_B , k = \frac{k_B T}{h} \frac{q^\ddagger}{q_A q_B}  e^{-{\Delta E(0)/k_BT}}
    \end{displaymath}
 
 #+ATTR_LATEX: :width 0.6\textwidth
