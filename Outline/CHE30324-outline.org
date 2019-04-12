@@ -2192,7 +2192,7 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
 |               | Characteristic                      | Characteristic   | States @ RT |                 |
 |               | Energy (cm^{-1})                    | Temperature (K)  |             |                 |
 |---------------+-------------------------------------+------------------+-------------+-----------------|
-| translational | $ \hbar^2/2 m L^2 \approx 10^{-21}$ | $10^{-21}$       | $10^{30}$   | classical limit |
+| translational | $\hbar^2/2 m L^2 \approx 10^{-21}$  | $10^{-21}$       | $10^{30}$   | classical limit |
 |               |                                     |                  |             |                 |
 | rotational    | $\approx 1$                         | $\approx 1$      | 100's       | semi-classical  |
 |               |                                     |                  |             |                 |
@@ -2202,6 +2202,36 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
 |---------------+-------------------------------------+------------------+-------------+-----------------|
 
 ** Lecture 20: Chemical reactions and equilibria
+*** Isothermal, isbaric separation for ideal gas mixture
+    \[ \text{A/B} (N_{A},N_{B},V,T) \rightarrow \text{A}(N_{A},x_{A}V,T) + \text{B}(N_{B},x_{B},V,T) \]
+1. Apply ideal gas expressions to all parts and compute a difference!
+2. Internal energy, $\Delta U(T) = 0$ 
+3. Entropy, $\Delta S(T)/(N_A+N_B) = k_B(x_A\ln(\x_A) + x_B \ln(x_B))$
+4. Minimum work of separation, $\Delta A(T) = \Delta U - T\Delta S > 0$
+*** Chemical reaction
+1. Consider \ce{A -> B}, eg vinyl alcohol to acetaldehyde (\ce{(HO)HC=CH2 -> CH3CHO})
+2. Standard reaction entropy $\Delta S^\circ (T) =  S^\circ_\mathrm{B}(T)-S^\circ_\mathrm{A}(T)$
+3. Reaction energy must capture difference in \SI{0}{K} electronic energy
+   \begin{displaymath}
+ \Delta U^\circ (T) = U^\circ_\mathrm{B}(T)-U^\circ_\mathrm{A}(T)+\Delta E(0)
+    \end{displaymath}
+4. Standard reaction free energy
+*** Chemical equilibrium 
+1. Consider \ce{A <=> B}, eg vinyl alcohol to acetaldehyde
+2. At chemical equilbrium, total free energy minimized with respect to reaction advancement
+3. Convolution of energy and entropy effects
+4. Equilibrium condition---equate chemical potentials
+     \begin{eqnarray*}
+    \mu_A(N,V,T) & = & \mu_B(N,V,T) \\
+    E_A(0) - k T \ln (q_A/N_A) & = & E_B(0) - k T \ln (q_B/N_B) \\
+   \frac{N_B}{N_A} =  \frac{N_B/V}{N_A/V} & = &\frac{q_B(T,V)/V}{q_A(T,V)/V} e^{-\Delta E(0)/kT}
+     \end{eqnarray*}
+5. Equilibrium constant---specify standard state to eliminate volume dependence
+    \begin{eqnarray*}
+     q_A^\circ(T) & = & q_A(T,V)/(V c^\circ) \\
+   K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT}
+    \end{eqnarray*}
+
 *** Standard states
 1. Translational partition function depends on concentration $N/V$
 2. "Standard state" corresponds to some standard choice, $(N/V)^\circ = c^\circ$
@@ -2210,23 +2240,6 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
      A(T,N/V)  = A^\circ(T) + k T \ln\left ( (N/V)/(N/V)^\circ \right ) =A^\circ(T) + k T \ln \left ( c/c^\circ \right )
      \end{displaymath}
 4. For ideal gas, related to pressure by $P^\circ = c^\circ k_B T$
-*** Chemical reaction $A \rightarrow B$
-1. Reaction entropy $\Delta S^\circ (T) =  S^\circ_\mathrm{B}(T)-S^\circ_\mathrm{A}(T)$
-2. Reaction energy must capture difference in \SI{0}{K} electronic energy
-   \begin{displaymath}
- \Delta U^\circ (T) = U^\circ_\mathrm{B}(T)-U^\circ_\mathrm{A}(T)+\Delta E(0)
-    \end{displaymath}
-3. Equilibrium condition---equate chemical potentials
-     \begin{eqnarray*}
-    \mu_A(N,V,T) & = & \mu_B(N,V,T) \\
-    E_A(0) - k T \ln (q_A/N_A) & = & E_B(0) - k T \ln (q_B/N_B) \\
-   \frac{N_B}{N_A} =  \frac{N_B/V}{N_A/V} & = &\frac{q_B(T,V)/V}{q_A(T,V)/V} e^{-\Delta E(0)/kT}
-     \end{eqnarray*}
-4. Equilibrium constant---specify standard state to eliminate volume dependence
-    \begin{eqnarray*}
-     q_A^\circ(T) & = & q_A(T,V)/(V c^\circ) \\
-   K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT}
-    \end{eqnarray*}
 *** Le'Chatlier's principle
 1. Response to temperature: Boltzmann distribution favors higher energy things as $T$ increases
 2. Response to volume chance: particle-in-a-box states increasingly favor side with more molecules as volume increases
