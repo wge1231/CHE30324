@@ -2201,6 +2201,8 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
 | electronic    | $\approx 10,000$                    | $\approx 10,000$ | 1           | non-classical   |
 |---------------+-------------------------------------+------------------+-------------+-----------------|
 
+
+
 ** Lecture 20: Chemical reactions and equilibria
 *** Isothermal, isbaric separation for ideal gas mixture
     \[ \text{A/B} (N_{A},N_{B},V,T) \rightarrow \text{A}(N_{A},x_{A}V,T) + \text{B}(N_{B},x_{B},V,T) \]
@@ -2243,6 +2245,126 @@ $q_\mathrm{elec} = \text{spin multiplicity}$
 *** Le'Chatlier's principle
 1. Response to temperature: Boltzmann distribution favors higher energy things as $T$ increases
 2. Response to volume chance: particle-in-a-box states increasingly favor side with more molecules as volume increases
+
+#+BEGIN_SRC python :exports results 
+import numpy as np
+import matplotlib.pyplot as plt
+
+k = 8.61734e-5   # eV /K
+eVtokJ = 96.485332
+autoeV= 27.212 # eV
+
+def A(q):
+   return -k*T*np.log(q)
+
+def S(A,U,T):
+   return (U - A)/T
+
+def qrot(T,Trot):
+    return np.sqrt((np.pi*(T/Trot[0])*(T/Trot[1])*(T/Trot[2])))
+
+def Urot(T,Trot):
+    return 1.5*k*T
+
+def qvib(T,Tvib):
+    qvib = 1
+    for mode in Tvib:
+        qvib = qvib*(1.-np.exp(-mode/T))**-1
+    return qvib
+
+def Uvib(T,Tvib):
+   Uvib=0.
+   for mode in Tvib:
+      Uvib=Uvib+k*(mode/(np.exp(mode/T)-1.0))
+   return Uvib
+
+def ZPE(Tvib):
+   ZPE=0.
+   for mode in Tvib:
+      ZPE = ZPE + mode
+   return ZPE * (0.5)*k
+
+TrotVA = [3.06869, 0.49808, 0.42852]   # Kelvin
+TvibVA = [342.12,   692.39,  1032.15,  1198.36,  1386.62, 1411.99,  1670.11,  1880.98,  1967.27,  2101.01, 2532.91,  4541.20,  4591.62,  4716.63,  5454.14]  # Kelvin
+EVA = -153.802227784  # au
+
+TrotAc = [ 2.72923, 0.48351, 0.43371]
+TvibAc = [222.94,   729.92,  1121.87,  1285.63,  1636.17, 1646.79,  2018.97,  2080.76,
+  2143.85,  2157.44,  2651.18,  4169.12,  4379.22,  4459.71,  4553.14]
+EAc = -153.830119460 # au
+
+T = np.linspace(200,1000,500)
+
+qrotVA = qrot(T,TrotVA)
+qrotAc = qrot(T,TrotAc)
+qvibVA = qvib(T,TvibVA)
+qvibAc = qvib(T,TvibAc)
+
+ArotVA = A(qrotVA)
+ArotAc = A(qrotAc)
+AvibVA = A(qrotVA)
+AvibAc = A(qrotAc)
+
+UrotVA = Urot(T,TrotVA)
+UrotAc = Urot(T,TrotAc)
+UvibVA = Uvib(T,TvibVA)
+UvibAc = Uvib(T,TvibAc)
+
+SrotVA = S(ArotVA,UrotVA,T)
+SrotAc = S(ArotAc,UrotAc,T)
+SvibVA = S(AvibVA,UvibVA,T)
+SvibAc = S(AvibAc,UvibAc,T)
+
+deltaSrot = SrotAc-SrotVA
+deltaSvib = SvibAc-SvibVA
+deltaS = deltaSrot+deltaSvib
+
+plt.figure()
+plt.plot(T,deltaSrot*eVtokJ,label="rot")
+plt.plot(T,deltaSvib*eVtokJ,label="vib")
+plt.plot(T,deltaS*eVtokJ,label="total")
+
+plt.xlabel('Temperature (K)')
+plt.ylabel('Entropy (J/K)')
+plt.title('Entropy')
+plt.legend()
+
+plt.savefig('./Images/rxn-entropy.png')
+
+plt.figure()
+
+deltaUrot=UrotAc-UrotVA
+deltaUvib=UvibAc-UvibVA
+deltaZPE = ZPE(TvibAc)-ZPE(TvibVA)
+
+plt.plot(T,deltaUrot*eVtokJ,label="rot")
+plt.plot(T,deltaUvib*eVtokJ,label="vib")
+plt.plot([200,1000],[deltaZPE*eVtokJ,deltaZPE*eVtokJ],label="ZPE")
+plt.xlabel('Temperature (K)')
+plt.ylabel('Energy (kJ/mol)')
+plt.title('Energy')
+plt.legend()
+
+plt.savefig('./Images/rxn-energy.png')
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_COMMENT
+[[./Images/rxn-entropy.png]]
+[[./Images/rxn-energy.png]]
+#+END_COMMENT
+
+#+BEGIN_EXPORT latex
+\begin{table}
+   \caption{Vinyl alchohol to acetaldehyde standard state thermodynamcs}
+\begin{tabular}{cc}
+\includegraphics[scale=0.5]{./Images/rxn-entropy.png} & \includegraphics[scale=0.5]{./Images/rxn-energy.png}% \\
+%\includegraphics[scale=0.5]{Images/2state-helmholtz.png} & \includegraphics[scale=0.5]{Images/2state-internal.png} \\
+%\includegraphics[scale=0.5]{Images/2state-heatcapacity.png} & \includegraphics[scale=0.5]{Images/2state-entropy.png}
+\end{tabular}
+\end{table}
+#+END_EXPORT
 
 ** Lecture 21: Chemical kinetics
 *** Kinetics and reaction rates
