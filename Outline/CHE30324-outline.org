@@ -2551,17 +2551,19 @@ plt.savefig('./Images/equilibrium.png')
    \frac{N_B}{N_A} =  \frac{N_B/V}{N_A/V} & = &\frac{q_B(T,V)/V}{q_A(T,V)/V} e^{-\Delta E(0)/kT}
      \end{eqnarray*}
 4. \(q/V = 1/\Lambda^3\) has units of number/volume, or concentration
-5. Equilibrium constant---define some standard concentration \(c^\circ\)
+5. Equilibrium constant---convert units to some standard concentration \(c^\circ\)
     \begin{eqnarray*}
      q_A^\circ(T) & = & q_A(T,V)/(V c^\circ) \\
    K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT} = e^{-\Delta G^\circ(T)/kT}
     \end{eqnarray*}
-6. Or in terms of standard pressure \(P^\circ\)
+6. Or to some standard pressure \(P^\circ\)
     \[q_A^\circ(T) = q_A(T,V)/(V P^\circ/RT) \]
 *** Le'Chatlier's principle
 1. Example: ethane dehydrogenation, \ce{C2H6 -> C2H4 + H2}, endothermic, positive entropy
-2. Response to temperature: Boltzmann distribution favors higher energy things as $T$ increases
-3. Response to volume chance: particle-in-a-box states increasingly favor side with less molecules as volume decreases/pressure increases
+2. Equilibrium composition starting from \ce{C2H6}
+    \[ K_p(T) = P_{\ce{C2H4}}P_{\ce{H2}}/P_{\ce{C2H6}} = x^2 P/(1-x) \]
+3. Response to temperature: Boltzmann distribution favors higher energy things as $T$ increases
+4. Response to pressure change: particle-in-a-box states increasingly favor side with less molecules as volume decreases/pressure increases
 
 
 ** Lecture 21: Chemical kinetics
