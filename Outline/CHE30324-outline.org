@@ -25,7 +25,7 @@
 #+LATEX_HEADER:\lhead{\em{Physical Chemistry for Chemical Engineers}}
 #+LATEX_HEADER:\rhead{ND CHE 30324}
 
-#+OPTIONS: toc:t
+#+OPTIONS: toc:2
 #+OPTIONS: H:3 num:3
 #+OPTIONS: ':t
 #+END_OPTIONS
@@ -2645,25 +2645,21 @@ plt.savefig('./Images/equilibrium.png')
    \frac{N_B}{N_A} =  \frac{N_B/V}{N_A/V} & = &\frac{q_B(T,V)/V}{q_A(T,V)/V} e^{-\Delta E(0)/kT}
      \end{eqnarray*}
 4. \(q/V = 1/\Lambda^3\) has units of number/volume, or concentration
-5. Equilibrium constant---convert units to some standard concentration \(c^\circ\)
+5. Equilibrium constant---convert units to some standard concentration \(c^\circ\) or pressure \(P^\circ\)
     \begin{eqnarray*}
-     q_A^\circ(T) & = & q_A(T,V)/(V c^\circ) \\
-   K_c(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT} = e^{-\Delta G^\circ(T)/kT}
+     q_A^\circ(T) & = & (q_A(T,V)/V) (1/c^\circ) \\
+     q_A^\circ(T) & = & (q_A(T,V)/V)(RT/P^\circ) \\ 
+   K_{eq}(T) & = &\frac{q_B^\circ(T)}{q_A^\circ(T)} e^{-\Delta E(0)/kT} = e^{-\Delta G^\circ(T)/kT} 
     \end{eqnarray*}
-6. Or to some standard pressure \(P^\circ\)
-    \[q_A^\circ(T) = q_A(T,V)/(V P^\circ/RT) \]
 *** Le'Chatlier's principle
 1. Example: ethane dehydrogenation, \ce{C2H6 -> C2H4 + H2}, endothermic, positive entropy
-2. Equilibrium composition starting from \ce{C2H6}
-    \[ K_p(T) = P_{\ce{C2H4}}P_{\ce{H2}}/P_{\ce{C2H6}} = x^2 P/(1-x) \]
+2. Equilibrium composition starting from \ce{C2H6}, at constant pressure
+    \[ K_p(T) = \frac{q_{\ce{C2H4}}^\circ(T) q_{\ce{H2}}^\circ(T)}{q_{\ce{C2H6}}^\circ(T)} e^{-\Delta E(0)/k_BT} =  \frac{P_{\ce{C2H4}}P_{\ce{H2}}}{P_{\ce{C2H6}}}\frac{1}{P^\circ} = \frac{P}{P^\circ}\frac{x^2}{(1-x)} \]
 3. Response to temperature: Boltzmann distribution favors higher energy things as $T$ increases
-4. Response to pressure change: particle-in-a-box states increasingly favor side with less molecules as volume decreases/pressure increases
-
-
+4. Response to pressure change: translational DOFs increasingly favor side with more molecules as volume increases/pressure decreases
 ** Lecture 21: Chemical kinetics
 *** Kinetics and reaction rates
 1. Rate: number per unit time per unit something
-
 *** Empirical chemical kinetics
 1. Rate laws, rate orders, and rate constants
 2. Functions of $T$, $P$, composition $C_i$
@@ -2672,12 +2668,13 @@ plt.savefig('./Images/equilibrium.png')
 *** Reaction mechanisms
 1. Elementary steps and molecularity
 2. Collision theory
-   1. \ce{A + B \rightarrow \text{products}}
+   1. A + B \rightarrow \products
    2. rate proportional to A/B collision frequency $z_{AB}$ weighted by fraction of collisions with energy $> E_a$
-   \begin{displaymath}
-      r = k C_A C_B , k = \left ( \frac{8 k_B T}{\pi \mu} \right ) \sigma_{AB} N_{av} e^{-E_a/k_BT}
-   \end{displaymath}
+      \begin{displaymath}
+         r = k C_A C_B , k = \left ( \frac{8 k_B T}{\pi \mu} \right ) \sigma_{AB} N_{av} e^{-E_a/k_BT}
+      \end{displaymath}
    3. upper bound on real rates
+   4. could apply same ideas to a collision with a surface 
 *** Transition state theory (TST)
 1. Assumptions
    1. Existence of reaction coordinate (PES)
@@ -2688,7 +2685,7 @@ plt.savefig('./Images/equilibrium.png')
    \begin{displaymath}
       r = k C_A C_B , k = \frac{k_B T}{h} \frac{q^\ddagger}{q_A q_B}  e^{-{\Delta E(0)/k_BT}}
    \end{displaymath}
-
+3. application to atom - atom collision
 #+ATTR_LATEX: :width 0.6\textwidth
 [[./Images/PES.png]]
 
@@ -2707,7 +2704,7 @@ plt.savefig('./Images/equilibrium.png')
    \begin{description}
    \item[Equilibrium Constants] $a~\text{A} + b~\text{B} \rightleftharpoons c~\text{C} + d~\text{D} $
      \begin{eqnarray*}
-       K_{eq}(T) &=& e^{\Delta S^\circ(T,V)/k_B}e^{-\Delta H^\circ(T,V)/k_BT}
+       K_{eq}(T) &=& e^{\Delta S^\circ(T)/k_B}e^{-\Delta H^\circ(T)/k_BT}
        \\ \\
             K_c(T) &=&
           \left(\frac{1}{c^\circ}\right)^{\nu_c+\nu_d-\nu_a-\nu_b}\frac{(q_c/V)^{\nu_c}(q_d/V)^{\nu_d}}{(q_a/V)^{\nu_a}(q_b/V)^{\nu_b}}e^{-\Delta
