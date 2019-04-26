@@ -2665,16 +2665,28 @@ plt.savefig('./Images/equilibrium.png')
 2. Functions of $T$, $P$, composition $C_i$
 3. differential vs integrated rate laws
 4. Arrhenius expression, $k=A e^{-E_a/k_BT}$
+#+CAPTION: Basic kinetic rate laws
+|--------------+-------------------+-----------------------------+---------------|
+|              | differential rate | integrated rate             | half-life     |
+|--------------+-------------------+-----------------------------+---------------|
+| First order  | $r = kC_A$        | $C_A = C_{A0} e^{-k \tau}$  | $\ln 2/k$     |
+| Second order | $r = kC_A^2$      | $1/C_A = 1/C_{A0} + k \tau$ | $1/kC_{A0}$   |
+
 *** Reaction mechanisms
 1. Elementary steps and molecularity
+   | \ce{2 O3 -> 3 O2}        |
+   |--------------------------|
+   | \ce{O3 ->[k_1] O2 + O}   |
+   | \ce{O2 + O ->[k_2] O3}   |
+   | \ce{O + O3 ->[k_3] 2 O2} |
 2. Collision theory
-   1. A + B \rightarrow \products
+   1. A + B \rightarrow products
    2. rate proportional to A/B collision frequency $z_{AB}$ weighted by fraction of collisions with energy $> E_a$
       \begin{displaymath}
          r = k C_A C_B , k = \left ( \frac{8 k_B T}{\pi \mu} \right ) \sigma_{AB} N_{av} e^{-E_a/k_BT}
       \end{displaymath}
    3. upper bound on real rates
-   4. could apply same ideas to a collision with a surface 
+3. Heterogeneous reactions and catalysis
 *** Transition state theory (TST)
 1. Assumptions
    1. Existence of reaction coordinate (PES)
