@@ -2686,7 +2686,6 @@ plt.savefig('./Images/equilibrium.png')
          r = k C_A C_B , k = \left ( \frac{8 k_B T}{\pi \mu} \right ) \sigma_{AB} N_{av} e^{-E_a/k_BT}
       \end{displaymath}
    3. upper bound on real rates
-3. Heterogeneous reactions and catalysis
 *** Transition state theory (TST)
 1. Assumptions
    1. Existence of reaction coordinate (PES)
@@ -2694,15 +2693,38 @@ plt.savefig('./Images/equilibrium.png')
    3. Equilibrium between reactants and "transition state"
    4. Harmonic approximation for transition state
 2. rate proportional to concentration of "activated complex" over reactants times crossing frequency
-   \begin{displaymath}
-      r = k C_A C_B , k = \frac{k_B T}{h} \frac{q^\ddagger}{q_A q_B}  e^{-{\Delta E(0)/k_BT}}
-   \end{displaymath}
-3. application to atom - atom collision
+   \begin{eqnarray*}
+      r & = & k C_AC_B \\
+        & = & k^\ddagger C_{AB}^\ddagger \\
+        & = & \nu^\ddagger K^\ddagger C_A C_ B \\
+        & = & \nu^\ddagger \frac{k_BT}{h\nu^\ddagger}\bar{K}^\ddagger(T) C_A C_B \\
+        & = & \frac{k_B T}{h} \frac{q^\ddagger(T)}{q_A(T) q_B(T)}  e^{-{\Delta E(0)/k_BT}}
+   \end{eqnarray*}
+4. application to atom - atom collision
 #+ATTR_LATEX: :width 0.6\textwidth
 [[./Images/PES.png]]
-
 *** Locating transition states computationally
 *** Thermodynamic connection
+1. Relate activated complex equilibrium constant to activation free energy
+   \[ \(\bar{K}^\ddagger(T) = e^{-\Delta G^{\circ \ddagger}(T)/kT} = e^{-\Delta H^{\circ \ddagger}(T)/k_BT}e^{\Delta S^{\circ \ddagger}(T)/k_B} \] 
+2. Compare to Arrhenius expression 
+   \[E_a = \Delta H^{\circ \ddagger}(T) + kT, A = \frac{k_B T}{h}e^1e^{\Delta S^{\circ \ddagger}(T)/k_B}\]
+*** Heterogeneous reactions and catalysis
+1. molecule-surface collisions
+2. surface reactions
+
+#+BEGIN_EXPORT latex
+\begin{table}
+   \caption{DFT PES for ethylene dissociation on Ni2P}
+\begin{tabular}{cc}
+\includegraphics[scale=0.33]{./Images/ethylene-001.png} & \includegraphics[scale=0.33]{./Images/ethylene-002.png} \\ \includegraphics[scale=0.33]{./Images/ethylene-003.png} & \includegraphics[scale=0.33]{./Images/ethylene-004.png} \\
+\includegraphics[scale=0.33]{./Images/ethylene-005.png} & 
+\includegraphics[scale=0.18]{./Images/ethylene-pes-animation.png} 
+\end{tabular}
+\end{table}
+#+END_EXPORT
+
+[[./Images/TS-Ethylene.gif]]
 *** Diffusion-controlled reactions
 1. Intermediate complex
 2. Steady-state approximation
