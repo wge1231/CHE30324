@@ -2665,6 +2665,7 @@ plt.savefig('./Images/equilibrium.png')
 2. Functions of $T$, $P$, composition $C_i$
 3. differential vs integrated rate laws
 4. Arrhenius expression, $k=A e^{-E_a/k_BT}$
+   1. Arrhenius plot, \(\ln k\) vs \(1/T\)
 #+CAPTION: Basic kinetic rate laws
 |--------------+-------------------+-----------------------------+---------------|
 |              | differential rate | integrated rate             | half-life     |
@@ -2674,12 +2675,13 @@ plt.savefig('./Images/equilibrium.png')
 
 *** Reaction mechanisms
 1. Elementary steps and molecularity
+2. Ozone decomposition, rate second-order at high \(P_{\ce{O2}}\), first-order at low \(P_{\ce{O2}}\)
    | \ce{2 O3 -> 3 O2}        |
    |--------------------------|
    | \ce{O3 ->[k_1] O2 + O}   |
-   | \ce{O2 + O ->[k_2] O3}   |
-   | \ce{O + O3 ->[k_3] 2 O2} |
-2. Collision theory
+   | \ce{O2 + O ->[k_-1] O3}     |
+   | \ce{O + O3 ->[k_2] 2 O2} |
+3. Collision theory
    1. A + B \rightarrow products
    2. rate proportional to A/B collision frequency $z_{AB}$ weighted by fraction of collisions with energy $> E_a$
       \begin{displaymath}
@@ -2700,7 +2702,10 @@ plt.savefig('./Images/equilibrium.png')
         & = & \nu^\ddagger \frac{k_BT}{h\nu^\ddagger}\bar{K}^\ddagger(T) C_A C_B \\
         & = & \frac{k_B T}{h} \frac{q^\ddagger(T)}{q_A(T) q_B(T)}  e^{-{\Delta E(0)/k_BT}}
    \end{eqnarray*}
-4. application to atom - atom collision
+3. application to atom - atom collision
+4. application to two molecules
+5. microscopic reversibility
+6. equilibrium requirement \(K_{eq}(T) = k_f(T)/k_r(T)\)
 #+ATTR_LATEX: :width 0.6\textwidth
 [[./Images/PES.png]]
 *** Locating transition states computationally
