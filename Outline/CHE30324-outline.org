@@ -2448,7 +2448,7 @@ class Molecule(object):
 
 # Fundamental relationships
 def A(q):
-   return -k*T*np.log(q)
+   return -k*T*np.log(q) - k*T
 
 def S(A,U,T):
    return (U - A)/T
@@ -2685,7 +2685,7 @@ plt.savefig('./Images/equilibrium.png')
    1. A + B \rightarrow products
    2. rate proportional to A/B collision frequency $z_{AB}$ weighted by fraction of collisions with energy $> E_a$
       \begin{displaymath}
-         r = k C_A C_B , k = \left ( \frac{8 k_B T}{\pi \mu} \right ) \sigma_{AB} N_{av} e^{-E_a/k_BT}
+         r = k C_A C_B , k = \left ( \frac{8 k_B T}{\pi \mu} \right )^{1/2} \sigma_{AB} N_{av} e^{-E_a/k_BT}
       \end{displaymath}
    3. upper bound on real rates
 *** Transition state theory (TST)
@@ -2700,7 +2700,7 @@ plt.savefig('./Images/equilibrium.png')
         & = & k^\ddagger C_{AB}^\ddagger \\
         & = & \nu^\ddagger K^\ddagger C_A C_ B \\
         & = & \nu^\ddagger \frac{k_BT}{h\nu^\ddagger}\bar{K}^\ddagger(T) C_A C_B \\
-        & = & \frac{k_B T}{h} \frac{q^\ddagger(T)}{q_A(T) q_B(T)}  e^{-{\Delta E(0)/k_BT}}
+        & = & \frac{k_B T}{h} \frac{q^\ddagger(T)}{q_A(T) q_B(T)}  e^{-{\Delta E(0)/k_BT}} C_A C_B
    \end{eqnarray*}
 3. application to atom - atom collision
 4. application to two molecules - vinyl alcohol to acetaldehyde
