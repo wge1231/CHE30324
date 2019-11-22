@@ -752,7 +752,7 @@ plt.savefig('./Images/PIAB.png')
 5. Recursion relations: \( \langle x^2 \rangle =
       \alpha^2 (v+1/2), \langle V(x) \rangle = \frac{1}{2} h\nu (v+\frac{1}{2})\)
 6. Virial theorem: $V(x) \propto x^n \rightarrow \langle T \rangle = \frac{n}{2}\langle V \rangle$
-7. Classical turning point and tunneling
+7. Classical turning point and =tunneling=
 8. Classical limiting behavior: large 
 *** HCl example
 1. Reduced mass, $\frac{1}{\mu}=\frac{1}{m_A}+\frac{1}{m_B}$
