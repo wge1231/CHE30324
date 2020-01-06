@@ -788,66 +788,6 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 \end{table}
 #+END_EXPORT
 
-#+BEGIN_SRC python :exports results
-# Stub to solve Schrodinger eq numerically
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.interpolate import interp1d
-from scipy import linalg as LA
-
-hc = 1239.8      # eV nm
-c = 2.9979e8 * 1.e9   # nm/s
-kB = 8.61734e-5   # eV /K
-hckB = hc/kB       # nm K
-me = 5.685630e-30  # eV/(nm/s)^2
-hbar = 6.58212e-16 # eV s 
-mH = 1.0364269572e-26 # eV/(nm/s)^2
-
-# harmonic parameters
-k = 800.0 *  6.24150912588 # eV / nm^2
-
-
-def harmonic(k,x):
-    return 0.5 * k * x**2
-
-def Hmat(mass,V):
-    hbar2mu = -hbar*hbar/(2 * mass) # eV nm^2
-    n = np.size(V)
-#    print(n)
-
-    A = np.zeros((n-1,n-1))
-    for i in range(n-1):
-        for j in range(n-1):
-            if i==j+1 or i==j-1:
-                 A[i,j]=(3./2.)*hbar2mu
-            if i==j+2 or i==j-2:
-                 A[i,j]=-(3./20.)*hbar2mu
-            if i==j+3 or i==j-3:
-                 A[i,j]=(1./90.)*hbar2mu
-        A[i,i]=-(49./18.)*hbar2mu #+V([i]) 
-    return A
-
-X = np.linspace(-0.01,0.01,100)
-print(X)
-print(np.size(X))
-V = harmonic(k,X)
-#print(V)
-#print(np.size(V))
-H = Hmat(mH,V)
-#print(H)
-# eigenE, eigenfn = LA.eigh(A)
-
-# print(eigenE)
-
-# plt.figure()
-# plt.plot(X,V)
-# plt.xlabel('Distance (nm)')
-# plt.ylabel('Energy (eV)')
-
-# plt.savefig('./Images/harmonic.png')
-
-
-#+END_SRC
 
 #+RESULTS:
 
