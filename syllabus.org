@@ -40,12 +40,12 @@
 
 #+BEGIN_EXPORT latex
 \begin{center}
-\textsc{\Large Physical Chemistry for Chemical Engineers (CHE 30324)}\\University of Notre Dame, Spring 2019
+\textsc{\Large Physical Chemistry for Chemical Engineers (CHE 30324)}\\University of Notre Dame, Spring 2020
 \end{center}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r}
 \hline
-Prof.\ Bill Schneider & Classroom: 127 HH\\
-Office: 180 Fitzpatrick & Lecture MWF 10:30-11:20\\
+Prof.\ Bill Schneider & Classroom: 129 DBRT\\
+Office: 370 Nieuwland & Lecture MWF 9:25-10:15\\
 \email{wschneider@nd.edu}, phone 574-631-8754\\
 \hline
 \end{tabular*}
@@ -58,9 +58,7 @@ Physical chemistry is the fundamental physical basis of all Chemical Engineering
 * (Suggested) Text
 Engel and Reid, /Physical Chemistry/, Benjamin-Cummings, 2006 or 2009. Each topic will include some suggested problems from this book to give you practice with the material.
 * Lecture
-The topics will be presented in a series of self-contained
-lectures. Attendance is expected, and you should be prepared to ask
-and answer questions. Chapter numbers are for the Second Edition of the suggested reading, "Physical Chemistry". In other editions the chapter numbers will vary, but titles will be the same. 
+The topics will be presented in a series of self-contained lectures. Attendance is expected, and you should be prepared to ask and answer questions. Chapter numbers are for the Second Edition of the suggested reading, "Physical Chemistry". In other editions the chapter numbers will vary, but titles will be the same. 
 
 #+CAPTION: Brief Outline of Course Topics
 |--------------------------------------------+----------------|
