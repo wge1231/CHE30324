@@ -12,9 +12,9 @@ Homework assignments and solutions available [here](./homework.org)
 
 Introduction to git available [here](http://rogerdudler.github.io/git-guide/)
 
-Introduction to iPython/Jupyter notebooks [here](https://nbviewer.jupyter.org/github/jckantor/CBE30338/blob/master/notebooks/Getting%20Started%20with%20Python.ipynb)
+Introduction to Jupyter notebooks [here](https://jupyter.org)
 
-Tutorial on Python [here](https://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Resources/Python_Tutorial.ipynb)
+Tutorial on Python at [https://colab.research.google.com/assets/colab-badge.svg](https://colab.research.google.com/github/wmfschneider/CHE30324/blob/master/Resources/Python_Tutorial.ipynb) and [./Resources/nbviewer.svg](https://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Resources/Python_Tutorial.ipynb)
 
 Git cheat sheet [here](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 

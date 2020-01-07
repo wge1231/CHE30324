@@ -20,7 +20,7 @@
 #+LATEX_HEADER:\renewcommand{\headrulewidth}{0.5pt}
 #+LATEX_HEADER:\renewcommand{\footrulewidth}{0.5pt}
 #+LATEX_HEADER:\lfoot{\today}
-#+LATEX_HEADER:\cfoot{\copyright\ 2019 W.\ F.\ Schneider}
+#+LATEX_HEADER:\cfoot{\copyright\ 2020 W.\ F.\ Schneider}
 #+LATEX_HEADER:\rfoot{\thepage}
 #+LATEX_HEADER:\title{University of Notre Dame\\Physical Chemistry for Chemical Engineers\\(CHE 30324)}
 #+LATEX_HEADER:\author{Prof. William F.\ Schneider}
@@ -46,7 +46,7 @@
 \hline
 Prof.\ Bill Schneider & Classroom: 129 DBRT\\
 Office: 370 Nieuwland & Lecture MWF 9:25-10:15\\
-\email{wschneider@nd.edu}, phone 574-631-8754\\
+\email{wschneider@nd.edu}, phone 574-631-8754 & \http{https://github.com/wmfschneider/CHE30324} \\
 \hline
 \end{tabular*}
 #+END_EXPORT
@@ -80,9 +80,9 @@ Eleven graded problem sets will be distributed during the semester and will be d
 Homework will in general require some computations. You may write out solutions by hand, being mindful that neatness counts. 
 
 ** Jupyter/Python
-Alternatively, homework will also be distributed as [[https://jupyter.org/][Jupyter notebooks]] (https://jupyter.org), a powerful, open source computing notebook environment that works within a web browser. Jupyter allows one to do among other things, create and execute [[https://www.python.org/][Python]] (https:/www.python.org) programs, which are similar in syntax to Matlab. Use is optional, but if you are interested, you can download Jupyter and Python as one distribution, at [[http://anaconda.com/download]]. A tutorial on both will be provided outside of regular class hours at a time to be announced.
+Homework will be distributed as [[https://jupyter.org/][Jupyter notebooks]] (https://jupyter.org), a powerful, open source computing notebook environment that works within a web browser. Jupyter allows one to do among other things, create and execute [[https://www.python.org/][Python]] (https:/www.python.org) programs, which are similar in syntax to Matlab. The easiest way to work within a notebook is through Google's [[https://colab.research.google.com/notebooks/welcome.ipynb][Colaboratory]] (https://colab.research.google.com/notebooks/welcome.ipynb), a web-based platform, integrated with your Google drive, that allows you to create and execute notebooks without installing anything on your computer. Alternatively, you can download Jupyter and Python as one distribution, at [[http://anaconda.com/download]]. A tutorial on both will be provided outside of regular class hours at a time to be announced.
 * Homework Defense
-To help me get to know you and how you are doing with the course, after each homework assignment six of you will be chosen at random to meet with me one-on-one to discuss their homework.
+To help me get to know you and how you are doing with the course, after each homework assignment seven of you will be chosen at random to meet with me to discuss their homework.
 
 * Grading
 Grades will be based on homework (25%), three in-class exams (45%), and a cumulative final (30%).
@@ -99,39 +99,38 @@ yourself from class.
 * Office hours
 The TA and instructor are happy to answer questions during regular office hours or by appointment if you need extra help.
 
-| Dr. Bill Schneider | \email{wschneider@nd.edu} | By appt/drop in | 182 Fitz |
-| Jerry Crum         | \email{jcrum@nd.edu}      | M 4-5           | 150 Fitz |
-| Yixiao Hou         | \email{yhou@nd.edu}       | T 3-4           | 150 Fitz |
-| Jian-Ren Lim       | \email{jlim6@nd.edu}      | T 4-5           | 150 Fitz |
-| Craig Waitt        | \email{cwaitt@nd.edu}     | Th 4-5          | 150 Fitz |
+| Dr. Bill Schneider | \email{wschneider@nd.edu} | By appt/drop in | 370 NSH |
+| Xuyao Gao          | \email{xgao2@nd.edu}      | M 4-5           |         |
+| Wei Ge             | \email{wge@nd.edu}        | T 3-4           |         |
+| Amanda Brown       | \email{abrown32@nd.edu}   | W 4-5           |         |
 
 
 #+CAPTION: Tentative Course Calendar
 |----------+----------+-------------+-------+----------+--------------+---------------|
-|          | 1/16     | 1/18        |       | 3/18     | 3/20         | 3/22          |
+|          | 1/15     | 1/17        |       | 3/16     | 3/18         | 3/20          |
 |          | Welcome! |             | XXXXX |          | *HW 7*       |               |
 |----------+----------+-------------+-------+----------+--------------+---------------|
-| 1/21     | 1/23     | 1/25        |       | 3/25     | 3/27         | 3/29          |
+| 1/20     | 1/22     | 1/24        |       | 3/23     | 3/25         | 3/27          |
 |          | *HW 1*   |             |       |          | *HW 8*       |               |
 |----------+----------+-------------+-------+----------+--------------+---------------|
-| 1/28     | 1/30     | 2/1         |       | 4/1      | 4/3          | 4/5           |
+| 1/27     | 1/29     | 1/31        |       | 3/30     | 4/1          | 4/3           |
 |          | *HW 2*   |             |       |          | *HW 9*       |               |
 |----------+----------+-------------+-------+----------+--------------+---------------|
-| 2/4      | 2/6      | 2/8         |       | 4/8      | 4/10         | 4/12          |
-|          | *HW 3*   | *Exam 1*    |       | *Exam 3* |              |               |
+| 2/3      | 2/5      | 2/7         |       | 4/6      | 4/8          | 4/10          |
+|          | *HW 3*   | *Exam 1*    |       | *Exam 3* |              | *Good Friday* |
 |----------+----------+-------------+-------+----------+--------------+---------------|
-| 2/11     | 2/13     | 2/15        |       | 4/15     | 4/17         | 4/19          |
-|          |          | *HW 4, JPW* |       |          | *HW 10*      | *Good Friday* |
+| 2/10     | 2/12     | 2/14        |       | 4/13     | 4/15         | 4/17          |
+|          |          | *HW 4, JPW* |       | *Easter* |              |               |
 |----------+----------+-------------+-------+----------+--------------+---------------|
-| 2/19     | 2/21     | 2/23        |       | 4/22     | 4/24         | 4/26          |
-|          |          | *HW 5*      |       | *Easter* |              |               |
+| 2/17     | 2/19     | 2/21        |       | 4/20     | 4/22         | 4/24          |
+|          |          | *HW 5*      |       | *HW 10*  |              |               |
 |----------+----------+-------------+-------+----------+--------------+---------------|
-| 2/25     | 2/27     | 3/1         |       | 4/29     | 5/1          | 5/3           |
+| 2/24     | 2/26     | 2/28        |       | 4/27     | 4/29         | 5/1           |
 |          |          | *HW 6*      |       |          | *Last class* | *HW 11*       |
 |----------+----------+-------------+-------+----------+--------------+---------------|
-| 3/4      | 3/6      | 3/8         |       |          | *Final Exam* |               |
-| *Exam 2* |          |             |       |          | *TBD*        |               |
+| 3/2      | 3/4      | 3/6         |       | 5/4      | 5/6          |               |
+| *Exam 2* |          |             |       |          | *Final Exam* |               |
 |----------+----------+-------------+-------+----------+--------------+---------------|
-| 3/11     | 3/13     | 3/15        |       |          |              |               |
+| 3/9      | 3/11     | 3/13        |       |          |              |               |
 | *BREAK*  | *BREAK*  | *BREAK*     |       |          |              |               |
 |----------+----------+-------------+-------+----------+--------------+---------------|
