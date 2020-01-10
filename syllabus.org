@@ -88,7 +88,20 @@ To help me get to know you and how you are doing with the course, after each hom
 Grades will be based on homework (25%), three in-class exams (45%), and a cumulative final (30%).
 
 * Academic honesty
-Should go without saying. Any cheating or misrepresenting of work as your own will be dealt with according to the Honor Code policies of the university. I reserve the right to relocate any students during an examination at my discretion.
+Should go without saying. This class follows the binding Code of Honor
+at Notre Dame.  Any cheating or misrepresenting of work as your own
+will be dealt with according to the policies of the University.  See https://honorcode.nd.edu/.
+
+* Mental Health
+Care and Wellness Consultants provide
+support and resources to students who are experiencing stressful or difficult
+situations that may be interfering with academic progress. Through Care and
+Wellness Consultants, students can be referred to The University Counseling
+Center (for cost-free and confidential psychological and psychiatric services from
+licensed professionals), University Health Services (which provides primary care,
+psychiatric services, case management, and a pharmacy), and The McDonald
+Center for Student Well Being (for problems with sleep, stress, and substance
+use). Visit [[https://care.nd.edu]].
 
 * Professional courtesy
 As a courtesy to the instructor and your classmates, please refrain from
@@ -99,10 +112,10 @@ yourself from class.
 * Office hours
 The TA and instructor are happy to answer questions during regular office hours or by appointment if you need extra help.
 
-| Dr. Bill Schneider | \email{wschneider@nd.edu} | By appt/drop in | 370 NSH |
-| Xuyao Gao          | \email{xgao2@nd.edu}      | M 4-5           |         |
-| Wei Ge             | \email{wge@nd.edu}        | T 3-4           |         |
-| Amanda Brown       | \email{abrown32@nd.edu}   | W 4-5           |         |
+| Dr. Bill Schneider | \email{wschneider@nd.edu} | By appt/drop in | 366 NSH |
+| Xuyao Gao          | \email{xgao2@nd.edu}      | M 3:00-4:00     |         |
+| Wei Ge             | \email{wge@nd.edu}        | Th 3:30-4:30    |         |
+| Amanda Brown       | \email{abrown32@nd.edu}   | T 3:30-4:30     |         |
 
 
 #+CAPTION: Tentative Course Calendar
