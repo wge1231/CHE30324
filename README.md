@@ -10,6 +10,8 @@ More detailed, living outline available as [pdf](./Outline/CHE30324-outline.pdf)
 
 Homework assignments and solutions available [here](./homework.org)
 
+Course calendar available [here](https://calendar.google.com/calendar/b/1?cid=NWJwN2pmMjI5bTdoYmFvM2R0cXM2NjYzOThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
+
 Introduction to git available [here](http://rogerdudler.github.io/git-guide/)
 
 Introduction to Jupyter notebooks [here](https://jupyter.org)
