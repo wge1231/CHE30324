@@ -2017,8 +2017,8 @@ Single particle & & & \\partition function& & $\displaystyle q(V,T) = \sum_i
 e^{-\epsilon_i\beta} $& $\displaystyle q(V,T) = \sum_i e^{-\epsilon_i\beta} $ \\
 Full partition & & & \\function & $\displaystyle Q(N,V,T) = \sum_j e^{-U_j\beta} $ &
 $\displaystyle Q = q(V,T)^N $ & $\displaystyle Q = q(V,T)^N/N! $ \\
-Log partition &  $\ln Q$ & $N\log q$ & $ N\ln q - \ln N! $\\
-function & & & $\approx N(\ln Q - \ln N +1)$ \\ & & & \\
+Log partition &  $\ln Q$ & $N\ln q$ & $ N\ln q - \ln N! $\\
+function & & & $\approx N(\ln q - \ln N +1)$ \\ & & & \\
 Helmholtz energy & $\displaystyle -\frac{\ln Q}{\beta}$ & $\displaystyle
 -\frac{N\ln q}{\beta}$ & $\displaystyle -\frac{N}{\beta}\left (\ln\frac{q}{N} +
   1 \right ) $ \\
