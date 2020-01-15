@@ -78,14 +78,17 @@
    5. Expectation value $\langle i \rangle = \sum_i i \tilde P_i$
 
 *** Continuous distributions---temperature
-   1. Probability density $P(x)$ has units $1/x$
-   2. Normalized $\tilde P(x) = P(x)/\int P(x) dx$
-   3. (Unitless) probability $a < x < b = \int_a^b \tilde P(x) dx$
-   4. Expectation value $\langle f(x) \rangle = \int f(x) \tilde P(x) dx$
+   1. Probability density $\phi(x)$ has units $1/x$
+   2. Normalized $\tilde \phi(x) = \phi(x)/\int \phi(x) dx$
+   3. (Unitless) probability $a < x < b = \int_a^b \tilde \phi(x) dx$
+   4. Expectation value $\langle f(x) \rangle = \int f(x) \tilde \phi(x) dx$
    5. Mean $= \langle x \rangle$
    6. Mean squared $= \langle x^2 \rangle$
    7. Variance $\sigma^2=\langle x^2 \rangle - \langle x \rangle^2$
    8. Standard deviation $\Delta x = \sigma$
+
+*** Temperature example
+[[https://colab.research.google.com/github/wmfschneider/CHE30324/blob/master/Resources/Probability.ipynb]]
 
 *** Boltzmann distribution
    1. $P(E) \propto e^{-E/k_BT}$, in some sense the definition of temperature (Figure 1)
