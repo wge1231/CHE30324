@@ -4,6 +4,8 @@ This one semester course demonstrates the molecular bases of chemical engineerin
 
 Syllabus available [here](./syllabus.org)
 
+How to succeed in Physical Chemistry [her](./how_to_succeed.org)
+
 Brief course outline available [here](./lectures.org)
 
 More detailed, living outline available as [pdf](./Outline/CHE30324-outline.pdf) or [org-file](./Outline/CHE30324-outline.org)
