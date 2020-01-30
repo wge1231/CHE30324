@@ -1,4 +1,4 @@
-% Created 2020-01-29 Wed 11:15
+% Created 2020-01-29 Wed 23:12
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -17,12 +17,13 @@
 \usepackage{wasysym}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage[theorems, skins]{tcolorbox}
 \usepackage[version=3]{mhchem}
 \usepackage[numbers,super,sort&compress]{natbib}
 \usepackage{natmove}
 \usepackage{url}
 \usepackage{minted}
-\usepackage{underscore}
+\usepackage[strings]{underscore}
 \usepackage[linktocpage,pdfstartview=FitH,colorlinks,
 linkcolor=blue,anchorcolor=blue,
 citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
@@ -76,63 +77,50 @@ Office: 370 Nieuwland & Lecture MWF 9:25-10:15\\
 
 \vspace{1cm}
 
-Most students agree that studying for any chemistry course is no walk in the park, and I'm sure if you ask around most will say that the hardest chemistry course is physical chemistry. Physical chemistry involves recalling things you've learned from your physics, calculus, and thermodynamics courses. If math is your weak spot, then you may find this class very daunting. However, physical chemistry is essential as it help you understand the relationship between energy and matter from the microscopic and macroscopic scale. As such, I've written a short document that will hopefully help you all succeed in class, and give you a quick guide on how to complete and study for the homeworks and exams in this class.
+Most students agree that studying for any chemistry course is no walk in the park, and I'm sure if you ask around most will say that the most conceptually demanding chemistry course is physical chemistry. Physical chemistry involves recalling things you've learned from your physics, calculus, and thermodynamics courses. If math is your weak spot, then you may find this class very daunting. However, physical chemistry is essential as it help you understand the relationship between energy and matter from the microscopic and macroscopic scale. As such, I've written a short document that will hopefully help you all succeed in class, and give you a quick guide on how to complete and study for the homeworks and exams in this class.
 
-\begin{table}[htbp]
-\caption{How to Succeed in Physical Chemistry}
-\centering
-\begin{tabular}{l}
-\hline
-1. Attend lectures and pay attention\\
-2. Take notes on \bf{Concepts}. Equations are provided in the outline and on exams. Its more important to\\
-understand what the equation means and when they should be used.\\
-3. Ask questions about the concepts\\
-4. After class \bf{Rewrite} your notes. This helps reinforce what learned in class and perhaps may reveal\\
-something that you don't understand. This gives you opportunities to ask me or the TA's questions before\\
-the exam.\\
-5. Read notes and homeworks everyday!!!\\
-6. Go to office hours, especially TA office hours. There are usually groups of students there. Someone\\
-may as a question that you may have never considered.\\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\caption{How to do the Homework}
-\centering
-\begin{tabular}{l}
-\hline
-1. Always read the question in full before attempting to answer it. You'll kick yourself if you lost\\
-points because you didn't read the question completely.\\
-2. Draw a picture. If your answering a question about effusion, draw a picture of a particle effusing\\
-through a hole in a box. This helps your mind wrap around the problem, and helps you see what variables\\
-in the problem your missing and need to figure out.\\
-3. Keep your notes open while doing the homework and relate what your doing to your notes\\
-4. Ask yourself what concepts are at play\\
-5. \bf{DON'T} jump straight to python and code your answer. \bf{SOLVE} it on paper first the code it. This\\
-will save you time in the long run and help you when you have a similar problem on an exam.\\
-6. After you solve on paper transcribe your results into a python notebook.\\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\caption{How to Study}
-\centering
-\begin{tabular}{l}
-\hline
-1. Read the two sections above\\
-2. Ask yourself these three questions:\\
-1. What concepts have we covered in class?\\
-2. What concepts do we still need to cover?\\
-3. If I were writing an exam, what questions would I ask?\\
-\hline
-\end{tabular}
-\end{table}
+\section{How to succeed in Physical Chemistry}
+\label{sec:orgcbc7fdf}
+\begin{enumerate}
+\item Attend lectures and pay attention
+\item Take notes, paying special attentions to the \textbf{concepts}. Equations are provided in the outline and on exams. Its more important to understand what the equation mean and when they should be used.
+\item If you don't understand a concept, ask a question.
+\item After class \textbf{rewrite} your notes. This helps reinforce what learned in class and will reveal the things 
+you don't understand. Figure those things out, either by reading, thinking, or discussing with friends, TAs, or me.
+\item Read and refine notes  everyday!!!
+\item Go to office hours, especially TA office hours. There are usually groups of students there. Someone
+\end{enumerate}
+may ask a question that you may have never considered.                                                   
 
 
+\section{How to do the homework}
+\label{sec:org7a12fa5}
+\begin{enumerate}
+\item Always read the question in full before attempting to answer it. You'll kick yourself if you lost     
+points because you didn't read the question completely.
+\item Draw a picture. If you are answering a question about effusion, draw a picture of a particle effusing    
+through a hole in a box. This helps your mind wrap around the problem, and helps you see what variables  
+in the problem your missing and need to figure out.
+\item Keep your notes open while doing the homework and relate what your doing to your notes
+\item Ask yourself what concepts are at play
+\item \textbf{DON'T} jump straight to python and code your answer. \textbf{SOLVE} it on paper first the code it. This
+will save you time in the long run and help you when you have a similar problem on an exam.
+\item After you sketch out solution on paper, transcribe your results into a python notebook.
+\end{enumerate}
 
 
+\section{How to study for an exam}
+\label{sec:orge44f748}
+Exams are intended for you to demonstrate your command of physical chemistry concepts. Questions will \textbf{not} be identical to the homework. They are not meant to be.
 
-4
+\begin{enumerate}
+\item Read the two sections above.
+\item As you review, ask yourself these questions: 
+\begin{enumerate}
+\item What concepts were covered on the homework?
+\item How might those concepts be applied/asked about in different ways?
+\item What concepts were \textbf{not} covered on the homework but could be on an exam?
+\item If you were writing an exam, what questions would you ask?
+\end{enumerate}
+\end{enumerate}
 \end{document}
