@@ -304,8 +304,6 @@ $\displaystyle \lambda = \frac{ \langle v \rangle}{z} = \frac{V}{\sqrt{2} \sigma
 
 Graham's effusion law & $\displaystyle \frac{dN}{dt}=\text{Area}\cdot  J_w \propto 1/m^{1/2} $
 \\ & \\
-Effusion from a vessel & $\displaystyle P=P_0 e^{-t/\tau}, \tau = \frac{V}{A}\left
-  (\frac{2\pi m}{k_B T}\right )^{1/2} $ \\ & \\ 
 
 Self-diffusion constant &
 $\displaystyle D_{11} = \frac{1}{3}\langle v \rangle \lambda $ \\ & \\
@@ -441,7 +439,7 @@ Standing wave & \(\Psi(x,t) = A \sin(kx)\cos(\omega t), \quad k =n\pi/a\) \\
 3. Planck model, 1900
    1. Energy spectrum of waves are /quantized/, $\epsilon_\nu=nh\nu$, $n = 0,1,2, \ldots$
    2. Expected energy of a quantized wave: 
-      \[\langle \epsilon \rangle_\nu = \sum_{n=0}^\infty e^{-nh\nu/k_BT} = h\nu/\left (
+      \[\langle \epsilon \rangle_\nu = \sum_{n=0}^\infty nh\nu e^{-nh\nu/k_BT} = h\nu/\left (
           e^{h\nu/k_BT}-1 \right )\]
    3. Intensity:
       \[I(\lambda, T) = \frac{8\pi}{\lambda^4} \cdot \langle\epsilon \rangle_\nu \cdot c \]
