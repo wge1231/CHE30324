@@ -663,6 +663,10 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 5. zero point energy and uncertainty
 6. correspondence principle
 7. superpositions
+*** Multiple dimensions
+1. separation of variables, one quantum number for each dimension
+2. \(\Psi_{lmn}(x,y,z) = \psi_l(x) \psi_m(y) \psi_n(z)\), [[https://colab.research.google.com/github/wmfschneider/CHE30324/blob/master/Resources/3dbox.ipynb][3dbox notebook]]
+3. \(E_{lmn}=(l^2+m^2+n^2)\pi^2\hbar^2/2L^2 \longrightarrow\) /degeneracies/
 *** Finite walls and tunneling
 1. Potential well of finite depth $V_0$
 2. Finite number of bound states
@@ -672,8 +676,6 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 5. Non-zero probability to "tunnel" into forbidden region
 6. Tunneling between two adjacent wells: chemical bonding, STM, nanoelectronics
 7. H atom tunneling: NH$_3$ inversion, H transfer, kinetic isotope effect
-*** Multiple dimensions
-1. separation of variables, one quantum number for each dimension
 *** Introduce Pauli principle for fermions?
 
 #+BEGIN_EXPORT latex
@@ -738,6 +740,70 @@ plt.savefig('./Images/PIAB.png')
 #+END_SRC
 
 #+RESULTS:
+
+#+BEGIN_SRC python :exports results
+import plotly.graph_objects as go
+import numpy as np
+
+xmesh=[]
+ymesh=[]
+zmesh=[]
+
+points=25
+
+plans = [[1,1,1,'psi_s'],[1,1,2,'psi_p'],[1,2,2,'psi_d'],[2,2,2,'psi_f']]
+save=plans
+
+array=[[],[],[],[]]
+
+for z in np.linspace(0.,1.,points):
+    for y in np.linspace(0.,1.,points):
+        for x in np.linspace(0.,1.,points):
+            xmesh.append(x)
+            ymesh.append(y)
+            zmesh.append(z)
+
+            i=0
+            for plan in plans:
+                l=plan[0]; m=plan[1]; n=plan[2]
+                value=np.sin(l*np.pi*x)*np.sin(m*np.pi*y)*np.sin(n*np.pi*z)
+                array[i].append(value)
+                i+=1
+
+iso = 0.1
+
+i=0
+for plan in plans:
+    fig= go.Figure(data=go.Isosurface(
+        x=xmesh,
+        y=ymesh,
+        z=zmesh,
+        value=array[i],
+        isomin=-iso,
+        isomax=iso,
+        surface_count=2,
+        opacity=0.5,
+        showscale=False,
+        caps=dict(x_show=False, y_show=False,z_show=False)
+    ))
+
+    fig.write_image('./Images/'+plan[3]+'.png')
+    i+=1
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_EXPORT LaTeX
+\begin{table}
+\caption{Three-dimensional particle-in-a-box s-like, p-like, d-like, and f-like wavefunctions}
+\begin{tabular}{cc}
+\includegraphics[scale=0.5]{./Images/psi_s.png} &
+\includegraphics[scale=0.5]{./Images/psi_p.png} \\
+\includegraphics[scale=0.5]{./Images/psi_d.png} &
+\includegraphics[scale=0.5]{./Images/psi_f.png} \\
+\end{tabular}
+\end{table}
+#+END_EXPORT
 
 ** Lecture 7: Harmonic oscillator
 *** Classical harmonic oscillator
