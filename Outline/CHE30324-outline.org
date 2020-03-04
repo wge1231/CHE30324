@@ -698,7 +698,7 @@ $\displaystyle     \psi_n(x) =\sqrt{\frac{2}{L}} \sin \left ( \frac{n\pi x}{L} \
 $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 \\ \underline{Selection Rule} \\
 \\
-$\displaystyle \delta n = \pm 1, \pm 3, \pm 5, ... $
+$\displaystyle \Delta n = $ odd 
 \\
 \\
      \includegraphics[scale=.5]{Images/PIAB.png} \\       
@@ -866,7 +866,7 @@ $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 
 \\ \underline{Selection Rule} \\
 \\
-$\displaystyle \delta v = \pm 1$
+$\displaystyle \Delta v = \pm 1$
  \\
  \\
      \includegraphics[scale=.6]{Images/HO} \\       
@@ -1093,6 +1093,30 @@ plt.show()
 4. Angular momentum eignefunctions, $l_z = m_l \hbar$
 5. Energy superpositions and localization 
 
+#+BEGIN_SRC python
+import matplotlib.pyplot as plt
+import numpy as np
+
+def s(theta):
+    return np.full(np.size(theta),  1./np.sqrt(2*np.pi))
+
+def py(theta):
+    return s(theta)*np.sin(theta)
+
+rad = np.arange(0, 2*np.pi, 0.01)
+radpi = np.arange(0, np.pi, 0.01)
+rad2pi = np.arange(np.pi, 2*np.pi, 0.01)
+
+plt.figure()
+plt.subplot(1,3,1,projection='polar')
+plt.plot(rad,s(rad))
+
+plt.subplot(1,3,2,projection='polar')
+plt.plot(radpi,py(radpi))
+plt.plot(rad2pi,np.abs(py(radpi)), color='red')
+# plt.show()
+#+END_SRC
+
 #+BEGIN_EXPORT latex
 \begin{table}[tbh]
    \begin{center}
@@ -1115,7 +1139,7 @@ $\displaystyle     E_{m_l}=\frac{\hbar^2}{2 I}m_l^2$ \\
 $\displaystyle L_z = m_l \hbar$ \\
 \\ \underline{Selection Rules} \\
 \\
-$\displaystyle \delta m_l = \pm 1 $
+$\displaystyle \Delta m_l = \pm 1 $
 \\
 \\
      \includegraphics[scale=1]{Images/2Drotor.pdf} \\       
@@ -1162,10 +1186,10 @@ $\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
 $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \\ \underline{Selection Rules} \\
 \\
-$\displaystyle \delta l = \pm 1 $ 
+$\displaystyle \Delta l = \pm 1 $ 
 \\
 \\
-$ \displaystyle \delta m_l = 0, \pm 1 $
+$ \displaystyle \Delta m_l = 0, \pm 1 $
 \\
 % \\
 %     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
@@ -1368,6 +1392,9 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \\
 $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1) \right \} \frac{a_0}{Z} $ \\
 \\
+\\ \underline{Selection Rules} \\
+\\
+$\displaystyle \Delta l = \pm 1, \qquad  \Delta m_l = 0, \pm 1\qquad \Delta m_s=0 $
 %%     \includegraphics[scale=0.4]{Images/H_atom} \\       
 \hline
 \end{tabular}
