@@ -14,6 +14,8 @@ Homework assignments and solutions available [here](./homework.org)
 
 Course calendar available [here](https://calendar.google.com/calendar/b/1?cid=NWJwN2pmMjI5bTdoYmFvM2R0cXM2NjYzOThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 
+Panopto recordings of lectures available [here](https://notredame.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=0cc6b4f0-2e6e-4edc-8d74-ab7400ec2d4f)
+
 Introduction to git available [here](http://rogerdudler.github.io/git-guide/)
 
 Introduction to Jupyter notebooks [here](https://jupyter.org)

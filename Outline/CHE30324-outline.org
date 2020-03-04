@@ -696,8 +696,7 @@ $\displaystyle     \psi_n(x) =\sqrt{\frac{2}{L}} \sin \left ( \frac{n\pi x}{L} \
 \\ 
  \\
 $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
-\\ \underline{Selection Rule} \\
-\\
+\\ \underline{Absorption Selection Rule} \\
 $\displaystyle \Delta n = $ odd 
 \\
 \\
@@ -864,8 +863,7 @@ $\displaystyle H_{n+1}(y) = 2 y H_n(y) -2 n H_{n-1}(y)$\\
 $\displaystyle     \nu =\frac{1}{2\pi}\sqrt\frac{k}{\mu}$ \\
 $\displaystyle     E_v=(v+\frac{1}{2})h \nu, v=0, 1, 2, ...$ \\
 
-\\ \underline{Selection Rule} \\
-\\
+\\ \underline{Specific Selection Rule for Absorption} \\
 $\displaystyle \Delta v = \pm 1$
  \\
  \\
@@ -1137,8 +1135,7 @@ $\displaystyle     \psi_{m_l}(\phi) = \frac{1}{\sqrt{2\pi}} e^{-i m_l \phi}, m_l
 $\displaystyle     E_{m_l}=\frac{\hbar^2}{2 I}m_l^2$ \\
  \\
 $\displaystyle L_z = m_l \hbar$ \\
-\\ \underline{Selection Rules} \\
-\\
+\\ \underline{Absorption Selection Rules} \\
 $\displaystyle \Delta m_l = \pm 1 $
 \\
 \\
@@ -1185,11 +1182,7 @@ $\displaystyle     E_{l}=\frac{\hbar^2}{2 I}l(l+1)$ \\
  \\
 $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \\ \underline{Selection Rules} \\
-\\
-$\displaystyle \Delta l = \pm 1 $ 
-\\
-\\
-$ \displaystyle \Delta m_l = 0, \pm 1 $
+$\displaystyle \Delta l = \pm 1\qquad \Delta m_l = 0, \pm 1 $
 \\
 % \\
 %     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
@@ -1393,8 +1386,8 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1) \right \} \frac{a_0}{Z} $ \\
 \\
 \\ \underline{Selection Rules} \\
-\\
 $\displaystyle \Delta l = \pm 1, \qquad  \Delta m_l = 0, \pm 1\qquad \Delta m_s=0 $
+\\
 %%     \includegraphics[scale=0.4]{Images/H_atom} \\       
 \hline
 \end{tabular}
