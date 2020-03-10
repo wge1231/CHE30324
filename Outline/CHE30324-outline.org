@@ -676,7 +676,7 @@ Total energy $E$ & $\hat{H}$ & $\displaystyle -\frac{\hbar^2}{2m}\nabla^2+V({\bf
 5. Non-zero probability to "tunnel" into forbidden region
 6. Tunneling between two adjacent wells: chemical bonding, STM, nanoelectronics
 7. H atom tunneling: NH$_3$ inversion, H transfer, kinetic isotope effect
-*** Introduce Pauli principle for fermions?
+*** Pauli principle for fermions
 
 #+BEGIN_EXPORT latex
 \begin{table}[tb]
@@ -759,6 +759,7 @@ save=plans
 
 array=[[],[],[],[]]
 
+# Loop to create mesh and populate array with function values
 for z in np.linspace(0.,1.,points):
     for y in np.linspace(0.,1.,points):
         for x in np.linspace(0.,1.,points):
@@ -1408,7 +1409,7 @@ $\displaystyle \Delta l = \pm 1, \qquad  \Delta m_l = 0, \pm 1\qquad \Delta m_s=
 6. Energy spectrum and populations
 7. Electronic selection rules
    1. $\Delta l=\pm 1 \quad \Delta m_s =0 \quad \Delta m_l = 0,\pm 1$
-9. Wavefunctions = "orbitals"
+9. Wavefunctions = "orbitals",  [[https://colab.research.google.com/github/wmfschneider/CHE30324/blob/master/Resources/Hydrogen_3d.ipynb][3d H atom notebook]]
 10. Integrate out angular components to get radial probability function $P_{nl}(r)=r^2 R_{nl}^2(r)$
     1. $\langle r\rangle = \int r P_{nl}(r) dr = \left(\frac{3}{2}n^2-l(l+1)\right)a_0$
 
@@ -1472,6 +1473,83 @@ plt.savefig('./Images/H-P.png')
 #+CAPTION: H atom radial probability
 #+ATTR_LATEX: :width 0.5\textwidth
 [[./Images/H-P.png]] 
+
+#+BEGIN_SRC python :exports results
+# 3D images of Hydrogen orbitals
+import plotly.graph_objects as go
+import numpy as np
+from sympy.physics.hydrogen import R_nl
+from sympy import Ynm
+from sympy import var
+
+var('r theta phi')
+
+n = 1
+l = 0
+m = 0
+Z = 1
+
+xmesh=[]
+ymesh=[]
+zmesh=[]
+psi=[]
+
+points=20
+gsize=10
+
+for z in np.linspace(-gsize,gsize,points):
+    for y in np.linspace(-gsize,gsize,points):
+        for x in np.linspace(-gsize,gsize,points):
+            xmesh.append(x)
+            ymesh.append(y)
+            zmesh.append(z)
+
+            r = np.sqrt(x**2+y**2+z**2)
+            theta=np.arccos(z/r)
+            phi=np.arctan(y/x)
+
+            value=R_nl(n,l,r,Z)* Ynm(l,m,theta,phi).evalf() 
+            psi.append(float(value))
+
+#            print('{0:6.3f} {1:6.3f} {2:6.3f} {3:6.3f} {4:6.3f} {5:6.3f} {6:6.3f}'.format(x,y,z,r,theta,phi,psi))
+
+iso = 0.3*max(psi)
+
+fig= go.Figure(data=go.Isosurface(
+        x=xmesh,
+        y=ymesh,
+        z=zmesh,
+        value=psi,
+        isomin=-iso,
+        isomax=iso,
+        surface_count=2,
+        opacity=1.0,
+        showscale=False,
+        caps=dict(x_show=False, y_show=False,z_show=False)
+    ))
+
+fig.show()
+#fig.write_image('./Images/1s-3D.png')
+# i=0
+# for plan in plans:
+#     fig= go.Figure(data=go.Isosurface(
+#         x=xmesh,
+#         y=ymesh,
+#         z=zmesh,
+#         value=array[i],
+#         isomin=-iso,
+#         isomax=iso,
+#         surface_count=2,
+#         opacity=0.5,
+#         showscale=False,
+#         caps=dict(x_show=False, y_show=False,z_show=False)
+#     ))
+
+#     fig.write_image('./Images/'+plan[3]+'.png')
+#     i+=1
+#+END_SRC
+
+#+RESULTS:
 
 *** /Variational principle/
 1. Solutions of Schr\ouml{}dinger equation always form a complete set
