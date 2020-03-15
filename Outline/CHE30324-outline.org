@@ -1655,7 +1655,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Lets open the file in read mode
-with open('./Resources/Ar.dmp', 'r') as f:
+with open('../Resources/fda/Ar.dmp', 'r') as f:
 
     # Reading all the lines in the file
     # Each line is stored as an element of a list
@@ -1713,8 +1713,8 @@ plt.xlim(0,6)
 plt.xlabel('Distance (bohr)')
 plt.ylabel('Wavefunction rR(r)')
 plt.title('Ar radial wavefunctions')
-plt.savefig('images/Ar-wave-functions.png')
-#plt.show()
+#plt.savefig('images/Ar-wave-functions.png')
+plt.show()
 #+END_SRC
 
 #+RESULTS:
