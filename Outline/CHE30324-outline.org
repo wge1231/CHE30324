@@ -1554,14 +1554,15 @@ fig.show()
 *** /Variational principle/
 1. Solutions of Schr\ouml{}dinger equation always form a complete set
 2. True wavefunction energy is therefore lower bound on energy of any trial wavefunction
-\[\langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle =E_\text{trial}^\lambda \geq E_0\]
+    \[\langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle =E_\text{trial}^\lambda \geq E_0\]
 3. Optimize wavefunction with respect to variational parameter
-\[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
+    \[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
 
 ** Lecture 12: Many-electron atoms
 *** Many-electron problem, Schr\ouml{}dinger equation not exactly solvable (Sad!)
-1.  $e^- -e^-$ interaction terms prevent separation of variables
-2.  /Independent electron/ model basis of all solutions, describes each electron by its own wavefunction, or "orbital," $\psi_i$
+1. $e^- -e^-$ interaction terms prevent separation of variables
+2. /Independent electron/ model basis of all solutions, describes each electron (pair) by its own wavefunction, or "orbital," $\psi_i$
+\[ \left \{ -\frac{\hbar^2}{2m_e}\nabla^2 - \frac{Z}{r} + v_\text{ee} \right \}\psi_i = \epsilon_i \psi_i \]
 *** Qualitative solutions
  1. $\psi_i$ look like H atom orbitals,  labeled by same quantum numbers
  2. /Aufbau principle/: ``Build-up'' electron configuration by adding electrons into H-atom-like orbitals, from bottom up
@@ -1576,10 +1577,15 @@ fig.show()
 | $3/2$ |      4 | quartet      |
 *** Structure of the periodic table
 1. Electrons in different subshells experience different effective nuclear charge $Z_\mathrm{eff} = Z - \sigma_{nl}$
-2. Inner ("core") shells not shielded well
+2. Inner ("core") shells not shielded well, decrease precipitously in energy with increasing \(Z\)
 3. Inner shell electrons "shield" outer electrons well
-4. Within a shell, $s$ shielded less than $p$ less than $d$ ..., causes degeneracy to break down
-5. Electrons in same subshell shield each other poorly, causing ionization energy to increase across the subshell
+4. Within a family (column), outmost $n$ increases, further from nucleus, energy goes up
+5. Within a period (row), $s$ shielded less than $p$ less than $d$ ..., causes degeneracy to break down
+6. Electrons in same subshell shield each other poorly, causing ionization energy to increase across the subshell
+
+#+ATTR_ORG: :width 600
+#+ATTR_LATEX: :width 0.9\textwidth
+[[./Images/PeriodicTableMuted.png]]
 *** Quantitative solutions
 1. Schr\ouml{}dinger equation
      \[\hat H \Psi({\bf r}_1, {\bf r}_2,...)=E \Psi({\bf r}_1, {\bf r}_2,...)\]
@@ -1653,71 +1659,290 @@ plt.savefig('./Images/Ionization.png')
 #+BEGIN_SRC python :exports results
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+
+name='H'
+radius=15
+
+# Hydrogen
+L1 = ["300  0.0001  30.0\n"]
+L2 = ["50 0.00001 0.10 0.50  0.682 0.0042\n"]
+L3 = ["1.0 1\n"] # Z and number of states to compute
+L4 = ["1 0 1.0 0.0\n"]  # n l up down
+L = L1 + L2 + L3 + L4
+
+with open('../Resources/fda/Atoms/'+name+'.inp', 'w') as f:
+     f.writelines(L)
+
+os.system('../Resources/fda/fda ../Resources/fda/Atoms/'+name)
 
 # Lets open the file in read mode
-with open('../Resources/fda/Ar.dmp', 'r') as f:
+with open('../Resources/fda/Atoms/'+name+'.dmp', 'r') as f:
 
     # Reading all the lines in the file
     # Each line is stored as an element of a list
     lines = f.readlines()
 
     # First we read the grid points and the total charge densities
-    grid_points = []
-    total_charge_densities = []
+grid_points = []
+total_charge_densities = []
 
-    for line in lines[3:303]:
+for line in lines[3:303]:
 
-        # Each is a string with two columns
-        grid_point, tot_charge_density = line.split()
+     # Each is a string with two columns
+     grid_point, tot_charge_density = line.split()
 
-        # We need to convert each line to a float add it to our lists
-        grid_points.append(float(grid_point))
-        total_charge_densities.append(float(tot_charge_density))
+     # We need to convert each line to a float add it to our lists
+     grid_points.append(float(grid_point))
+     total_charge_densities.append(float(tot_charge_density))
     
-    # Now for the 1s orbital
-    one_s = []
-    one_s = [float(x) for x in lines[304:604]]
-
-    two_s = []
-    two_s = [float(x) for x in lines[605:905]]
-
-    two_p = []
-    two_p = [float(x) for x in lines[906:1206]]
-
-    three_s = []
-    three_s = [float(x) for x in lines[1207:1507]]
-
-    three_p = []
-    three_p = [float(x) for x in lines[1508:1808]]
-#    for x in lines[304:604]:
-#        one_s_charge_density.append(float(x))
+# Now for the 1s orbital
+one_s = []
+one_s = [float(x) for x in lines[304:604]]
  
 
 plt.figure()
 #plt.semilogx(grid_points, total_charge_densities)
 plt.plot(grid_points, total_charge_densities)
 plt.xlabel('Grid Points')
-plt.ylabel('Charge Density')
-plt.title('Overall')
-plt.savefig('./Images/Ar-overall-charge-density.png')
+plt.ylabel('Charge Density (electrons/bohr')
+plt.title(name+' Radial Charge Density')
+plt.xlim(0,radius)
+plt.savefig('./Images/'+name+'-overall-charge-density.png')
 
 plt.figure()
 plt.plot(grid_points, one_s,label='1s')
-plt.plot(grid_points, two_s,label='2s')
-plt.plot(grid_points, two_p,label='2p')
-plt.plot(grid_points, three_s,label='3s')
-plt.plot(grid_points, three_p,label='3p')
 plt.legend()
-plt.xlim(0,6)
+plt.xlim(0,radius)
 
 plt.xlabel('Distance (bohr)')
 plt.ylabel('Wavefunction rR(r)')
-plt.title('Ar radial wavefunctions')
-#plt.savefig('images/Ar-wave-functions.png')
-plt.show()
+plt.title(name+' radial wavefunctions')
+plt.savefig('./Images/'+name+'-wave-functions.png')
+#plt.show()
+
+with open('../Resources/fda/Atoms/'+name+'.out', 'r') as f:
+    lines = f.readlines()
+
+echo = 0
+for line in lines:
+     if echo == 1:
+          print(line.strip())
+     elif line.strip() == "Orbital Summary":
+          print(name+' '+line.strip())
+          echo = 1
+
+#+End_SRC
+
+#+RESULTS:
+#+begin_example
+H Orbital Summary
+nl    occ        E           KE       <1/r>     <r>
+1s   1.00      -0.5002      0.5003    1.0005   1.4994
+
+Energy Summary
+kinetic energy      =     0.5003
+potential energy    =    -1.0005
+one-electron energy =    -0.5001
+two-electron energy =    -0.0000
+
+total energy =    -0.5002
+virial ratio =    -1.9996
+#+end_example
+
+#+BEGIN_SRC python :exports results
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+# Helium
+L1 = ["300  0.0001  30.0\n"]
+L2 = ["50 0.00001 0.10 0.50  0.682 0.0042\n"]
+L3 = ["2.0 1\n"] # Z and number of states to compute
+L4 = ["1 0 1.0 1.0\n"]  # n l up down
+L = L1 + L2 + L3 + L4
+
+name='He'
+radius=15
+
+with open('../Resources/fda/Atoms/'+name+'.inp', 'w') as f:
+     f.writelines(L)
+
+os.system('../Resources/fda/fda ../Resources/fda/Atoms/'+name)
+
+# Lets open the file in read mode
+with open('../Resources/fda/Atoms/'+name+'.dmp', 'r') as f:
+
+    # Reading all the lines in the file
+    # Each line is stored as an element of a list
+    lines = f.readlines()
+
+    # First we read the grid points and the total charge densities
+grid_points = []
+total_charge_densities = []
+
+for line in lines[3:303]:
+
+     # Each is a string with two columns
+     grid_point, tot_charge_density = line.split()
+
+     # We need to convert each line to a float add it to our lists
+     grid_points.append(float(grid_point))
+     total_charge_densities.append(float(tot_charge_density))
+    
+# Now for the 1s orbital
+one_s = []
+one_s = [float(x) for x in lines[304:604]]
+ 
+
+plt.figure()
+#plt.semilogx(grid_points, total_charge_densities)
+plt.plot(grid_points, total_charge_densities)
+plt.xlabel('Grid Points')
+plt.ylabel('Charge Density (electrons/bohr')
+plt.title(name+' Radial Charge Density')
+plt.xlim(0,radius)
+plt.savefig('./Images/'+name+'-overall-charge-density.png')
+
+plt.figure()
+plt.plot(grid_points, one_s,label='1s')
+plt.legend()
+plt.xlim(0,radius)
+
+plt.xlabel('Distance (bohr)')
+plt.ylabel('Wavefunction rR(r)')
+plt.title(name+' radial wavefunctions')
+plt.savefig('./Images/'+name+'-wave-functions.png')
+
+with open('../Resources/fda/Atoms/'+name+'.out', 'r') as f:
+    lines = f.readlines()
+
+echo = 0
+for line in lines:
+     if echo == 1:
+          print(line.strip())
+     elif line.strip() == "Orbital Summary":
+          print(name+' '+line.strip())
+          echo = 1
+
+#+End_SRC
+
+#+RESULTS:
+#+begin_example
+He Orbital Summary
+nl    occ        E           KE       <1/r>     <r>
+1s   2.00      -0.8998      1.5175    1.7352   0.9133
+
+Energy Summary
+kinetic energy      =     3.0349
+potential energy    =    -5.8876
+one-electron energy =    -3.9058
+two-electron energy =     1.0531
+
+total energy =    -2.8527
+virial ratio =    -1.9399
+#+end_example
+
+#+BEGIN_SRC python :exports results
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+# Argon
+L1 = ["300  0.0001  30.0\n"]
+L2 = ["50 0.00001 0.10 0.50  0.682 0.0042\n"]
+L3 = ["18.0 5\n"] # Z and number of states to compute
+L4 = ["1 0 1.0 1.0\n"]  # n l up down
+L5 = ["2 0 1.0 1.0\n"]  # n l up down
+L6 = ["2 1 3.0 3.0\n"]  # n l up down
+L7 = ["3 0 1.0 1.0\n"]  # n l up down
+L8 = ["3 1 3.0 3.0\n"]  # n l up down
+L = L1 + L2 + L3 + L4 + L5 + L6 + L7 + L8
+
+name='Ar'
+radius=15
+
+with open('../Resources/fda/Atoms/'+name+'.inp', 'w') as f:
+     f.writelines(L)
+
+os.system('../Resources/fda/fda ../Resources/fda/Atoms/'+name)
+
+# Lets open the file in read mode
+with open('../Resources/fda/Atoms/'+name+'.dmp', 'r') as f:
+
+    # Reading all the lines in the file
+    # Each line is stored as an element of a list
+    lines = f.readlines()
+
+    # First we read the grid points and the total charge densities
+grid_points = []
+total_charge_densities = []
+
+for line in lines[3:303]:
+
+     # Each is a string with two columns
+     grid_point, tot_charge_density = line.split()
+
+     # We need to convert each line to a float add it to our lists
+     grid_points.append(float(grid_point))
+     total_charge_densities.append(float(tot_charge_density))
+    
+# Now for the 1s orbital
+one_s = []
+one_s = [float(x) for x in lines[304:604]]
+ 
+
+plt.figure()
+#plt.semilogx(grid_points, total_charge_densities)
+plt.plot(grid_points, total_charge_densities)
+plt.xlabel('Grid Points')
+plt.ylabel('Charge Density (electrons/bohr')
+plt.title(name+' Radial Charge Density')
+plt.xlim(0,radius)
+plt.savefig('./Images/'+name+'-overall-charge-density.png')
+
+plt.figure()
+plt.plot(grid_points, one_s,label='1s')
+plt.legend()
+plt.xlim(0,radius)
+
+plt.xlabel('Distance (bohr)')
+plt.ylabel('Wavefunction rR(r)')
+plt.title(name+' radial wavefunctions')
+plt.savefig('./Images/'+name+'-wave-functions.png')
+
+with open('../Resources/fda/Atoms/'+name+'.out', 'r') as f:
+    lines = f.readlines()
+
+echo = 0
+for line in lines:
+     if echo == 1:
+          print(line.strip())
+     elif line.strip() == "Orbital Summary":
+          print(name+' '+line.strip())
+          echo = 1
+
 #+END_SRC
 
 #+RESULTS:
+#+begin_example
+Ar Orbital Summary
+nl    occ        E           KE       <1/r>     <r>
+1s   2.00    -116.9366    155.6552   17.6458   0.0856
+2s   2.00     -11.6037     25.6407    3.5930   0.4087
+2p   6.00      -9.2721     25.0012    3.5259   0.3675
+3s   2.00      -1.1022      4.4193    1.0227   1.3584
+3p   6.00      -0.5735      3.4406    0.8812   1.5596
+
+Energy Summary
+kinetic energy      =   542.0811
+potential energy    = -1068.9087
+one-electron energy =  -735.2963
+two-electron energy =   208.4688
+
+total energy =  -526.8275
+virial ratio =    -1.9719
+#+end_example
 
 #+BEGIN_EXPORT latex
 \begin{table}[]
