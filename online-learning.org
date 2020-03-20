@@ -103,7 +103,7 @@ We will use [[https://che30324-nd.slack.com][Slack]] as a tool for you to commun
 
 
 ** Exams
-We will have one exam on April 14 and a final on May 5.  Each will be distributed electronically at a set time, and you will have some amount of time (greater than an hour) to complete and upload to Panopto, just like a homework.  
+We will have one exam on April 14 and a final on May 5.  Each will be distributed electronically at a set time, and you will have some amount of time (greater than an hour) to complete and upload to [[https://www.gradescope.com/][Gradescope]], just like a homework.  
 
 ** Final words
 We truly are in uncharted water heres.  But as they say, necessity is the mother of invention, and we may well learn new and better ways to learn and communicate through the experience. I assure you I am here to help you get through the course. Again, contact me with any concerns at any time. - Prof.\nbsp{}Bill Schneider
