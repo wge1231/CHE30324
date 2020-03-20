@@ -1848,6 +1848,101 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
+# Lithium
+L1 = ["300  0.0001  30.0\n"]
+L2 = ["50 0.00001 0.10 0.50  0.682 0.0042\n"]
+L3 = ["2.0 2\n"] # Z and number of states to compute
+L4 = ["1 0 1.0 1.0\n"]  # n l up down
+L5 = ["2 0 1.0 0.0\n"]  # n l up down
+L = L1 + L2 + L3 + L4 + L5
+
+name='Li'
+radius=15
+
+with open('../Resources/fda/Atoms/'+name+'.inp', 'w') as f:
+     f.writelines(L)
+
+os.system('../Resources/fda/fda ../Resources/fda/Atoms/'+name)
+
+# Lets open the file in read mode
+with open('../Resources/fda/Atoms/'+name+'.dmp', 'r') as f:
+
+    # Reading all the lines in the file
+    # Each line is stored as an element of a list
+    lines = f.readlines()
+
+    # First we read the grid points and the total charge densities
+grid_points = []
+total_charge_densities = []
+
+for line in lines[3:303]:
+
+     # Each is a string with two columns
+     grid_point, tot_charge_density = line.split()
+
+     # We need to convert each line to a float add it to our lists
+     grid_points.append(float(grid_point))
+     total_charge_densities.append(float(tot_charge_density))
+    
+# Now for the 1s orbital
+one_s = []
+one_s = [float(x) for x in lines[304:604]]
+ 
+
+plt.figure()
+#plt.semilogx(grid_points, total_charge_densities)
+plt.plot(grid_points, total_charge_densities)
+plt.xlabel('Grid Points')
+plt.ylabel('Charge Density (electrons/bohr')
+plt.title(name+' Radial Charge Density')
+plt.xlim(0,radius)
+plt.savefig('./Images/'+name+'-overall-charge-density.png')
+
+plt.figure()
+plt.plot(grid_points, one_s,label='1s')
+plt.legend()
+plt.xlim(0,radius)
+
+plt.xlabel('Distance (bohr)')
+plt.ylabel('Wavefunction rR(r)')
+plt.title(name+' radial wavefunctions')
+plt.savefig('./Images/'+name+'-wave-functions.png')
+
+with open('../Resources/fda/Atoms/'+name+'.out', 'r') as f:
+    lines = f.readlines()
+
+echo = 0
+for line in lines:
+     if echo == 1:
+          print(line.strip())
+     elif line.strip() == "Orbital Summary":
+          print(name+' '+line.strip())
+          echo = 1
+
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+Li Orbital Summary
+nl    occ        E           KE       <1/r>     <r>
+1s   2.00      -0.6742      1.6434    1.8101   0.8581
+2s   2.00       0.0590      0.0149    0.0606  19.9661
+
+Energy Summary
+kinetic energy      =     3.3165
+potential energy    =    -6.0150
+one-electron energy =    -4.1666
+two-electron energy =     1.4681
+
+total energy =    -2.6985
+virial ratio =    -1.8136
+#+end_example
+
+#+BEGIN_SRC python :exports results
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
 # Argon
 L1 = ["300  0.0001  30.0\n"]
 L2 = ["50 0.00001 0.10 0.50  0.682 0.0042\n"]
