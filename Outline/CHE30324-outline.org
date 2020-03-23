@@ -2650,6 +2650,37 @@ for line in lines:
 8. Makes clear that bonding stabilization $<$ anti-bonding destabilization
 9. Ground configuration $=\sigma_g^2$
 10. Bond order = $\frac{1}{2}(n-n^*)$
+11. Electron-driven bonding in competetition with $1/R$ repulsion between nuclei.
+
+#+BEGIN_SRC python :exports results
+import matplotlib.pyplot as plt
+import numpy as np
+
+def Morse(R):
+    return A*((1-np.exp(-alpha*(R - R0)))**2-1)
+
+R0 = 1
+alpha = 1
+A = 1
+
+R = np.linspace(R0/300,8*R0,100)
+V = Morse(R)
+
+plt.figure()
+plt.plot(R,V)
+plt.plot([0,8*R0],[0,0],ls='--', color = 'black')
+plt.xlabel('Interatomic distance (au)')
+plt.ylabel('Potential energy (au)')
+plt.title('Qualitative PES for diatomic molecule')
+plt.savefig('./Images/Morse.png')
+#+END_SRC
+
+#+RESULTS:
+
+#+ATTR_ORG: :width 600
+#+ATTR_LATEX: :width 0.5\textwidth
+[[./Images/Morse.png]]
+
 *** Heteronuclear diatomic: LiH, HF, BH example
 1. Only AOs of appropriate symmetry, overlap, and energy match can combine to form MOs
       \begin{eqnarray*}
@@ -2668,7 +2699,7 @@ for line in lines:
    3. 2p$_z$ + 2p$_z$ form second bond and anti-bond
    4. 2p$_{x,y}$ + 2p$_{x,y}$ form degenerate $\pi$ bonds and anti-bonds
    5. O$_2$ is a triplet, consistent with experiment!
-*** Secular equations
+*** COMMENT Secular equations
 1. Expand wavefunctions ("molecular orbitals") in "basis" of atomic-like orbitals
 	\begin{equation}
           \psi_\mathrm{MO}=\sum_a c_a\phi_a({\bf r})
@@ -2701,7 +2732,7 @@ for line in lines:
           \end{array} \right | = 0
       \end{displaymath}
 5. Solve for \(\epsilon\)s and back-substitute to find correspond \(c_i\)s
-*** H$_2$ example, again
+*** COMMENT H$_2$ example, again
 1. Set-up and solve secular matrix
       \begin{displaymath}
        \left | \begin{array}{cc}
@@ -2713,7 +2744,7 @@ for line in lines:
 	\epsilon_+=\frac{\alpha+\beta}{1+S},\ \ c_1=c_2=\frac{1}{\sqrt{2(1+S)}} \\
 	\epsilon_-=\frac{\alpha-\beta}{1-S},\ \ c_1=-c_2=\frac{1}{\sqrt{2(1-S)}} \\
       \end{eqnarray*}
-*** Qualitative solutions of secular equations
+*** COMMENT Qualitative solutions of secular equations
 1. Lot's of insight into chemical bonding can be obtained from approximate solutions to secular equations, basis of "molecular orbital theory"
 2. Two general assumptions
    1. Diagonal matrix elements are approximately equal to energies of corresponding atomic orbitals: $F_{ii} \approx \epsilon_{i,\mathrm{ao}}$
@@ -2766,6 +2797,12 @@ for state in [2,1,0]:
 #+ATTR_LATEX: :width 0.9\textwidth
 [[./Images/band.pdf]]
 
+*** Non-bonding interactions
+1. Chemical covalent bonds have energies on the order of several eV
+2. Even things that are not "bonded" still attract one another
+   1. permanent dipoles (~0.1 eV)
+   2. induced dipoles (dispersion)---scaled with number of electrons
+3. Results in physical properties, eg trends in boiling point (He < Ne < Kr < Xe; \ce{CH4} < \ce{C2H6} < \ce{C3H8} )
 ** Lecture 14: Quantitative Models of Bonding
 *** Numerical Schr\ouml{}dinger equation solvers for discrete (molecule) and periodic (solids/liquids/interfaces) readily available today
 *** Have to specify:
