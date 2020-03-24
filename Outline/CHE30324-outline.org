@@ -2765,7 +2765,7 @@ plt.savefig('./Images/Morse.png')
 from sympy import *
 init_printing(use_unicode=True)
 
-print('6. Cyclobutadiene example\n')
+print('Huckel model for pi orbitals of cyclobutadiene\n')
 alpha,beta = symbols('alpha beta')
 
 M = Matrix([[alpha, beta, 0 , beta],[beta, alpha, beta, 0],[0,beta,alpha,beta],[beta,0,beta,alpha]])
@@ -2787,8 +2787,52 @@ for state in [2,1,0]:
 #+END_SRC
 
 #+RESULTS:
-:RESULTS:
-:END:
+:results:
+Huckel model for pi orbitals of cyclobutadiene
+
+⎡α  β  0  β⎤
+⎢          ⎥
+⎢β  α  β  0⎥
+⎢          ⎥
+⎢0  β  α  β⎥
+⎢          ⎥
+⎣β  0  β  α⎦
+                        
+Energy state, degeneracy
+alpha    2
+
+alpha - 2*beta    1
+
+alpha + 2*beta    1
+
+            
+Eigenvectors
+Eigenvector(s) of state 2 : [Matrix([
+[1],
+[1],
+[1],
+[1]])]
+ 
+Eigenvector(s) of state 1 : [Matrix([
+[-1],
+[ 1],
+[-1],
+[ 1]])]
+ 
+Eigenvector(s) of state 0 : [Matrix([
+[-1],
+[ 0],
+[ 1],
+[ 0]]), Matrix([
+[ 0],
+[-1],
+[ 0],
+[ 1]])]
+ 
+:end:
+
+#+ATTR_LATEX: :width 0.8\textwidth
+[[./Images/CyclicH.pdf]]
 
 *** Band structure of solids  
 1. Discrete molecular orbitals transform into continuous bands
@@ -2801,7 +2845,7 @@ for state in [2,1,0]:
 1. Chemical covalent bonds have energies on the order of several eV
 2. Even things that are not "bonded" still attract one another
    1. permanent dipoles (~0.1 eV)
-   2. induced dipoles (dispersion)---scaled with number of electrons
+   2. induced dipoles (dispersion)---scales with number of electrons
 3. Results in physical properties, eg trends in boiling point (He < Ne < Kr < Xe; \ce{CH4} < \ce{C2H6} < \ce{C3H8} )
 ** Lecture 14: Quantitative Models of Bonding
 *** Numerical Schr\ouml{}dinger equation solvers for discrete (molecule) and periodic (solids/liquids/interfaces) readily available today
@@ -2811,7 +2855,6 @@ for state in [2,1,0]:
    3. (spin multiplicity)
    4. exact theoretical model (how are Coulomb, exchange, and correlation described?)
       1. Hartree, Hartree-Fock, DFT (various flavors), $\ldots$
-
    5. basis set to express wavefunctions in terms of
    6. initial guess of wavefunction coefficients (often guessed for you)
 *** Secular equations solved iteratively until input coefficients = output coefficients
@@ -2835,7 +2878,7 @@ for state in [2,1,0]:
 1. Gradient-driven optimizations, $3n-6$ degrees of freedom
 2. Hessian matrix for frequencies
 
-** Lecture 15: Electronic spectroscopy
+** COMMENT Lecture 15: Electronic spectroscopy
 *** Electronic spectroscopy probes electron jumps between energy states, or "orbitals"
 1. The electronic structure of each substance is unique, so no general energy expression for electronic transitions
 2. Core, valence, virtual, vacuum states
@@ -2871,7 +2914,7 @@ for state in [2,1,0]:
 **** Stimulated emission
  1. passing photon causes electron to jump from higher to a lower energy state and to emit another photon
  2. cascade of such stimulated events is the basis of laser action#+BEGIN_COMMENT
-** Lecture 16: Electronic and magnetic properties
+** COMMENT Lecture 16: Electronic and magnetic properties
 
 * Statistical Mechanics: The Bridge from the Tiny to the Many
 ** Lecture 17: Statistical mechanics
