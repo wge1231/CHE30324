@@ -699,7 +699,6 @@ $\displaystyle     E_n =\frac{n^2\pi^2\hbar^2}{2mL^2}, n = 1, 2, ...$ \\
 \\ \underline{Absorption Selection Rule} \\
 $\displaystyle \Delta n = $ odd 
 \\
-\\
      \includegraphics[scale=.5]{Images/PIAB.png} \\       
 \hline
 \end{tabular}
@@ -801,10 +800,10 @@ for plan in plans:
 \begin{table}
 \caption{Three-dimensional particle-in-a-box s-like, p-like, d-like, and f-like wavefunctions}
 \begin{tabular}{cc}
-\includegraphics[scale=0.5]{./Images/psi_s.png} &
-\includegraphics[scale=0.5]{./Images/psi_p.png} \\
-\includegraphics[scale=0.5]{./Images/psi_d.png} &
-\includegraphics[scale=0.5]{./Images/psi_f.png} \\
+\includegraphics[scale=0.6]{./Images/psi_s.png} &
+\includegraphics[scale=0.6]{./Images/psi_p.png} \\
+\includegraphics[scale=0.6]{./Images/psi_d.png} &
+\includegraphics[scale=0.6]{./Images/psi_f.png} \\
 \end{tabular}
 \end{table}
 #+END_EXPORT
@@ -1092,7 +1091,7 @@ plt.show()
 4. Angular momentum eignefunctions, $l_z = m_l \hbar$
 5. Energy superpositions and localization 
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :exports results
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -1101,6 +1100,9 @@ def s(theta):
 
 def py(theta):
     return s(theta)*np.sin(theta)
+
+def dy(theta):
+    return s(theta)*np.sin(2.*theta)
 
 rad = np.arange(0, 2*np.pi, 0.01)
 radpi = np.arange(0, np.pi, 0.01)
@@ -1113,11 +1115,16 @@ plt.plot(rad,s(rad))
 plt.subplot(1,3,2,projection='polar')
 plt.plot(radpi,py(radpi))
 plt.plot(rad2pi,np.abs(py(radpi)), color='red')
+
+plt.subplot(1,3,3,projection='polar')
+plt.plot(rad,dy(rad))
 # plt.show()
 #+END_SRC
 
+#+RESULTS:
+
 #+BEGIN_EXPORT latex
-\begin{table}[tbh]
+\begin{table}[h]
    \begin{center}
    \caption{2-D rigid rotor model}
     \label{Rigid rotor}
@@ -1157,7 +1164,7 @@ $\displaystyle \Delta m_l = \pm 1 $
 7. Wavefunctions look like atomic orbitals, $l$ nodes
 
 #+BEGIN_EXPORT latex
-\begin{table}
+\begin{table}[h]
    \begin{center}
    \caption{3-D rigid rotor model}
     \label{3-D Rigid rotor}
@@ -1346,7 +1353,7 @@ plt.savefig('./Images/d.png')
 2. Coulomb potential $v_\mathrm{Coulomb}(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$
 3. Centripetal potential  $v=\hbar^2\frac{l(l+1)}{2\mu r^2}$
 #+BEGIN_EXPORT latex
-\begin{table}[]
+\begin{table}[h]
    \begin{center}
    \caption{Hydrogen atom}
     \label{Hydrogen atom}
