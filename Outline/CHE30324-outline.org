@@ -1140,12 +1140,11 @@ $\\
 $\displaystyle     \psi_{m_l}(\phi) = \frac{1}{\sqrt{2\pi}} e^{-i m_l \phi}, m_l
 = 0, \pm 1, \pm 2, \ldots $ \\
 \\
-$\displaystyle     E_{m_l}=\frac{\hbar^2}{2 I}m_l^2$ \\
+$\displaystyle     E_{m_l}=\frac{\hbar^2}{2 I}m_l^2$ 
  \\
 $\displaystyle L_z = m_l \hbar$ \\
-\\ \underline{Absorption Selection Rules} \\
-$\displaystyle \Delta m_l = \pm 1 $
-\\
+\\ \underline{Absorption Selection Rules}: 
+$\displaystyle \Delta m_l = \pm 1$
 \\
      \includegraphics[scale=1]{Images/2Drotor.pdf} \\       
 \hline
@@ -1386,14 +1385,13 @@ $\displaystyle N_{nl} = \sqrt{\left ( \frac{2}{na_0}\right )^3 \frac{(n-l-1)!}{2
 $\displaystyle L_{10} = L_{21} = L_{32} = \ldots =1 \quad L_{20} = 2 - x \quad L_{31} = 4-x$
 \\
 \\
-\\
 $\displaystyle     E_{n}=-\frac{1}{2}\frac{\hbar^2}{m_e a_0^2}\frac{1}{n^2} =-\frac{E_H}{2}\frac{1}{n^2}$ \\
  \\
 $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \\
 $\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1) \right \} \frac{a_0}{Z} $ \\
-\\
-\\ \underline{Selection Rules} \\
+
+\\ \underline{Selection Rules}:
 $\displaystyle \Delta l = \pm 1, \qquad  \Delta m_l = 0, \pm 1\qquad \Delta m_s=0 $
 \\
 %%     \includegraphics[scale=0.4]{Images/H_atom} \\       
