@@ -1,0 +1,4 @@
+|        |             | Exam                                                                                      | Submission |
+|--------+-------------+-------------------------------------------------------------------------------------------+------------|
+| Exam 3 | 14 Apr 2020 | [[https://colab.research.google.com/github/wmfschneider/CHE30324/blob/master/Exams/Exam3-Sp20.ipynb][https://colab.research.google.com/assets/colab-badge.svg]] [[http://nbviewer.jupyter.org/github/wmfschneider/CHE30324/blob/master/Exams/Exam3-Sp20.ipynb][./Resources/nbviewer.svg]]     [[./Exams/Exam3-Sp20.pdf][pdf]] | [[https://www.gradescope.com/courses/88893][Gradescope]] |
+|        | 9 am - 9 pm |                                                                                           |            |
