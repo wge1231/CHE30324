@@ -2,6 +2,8 @@
 
 This one semester course demonstrates the molecular bases of chemical engineering, making the connection between basic physical chemistry concepts (Boltzmann statistics, classical and quantum mechanics) and the pillars of chemical engineering (thermodynamics, kinetics, and transport). 
 
+Exams [here](./exams.org)
+
 DETAILS ABOUT MOVING TO ONLINE INSTRUCTION [here](./online-learning.org)
 
 Syllabus available [here](./syllabus.org)
