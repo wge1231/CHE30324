@@ -7,6 +7,7 @@
 #+LATEX_HEADER:\geometry{margin=1.0in}
 #+LATEX_HEADER:\usepackage{outline}
 #+LATEX_HEADER:\usepackage{amsmath}
+#+LATEX_HEADER:\usepackage{tabu}
 #+LATEX_HEADER:\usepackage{graphicx}
 #+LATEX_HEADER:\usepackage{epstopdf}
 #+LATEX_HEADER:\usepackage{siunitx}
@@ -1099,26 +1100,39 @@ def s(theta):
     return np.full(np.size(theta),  1./np.sqrt(2*np.pi))
 
 def py(theta):
-    return s(theta)*np.sin(theta)
+    return s(theta)*2.*np.sin(theta)
 
 def dy(theta):
-    return s(theta)*np.sin(2.*theta)
+    return s(theta)*2.*np.sin(2.*theta)
 
 rad = np.arange(0, 2*np.pi, 0.01)
 radpi = np.arange(0, np.pi, 0.01)
 rad2pi = np.arange(np.pi, 2*np.pi, 0.01)
 
+rad1 = np.arange(0, np.pi/2., 0.02)
+rad2 = np.arange(np.pi/2., np.pi, 0.02)
+rad3 = np.arange(np.pi, 1.5*np.pi, 0.02)
+rad4 = np.arange(1.5*np.pi, 2.*np.pi, 0.02)
 plt.figure()
-plt.subplot(1,3,1,projection='polar')
-plt.plot(rad,s(rad))
+plt.subplot(1,3,1,projection='polar',)
+plt.plot(rad1,s(rad1),color='blue')
+plt.plot(rad2,s(rad2),color='blue')
+plt.plot(rad3,s(rad3),color='blue')
+plt.plot(rad4,s(rad4),color='blue')
 
 plt.subplot(1,3,2,projection='polar')
-plt.plot(radpi,py(radpi))
-plt.plot(rad2pi,np.abs(py(radpi)), color='red')
+plt.plot(rad1,py(rad1),color='blue')
+plt.plot(rad2,py(rad2),color='blue')
+plt.plot(rad3,-py(rad3),color='red')
+plt.plot(rad4,-py(rad4),color='red')
 
+#plt.plot(rad2pi,np.abs(py(radpi)), color='red')
 plt.subplot(1,3,3,projection='polar')
-plt.plot(rad,dy(rad))
-# plt.show()
+plt.plot(rad1,dy(rad1),color='blue')
+plt.plot(rad2,-dy(rad2),color='red')
+plt.plot(rad3,dy(rad3),color='blue')
+plt.plot(rad4,-dy(rad4),color='red')
+plt.savefig('./Images/2Drotor.png')
 #+END_SRC
 
 #+RESULTS:
@@ -1146,7 +1160,7 @@ $\displaystyle L_z = m_l \hbar$ \\
 \\ \underline{Absorption Selection Rules}: 
 $\displaystyle \Delta m_l = \pm 1$
 \\
-     \includegraphics[scale=1]{Images/2Drotor.pdf} \\       
+     \includegraphics[scale=0.8]{Images/2Drotor.png} \\       
 \hline
 \end{tabular}
  \end{center}
@@ -1191,8 +1205,12 @@ $\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
 \\ \underline{Selection Rules} \\
 $\displaystyle \Delta l = \pm 1\qquad \Delta m_l = 0, \pm 1 $
 \\
-% \\
-%     \includegraphics[scale=0.4]{Images/3Drotor.png} \\       
+\end{tabular}
+\begin{tabular}[h]{|ccc|}
+\includegraphics[scale=0.4]{./Images/s.png} &
+\includegraphics[scale=0.4]{./Images/p.png} &
+\includegraphics[scale=0.4]{./Images/d.png} \\
+$s\ (l=0) $ & $d\ (l=1)$ & $p\ (l=2)$ \\
 \hline
 \end{tabular}
  \end{center}
@@ -1270,6 +1288,7 @@ plt.savefig('./Images/d.png')
 :RESULTS:
 :END:
 
+#+BEGIN_COMMENT
 #+BEGIN_EXPORT LaTeX
 \begin{figure}
 \includegraphics[scale=0.4]{./Images/s.png}
@@ -1278,6 +1297,8 @@ plt.savefig('./Images/d.png')
 \caption{Pythonic $s$ ($l = 0$), $p$ ($l=1$), and $d$ ($l=2$) spherical harmonics. Color scale from red to white to blue corresponds to positive to zero to negative sign of wavefunction.}
 \end{figure}
 #+END_EXPORT
+replace. Tab to end.
+#+END_COMMENT
 
 *** Particle angular momentum
 1. Fermions, mass, half-integer spin
@@ -1351,56 +1372,6 @@ plt.savefig('./Images/d.png')
 1. Spherical coordinates and separation of variables
 2. Coulomb potential $v_\mathrm{Coulomb}(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$
 3. Centripetal potential  $v=\hbar^2\frac{l(l+1)}{2\mu r^2}$
-#+BEGIN_EXPORT latex
-\begin{table}[h]
-   \begin{center}
-   \caption{Hydrogen atom}
-    \label{Hydrogen atom}
-\begin{tabular}[h]{|c|}
-\hline
- \\
-$\displaystyle       V(r) = -\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}, 0 < r< \infty$ \\
- \\
-$\displaystyle     \hat H = -\frac{\hbar^2}{2m_e}\frac{1}{r^2}\left [
-  \frac{\partial}{\partial r}r^2\frac{\partial}{\partial r} + \hat L^2 \right ] +V(r)$ \\
-\\
-$\displaystyle \psi(r,\theta,\phi) = R(r)Y_{l,m_l}(\theta,\phi) $ \\
-\\
-$\displaystyle   \left \{ -\frac{\hbar^2}{2m_e}\frac{1}{r^2}
-            \frac{d}{d r} \left ( r^2 \frac{d}{dr}\right ) + \frac{\hbar^2
-              l(l+1)}{2 m_e r^2}
-          -\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}\right \} R(r) = E R(r) $ \\
-\\
-$\displaystyle R_{nl}(r) = N_{nl} e^{-x/2} x^l L_{nl}(x),\ \ \  x = \frac{2 r}{n a_0} $
-\\
-$\displaystyle P_{nl}(r) = r^2 R_{nl}^2 $
-\\
-\\
-$\displaystyle n = 1, 2, \ldots,\ \  l = 0, \ldots, n-1 \ \ m_l = 0,\pm 1, \ldots, \pm l$
-\\
-\\
-$\displaystyle N_{nl} = \sqrt{\left ( \frac{2}{na_0}\right )^3 \frac{(n-l-1)!}{2n(n+l)!}}$
-\\
-\\
-$\displaystyle L_{10} = L_{21} = L_{32} = \ldots =1 \quad L_{20} = 2 - x \quad L_{31} = 4-x$
-\\
-\\
-$\displaystyle     E_{n}=-\frac{1}{2}\frac{\hbar^2}{m_e a_0^2}\frac{1}{n^2} =-\frac{E_H}{2}\frac{1}{n^2}$ \\
- \\
-$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
-\\
-$\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1) \right \} \frac{a_0}{Z} $ \\
-
-\\ \underline{Selection Rules}:
-$\displaystyle \Delta l = \pm 1, \qquad  \Delta m_l = 0, \pm 1\qquad \Delta m_s=0 $
-\\
-%%     \includegraphics[scale=0.4]{Images/H_atom} \\       
-\hline
-\end{tabular}
- \end{center}
-\end{table}
-#+END_EXPORT
-
 *** Solutions
 1. $\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)$
 2. Principle quantum number $n=1,2,\ldots$
@@ -1563,6 +1534,98 @@ fig.show()
 3. Optimize wavefunction with respect to variational parameter
     \[ \left ( \frac{\partial \langle \psi_\text{trial}^\lambda | \hat{H} | \psi_\text{trial}^\lambda\rangle}{\partial\lambda} \right ) = 0 \rightarrow \lambda_\text{opt} \] 
 
+
+#+BEGIN_EXPORT latex
+\begin{table}[h]
+   \begin{center}
+   \caption{Hydrogen atom}
+    \label{Hydrogen atom}
+\begin{displaymath}
+\begin{array}{|c|}
+\hline
+      V(r) = -\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}, 0 < r< \infty \\[0.3cm]
+
+      \hat H = -\frac{\hbar^2}{2m_e}\frac{1}{r^2}\left [
+  \frac{\partial}{\partial r}r^2\frac{\partial}{\partial r} + \hat L^2 \right ] +V(r) \\[0.3cm]
+
+   \psi(r,\theta,\phi) = R(r)Y_{l,m_l}(\theta,\phi)  \\[0.3cm]
+ \left \{ -\frac{\hbar^2}{2m_e}\frac{1}{r^2}
+            \frac{d}{d r} \left ( r^2 \frac{d}{dr}\right ) + \frac{\hbar^2
+              l(l+1)}{2 m_e r^2}
+          -\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}\right \} R(r) = E R(r)  \\[0.3cm]
+
+ R_{nl}(r) = N_{nl} e^{-x/2} x^l L_{nl}(x),\ \ \  x = \frac{2 r}{n a_0} \\[0.3cm]
+
+ P_{nl}(r) = r^2 R_{nl}^2 \\[0.3cm]
+ n = 1, 2, \ldots,\ \  l = 0, \ldots, n-1 \ \ m_l = 0,\pm 1, \ldots, \pm l \\[0.3cm]
+ N_{nl} = \sqrt{\left ( \frac{2}{na_0}\right )^3 \frac{(n-l-1)!}{2n(n+l)!}} \\[0.3cm]
+ L_{10} = L_{21} = L_{32} = \ldots =1 \quad L_{20} = 2 - x \quad L_{31} = 4-x \\[0.3cm]
+  E_{n}=-\frac{1}{2}\frac{\hbar^2}{m_e a_0^2}\frac{1}{n^2} =-\frac{E_H}{2}\frac{1}{n^2} \\[0.3cm]
+ |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar  \\[0.3cm]
+ \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1) \right \} \frac{a_0}{Z} \\[0.3cm]
+
+ \text{Selection Rules}:
+ \Delta l = \pm 1, \qquad  \Delta m_l = 0, \pm 1\qquad \Delta m_s=0  \\
+%%     \includegraphics[scale=0.4]{Images/H_atom} \\       
+\hline
+\end{array}
+\end{displaymath}
+ \end{center}
+\end{table}
+#+END_EXPORT
+
+#+BEGIN_COMMENT
+#+BEGIN_EXPORT latex
+\begin{table}[h]
+   \begin{center}
+   \caption{Hydrogen atom}
+    \label{Hydrogen atom}
+\begin{tabular}{|c|}
+\hline
+ \\
+$\displaystyle       V(r) = -\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}, 0 < r< \infty$ \\
+ \\
+$\displaystyle     \hat H = -\frac{\hbar^2}{2m_e}\frac{1}{r^2}\left [
+  \frac{\partial}{\partial r}r^2\frac{\partial}{\partial r} + \hat L^2 \right ] +V(r)$ \\
+\\
+$\displaystyle \psi(r,\theta,\phi) = R(r)Y_{l,m_l}(\theta,\phi) $ \\
+\\
+$\displaystyle   \left \{ -\frac{\hbar^2}{2m_e}\frac{1}{r^2}
+            \frac{d}{d r} \left ( r^2 \frac{d}{dr}\right ) + \frac{\hbar^2
+              l(l+1)}{2 m_e r^2}
+          -\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}\right \} R(r) = E R(r) $ \\
+\\
+$\displaystyle R_{nl}(r) = N_{nl} e^{-x/2} x^l L_{nl}(x),\ \ \  x = \frac{2 r}{n a_0} $
+\\
+$\displaystyle P_{nl}(r) = r^2 R_{nl}^2 $
+\\
+\\
+$\displaystyle n = 1, 2, \ldots,\ \  l = 0, \ldots, n-1 \ \ m_l = 0,\pm 1, \ldots, \pm l$
+\\
+\\
+$\displaystyle N_{nl} = \sqrt{\left ( \frac{2}{na_0}\right )^3 \frac{(n-l-1)!}{2n(n+l)!}}$
+\\
+\\
+$\displaystyle L_{10} = L_{21} = L_{32} = \ldots =1 \quad L_{20} = 2 - x \quad L_{31} = 4-x$
+\\
+\\
+$\displaystyle     E_{n}=-\frac{1}{2}\frac{\hbar^2}{m_e a_0^2}\frac{1}{n^2} =-\frac{E_H}{2}\frac{1}{n^2}$ \\
+ \\
+$\displaystyle |L| = \hbar \sqrt{l(l+1)}, L_z = m_l \hbar $ \\
+\\
+$\displaystyle \langle r \rangle = \left \{ \frac{3}{2} n^2 - \frac{1}{2} l(l+1) \right \} \frac{a_0}{Z} $ \\
+
+\\ \underline{Selection Rules}:
+$\displaystyle \Delta l = \pm 1, \qquad  \Delta m_l = 0, \pm 1\qquad \Delta m_s=0 $
+\\
+%%     \includegraphics[scale=0.4]{Images/H_atom} \\       
+\hline
+\end{tabular}
+ \end{center}
+\end{table}
+#+END_EXPORT
+#+END_COMMENT
+
 ** Lecture 12: Many-electron atoms
 *** Many-electron problem, Schr\ouml{}dinger equation not exactly solvable (Sad!)
 1. $e^- -e^-$ interaction terms prevent separation of variables
@@ -1589,7 +1652,7 @@ fig.show()
 6. Electrons in same subshell shield each other poorly, causing ionization energy to increase across the subshell
 
 #+ATTR_ORG: :width 600
-#+ATTR_LATEX: :width 0.9\textwidth
+#+ATTR_LATEX: :width 0.7\textwidth
 [[./Images/PeriodicTableMuted.png]]
 *** Quantitative solutions
 1. Schr\ouml{}dinger equation
