@@ -3659,19 +3659,26 @@ plt.savefig('./Images/ethane-entropy.png')
 *** Chemical reaction
 1. General chemical reaction \(\sum_i \nu_i A_i = 0\), \(\nu_i\) stoichiometric coefficients
 2. Thermodynamic change \(\Delta W^\circ(T) = \sum_i \nu_i W^\circ_i(T)\), where \(W = A, U, S, G, \ldots \)
-3. "Standard state" derives from concentration dependence of entropy
-4. "Standard state" corresponds to some standard choice, $(N/V)^\circ = c^\circ$, e.g. \SI{1}{mol/l} (T-independent), or $(N/V)^\circ = P^\circ/RT$, e.g. \SI{1}{bar} (T-dependent)
-5. Permits functions to be easily computed at other concentrations, e.g.
+3. Example: vinyl alcohol to acetaldehyde, \ce{H2C=CH(OH) -> CH3CH(O)}
+4. Reaction entropy captures contributions of all degrees of freedom
+     \[\Delta S^\circ(T) = \Delta S^\circ_\text{trans}(T)+ \Delta S_\text{rot}(T) +\Delta S_\text{vib}(T)\]
+5. Reaction energy (internal, Helmholtz, ...) must /also/ capture difference
+   in \SI{0}{K} electronic energy
+    \[\Delta U^\circ(T) = \Delta U^\circ_\text{trans}(T)+ \Delta U_\text{rot}(T) +\Delta U_\text{vib}(T) + \Delta E_\text{elec}(0) + \Delta ZPE\]
+6. "Standard state" derives from concentration dependence of entropy
+7. "Standard state" corresponds to some standard choice, $(N/V)^\circ = c^\circ$, e.g. \SI{1}{mol/l} (T-independent), or $(N/V)^\circ = P^\circ/RT$, e.g. \SI{1}{bar} (T-dependent)
+8. Permits functions to be easily computed at other concentrations, e.g.
      \begin{displaymath}
      A(T,N/V)  = A^\circ(T) + k T \ln\left ( (N/V)/(N/V)^\circ \right ) =A^\circ(T) + k T \ln \left ( c/c^\circ \right )
      \end{displaymath}
-6. Example: ethane dehydrogenation, \ce{C2H6 -> C2H4 + H2}, 1 bar standard state
-7. Reaction entropy captures contributions of all degrees of freedom
-8. Reaction energy (internal, Helmholtz, ...) must /also/ capture difference
-   in \SI{0}{K} electronic energy
-   \begin{displaymath}
- \Delta U^\circ (T) = U^\circ_\mathrm{B}(T)-U^\circ_\mathrm{A}(T)+\Delta E(0)
-    \end{displaymath}
+9. Tabulations a common source of standard state /H/ and /S/, eg [[http://webbook.nist.gov]]
+   1. \(S^\circ(T)\) referenced to \SI{0}{K}, because \(S(0) = 0\) (Third law)
+     \[ S^\circ(T^\prime) = S^\circ(T) + \int_T^{T^\prime} \frac{C^\circ_p(T)}{T} dT\]
+   2. Enthalpies of elements in their most stable form at \(T=\SI{298}{K}\), \(P=\SI{1}{bar}\) defined to be zero
+   3. Enthalpies of substances tabulated as /formation enthalpies/ relative to constiuent elements
+       \[ \Delta H^\circ(T) = \sum_i \nu_i \Delta H^\circ_{f,i}(T) \]
+       \[ \Delta H^\circ(T^\prime) = \Delta H^\circ(T) + \int_T^{T^\prime} \Delta C^\circ_p(T) dT\]
+10. Example: ethane dehydrogenation, \ce{C2H6 -> C2H4 + H2}, 1 bar standard state
 #+BEGIN_SRC python :exports results 
 import numpy as np
 import matplotlib.pyplot as plt
